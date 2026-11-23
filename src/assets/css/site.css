@@ -473,3 +473,13 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hband__note { font-family: var(--head); font-weight: 600; font-size: 1.15rem; margin: -.4rem 0 .8rem; }
 /* Team headshots: show the whole square photo, like the current site */
 .gcards--portraits .gcard__img { aspect-ratio: 1 / 1; object-position: center top; }
+/* Home photo tiles: more breathing room (Nov 2026) */
+.htiles:not(.htiles--inset) { padding: clamp(28px, 4vw, 56px) clamp(16px, 4vw, 48px); gap: 1.25rem; }
+.htiles--scroll { gap: 1.25rem; }
+@media (min-width: 900px) { .htiles--scroll:not(.htiles--inset) .htile { flex-basis: calc((100% - 2.5rem) / 3); } }
+.htile { min-height: 28rem; }
+.htile__body { padding: 2.25rem 2rem; }
+.htile__body h3 { margin-bottom: .9rem; }
+.htile__body p { margin-bottom: 1.4rem; }
+.htile .pill { transition: background .15s, border-color .15s, color .15s; }
+.htile .pill:hover, .htile .pill:focus-visible { background: var(--deep-blue); border-color: var(--deep-blue); color: var(--white); }
