@@ -14,19 +14,22 @@ for page in PAGES:
         if "opengraph" in u or "Badge-Icon" in u or "Logo" in u: continue
         base = re.sub(r"__[a-z]+__(?=\.\w+$)", "", u)  # strip size suffix for the original
         if base in [f["url"] for f in found]: continue
+        tries = [base, u] + [base.replace(".", "__" + s + "__.", 1) if False else re.sub(r"(\.\w+)$", "__" + s + r"__\1", base) for s in ("largepreview", "mediumsquare", "large")]
         before = re.sub(r"<[^>]+>", " ", src[max(0, m.start() - 1500):m.start()])
         after = re.sub(r"<[^>]+>", " ", src[m.end():m.end() + 1500])
         ctx = " ".join((before.split()[-12:] + ["[IMG]"] + after.split()[:12]))
-        found.append({"url": base, "context": ctx})
+        found.append({"url": base, "tries": tries, "context": ctx})
     slug = page or "home"
     outdir = f"src/assets/img/live/{slug}"
     os.makedirs(outdir, exist_ok=True)
     for i, f in enumerate(found, 1):
         ext = os.path.splitext(f["url"])[1].lower()
         name = f"{i:02d}{ext}"
-        for u in (f["url"], f["url"].replace(ext, "-Large" + ext)):
+        for u in f["tries"]:
             try:
-                open(f"{outdir}/{name}", "wb").write(get(u)); f["file"] = name; break
+                data = get(u)
+                if not data: continue
+                open(f"{outdir}/{name}", "wb").write(data); f["file"] = name; f["got"] = u; f.pop("error", None); break
             except Exception as e:
                 f["error"] = str(e)
     manifest[slug] = found
