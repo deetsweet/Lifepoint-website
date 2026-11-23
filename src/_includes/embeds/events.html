@@ -1,0 +1,469 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;family=Lato:wght@400;700&amp;display=swap">
+<div id="lifepoint-events-listing" data-listing="events"{% if eventsLimit %} data-limit="{{ eventsLimit }}"{% endif %}>
+  <p class="lp-status" role="status">Loading events... <a href="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">Browse on ChurchSuite</a></p>
+  <div class="lp-grid"></div>
+
+<style>
+#lifepoint-events-listing {
+  box-sizing: border-box;
+  width: 100%;
+  padding: clamp(24px, 4vw, 56px) clamp(16px, 4vw, 40px);
+  background: #FFFBF0;
+  color: #333333;
+  font: 400 1rem/1.55 "Lato", Arial, sans-serif;
+}
+#lifepoint-events-listing .lp-status,
+#lifepoint-events-listing .lp-grid {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+#lifepoint-events-listing .lp-status,
+#lifepoint-events-listing .lp-body,
+#lifepoint-events-listing .lp-body > * {
+  text-align: left !important;
+}
+#lifepoint-events-listing .lp-status a {
+  color: #3D6270;
+  text-decoration: underline;
+}
+#lifepoint-events-listing .lp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  align-items: stretch;
+  gap: clamp(16px, 2.5vw, 28px);
+}
+#lifepoint-events-listing .lp-card {
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #333333;
+  color: #FFFBF0;
+}
+#lifepoint-events-listing .lp-image-labels {
+  position: absolute;
+  inset-inline-end: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: calc(100% - 20px);
+}
+#lifepoint-events-listing .lp-label {
+  overflow-wrap: anywhere;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--lp-label-bg, #515151);
+  color: var(--lp-label-text, #FFFBF0);
+  font: 600 .75rem/1.3 "Jost", Arial, sans-serif;
+}
+#lifepoint-events-listing .lp-label[data-theme="blue"] { --lp-label-bg: #3D6270; --lp-label-text: #FFFBF0; }
+#lifepoint-events-listing .lp-label[data-theme="sage"] { --lp-label-bg: #71806D; --lp-label-text: #090B09; }
+#lifepoint-events-listing .lp-label[data-theme="lavender"] { --lp-label-bg: #D8CDE4; --lp-label-text: #090B09; }
+#lifepoint-events-listing .lp-label[data-theme="terracotta"] { --lp-label-bg: #E8B7AA; --lp-label-text: #090B09; }
+#lifepoint-events-listing .lp-label[data-theme="moss"] { --lp-label-bg: #B1B89F; --lp-label-text: #090B09; }
+#lifepoint-events-listing .lp-label[data-theme="mist"] { --lp-label-bg: #BFCFD7; --lp-label-text: #090B09; }
+#lifepoint-events-listing .lp-label[data-theme="stone"] { --lp-label-bg: #E8E4E4; --lp-label-text: #090B09; }
+#lifepoint-events-listing .lp-image-frame {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #E8E4E4;
+}
+@media (hover: hover) {
+  #lifepoint-events-listing .lp-image-link:hover .lp-photo { filter: brightness(.65); }
+}
+#lifepoint-events-listing .lp-image-link:focus-visible {
+  outline: 3px solid #FFFBF0;
+  outline-offset: -6px;
+}
+#lifepoint-events-listing .lp-image-link:focus-visible .lp-photo { filter: brightness(.65); }
+#lifepoint-events-listing .lp-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+#lifepoint-events-listing .lp-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(16px, 2vw, 24px);
+  padding-bottom: 14px;
+}
+#lifepoint-events-listing .lp-title {
+  color: #FFFBF0;
+  font: 600 clamp(1.5rem, 1.25rem + .65vw, 1.85rem)/1.15 "Jost", Arial, sans-serif;
+  letter-spacing: -.025em;
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+#lifepoint-events-listing .lp-date,
+#lifepoint-events-listing .lp-time {
+  margin: 0;
+  color: #FFFBF0;
+  font: 400 1.05rem/1.2 "Jost", Arial, sans-serif;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+#lifepoint-events-listing .lp-date {
+  font-size: clamp(1.25rem, 1.1rem + .55vw, 1.55rem);
+}
+#lifepoint-events-listing .lp-time { margin-top: 4px; }
+#lifepoint-events-listing .lp-countdown {
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+  color: #BFCFD7;
+  font: 700 .85rem/1.4 "Lato", Arial, sans-serif;
+}
+#lifepoint-events-listing .lp-actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+#lifepoint-events-listing .lp-action {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 44px;
+  text-decoration: none;
+}
+#lifepoint-events-listing .lp-action-pill {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  min-height: 32px;
+  padding: 4px clamp(4px, 1vw, 10px);
+  border: 1px solid #DDD6C7;
+  border-radius: 999px;
+  background: #FFFBF0;
+  color: #333333;
+  font: 600 .69rem/1.2 "Jost", Arial, sans-serif;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+#lifepoint-events-listing .lp-action-pill svg {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+}
+#lifepoint-events-listing .lp-action:hover .lp-action-pill {
+  background: #BFCFD7;
+}
+#lifepoint-events-listing .lp-action:focus-visible {
+  outline: 2px solid #FFFBF0;
+  outline-offset: 2px;
+}
+#lifepoint-events-listing .lp-description {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: .75rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  margin: 10px 0 0;
+}
+#lifepoint-events-listing .lp-status a:focus-visible {
+  outline: 2px solid #3D6270;
+  outline-offset: 4px;
+}
+</style>
+
+<script>
+(() => {
+  const root = document.getElementById('lifepoint-events-listing');
+  const mode = root.dataset.listing;
+  const feed = new URL('https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1/json');
+  const status = root.querySelector('.lp-status');
+  const grid = root.querySelector('.lp-grid');
+  const date = new Intl.DateTimeFormat('en-AU', {
+    weekday: 'short', day: 'numeric', month: 'short', year: 'numeric',
+    timeZone: 'Australia/Brisbane'
+  });
+  const clock = new Intl.DateTimeFormat('en-AU', {
+    hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Australia/Brisbane'
+  });
+
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function safeUrl(value, hostname) {
+    if (!value) return '';
+    try {
+      const url = new URL(value, feed.origin);
+      return url.protocol === 'https:' && url.hostname === hostname ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function description(value) {
+    const template = document.createElement('template');
+    template.innerHTML = (value || '').replace(/<br\s*\/?\s*>|<\/(?:p|div|li|h[1-6])\s*>/gi, '\n');
+    template.content.querySelectorAll('script,style').forEach(node => node.remove());
+    return template.content.textContent.replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  const day = new Intl.DateTimeFormat('en-AU', {
+    year: 'numeric', month: 'numeric', day: 'numeric', timeZone: 'Australia/Brisbane'
+  });
+
+  function calendarDay(value) {
+    const parts = Object.fromEntries(day.formatToParts(value).map(part => [part.type, part.value]));
+    return Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
+  }
+
+  function addSchedule(body, event, today) {
+    const start = new Date(event.starts_at);
+    const end = new Date(event.ends_at);
+    if (!event.starts_at || !Number.isFinite(+start)) return '';
+    const hasEnd = Boolean(event.ends_at) && Number.isFinite(+end) && end > start;
+    const firstDay = calendarDay(start);
+    const multipleDays = hasEnd && calendarDay(end) !== firstDay;
+
+    if (multipleDays && !event.all_day) {
+      body.append(
+        element('p', 'lp-date', date.format(start)),
+        element('p', 'lp-time', clock.format(start)),
+        element('p', 'lp-time', 'Ends ' + date.format(end) + ' at ' + clock.format(end))
+      );
+    } else {
+      const dateLabel = date.format(start) + (multipleDays ? ' \u2013 ' + date.format(end) : '');
+      const timeLabel = event.all_day
+        ? 'All day'
+        : clock.format(start) + (hasEnd ? ' \u2013 ' + clock.format(end) : '');
+      body.append(element('p', 'lp-date', dateLabel), element('p', 'lp-time', timeLabel));
+    }
+
+    const days = (firstDay - today) / 86400000;
+    if (days < 0) return '';
+    return days === 0 ? 'Today' : days === 1 ? 'Tomorrow' : 'In ' + days + ' days';
+  }
+
+  const categoryThemes = new Map([
+    ['young adults', 'sage'],
+    ['youth', 'moss'],
+    ['men', 'blue'],
+    ['women', 'terracotta'],
+    ['general', 'charcoal'],
+    ['fluro import', 'charcoal'],
+    ['kids', 'mist'],
+    ['sunday services', 'stone']
+  ]);
+
+  function actionLink(label, iconPath) {
+    const link = element('a', 'lp-action');
+    const pill = element('span', 'lp-action-pill');
+    const namespace = 'http://www.w3.org/2000/svg';
+    const icon = document.createElementNS(namespace, 'svg');
+    icon.setAttribute('viewBox', '0 0 24 24');
+    icon.setAttribute('fill', 'none');
+    icon.setAttribute('stroke', 'currentColor');
+    icon.setAttribute('stroke-width', '2');
+    icon.setAttribute('stroke-linecap', 'round');
+    icon.setAttribute('stroke-linejoin', 'round');
+    icon.setAttribute('aria-hidden', 'true');
+    const path = document.createElementNS(namespace, 'path');
+    path.setAttribute('d', iconPath);
+    icon.append(path);
+    pill.append(icon, element('span', '', label));
+    link.append(pill);
+    return link;
+  }
+
+  function calendarLink(event, details, eventUrl) {
+    const start = new Date(event.starts_at);
+    const end = new Date(event.ends_at);
+    if (!event.starts_at || !Number.isFinite(+start)) return null;
+
+    const formatUtc = value => value.toISOString().replace(/[-:]|\.\d{3}/g, '');
+    const formatDay = value => formatUtc(new Date(value)).slice(0, 8);
+    const escapeText = value => String(value ?? '').replace(/\\/g, '\\\\')
+      .replace(/\r\n|\r|\n/g, '\\n').replace(/[,;]/g, '\\$&');
+    const hasEnd = Boolean(event.ends_at) && Number.isFinite(+end) && end > start;
+    const lines = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Lifepoint Church//Events//EN',
+      'BEGIN:VEVENT',
+      'UID:' + encodeURIComponent(event.identifier || event.id || event.starts_at) + '@' + feed.hostname,
+      'DTSTAMP:' + formatUtc(new Date()),
+      'SUMMARY:' + escapeText(event.name)
+    ];
+
+    if (event.all_day) {
+      const startDay = calendarDay(start);
+      let lastDay = hasEnd ? calendarDay(end) : startDay;
+      // An end at local midnight marks the start of the next day.
+      if (lastDay > startDay && (+end + 10 * 3600000) % 86400000 === 0) lastDay -= 86400000;
+      lines.push('DTSTART;VALUE=DATE:' + formatDay(startDay),
+        'DTEND;VALUE=DATE:' + formatDay(lastDay + 86400000));
+    } else {
+      lines.push('DTSTART:' + formatUtc(start));
+      if (hasEnd) lines.push('DTEND:' + formatUtc(end));
+    }
+
+    const venue = [...new Set([event.location?.name?.trim(), event.location?.address?.trim()].filter(Boolean))];
+    if (venue.length) lines.push('LOCATION:' + escapeText(venue.join(', ')));
+    if (details) lines.push('DESCRIPTION:' + escapeText(details));
+    if (eventUrl) lines.push('URL:' + eventUrl);
+    lines.push('END:VEVENT', 'END:VCALENDAR');
+
+    const encoder = new TextEncoder();
+    const folded = lines.map(line => {
+      let result = '';
+      let bytes = 0;
+      for (const character of line) {
+        const length = encoder.encode(character).length;
+        if (bytes + length > 75) {
+          result += '\r\n ';
+          bytes = 1;
+        }
+        result += character;
+        bytes += length;
+      }
+      return result;
+    });
+    const link = actionLink('ADD TO CAL', 'M4 5h16v16H4z M8 3v4m8-4v4M4 10h16m-8 3v5m-2.5-2.5h5');
+    link.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(folded.join('\r\n') + '\r\n');
+    link.download = 'lifepoint-' + String(event.identifier || event.id || 'event').replace(/[^a-z0-9_-]/gi, '') + '.ics';
+    link.setAttribute('aria-label', 'Add to my calendar: ' + event.name);
+    return link;
+  }
+
+  function createCard(item, today, categoryName) {
+    const card = element('article', 'lp-card');
+    const categoryKey = categoryName?.trim().toLowerCase();
+    const theme = categoryKey ? (categoryThemes.get(categoryKey) || 'lavender') : 'charcoal';
+    const text = description(item.description);
+    const photo = safeUrl(item.image?.medium || item.image?.large || item.image?.small, 'cdn.churchsuite.com');
+    const link = safeUrl(item.url, feed.hostname);
+    const frame = element(link && photo ? 'a' : 'div', 'lp-image-frame');
+    if (link && photo) {
+      frame.classList.add('lp-image-link');
+      frame.href = link;
+      frame.setAttribute('aria-label', 'More info about ' + item.name);
+    }
+    if (photo) {
+      const img = element('img', 'lp-photo');
+      img.src = photo;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.addEventListener('error', () => img.remove(), { once: true });
+      frame.append(img);
+    }
+    const categoryLabel = categoryKey === 'general' ? 'All welcome' : (categoryName?.trim() || '');
+    if (categoryLabel) {
+      const badges = element('span', 'lp-image-labels');
+      const badge = element('span', 'lp-label', categoryLabel);
+      badge.dataset.theme = theme;
+      badges.append(badge);
+      frame.append(badges);
+      if (link && photo) frame.setAttribute('aria-label', 'More info about ' + item.name + '. ' + categoryLabel);
+    }
+    card.append(frame);
+
+    const body = element('div', 'lp-body');
+    body.append(element('h3', 'lp-title', item.name));
+    const countdown = addSchedule(body, item, today);
+    const venue = item.location;
+    const address = venue?.address?.trim();
+    const location = venue?.name?.trim() || address;
+    const hasPin = Number.isFinite(venue?.latitude) && Number.isFinite(venue?.longitude);
+    const mapQuery = venue?.type === 'physical'
+      ? address || (hasPin ? venue.latitude + ',' + venue.longitude : '')
+      : '';
+    const eventStatus = [location, countdown].filter(Boolean).join(' | ');
+    if (eventStatus) body.append(element('p', 'lp-countdown', eventStatus));
+
+    if (text) body.append(element('p', 'lp-description', text));
+
+    const actions = element('div', 'lp-actions');
+    if (link) {
+      const info = actionLink('MORE INFO', 'M12 11v5m0-8h.01 M22 12a10 10 0 1 1-20 0 10 10 0 1 1 20 0');
+      info.href = link;
+      info.setAttribute('aria-label', 'More info about ' + item.name);
+      actions.append(info);
+    }
+    if (mapQuery) {
+      const mapUrl = new URL('https://www.google.com/maps/dir/');
+      mapUrl.searchParams.set('api', '1');
+      mapUrl.searchParams.set('destination', mapQuery);
+      const directions = actionLink('DIRECTIONS', 'M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z M15 10a3 3 0 1 1-6 0 3 3 0 1 1 6 0');
+      directions.href = mapUrl.href;
+      directions.setAttribute('aria-label', 'Directions to ' + (location || item.name));
+      actions.append(directions);
+    }
+    const calendar = calendarLink(item, text, link);
+    if (calendar) actions.append(calendar);
+    if (actions.childElementCount) body.append(actions);
+    card.append(body);
+    return card;
+  }
+
+  function limitSundayServices(events, now) {
+    const isSundayService = entry => entry.categoryName?.trim().toLowerCase() === 'sunday services';
+    const nextServices = new Set(events.filter(entry => {
+      if (!isSundayService(entry)) return false;
+      const { item } = entry;
+      const start = Date.parse(item.starts_at);
+      const end = Date.parse(item.ends_at);
+      const cancelled = /^cancelled$|^canceled$/i.test(item.status || '');
+      return !cancelled && Number.isFinite(start) && (end > start ? end : start) >= now;
+    }).sort((a, b) => Date.parse(a.item.starts_at) - Date.parse(b.item.starts_at)).slice(0, 2));
+
+    return events.filter(entry => !isSundayService(entry) || nextServices.has(entry));
+  }
+
+  async function load() {
+    const events = [];
+    let page = 1;
+    while (page) {
+      const url = new URL(feed);
+      url.searchParams.set('page', page);
+      const response = await fetch(url, { credentials: 'omit', cache: 'no-cache' });
+      if (!response.ok) throw new Error('ChurchSuite feed unavailable');
+      const data = await response.json();
+      if (!Array.isArray(data[mode])) throw new Error('Unexpected ChurchSuite response');
+      const categories = new Map((data.categories || []).map(category => [String(category.id), category.name]));
+      for (const item of data[mode]) {
+        events.push({ item, categoryName: categories.get(String(item.category_id)) });
+      }
+      const next = Number(data.pagination?.next_page);
+      page = Number.isSafeInteger(next) && next > page ? next : 0;
+    }
+    const now = new Date();
+    const today = calendarDay(now);
+    const limit = Number(root.dataset.limit) || Infinity;
+    const visible = limitSundayServices(events, now).slice(0, limit);
+    const cards = document.createDocumentFragment();
+    for (const { item, categoryName } of visible) cards.append(createCard(item, today, categoryName));
+    const count = visible.length;
+    grid.replaceChildren(cards);
+    const link = status.querySelector('a');
+    status.replaceChildren(count ? '' : 'No ' + mode + ' are listed right now. ', link);
+    status.hidden = count > 0;
+  }
+
+  load().catch(() => {
+    status.firstChild.textContent = 'The ' + mode + ' could not load. ';
+  });
+})();
+</script>
+</div>

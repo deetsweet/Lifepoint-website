@@ -4,6 +4,7 @@ title: Home | Lifepoint Church - Moreton, Queensland
 description: Lifepoint Church in Rothwell, Moreton Bay. Sundays at 8.30am, 10am and 5pm. Your place to belong.
 permalink: /
 heroHeader: true
+eventsLimit: 4
 locations:
   - { img: home-rothwell, title: Rothwell, sub: 3 services every Sunday, times: "8.30am | 10am | 5pm", place: "<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell", url: /sundays/, link: Plan a visit }
   - { img: home-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
@@ -96,10 +97,9 @@ help:
   {{ m.pill("Meet our team", "/our-team/", "dark") }}
 </section>
 
-<section class="sec sec--dark hevents" data-cs-events data-hide-sundays data-limit="4" data-fallback="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">
-  <div class="hevents__head"><h2>Coming up</h2><a class="pill pill--ghost" href="{{ '/events/' | url }}">See all events</a></div>
-  <p class="cs-status">Loading events…</p>
-  <div class="gcards gcards--4 cs-list"></div>
+<section class="hevents-wrap">
+  <div class="hevents__head"><h2>Coming up</h2><a class="pill pill--dark" href="{{ '/events/' | url }}">See all events</a></div>
+  {% include "embeds/events.html" %}
 </section>
 
 <section class="sec sec--linen hhelp">
@@ -121,4 +121,4 @@ help:
   </div>
 </section>
 
-<script src="{{ '/assets/js/churchsuite.js' | url }}" defer></script>
+

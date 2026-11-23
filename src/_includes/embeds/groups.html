@@ -1,0 +1,524 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&amp;family=Lato:wght@400;700&amp;display=swap">
+<div id="lifepoint-groups-listing" data-listing="groups">
+  <div class="lp-intro">
+    <h2>Join a Lifepoint Small Group</h2>
+    <p>Small Groups are a place to get to know people, explore faith and grow together.</p>
+    <p>Browse the groups below or tap <strong>Help me find a group</strong> and we will help you find one or start your own.</p>
+  </div>
+  <div class="lp-toolbar">
+    <div class="lp-filters" role="search" aria-label="Find a small group" hidden>
+      <input type="search" class="lp-search" aria-label="Search groups" placeholder="Search groups...">
+      <select class="lp-day" aria-label="Meeting day"><option value="">Any day</option></select>
+      <select class="lp-audience" aria-label="Group audience"><option value="">All audiences</option></select>
+      <select class="lp-campus" aria-label="Campus"><option value="">All campuses</option></select>
+    </div>
+    <a class="lp-help" href="https://lifepointchurchrothwell.churchsuite.com/-/forms/8qmfh5ni">Help me find a group</a>
+  </div>
+  <p class="lp-results" role="status" hidden></p>
+  <p class="lp-status" role="status">Loading groups... <a href="https://lifepointchurchrothwell.churchsuite.com/-/smallgroups/fa05115c-e746-4b1a-b60c-fede85ef2f94">Browse on ChurchSuite</a></p>
+  <div class="lp-grid"></div>
+
+<style>
+#lifepoint-groups-listing {
+  box-sizing: border-box;
+  width: 100%;
+  padding: clamp(24px, 4vw, 56px) clamp(16px, 4vw, 40px);
+  background: #FFFBF0;
+  color: #333333;
+  font: 400 1rem/1.55 "Lato", Arial, sans-serif;
+}
+#lifepoint-groups-listing [hidden] { display: none !important; }
+#lifepoint-groups-listing .lp-intro {
+  max-width: 760px;
+  margin: 0 auto 20px;
+  padding: 0;
+  text-align: center;
+}
+#lifepoint-groups-listing .lp-intro h2 {
+  max-width: 19ch;
+  margin: 0 auto 16px;
+  color: #333333;
+  font: 600 clamp(2rem, 1.35rem + 2.5vw, 3.5rem)/1.08 "Jost", Arial, sans-serif;
+  letter-spacing: -.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+#lifepoint-groups-listing .lp-intro p {
+  margin: 0 0 12px;
+  text-align: center;
+}
+#lifepoint-groups-listing .lp-intro p:last-child { margin-bottom: 0; }
+#lifepoint-groups-listing .lp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto 12px;
+}
+#lifepoint-groups-listing .lp-filters {
+  display: flex;
+  flex: 1 1 540px;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+#lifepoint-groups-listing .lp-filters :is(input, select),
+#lifepoint-groups-listing .lp-help {
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 1px solid #71806D;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #333333;
+  font: 400 .875rem/1.3 "Lato", Arial, sans-serif;
+}
+#lifepoint-groups-listing .lp-filters input {
+  flex: 2 1 150px;
+  min-width: 100px;
+}
+#lifepoint-groups-listing .lp-filters select {
+  flex: 1 1 120px;
+  min-width: min(100%, 112px);
+  max-width: 100%;
+  appearance: none;
+  padding-inline-end: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23333333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+@media (forced-colors: active) {
+  #lifepoint-groups-listing .lp-filters select {
+    appearance: auto;
+    padding-inline-end: 12px;
+    background-image: none;
+  }
+}
+#lifepoint-groups-listing .lp-help {
+  display: inline-flex;
+  align-items: center;
+  border-color: #333333;
+  border-radius: 999px;
+  background: #333333;
+  color: #FFFBF0;
+  font: 500 .95rem/1.3 "Jost", Arial, sans-serif;
+  text-decoration: none;
+}
+#lifepoint-groups-listing .lp-help:hover { background: #3D6270; }
+#lifepoint-groups-listing .lp-toolbar :focus-visible {
+  outline: 2px solid #3D6270;
+  outline-offset: 2px;
+}
+#lifepoint-groups-listing .lp-results {
+  max-width: 1200px;
+  margin: 0 auto 12px;
+  color: #3D6270;
+  font-size: .85rem;
+}
+@media (max-width: 540px) {
+  #lifepoint-groups-listing .lp-filters input { flex-basis: 100%; }
+  #lifepoint-groups-listing .lp-filters select { flex-basis: 90px; }
+}
+#lifepoint-groups-listing .lp-status,
+#lifepoint-groups-listing .lp-grid {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+#lifepoint-groups-listing .lp-status,
+#lifepoint-groups-listing .lp-body,
+#lifepoint-groups-listing .lp-body > * {
+  text-align: left !important;
+}
+#lifepoint-groups-listing .lp-status a {
+  color: #3D6270;
+  text-decoration: underline;
+}
+#lifepoint-groups-listing .lp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  align-items: stretch;
+  gap: clamp(16px, 2.5vw, 28px);
+}
+#lifepoint-groups-listing .lp-card {
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #333333;
+  color: #FFFBF0;
+}
+#lifepoint-groups-listing .lp-image-labels {
+  position: absolute;
+  inset-inline-end: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: calc(100% - 20px);
+}
+#lifepoint-groups-listing .lp-label.lp-purpose-label {
+  --lp-label-bg: #FFFBF0;
+  --lp-label-text: #333333;
+}
+#lifepoint-groups-listing .lp-label {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--lp-label-bg, #515151);
+  color: var(--lp-label-text, #FFFBF0);
+  font: 600 .75rem/1.3 "Jost", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+#lifepoint-groups-listing .lp-label[data-theme="blue"] { --lp-label-bg: #3D6270; --lp-label-text: #FFFBF0; }
+#lifepoint-groups-listing .lp-label[data-theme="terracotta"] { --lp-label-bg: #E8B7AA; --lp-label-text: #090B09; }
+#lifepoint-groups-listing .lp-label[data-theme="lavender"] { --lp-label-bg: #D8CDE4; --lp-label-text: #090B09; }
+#lifepoint-groups-listing .lp-label[data-theme="sage"] { --lp-label-bg: #71806D; --lp-label-text: #090B09; }
+#lifepoint-groups-listing .lp-label[data-theme="moss"] { --lp-label-bg: #B1B89F; --lp-label-text: #090B09; }
+#lifepoint-groups-listing .lp-label[data-theme="mist"] { --lp-label-bg: #BFCFD7; --lp-label-text: #090B09; }
+#lifepoint-groups-listing .lp-label[data-theme="stone"] { --lp-label-bg: #E8E4E4; --lp-label-text: #090B09; }
+#lifepoint-groups-listing .lp-image-frame {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #E8E4E4;
+}
+@media (hover: hover) {
+  #lifepoint-groups-listing .lp-image-link:hover .lp-photo { filter: brightness(.65); }
+}
+#lifepoint-groups-listing .lp-image-link:focus-visible {
+  outline: 3px solid #FFFBF0;
+  outline-offset: -6px;
+}
+#lifepoint-groups-listing .lp-image-link:focus-visible .lp-photo { filter: brightness(.65); }
+#lifepoint-groups-listing .lp-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+#lifepoint-groups-listing .lp-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(16px, 2vw, 24px);
+  padding-bottom: 14px;
+}
+#lifepoint-groups-listing .lp-title {
+  color: #FFFBF0;
+  font: 600 clamp(1.5rem, 1.25rem + .65vw, 1.85rem)/1.15 "Jost", Arial, sans-serif;
+  letter-spacing: -.025em;
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+#lifepoint-groups-listing .lp-schedule {
+  margin: 0;
+  color: #FFFBF0;
+  font: 400 1.05rem/1.2 "Jost", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+#lifepoint-groups-listing .lp-details {
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+  color: #BFCFD7;
+  font: 700 .85rem/1.4 "Lato", Arial, sans-serif;
+}
+#lifepoint-groups-listing .lp-actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+#lifepoint-groups-listing .lp-action {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  text-decoration: none;
+}
+#lifepoint-groups-listing .lp-action-pill {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  min-height: 32px;
+  padding: 4px 14px;
+  border: 1px solid #DDD6C7;
+  border-radius: 999px;
+  background: #FFFBF0;
+  color: #333333;
+  font: 600 .69rem/1.2 "Jost", Arial, sans-serif;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+#lifepoint-groups-listing .lp-action-pill svg {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+}
+#lifepoint-groups-listing .lp-action:hover .lp-action-pill {
+  background: #BFCFD7;
+}
+#lifepoint-groups-listing .lp-action:focus-visible {
+  outline: 2px solid #FFFBF0;
+  outline-offset: 2px;
+}
+#lifepoint-groups-listing .lp-description {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: .75rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  margin: 10px 0 0;
+}
+#lifepoint-groups-listing .lp-status a:focus-visible {
+  outline: 2px solid #3D6270;
+  outline-offset: 4px;
+}
+</style>
+
+<script>
+(() => {
+  const root = document.getElementById('lifepoint-groups-listing');
+  const mode = root.dataset.listing;
+  const feed = new URL('https://lifepointchurchrothwell.churchsuite.com/-/smallgroups/fa05115c-e746-4b1a-b60c-fede85ef2f94/json');
+  const status = root.querySelector('.lp-status');
+  const grid = root.querySelector('.lp-grid');
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function safeUrl(value, hostname) {
+    if (!value) return '';
+    try {
+      const url = new URL(value, feed.origin);
+      return url.protocol === 'https:' && url.hostname === hostname ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function description(value) {
+    const template = document.createElement('template');
+    template.innerHTML = (value || '').replace(/<br\s*\/?\s*>|<\/(?:p|div|li|h[1-6])\s*>/gi, '\n');
+    template.content.querySelectorAll('script,style').forEach(node => node.remove());
+    return template.content.textContent.replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function groupSchedule(group) {
+    const day = (group.day || '').replace(/^./, letter => letter.toUpperCase());
+    const time = /^([01]\d|2[0-3]):([0-5]\d)/.exec(group.time || '');
+    const hour = time ? Number(time[1]) : 0;
+    const localTime = time ? (hour % 12 || 12) + ':' + time[2] + (hour < 12 ? ' am' : ' pm') : '';
+    const frequency = (group.frequency || '').replace(/^./, letter => letter.toUpperCase());
+    return [[day, localTime].filter(Boolean).join(' at '), frequency]
+      .filter(Boolean).join(' \u00B7 ');
+  }
+
+  const audienceThemes = new Map([
+    ['young adults', 'sage'],
+    ['women', 'terracotta'],
+    ['youth', 'moss'],
+    ['all ages', 'charcoal'],
+    ['men', 'blue'],
+    ['families', 'mist'],
+    ['seniors', 'stone']
+  ]);
+
+  function actionLink(label, iconPath) {
+    const link = element('a', 'lp-action');
+    const pill = element('span', 'lp-action-pill');
+    const namespace = 'http://www.w3.org/2000/svg';
+    const icon = document.createElementNS(namespace, 'svg');
+    icon.setAttribute('viewBox', '0 0 24 24');
+    icon.setAttribute('fill', 'none');
+    icon.setAttribute('stroke', 'currentColor');
+    icon.setAttribute('stroke-width', '2');
+    icon.setAttribute('stroke-linecap', 'round');
+    icon.setAttribute('stroke-linejoin', 'round');
+    icon.setAttribute('aria-hidden', 'true');
+    const path = document.createElementNS(namespace, 'path');
+    path.setAttribute('d', iconPath);
+    icon.append(path);
+    pill.append(icon, element('span', '', label));
+    link.append(pill);
+    return link;
+  }
+
+  function selectedOptions(item, label) {
+    if (!label) return [];
+    const selection = item.labels?.find(entry => String(entry.id) === String(label.id))?.options || [];
+    return (label.options || []).filter(option => selection.includes(option.id));
+  }
+
+  function createCard(item, audiences, purposes, text) {
+    const card = element('article', 'lp-card');
+    const photo = safeUrl(item.image?.medium || item.image?.large || item.image?.small, 'cdn.churchsuite.com');
+    const groupPath = item.identifier ? '/-/groups/' + encodeURIComponent(item.identifier) : item.url;
+    const link = safeUrl(groupPath, feed.hostname);
+    const frame = element(link && photo ? 'a' : 'div', 'lp-image-frame');
+    if (link && photo) {
+      frame.classList.add('lp-image-link');
+      frame.href = link;
+      frame.setAttribute('aria-label', 'More info about ' + item.name);
+    }
+    if (photo) {
+      const img = element('img', 'lp-photo');
+      img.src = photo;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.addEventListener('error', () => img.remove(), { once: true });
+      frame.append(img);
+    }
+    const badges = element('span', 'lp-image-labels');
+    const audienceNames = [];
+    for (const option of audiences) {
+      const name = option.name.trim();
+      if (!name) continue;
+      const displayName = name[0].toUpperCase() + name.slice(1);
+      const badge = element('span', 'lp-label', displayName);
+      badge.dataset.theme = audienceThemes.get(name.toLowerCase()) || 'lavender';
+      badges.append(badge);
+      audienceNames.push(displayName);
+    }
+    for (const purpose of purposes) {
+      badges.append(element('span', 'lp-label lp-purpose-label', purpose));
+    }
+    if (badges.childElementCount) {
+      frame.append(badges);
+      if (link && photo) {
+        const label = ['More info about ' + item.name];
+        if (audienceNames.length) label.push('Audience: ' + audienceNames.join(', '));
+        if (purposes.length) label.push('Group focus: ' + purposes.join(', '));
+        frame.setAttribute('aria-label', label.join('. '));
+      }
+    }
+    card.append(frame);
+
+    const body = element('div', 'lp-body');
+    body.append(element('h3', 'lp-title', item.name));
+
+    const schedule = groupSchedule(item);
+    if (schedule) body.append(element('p', 'lp-schedule', schedule));
+    const location = item.location?.name?.trim() || item.location?.address?.trim();
+    if (location) body.append(element('p', 'lp-details', location));
+
+    if (text) body.append(element('p', 'lp-description', text));
+
+    if (link) {
+      const actions = element('div', 'lp-actions');
+      const info = actionLink('MORE INFO', 'M12 11v5m0-8h.01 M22 12a10 10 0 1 1-20 0 10 10 0 1 1 20 0');
+      info.href = link;
+      info.setAttribute('aria-label', 'More info about ' + item.name);
+      actions.append(info);
+      body.append(actions);
+    }
+    card.append(body);
+    return card;
+  }
+
+  const filters = root.querySelector('.lp-filters');
+  const search = filters.querySelector('.lp-search');
+  const day = filters.querySelector('.lp-day');
+  const audience = filters.querySelector('.lp-audience');
+  const campus = filters.querySelector('.lp-campus');
+  const results = root.querySelector('.lp-results');
+  const groups = [];
+  const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+  function applyFilters() {
+    const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let count = 0;
+    for (const group of groups) {
+      const matches = (!day.value || group.day === day.value) &&
+        (!audience.value || group.audiences.includes(audience.value)) &&
+        (!campus.value || group.campuses.includes(campus.value)) &&
+        terms.every(term => group.searchText.includes(term));
+      group.card.hidden = !matches;
+      if (matches) count++;
+    }
+    results.textContent = count ? count + (count === 1 ? ' group' : ' groups') :
+      'No groups match. Try another search or change a filter.';
+    results.hidden = false;
+  }
+
+  function addOptions(select, options) {
+    for (const [value, label] of options) {
+      const option = element('option', '', label);
+      option.value = value;
+      select.append(option);
+    }
+  }
+
+  async function load() {
+    const cards = document.createDocumentFragment();
+    const audienceOptions = new Map();
+    const campusOptions = new Map();
+    let page = 1;
+    while (page) {
+      const url = new URL(feed);
+      url.searchParams.set('page', page);
+      const response = await fetch(url, { credentials: 'omit', cache: 'no-cache' });
+      if (!response.ok) throw new Error('ChurchSuite feed unavailable');
+      const data = await response.json();
+      if (!Array.isArray(data[mode])) throw new Error('Unexpected ChurchSuite response');
+
+      const demographic = data.labels?.find(label => label.name === 'Demographic');
+      const primaryPurpose = data.labels?.find(label => label.name.trim().toLowerCase() === 'primary purpose');
+      const sites = data.sites || [];
+      for (const site of sites) campusOptions.set(String(site.id), site.name);
+      for (const item of data[mode]) {
+        const audiences = selectedOptions(item, demographic);
+        const purposes = selectedOptions(item, primaryPurpose).map(option => option.name.trim()).filter(Boolean);
+        for (const option of audiences) audienceOptions.set(String(option.id), option.name);
+        const campuses = (item.all_sites ? sites.map(site => site.id) : item.site_ids || []).map(String);
+        const text = description(item.description);
+        const card = createCard(item, audiences, purposes, text);
+        const searchText = [
+          item.name, text, item.day, item.location?.name, item.location?.address,
+          ...audiences.map(option => option.name), ...purposes, ...campuses.map(id => campusOptions.get(id))
+        ].filter(Boolean).join(' ').toLowerCase();
+        groups.push({ card, day: item.day, campuses, searchText, audiences: audiences.map(option => String(option.id)) });
+        cards.append(card);
+      }
+      const next = Number(data.pagination?.next_page);
+      page = Number.isSafeInteger(next) && next > page ? next : 0;
+    }
+
+    grid.replaceChildren(cards);
+    const link = status.querySelector('a');
+    status.replaceChildren(groups.length ? '' : 'No groups are listed right now. ', link);
+    status.hidden = groups.length > 0;
+    if (groups.length) {
+      const availableDays = new Set(groups.map(group => group.day));
+      addOptions(day, days.filter(value => availableDays.has(value)).map(value => [value, value[0].toUpperCase() + value.slice(1)]));
+      addOptions(audience, [...audienceOptions].sort((a, b) => a[1].localeCompare(b[1])));
+      addOptions(campus, campusOptions);
+      search.addEventListener('input', applyFilters);
+      filters.addEventListener('change', applyFilters);
+      filters.hidden = false;
+      applyFilters();
+    }
+  }
+
+  load().catch(() => {
+    status.firstChild.textContent = 'The groups could not load. ';
+  });
+})();
+</script>
+</div>

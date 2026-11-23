@@ -1,0 +1,378 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&amp;family=Lato:wght@400;700&amp;display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<div id="lifepoint-groups-map" data-listing="groups">
+  <div class="lp-toolbar">
+    <div class="lp-filters" role="search" aria-label="Find a small group" hidden>
+      <input type="search" class="lp-search" aria-label="Search groups" placeholder="Search groups...">
+      <select class="lp-day" aria-label="Meeting day"><option value="">Any day</option></select>
+      <select class="lp-audience" aria-label="Group audience"><option value="">All audiences</option></select>
+      <select class="lp-campus" aria-label="Campus"><option value="">All campuses</option></select>
+    </div>
+    <a class="lp-help" href="https://lifepointchurchrothwell.churchsuite.com/-/forms/8qmfh5ni">Help me find a group</a>
+  </div>
+  <p class="lp-results" role="status" hidden></p>
+  <p class="lp-status" role="status">Loading the groups map... <a href="https://lifepointchurchrothwell.churchsuite.com/-/smallgroups/8e8cbc4c-9d70-4d16-9423-cf5b929e78e1">Open the ChurchSuite map</a></p>
+  <div class="lp-map" role="region" aria-label="Small group locations" hidden></div>
+</div>
+<style>
+#lifepoint-groups-map {
+  box-sizing: border-box;
+  width: 100%;
+  padding: clamp(24px, 4vw, 56px) clamp(16px, 4vw, 40px);
+  background: #FFFBF0;
+  color: #333333;
+  font: 400 1rem/1.55 "Lato", Arial, sans-serif;
+}
+#lifepoint-groups-map [hidden] { display: none !important; }
+#lifepoint-groups-map .lp-intro {
+  max-width: 760px;
+  margin: 0 auto 20px;
+  padding: 0;
+  text-align: center;
+}
+#lifepoint-groups-map .lp-intro h2 {
+  max-width: 19ch;
+  margin: 0 auto 16px;
+  color: #333333;
+  font: 600 clamp(2rem, 1.35rem + 2.5vw, 3.5rem)/1.08 "Jost", Arial, sans-serif;
+  letter-spacing: -.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+#lifepoint-groups-map .lp-intro p {
+  margin: 0 0 12px;
+  text-align: center;
+}
+#lifepoint-groups-map .lp-intro p:last-child { margin-bottom: 0; }
+#lifepoint-groups-map .lp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto 12px;
+}
+#lifepoint-groups-map .lp-filters {
+  display: flex;
+  flex: 1 1 540px;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+#lifepoint-groups-map .lp-filters :is(input, select),
+#lifepoint-groups-map .lp-help {
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 1px solid #71806D;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #333333;
+  font: 400 .875rem/1.3 "Lato", Arial, sans-serif;
+}
+#lifepoint-groups-map .lp-filters input {
+  flex: 2 1 150px;
+  min-width: 100px;
+}
+#lifepoint-groups-map .lp-filters select {
+  flex: 1 1 120px;
+  min-width: min(100%, 112px);
+  max-width: 100%;
+  appearance: none;
+  padding-inline-end: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23333333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+@media (forced-colors: active) {
+  #lifepoint-groups-map .lp-filters select {
+    appearance: auto;
+    padding-inline-end: 12px;
+    background-image: none;
+  }
+}
+#lifepoint-groups-map .lp-help {
+  display: inline-flex;
+  align-items: center;
+  border-color: #333333;
+  border-radius: 999px;
+  background: #333333;
+  color: #FFFBF0;
+  font: 500 .95rem/1.3 "Jost", Arial, sans-serif;
+  text-decoration: none;
+}
+#lifepoint-groups-map .lp-help:hover { background: #3D6270; }
+#lifepoint-groups-map .lp-toolbar :focus-visible {
+  outline: 2px solid #3D6270;
+  outline-offset: 2px;
+}
+#lifepoint-groups-map .lp-results {
+  max-width: 1200px;
+  margin: 0 auto 12px;
+  color: #3D6270;
+  font-size: .85rem;
+}
+@media (max-width: 540px) {
+  #lifepoint-groups-map .lp-filters input { flex-basis: 100%; }
+  #lifepoint-groups-map .lp-filters select { flex-basis: 90px; }
+}
+#lifepoint-groups-map .lp-status,
+#lifepoint-groups-map .lp-map {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+#lifepoint-groups-map .lp-status a,
+#lifepoint-groups-map .lp-map-info {
+  color: #3D6270;
+  text-decoration: underline;
+}
+#lifepoint-groups-map .lp-map {
+  height: clamp(350px, 60vh, 560px);
+  border: 1px solid #BFCFD7;
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #E8E4E4;
+}
+#lifepoint-groups-map .lp-map-pin span {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFFBF0;
+  border-radius: 50%;
+  background: #3D6270;
+  color: #FFFBF0;
+  box-shadow: 0 1px 5px #33333380;
+  font: 600 13px/1 "Jost", Arial, sans-serif;
+}
+#lifepoint-groups-map .lp-map-popup {
+  color: #333333;
+  font: 400 .9rem/1.45 "Lato", Arial, sans-serif;
+  text-align: left;
+}
+#lifepoint-groups-map .lp-map-entry + .lp-map-entry {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #E8E4E4;
+}
+#lifepoint-groups-map .lp-map-entry strong {
+  display: block;
+  font: 600 1.05rem/1.25 "Jost", Arial, sans-serif;
+}
+</style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const root = document.getElementById('lifepoint-groups-map');
+  const mode = root.dataset.listing;
+  const feed = new URL('https://lifepointchurchrothwell.churchsuite.com/-/smallgroups/8e8cbc4c-9d70-4d16-9423-cf5b929e78e1/json');
+  const status = root.querySelector('.lp-status');
+  const mapElement = root.querySelector('.lp-map');
+  const fallback = status.querySelector('a');
+  let map, markers;
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function safeUrl(value, hostname) {
+    if (!value) return '';
+    try {
+      const url = new URL(value, feed.origin);
+      return url.protocol === 'https:' && url.hostname === hostname ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function description(value) {
+    const template = document.createElement('template');
+    template.innerHTML = (value || '').replace(/<br\s*\/?\s*>|<\/(?:p|div|li|h[1-6])\s*>/gi, '\n');
+    template.content.querySelectorAll('script,style').forEach(node => node.remove());
+    return template.content.textContent.replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function groupSchedule(group) {
+    const day = (group.day || '').replace(/^./, letter => letter.toUpperCase());
+    const time = /^([01]\d|2[0-3]):([0-5]\d)/.exec(group.time || '');
+    const hour = time ? Number(time[1]) : 0;
+    const localTime = time ? (hour % 12 || 12) + ':' + time[2] + (hour < 12 ? ' am' : ' pm') : '';
+    const frequency = (group.frequency || '').replace(/^./, letter => letter.toUpperCase());
+    return [[day, localTime].filter(Boolean).join(' at '), frequency]
+      .filter(Boolean).join(' \u00B7 ');
+  }
+
+  function selectedOptions(item, label) {
+    if (!label) return [];
+    const selection = item.labels?.find(entry => String(entry.id) === String(label.id))?.options || [];
+    return (label.options || []).filter(option => selection.includes(option.id));
+  }
+
+  function coordinates(location) {
+    if (location?.type !== 'physical') return null;
+    const { latitude, longitude } = location;
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude) ||
+      Math.abs(latitude) > 90 || Math.abs(longitude) > 180 || (!latitude && !longitude)) return null;
+    return [latitude, longitude];
+  }
+
+  function popup(groups) {
+    const content = element('div', 'lp-map-popup');
+    for (const { item, purposes } of groups) {
+      const entry = element('div', 'lp-map-entry');
+      entry.append(element('strong', '', item.name));
+      const schedule = groupSchedule(item);
+      if (schedule) entry.append(element('div', '', schedule));
+      const place = item.location.name || item.location.address;
+      if (place) entry.append(element('div', '', place));
+      if (purposes.length) entry.append(element('div', '', purposes.join(', ')));
+      const path = item.identifier ? '/-/groups/' + encodeURIComponent(item.identifier) : item.url;
+      const href = safeUrl(path, feed.hostname);
+      if (href) {
+        const link = element('a', 'lp-map-info', 'More info');
+        link.href = href;
+        link.setAttribute('aria-label', 'More info about ' + item.name);
+        entry.append(link);
+      }
+      content.append(entry);
+    }
+    return content;
+  }
+
+  function updatePins(matches) {
+    const L = window.L;
+    markers.clearLayers();
+    const locations = new Map();
+    let mapped = 0;
+    for (const group of matches) {
+      if (!group.point) continue;
+      const key = group.point.join(',');
+      if (!locations.has(key)) locations.set(key, []);
+      locations.get(key).push(group);
+      mapped++;
+    }
+    for (const groupsAtPin of locations.values()) {
+      const group = groupsAtPin[0];
+      const title = groupsAtPin.length === 1 ? group.item.name : groupsAtPin.length + ' groups at this location';
+      const count = groupsAtPin.length;
+      const icon = L.divIcon({
+        className: 'lp-map-pin',
+        html: '<span>' + (count > 1 ? count : '') + '</span>',
+        iconSize: [32, 32],
+        iconAnchor: [16, 16],
+        popupAnchor: [0, -14]
+      });
+      L.marker(group.point, { icon, title, alt: title })
+        .bindPopup(() => popup(groupsAtPin), { maxHeight: 240, maxWidth: 270 })
+        .addTo(markers);
+    }
+    if (mapped) map.fitBounds(markers.getBounds(), { padding: [34, 34], maxZoom: 14, animate: false });
+    return mapped;
+  }
+
+  const filters = root.querySelector('.lp-filters');
+  const search = filters.querySelector('.lp-search');
+  const day = filters.querySelector('.lp-day');
+  const audience = filters.querySelector('.lp-audience');
+  const campus = filters.querySelector('.lp-campus');
+  const results = root.querySelector('.lp-results');
+  const groups = [];
+  const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+  function applyFilters() {
+    const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const matches = groups.filter(group =>
+      (!day.value || group.day === day.value) &&
+      (!audience.value || group.audiences.includes(audience.value)) &&
+      (!campus.value || group.campuses.includes(campus.value)) &&
+      terms.every(term => group.searchText.includes(term))
+    );
+    const mapped = updatePins(matches);
+    if (!matches.length) {
+      results.textContent = 'No groups match. Try another search or change a filter.';
+    } else {
+      const unmapped = matches.length - mapped;
+      results.textContent = mapped + (mapped === 1 ? ' group on the map' : ' groups on the map') +
+        (unmapped ? ' | ' + unmapped + ' without a map location.' : '');
+    }
+    results.hidden = false;
+  }
+
+  function addOptions(select, options) {
+    for (const [value, label] of options) {
+      const option = element('option', '', label);
+      option.value = value;
+      select.append(option);
+    }
+  }
+
+  async function load() {
+    const audienceOptions = new Map();
+    const campusOptions = new Map();
+    let page = 1;
+    while (page) {
+      const url = new URL(feed);
+      url.searchParams.set('page', page);
+      const response = await fetch(url, { credentials: 'omit', cache: 'no-cache' });
+      if (!response.ok) throw new Error('ChurchSuite feed unavailable');
+      const data = await response.json();
+      if (!Array.isArray(data[mode])) throw new Error('Unexpected ChurchSuite response');
+
+      const demographic = data.labels?.find(label => label.name === 'Demographic');
+      const primaryPurpose = data.labels?.find(label => label.name.trim().toLowerCase() === 'primary purpose');
+      const sites = data.sites || [];
+      for (const site of sites) campusOptions.set(String(site.id), site.name);
+      for (const item of data[mode]) {
+        const audiences = selectedOptions(item, demographic);
+        const purposes = selectedOptions(item, primaryPurpose).map(option => option.name.trim()).filter(Boolean);
+        for (const option of audiences) audienceOptions.set(String(option.id), option.name);
+        const campuses = (item.all_sites ? sites.map(site => site.id) : item.site_ids || []).map(String);
+        const text = description(item.description);
+        const searchText = [
+          item.name, text, item.day, item.location?.name, item.location?.address,
+          ...audiences.map(option => option.name), ...purposes, ...campuses.map(id => campusOptions.get(id))
+        ].filter(Boolean).join(' ').toLowerCase();
+        groups.push({ item, purposes, point: coordinates(item.location), day: item.day, campuses, searchText, audiences: audiences.map(option => String(option.id)) });
+      }
+      const next = Number(data.pagination?.next_page);
+      page = Number.isSafeInteger(next) && next > page ? next : 0;
+    }
+
+    if (!groups.length) {
+      status.replaceChildren('No groups are listed right now. ', fallback);
+      return;
+    }
+    const L = window.L;
+    if (!L) throw new Error('Map library unavailable');
+    mapElement.hidden = false;
+    map = L.map(mapElement, { scrollWheelZoom: false }).setView([-27.22, 153.04], 11);
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    tiles.on('tileerror', () => {
+      status.replaceChildren('Some map tiles could not load. ', fallback);
+      status.hidden = false;
+    });
+    markers = L.featureGroup().addTo(map);
+    status.hidden = true;
+    const availableDays = new Set(groups.map(group => group.day));
+    addOptions(day, days.filter(value => availableDays.has(value)).map(value => [value, value[0].toUpperCase() + value.slice(1)]));
+    addOptions(audience, [...audienceOptions].sort((a, b) => a[1].localeCompare(b[1])));
+    addOptions(campus, campusOptions);
+    search.addEventListener('input', applyFilters);
+    filters.addEventListener('change', applyFilters);
+    filters.hidden = false;
+    applyFilters();
+  }
+
+  load().catch(() => {
+    status.replaceChildren('The groups map could not load. ', fallback);
+    status.hidden = false;
+  });
+})();
+</script>

@@ -103,6 +103,9 @@ layout: layouts/base.njk
   <div class="faq__list">{% for f in s.faqs %}<details><summary>{{ f.q }}</summary>{% for p in f.a %}<p>{{ p | safe }}</p>{% endfor %}</details>{% endfor %}</div>
 </section>
 
+{% elif s.type == "include" %}
+<section class="sec-raw">{% include s.file %}</section>
+
 {% elif s.type == "embed" %}
 <section class="sec{{ bg }}">
   {% if s.heading or s.eyebrow %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
