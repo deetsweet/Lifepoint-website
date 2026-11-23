@@ -21,3 +21,12 @@
     });
   });
 })();
+
+// Show the help button after the first screen
+(function () {
+  var help = document.querySelector(".help");
+  if (!help) return;
+  function check() { help.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6); }
+  window.addEventListener("scroll", check, { passive: true });
+  check();
+})();
