@@ -26,18 +26,17 @@ help:
 <section class="hhero">
   <video class="hhero__img" autoplay muted loop playsinline poster="{{ '/assets/img/home-hero-poster.jpg' | url }}"><source src="{{ '/assets/img/home-hero.mp4' | url }}" type="video/mp4"></video>
   <div class="hhero__inner">
-    {{ m.eyebrow("Welcome to Lifepoint Church") }}
-    <h1 class="hhero__title">Your place <span class="script">to belong</span></h1>
-    <div class="hhero__foot">
-      <div>
-        <p class="hhero__label">Visit us this Sunday</p>
-        <ul class="times">{% for t in site.timesList %}<li>{{ t }}</li>{% endfor %}</ul>
-        <p class="hhero__where">Grace Lutheran College, Rothwell · No church experience required</p>
-      </div>
-      <div class="btns">
-        {{ m.pill("Plan a visit", "/sundays/", "light") }}
-        <a class="pill pill--blue" href="https://maps.app.goo.gl/rr9TvTEZWYqxVcwr6">Get directions</a>
-        <a class="pill pill--ghost" href="{{ '/watch--listen/' | url }}">Watch online</a>
+    <p class="hhero__badge">No church experience required</p>
+    <h1 class="hhero__title">Welcome to Lifepoint <span class="script">your place to belong</span></h1>
+    <div class="hhero__actions">
+      <a class="hhero__big" href="{{ '/sundays/' | url }}">
+        <span class="hhero__big-label">Sundays</span>
+        <span class="hhero__big-times">8.30am · 10am · 5pm · Grace Lutheran College, Rothwell</span>
+        <span class="pill__arrow" aria-hidden="true">→</span>
+      </a>
+      <div class="hhero__small">
+        <a class="hhero__sm" href="https://maps.app.goo.gl/rr9TvTEZWYqxVcwr6">Get directions</a>
+        <a class="hhero__sm" href="{{ '/watch--listen/' | url }}">Watch online</a>
       </div>
     </div>
   </div>
