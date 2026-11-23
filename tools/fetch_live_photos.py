@@ -18,7 +18,10 @@ for page in PAGES:
         before = re.sub(r"<[^>]+>", " ", src[max(0, m.start() - 1500):m.start()])
         after = re.sub(r"<[^>]+>", " ", src[m.end():m.end() + 1500])
         ctx = " ".join((before.split()[-12:] + ["[IMG]"] + after.split()[:12]))
-        found.append({"url": base, "tries": tries, "context": ctx})
+        tag_start = src.rfind("<", 0, m.start()); tag_end = src.find(">", m.end())
+        tag = src[tag_start:tag_end] if tag_start != -1 else ""
+        alt = re.search(r'alt="([^"]*)"', tag)
+        found.append({"url": base, "tries": tries, "alt": html.unescape(alt.group(1)) if alt else "", "context": ctx})
     slug = page or "home"
     outdir = f"src/assets/img/live/{slug}"
     os.makedirs(outdir, exist_ok=True)
