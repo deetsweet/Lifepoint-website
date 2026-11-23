@@ -9,7 +9,7 @@ manifest = {}
 for page in PAGES:
     src = get("https://www.lifepoint.org.au/" + page).decode("utf-8", "ignore")
     found = []
-    for m in re.finditer(r'https?://media\.thechurchcoassets\.com/accounts/3836/[^"\'\)\s]+?\.(?:jpe?g|png|webp|gif|mp4)', src, re.I):
+    for m in re.finditer(r'https?://[a-z0-9.-]*(?:thechurchcoassets\.com|thechurchco[a-z0-9.-]*\.amazonaws\.com|cloudinary\.com|imgix\.net|cloudfront\.net)/[^"\'\)\s]+?\.(?:jpe?g|png|webp|gif|mp4)', src, re.I):
         u = html.unescape(m.group(0))
         if "opengraph" in u or "Badge-Icon" in u or "Logo" in u: continue
         base = re.sub(r"__[a-z]+__(?=\.\w+$)", "", u)  # strip size suffix for the original
