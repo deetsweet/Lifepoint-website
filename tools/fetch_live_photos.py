@@ -35,7 +35,7 @@ for page in PAGES:
         tag = src[tag_start:tag_end] if tag_start != -1 else ""
         alt = re.search(r'alt="([^"]*)"', tag)
         found.append({"url": base, "tries": tries, "alt": html.unescape(alt.group(1)) if alt else "", "context": ctx})
-    slug = page or "home"
+    slug = (page or "home").replace("/", "-")
     os.makedirs("src/assets/img/live", exist_ok=True)
     open(f"src/assets/img/live/{slug}.html", "w").write(src)
     outdir = f"src/assets/img/live/{slug}"
