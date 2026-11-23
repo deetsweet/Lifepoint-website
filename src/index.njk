@@ -17,7 +17,7 @@ help:
   - { img: p-serving, title: Serving our World, text: "We serve our local community in Moreton Bay, and the world through partners like Compassion.", links: [{ label: Compassion, url: "https://compassion.com.au" }] }
   - { img: p-alpha-guest, title: Faith Steps, text: Interested in taking a step to find out more about God and faith?, links: [{ label: Next steps, url: /next-steps/ }] }
 ---
-{% import "macros.njk" as m %}
+{% import "macros.njk" as m with context %}
 
 <section class="hhero">
   {{ m.photo("p-worship-leader", "hhero__img", true) }}
