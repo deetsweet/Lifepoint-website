@@ -36,6 +36,8 @@ for page in PAGES:
         alt = re.search(r'alt="([^"]*)"', tag)
         found.append({"url": base, "tries": tries, "alt": html.unescape(alt.group(1)) if alt else "", "context": ctx})
     slug = page or "home"
+    os.makedirs("src/assets/img/live", exist_ok=True)
+    open(f"src/assets/img/live/{slug}.html", "w").write(src)
     outdir = f"src/assets/img/live/{slug}"
     os.makedirs(outdir, exist_ok=True)
     for i, f in enumerate(found, 1):
