@@ -75,5 +75,37 @@
   "sundays-beyond-bg": {
     "file": "sundays-hero.jpg",
     "alt": ""
+  },
+  "v2030-outward": {
+    "file": "v2030-outward.jpg",
+    "alt": "Two hosts welcoming guests at an Alpha launch night"
+  },
+  "v2030-praying": {
+    "file": "v2030-praying.jpg",
+    "alt": "Someone praying with a man during a Sunday service"
+  },
+  "v2030-pathway": {
+    "file": "v2030-pathway.jpg",
+    "alt": "People catching up in their seats before a service"
+  },
+  "v2030-healthy": {
+    "file": "v2030-healthy.jpg",
+    "alt": "People worshipping with their hands raised"
+  },
+  "v2030-nextgen": {
+    "file": "v2030-nextgen.jpg",
+    "alt": "A group of young people together at Lifepoint"
+  },
+  "v2030-multiplying": {
+    "file": "v2030-multiplying.jpg",
+    "alt": "A young woman being baptised"
+  },
+  "v2030-hero": {
+    "file": "step-gather.jpg",
+    "alt": "The band leading worship at Lifepoint"
+  },
+  "v2030-part": {
+    "file": "v2030-part.jpg",
+    "alt": "Team Lifepoint blowing up balloons before a celebration"
   }
 }

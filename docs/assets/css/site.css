@@ -254,3 +254,65 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 /* Keep the help button out of the way until the visitor scrolls */
 .help { opacity: 0; pointer-events: none; transition: opacity .25s; }
 .help.is-visible { opacity: 1; pointer-events: auto; }
+
+/* ---------- Vision 2030 page ---------- */
+.lede { max-width: 38rem; margin: 0 auto; color: var(--muted); font-size: 1.1rem; }
+.sec--dark .lede { color: rgba(255,255,255,.8); }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.stat { background: var(--white); border-radius: var(--radius); padding: 1.6rem 1.2rem; text-align: center; }
+.stat__num { display: block; font-family: var(--head); font-weight: 700; font-size: clamp(2.6rem, 9vw, 4.4rem); line-height: 1; margin-bottom: .5rem; }
+.stat__label { color: var(--muted); font-size: .95rem; }
+
+.markers { list-style: none; padding: 0; display: grid; gap: 2.5rem; }
+.marker__media { position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 1.1rem; }
+.marker__img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.marker h3 { font-size: 1.6rem; }
+.marker p { color: var(--muted); }
+.marker__looks { border-left: 3px solid var(--charcoal); padding-left: 1rem; color: var(--charcoal) !important; }
+.marker__looks span { display: block; font-family: var(--head); font-weight: 600; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; margin-bottom: .2rem; }
+
+.house { list-style: none; padding: 0; display: grid; gap: 1rem; margin-bottom: 3rem; }
+.room { background: var(--white); border-radius: var(--radius); padding: 1.6rem; position: relative; }
+.room__num { font-family: var(--head); font-weight: 700; font-size: .85rem; letter-spacing: .2em; color: var(--muted); }
+.room h3 { font-size: 1.6rem; margin: .4rem 0 0; }
+.room__say { font-size: 1.9rem; line-height: 1.5; margin: 0 0 .4rem; }
+.room p:last-child { color: var(--muted); margin: 0; }
+.pathways { background: var(--deep-blue); color: var(--white); border-radius: var(--radius); padding: 1.8rem; }
+.pathways h3 { font-size: 1.3rem; margin-bottom: 1.2rem; }
+.pathway { padding: .9rem 0; border-top: 1px solid rgba(255,255,255,.2); display: grid; gap: .4rem; }
+.pathway strong { font-family: var(--head); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: .9rem; }
+.pathway ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.pathway li { border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: .2rem .8rem; font-size: .92rem; }
+.pathway li:not(:last-child)::after { content: " →"; opacity: .7; }
+
+.values__grid { display: grid; gap: 1rem; }
+.value { border: 1px solid rgba(255,255,255,.3); border-radius: var(--radius); padding: 1.8rem; }
+.value h3 { font-size: 1.6rem; }
+.value p { opacity: .85; }
+.value ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.value li { background: var(--white); color: var(--charcoal); border-radius: 999px; padding: .3rem 1rem; font-family: var(--head); font-weight: 500; }
+
+.places { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.place { border: 1px solid #e3e0d8; border-top: 6px solid var(--charcoal); border-radius: var(--radius); padding: 1.6rem; }
+.place h3 { font-size: 1.6rem; margin: .4rem 0 .3rem; }
+.place p { color: var(--muted); }
+.place__status { display: inline-block; background: var(--charcoal); color: var(--white); border-radius: 999px; padding: .25rem .9rem; font-family: var(--head); font-size: .85rem; }
+.place--future { border-style: dashed; border-top-style: solid; border-top-color: var(--sage); }
+.place--future .place__status { background: var(--sage); }
+
+.part { display: grid; gap: 1rem; margin-top: 2.5rem; }
+.part__card { background: var(--white); text-align: left; }
+.part__card h3 { font-size: 1.5rem; }
+.part__card p { margin-bottom: 1rem; }
+
+@media (min-width: 720px) {
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .markers { grid-template-columns: 1fr 1fr; column-gap: 2rem; }
+  .house, .places, .part { grid-template-columns: 1fr 1fr; }
+  .pathway { grid-template-columns: 9rem 1fr; align-items: center; }
+}
+@media (min-width: 1024px) {
+  .markers { grid-template-columns: repeat(3, 1fr); }
+  .house, .places, .part { grid-template-columns: repeat(4, 1fr); }
+  .values__grid { grid-template-columns: repeat(3, 1fr); }
+}

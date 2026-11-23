@@ -1,0 +1,212 @@
+---
+layout: layouts/base.njk
+title: Lifepoint 2030 | Lifepoint Church - Moreton, Queensland
+description: Where Lifepoint is heading by 2030, and how every one of us gets to be part of it.
+permalink: /vision-2030/
+heroHeader: true
+ticker:
+  - Thousands of lives transformed by Jesus
+  - 1,200 gathering every week
+  - Four locations
+  - 100 people choosing Jesus every year
+  - A new pastor raised every year
+  - Everyone with a next step
+stats:
+  - { num: "1,200", label: "people gathering every week across our campuses" }
+  - { num: "4", label: "locations across the City of Moreton Bay" }
+  - { num: "100", label: "people choosing to follow Jesus every year" }
+  - { num: "1", label: "new pastor raised up and sent out every year" }
+markers:
+  - title: Outward facing
+    img: v2030-outward
+    text: "We build everything with people far from God in mind. Clear language, low barriers and simple next steps. We refuse to drift towards looking after ourselves, because the best news we have is for the people who haven't heard it yet."
+    looks: "Alpha every term, 200 guests a year, and baptisms every First Sunday."
+  - title: Praying
+    img: v2030-praying
+    text: "Prayer is the most important work we do. We expect God to show up when we gather, and we teach each other how to pray. Every campus has a place set apart for it."
+    looks: "Ten prayer meetings every week and two prayer weeks a year in every location."
+  - title: Pathway
+    img: v2030-pathway
+    text: "Nothing we run stands on its own. Every gathering, group and event is there to help someone take their next step with Jesus, and everyone in our church can name theirs."
+    looks: "No programs for the sake of programs, and nobody overlooked."
+  - title: Healthy
+    img: v2030-healthy
+    text: "We're broken people being made whole by Jesus. We go at God's pace, keep rhythms of prayer, Scripture and sabbath, and deal with things honestly. We pursue Jesus first, ahead of church success."
+    looks: "Leaders who are well with God, with others and in themselves."
+  - title: Next-gen focused
+    img: v2030-nextgen
+    text: "The most important thing isn't what we achieve but who we raise. We partner with parents, give young leaders a go early, and make sure every young person is known and loved by a leader."
+    looks: "Kids, youth and young adults each 200 strong, leading worship, preaching and reaching their friends."
+  - title: Multiplying
+    img: v2030-multiplying
+    text: "We multiply new believers, new leaders and new churches. We help each other invite, we raise leaders for the church and the marketplace, and we plant and revitalise churches together as one family."
+    looks: "Ten people a month giving their lives to Jesus, and four locations working as one."
+rooms:
+  - { name: Front Door, say: "Hello!", text: "Where people first meet us. Sundays, events, Alpha and a warm welcome." }
+  - { name: Table, say: "Join us!", text: "Where people find their place. A small group, a serving team and real friendships." }
+  - { name: Living Room, say: "Go deeper!", text: "Where faith grows. Foundations, baptism, freedom and going deep in God's Word." }
+  - { name: Kitchen, say: "Help us cook!", text: "Where people lead. Stepping in, stepping up and stepping out to lead others." }
+pathways:
+  - { name: Discovery, steps: ["Alpha", "Foundations", "Baptism"] }
+  - { name: Connection, steps: ["Welcome", "Sunday", "Small Group", "Serving"] }
+  - { name: Growth, steps: ["Freedom", "God's Word", "Life in the Spirit"] }
+  - { name: Leadership, steps: ["Step In", "Step Up", "Step Out"] }
+values:
+  - name: An Inviting Family
+    line: "A place you feel accepted and can't wait to bring others into."
+    words: [Open, Vibrant, Authentic]
+  - name: A House of Prayer
+    line: "A place where God is central, praised and needed."
+    words: [Dependent, Thankful, Prayerful]
+  - name: A Light to the World
+    line: "People who live to love others and point them to Jesus."
+    words: [Generous, Investors, Inviters]
+places:
+  - { name: Rothwell, note: "Where it all started in 2007", status: "Sundays now" }
+  - { name: Caboolture West, note: "Our first new campus", status: "Launching Feb 2027" }
+  - { name: Campus three, note: "Somewhere God is already preparing", status: "Praying now" }
+  - { name: Campus four, note: "Maybe a church we help bring back to life", status: "Praying now" }
+part:
+  - { title: Pray, text: "Ask God for the people who aren't here yet, and come to a prayer meeting.", link: "Prayer", url: "https://www.lifepoint.org.au/prayer" }
+  - { title: Invite, text: "Bring a friend to a Sunday or to Alpha. One invitation can change a life.", link: "Alpha", url: "https://www.lifepoint.org.au/alpha" }
+  - { title: Step in, text: "Join a team or a small group, and take your own next step.", link: "Join a team", url: "https://www.lifepoint.org.au/join-a-team" }
+  - { title: Give, text: "Generous giving is how this vision becomes rooms, staff and new campuses.", link: "Giving", url: "https://www.lifepoint.org.au/give" }
+---
+{% import "macros.njk" as m with context %}
+
+<section class="hero">
+  {{ m.photo("v2030-hero", "hero__img", true) }}
+  <div class="hero__inner">
+    {{ m.eyebrow("Our vision for 2030") }}
+    <h1 class="hero__title">Lifepoint <span class="script">in</span> 2030</h1>
+    <div class="hero__foot">
+      <p class="hero__intro">Thousands of lives transformed by Jesus. Here's what we believe God is building, and the part every one of us gets to play.</p>
+      <div class="hero__actions">
+        <a class="pill pill--light" href="#your-part">Find your part <span class="pill__arrow" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="{{ ticker | join(', ') }}">
+  <div class="ticker__track" aria-hidden="true">
+    {% for round in [1, 2] %}{% for t in ticker %}<span>{{ t }} ✦</span>{% endfor %}{% endfor %}
+  </div>
+</div>
+
+<section class="sec">
+  <div class="split-head">
+    <div>
+      {{ m.eyebrow("Why we exist") }}
+      <h2>It's always been about <u>people</u>.</h2>
+    </div>
+    <div>
+      <p>Jesus told his followers to go and make disciples, and promised to be with them to the very end. That's still our job. We're not here to build a bigger church for its own sake. We're here because people across Moreton Bay are far from God, and Jesus changes lives.</p>
+      <p>So our mission is simple: <strong>thousands of lives transformed by Jesus.</strong></p>
+      <p><a class="arrow-link" href="https://www.bible.com/bible/111/MAT.28.18-20.NIV">Read Matthew 28:18-20 <span aria-hidden="true">→</span></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--linen">
+  <div class="centre-head">
+    {{ m.eyebrow("The picture") }}
+    <h2>By the end of <u>2030</u>.</h2>
+    <p class="lede">We see a healthy and vibrant family of churches across the City of Moreton Bay, known for community, transformation and authenticity.</p>
+  </div>
+  <div class="stats">
+    {% for s in stats %}<div class="stat"><span class="stat__num">{{ s.num }}</span><span class="stat__label">{{ s.label }}</span></div>{% endfor %}
+  </div>
+</section>
+
+<section class="sec">
+  <div class="centre-head">
+    {{ m.eyebrow("Six markers") }}
+    <h2>What we'll be <u>known</u> for.</h2>
+    <p class="lede">These six markers shape every decision we make between now and 2030.</p>
+  </div>
+  <ol class="markers">
+    {% for mk in markers %}
+    <li class="marker">
+      <div class="marker__media">{{ m.photo(mk.img, "marker__img") }}<span class="step__num">0{{ loop.index }}</span></div>
+      <div class="marker__body">
+        <h3>We are {{ mk.title | lower }}</h3>
+        <p>{{ mk.text }}</p>
+        <p class="marker__looks"><span>In 2030</span>{{ mk.looks }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="sec sec--linen">
+  <div class="centre-head">
+    {{ m.eyebrow("Our discipleship strategy") }}
+    <h2>Think of it as a <u>house</u>.</h2>
+    <p class="lede">Every person has a next step. We picture it as moving through a home, from the front door all the way to the kitchen.</p>
+  </div>
+  <ol class="house">
+    {% for r in rooms %}
+    <li class="room"><span class="room__num">0{{ loop.index }}</span><h3>{{ r.name }}</h3><p class="room__say script">{{ r.say }}</p><p>{{ r.text }}</p></li>
+    {% endfor %}
+  </ol>
+  <div class="pathways">
+    <h3>Four pathways through the house</h3>
+    {% for p in pathways %}
+    <div class="pathway"><strong>{{ p.name }}</strong><ol>{% for st in p.steps %}<li>{{ st }}</li>{% endfor %}</ol></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="sec sec--dark values">
+  {{ m.photo("v2030-hero", "beyond__bg") }}
+  <div class="centre-head">
+    {{ m.eyebrow("Our values") }}
+    <h2>What we're <u>like</u>.</h2>
+  </div>
+  <div class="values__grid">
+    {% for v in values %}
+    <div class="value">
+      <h3>{{ v.name }}</h3>
+      <p>{{ v.line }}</p>
+      <ul>{% for w in v.words %}<li>{{ w }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="sec">
+  <div class="centre-head">
+    {{ m.eyebrow("One family, many places") }}
+    <h2>Four <u>locations</u>.</h2>
+    <p class="lede">Each campus led locally, all of us working together as one Lifepoint family.</p>
+  </div>
+  <ol class="places">
+    {% for pl in places %}
+    <li class="place{% if loop.index > 2 %} place--future{% endif %}"><span class="room__num">0{{ loop.index }}</span><h3>{{ pl.name }}</h3><p>{{ pl.note }}</p><span class="place__status">{{ pl.status }}</span></li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="sec sec--linen" id="your-part">
+  <div class="plan">
+    {{ m.photo("v2030-part", "plan__img") }}
+    <div>
+      {{ m.eyebrow("Your part") }}
+      <h2>This vision needs <u>you</u>.</h2>
+      <p>2030 won't happen because of a plan on a page. It happens when ordinary people pray, invite, serve and give, week after week. Here's where to start.</p>
+    </div>
+  </div>
+  <div class="part">
+    {% for p in part %}
+    <div class="card part__card"><h3>{{ p.title }}</h3><p>{{ p.text }}</p><a class="arrow-link" href="{{ p.url }}">{{ p.link }} <span aria-hidden="true">→</span></a></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="sec closing">
+  {{ m.eyebrow("Let's go together") }}
+  <h2>Thousands of lives<br><span class="script">transformed.</span></h2>
+  {{ m.pill("Take your next step", "https://www.lifepoint.org.au/next-steps", "dark") }}
+  <p class="closing__line">Lifepoint Church · One family across the City of Moreton Bay</p>
+</section>
