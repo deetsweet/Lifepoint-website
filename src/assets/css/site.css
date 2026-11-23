@@ -457,3 +457,6 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .htiles--scroll .htile { flex: 0 0 85%; scroll-snap-align: start; }
 @media (min-width: 900px) { .htiles--scroll .htile { flex-basis: calc((100% - 1.2rem) / 3); } .htiles--inset.htiles--scroll .htile { flex-basis: calc((100% - 2.5rem) / 3); } }
 .hletter__img { width: 100%; max-width: 40rem; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); margin-bottom: 2rem; }
+/* Buttons without the round arrow get even padding so the text sits centred */
+.pill:not(:has(.pill__arrow)) { padding: .7rem 1.4rem; justify-content: center; }
+.pill--ghost:not(:has(.pill__arrow)) { padding: .6rem 1.3rem; }
