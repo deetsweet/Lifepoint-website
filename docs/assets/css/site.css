@@ -250,3 +250,7 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
   .faq__head .eyebrow { justify-content: flex-start; }
   .ftr__top { grid-template-columns: 1.4fr 1fr; }
 }
+
+/* Keep the help button out of the way until the visitor scrolls */
+.help { opacity: 0; pointer-events: none; transition: opacity .25s; }
+.help.is-visible { opacity: 1; pointer-events: auto; }
