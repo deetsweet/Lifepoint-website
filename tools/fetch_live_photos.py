@@ -7,7 +7,20 @@ def get(url):
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read()
 manifest = {}
 for page in PAGES:
-    src = get("https://www.lifepoint.org.au/" + page).decode("utf-8", "ignore")
+    url = "https://www.lifepoint.org.au/" + page
+    src = ""
+    if os.environ.get("RENDER"):
+        import subprocess
+        try:
+            src = subprocess.run(["google-chrome", "--headless=new", "--no-sandbox", "--disable-gpu",
+                                  "--virtual-time-budget=15000", "--window-size=1400,4000", "--dump-dom", url],
+                                 capture_output=True, text=True, timeout=120).stdout
+        except Exception as e:
+            print("render failed", e)
+    if not src:
+        src = get(url).decode("utf-8", "ignore")
+    else:
+        src += get(url).decode("utf-8", "ignore")
     found = []
     for m in re.finditer(r'https?://[a-z0-9.-]*(?:thechurchcoassets\.com|thechurchco[a-z0-9.-]*\.amazonaws\.com|cloudinary\.com|imgix\.net|cloudfront\.net)/[^"\'\)\s]+?\.(?:jpe?g|png|webp|gif|mp4)', src, re.I):
         u = html.unescape(m.group(0))

@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 tools/fetch_live_photos.py ${{ github.event.inputs.pages }}
+      - run: RENDER=1 python3 tools/fetch_live_photos.py ${{ github.event.inputs.pages }}
       - run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
