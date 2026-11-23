@@ -20,6 +20,19 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addGlobalData("buildId", () => Date.now().toString(36));
 
+  // Works out each section's background. Card sections go charcoal, unless the
+  // section before is already charcoal, so two dark sections never sit together.
+  eleventyConfig.addFilter("withBg", (sections = []) => {
+    let prevDark = false;
+    return sections.map((s) => {
+      let bg = s.bg || "";
+      const cardType = ["cards", "csgroups", "csevents"].includes(s.type);
+      if (cardType && bg !== "nextgen" && !s.light) bg = prevDark ? "" : "dark";
+      prevDark = bg === "dark";
+      return { ...s, _bg: bg ? " sec--" + bg : "" };
+    });
+  });
+
   return {
     dir: { input: "src", output: "docs", includes: "_includes", data: "_data" },
     pathPrefix: process.env.PATH_PREFIX || "/Lifepoint-website/",

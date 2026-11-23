@@ -20,8 +20,8 @@ layout: layouts/base.njk
   {% if s.links %}<p class="links">{% for l in s.links %}<a class="arrow-link" href="{{ l.url | url }}">{{ l.label }} <span aria-hidden="true">→</span></a>{% endfor %}</p>{% endif %}
 {% endmacro %}
 
-{% for s in sections %}
-{% set bg = (" sec--" + s.bg) if s.bg else "" %}
+{% for s in sections | withBg %}
+{% set bg = s._bg %}
 
 {% if s.type == "hero" %}
 <section class="hero{% if s.big %}{% if s.short %} hero--short{% endif %}{% else %} hero--simple{% endif %}">

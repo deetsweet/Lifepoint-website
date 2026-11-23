@@ -382,18 +382,15 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hero--simple .hero__actions { justify-items: center; }
 @media (min-width: 768px) { .hero--simple .hero__inner { padding: 9rem 2rem 3.5rem; } }
 
-/* Stronger card contrast using brand colours (Nov 2026)
-   On white sections: Next Gen blue cards. On linen sections: deep blue cards with white text. */
-.card, .gcard { background: var(--nextgen); border: 0; }
-.card { border-top: 6px solid var(--deep-blue); }
-.card p, .gcard__body p, .gcard__eyebrow { color: var(--charcoal); }
-.sec--linen .card, .sec--linen .gcard { background: var(--deep-blue); color: var(--white); border-top-color: var(--charcoal); }
-.sec--linen .card p, .sec--linen .gcard__body p, .sec--linen .gcard__eyebrow, .sec--linen .gcard__meta { color: rgba(255,255,255,.9) !important; }
-.sec--linen .card a, .sec--linen .gcard a { color: var(--white); }
-.sec--nextgen .card, .sec--nextgen .gcard { background: var(--white); }
-.sec--dark .card, .sec--dark .gcard { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.3); }
-.sec--dark .card p, .sec--dark .gcard__body p, .sec--dark .gcard__eyebrow { color: rgba(255,255,255,.85); }
-.sec--dark .card { color: var(--white); }
-.sec--linen .campus, .sec--linen .stat, .sec--linen .room, .sec--linen .part__card { background: var(--deep-blue); color: var(--white); }
-.sec--linen .campus p, .sec--linen .stat p, .sec--linen .room p, .sec--linen .part__card p { color: rgba(255,255,255,.9); }
-.sec--linen .campus a, .sec--linen .room a, .sec--linen .part__card a { color: var(--white); }
+/* Cards (Nov 2026): most card sections are charcoal with linen cards.
+   Cards on a light section are charcoal with white text. Next Gen blue sections keep white cards. */
+.card, .gcard, .campus, .stat, .room, .part__card { background: var(--charcoal); color: var(--white); border: 0; }
+.card p, .gcard__body p, .gcard__eyebrow, .gcard__meta, .campus p, .stat__label, .room p, .part__card p { color: rgba(255,255,255,.88) !important; }
+.card a, .gcard a, .campus a, .room a, .part__card a { color: var(--white); }
+.sec--dark .card, .sec--dark .gcard, .sec--dark .campus, .sec--dark .stat, .sec--dark .room, .sec--dark .part__card { background: var(--linen); color: var(--charcoal); border: 0; }
+.sec--dark .card p, .sec--dark .gcard__body p, .sec--dark .gcard__eyebrow, .sec--dark .gcard__meta, .sec--dark .campus p, .sec--dark .stat__label, .sec--dark .room p, .sec--dark .part__card p { color: var(--charcoal) !important; }
+.sec--dark .card a, .sec--dark .gcard a, .sec--dark .campus a, .sec--dark .room a, .sec--dark .part__card a { color: var(--charcoal); }
+.sec--nextgen .card, .sec--nextgen .gcard { background: var(--white); color: var(--charcoal); }
+.sec--nextgen .card p, .sec--nextgen .gcard__body p, .sec--nextgen .gcard__eyebrow { color: var(--charcoal) !important; }
+.sec--nextgen .card a, .sec--nextgen .gcard a { color: var(--charcoal); }
+.gcard .badge { background: var(--charcoal); color: var(--white); }
