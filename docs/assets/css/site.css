@@ -365,3 +365,4 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hero .pill--ghost { color: var(--white); }
 .sec .pill--ghost { color: var(--charcoal); }
 .sec--dark .pill--ghost { color: var(--white); }
+.split-head--text { align-items: start; }

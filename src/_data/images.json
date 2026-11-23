@@ -33,8 +33,8 @@
     "alt": "Sunday service at Lifepoint Rothwell"
   },
   "campus-caboolture-west": {
-    "file": "",
-    "alt": "Breyton and Georgie Mann, leading the Caboolture West plant"
+    "file": "campus-caboolture-west.jpg",
+    "alt": "Leaders sharing at a Caboolture West information session"
   },
   "sundays-step-arrive": {
     "file": "step-arrive.jpg",
@@ -215,5 +215,9 @@
   "hero-worship": {
     "file": "sundays-hero.jpg",
     "alt": "A woman worshipping with her hand raised during a Lifepoint Sunday service"
+  },
+  "cw-info": {
+    "file": "cw-info.jpg",
+    "alt": "Sharing what Caboolture West looks like now at an information session"
   }
 }
