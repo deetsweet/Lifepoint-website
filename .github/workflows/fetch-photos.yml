@@ -1,0 +1,21 @@
+name: Fetch photos from current site
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: "Space-separated page paths (blank = home)"
+        default: ""
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/fetch_live_photos.py ${{ github.event.inputs.pages }}
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add src/assets/img/live
+          git commit -m "Photos from current lifepoint.org.au" || echo "nothing new"
+          git push
