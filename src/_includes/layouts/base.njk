@@ -11,14 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+  <link rel="icon" href="{{ '/assets/logo/lifepoint-badge-grey.svg' | url }}" type="image/svg+xml">
 </head>
 <body class="{{ bodyClass }}">
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="hdr{% if heroHeader %} hdr--over{% endif %}">
-    <a class="hdr__logo" href="{{ '/' | url }}" aria-label="Lifepoint Church home">
-      <span class="logo-word">LIFEPOINT</span><span class="logo-sub">CHURCH</span>
-    </a>
+    <a class="hdr__logo" href="{{ '/' | url }}"><img src="{{ '/assets/logo/lifepoint-secondary-white.svg' | url }}" alt="Lifepoint Church" width="240" height="31"></a>
     <nav class="hdr__quick" aria-label="Quick links">
       {% for l in site.quickNav %}<a href="{{ l.url | url }}">{{ l.label }}</a>{% endfor %}
     </nav>
@@ -51,7 +50,7 @@
   <footer class="ftr">
     <div class="ftr__top">
       <div class="ftr__brand">
-        <a class="hdr__logo" href="{{ '/' | url }}" aria-label="Lifepoint Church home"><span class="logo-word">LIFEPOINT</span><span class="logo-sub">CHURCH</span></a>
+        <a class="ftr__logo" href="{{ '/' | url }}"><img src="{{ '/assets/logo/lifepoint-primary-white.svg' | url }}" alt="Lifepoint Church" width="150" height="100" loading="lazy"></a>
         <h2>{{ site.slogan }}</h2>
         <a class="pill pill--light" href="{{ '/sundays/' | url }}">Plan your visit <span class="pill__arrow" aria-hidden="true">→</span></a>
       </div>

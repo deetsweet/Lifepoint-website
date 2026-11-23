@@ -316,3 +316,8 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
   .house, .places, .part { grid-template-columns: repeat(4, 1fr); }
   .values__grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Real logo files */
+.hdr__logo img { height: 26px; width: auto; display: block; }
+.ftr__logo img { height: 96px; width: auto; display: block; }
+@media (min-width: 1024px) { .hdr__logo img { height: 30px; } }
