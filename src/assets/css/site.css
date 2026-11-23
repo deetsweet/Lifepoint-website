@@ -471,3 +471,5 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hhero__sm { display: inline-flex; align-items: center; padding: .45rem 1rem; border: 1.5px solid rgba(255,255,255,.85); border-radius: 999px; color: var(--white); text-decoration: none; font-family: var(--head); font-weight: 500; font-size: .9rem; }
 .hhero__sm:hover { background: var(--white); color: var(--charcoal); }
 .hband__note { font-family: var(--head); font-weight: 600; font-size: 1.15rem; margin: -.4rem 0 .8rem; }
+/* Team headshots: show the whole square photo, like the current site */
+.gcards--portraits .gcard__img { aspect-ratio: 1 / 1; object-position: center top; }
