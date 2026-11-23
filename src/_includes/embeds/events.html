@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;family=Lato:wght@400;700&amp;display=swap">
-<div id="lifepoint-events-listing" data-listing="events"{% if eventsLimit %} data-limit="{{ eventsLimit }}"{% endif %}>
+<div id="lifepoint-events-listing" data-listing="events">
   <p class="lp-status" role="status">Loading events... <a href="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">Browse on ChurchSuite</a></p>
   <div class="lp-grid"></div>
 
@@ -450,8 +450,7 @@
     }
     const now = new Date();
     const today = calendarDay(now);
-    const limit = Number(root.dataset.limit) || Infinity;
-    const visible = limitSundayServices(events, now).slice(0, limit);
+    const visible = limitSundayServices(events, now);
     const cards = document.createDocumentFragment();
     for (const { item, categoryName } of visible) cards.append(createCard(item, today, categoryName));
     const count = visible.length;
