@@ -366,3 +366,8 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .sec .pill--ghost { color: var(--charcoal); }
 .sec--dark .pill--ghost { color: var(--white); }
 .split-head--text { align-items: start; }
+.embed--card { border-radius: 0; }
+.ticks-inline { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
+.cs-tools { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-bottom: 1rem; }
+.cs-tools input, .cs-tools select { font: inherit; padding: .7rem 1.1rem; border: 1px solid #cfc9bd; border-radius: 999px; background: var(--white); min-width: 12rem; }
+.cs-status { text-align: center; color: var(--muted); }

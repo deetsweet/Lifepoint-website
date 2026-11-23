@@ -65,6 +65,7 @@ layout: layouts/base.njk
   <div class="gcards gcards--{{ s.cols or 3 }}">
     {% for c in s.cards %}
     <article class="gcard{% if c.img %} gcard--img{% endif %}">
+      {% if c.video %}<div class="embed embed--card"><iframe src="https://www.youtube-nocookie.com/embed/{{ c.video }}" title="{{ c.title }}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>{% endif %}
       {% if c.img %}<div class="gcard__media">{{ m.photo(c.img, "gcard__img") }}{% if c.badge %}<p class="badge">{{ c.badge }}</p>{% endif %}</div>{% endif %}
       <div class="gcard__body">
         {% if c.eyebrow %}<p class="gcard__eyebrow">{{ c.eyebrow }}</p>{% endif %}
@@ -121,6 +122,22 @@ layout: layouts/base.njk
   </div>
 </section>
 
+{% elif s.type == "csgroups" %}
+<section class="sec{{ bg }}" data-cs-groups data-fallback="{{ s.fallback }}">
+  {% if s.heading %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
+  <div class="cs-tools"><input class="cs-search" type="search" placeholder="Search groups" aria-label="Search groups"><select class="cs-day" aria-label="Filter by day"><option value="">Any day</option></select>{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</div>
+  <p class="cs-status">Loading groups…</p>
+  <div class="gcards gcards--3 cs-list"></div>
+</section>
+
+{% elif s.type == "csevents" %}
+<section class="sec{{ bg }}" data-cs-events data-fallback="{{ s.fallback }}"{% if s.hideSundays %} data-hide-sundays{% endif %}>
+  {% if s.heading %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
+  <p class="cs-status">Loading events…</p>
+  <div class="gcards gcards--3 cs-list"></div>
+  {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+</section>
+
 {% elif s.type == "cta" %}
 <section class="sec closing{{ bg }}">
   {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
@@ -131,3 +148,4 @@ layout: layouts/base.njk
 </section>
 {% endif %}
 {% endfor %}
+{% if usesChurchSuite %}<script src="{{ '/assets/js/churchsuite.js' | url }}" defer></script>{% endif %}

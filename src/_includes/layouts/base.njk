@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,9 +81,9 @@
       <h3>Hello!</h3>
       <p>How can we help?</p>
       <a href="{{ '/sundays/' | url }}">Sundays</a>
-      <a href="https://www.lifepoint.org.au/watch--listen">Watch Messages</a>
-      <a href="https://www.lifepoint.org.au/our-team">Email a Pastor</a>
-      <a href="https://www.lifepoint.org.au/events">Events</a>
+      <a href="{{ '/watch--listen/' | url }}">Watch Messages</a>
+      <a href="{{ '/our-team/' | url }}">Email a Pastor</a>
+      <a href="{{ '/events/' | url }}">Events</a>
     </div>
     <button class="help__btn" aria-expanded="false" aria-controls="help" aria-label="How can we help?">?</button>
   </div>

@@ -67,10 +67,10 @@ places:
   - { name: Campus three, note: "Somewhere God is already preparing", status: "Praying now" }
   - { name: Campus four, note: "Maybe a church we help bring back to life", status: "Praying now" }
 part:
-  - { title: Pray, text: "Ask God for the people who aren't here yet, and come to a prayer meeting.", link: "Prayer", url: "https://www.lifepoint.org.au/prayer" }
-  - { title: Invite, text: "Bring a friend to a Sunday or to Alpha. One invitation can change a life.", link: "Alpha", url: "https://www.lifepoint.org.au/alpha" }
-  - { title: Step in, text: "Join a team or a small group, and take your own next step.", link: "Join a team", url: "https://www.lifepoint.org.au/join-a-team" }
-  - { title: Give, text: "Generous giving is how this vision becomes rooms, staff and new campuses.", link: "Giving", url: "https://www.lifepoint.org.au/give" }
+  - { title: Pray, text: "Ask God for the people who aren't here yet, and come to a prayer meeting.", link: "Prayer", url: "/prayer/" }
+  - { title: Invite, text: "Bring a friend to a Sunday or to Alpha. One invitation can change a life.", link: "Alpha", url: "/alpha/" }
+  - { title: Step in, text: "Join a team or a small group, and take your own next step.", link: "Join a team", url: "/join-a-team/" }
+  - { title: Give, text: "Generous giving is how this vision becomes rooms, staff and new campuses.", link: "Giving", url: "/give/" }
 ---
 {% import "macros.njk" as m with context %}
 
@@ -199,7 +199,7 @@ part:
   </div>
   <div class="part">
     {% for p in part %}
-    <div class="card part__card"><h3>{{ p.title }}</h3><p>{{ p.text }}</p><a class="arrow-link" href="{{ p.url }}">{{ p.link }} <span aria-hidden="true">→</span></a></div>
+    <div class="card part__card"><h3>{{ p.title }}</h3><p>{{ p.text }}</p><a class="arrow-link" href="{{ p.url | url }}">{{ p.link }} <span aria-hidden="true">→</span></a></div>
     {% endfor %}
   </div>
 </section>
@@ -207,6 +207,6 @@ part:
 <section class="sec closing">
   {{ m.eyebrow("Let's go together") }}
   <h2>Thousands of lives<br><span class="script">transformed.</span></h2>
-  {{ m.pill("Take your next step", "https://www.lifepoint.org.au/next-steps", "dark") }}
+  {{ m.pill("Take your next step", "/next-steps/", "dark") }}
   <p class="closing__line">Lifepoint Church · One family across the City of Moreton Bay</p>
 </section>

@@ -1,0 +1,42 @@
+---
+layout: layouts/sections.njk
+title: Watch & Listen | Lifepoint Church - Moreton, Queensland
+description: Missed a Sunday? Watch and listen to recent Lifepoint Church messages and browse series and topics on YouTube.
+permalink: /watch--listen/
+heroHeader: true
+sections:
+  - type: hero
+    img: dan-preaching
+    eyebrow: The Bible. Everyday life.
+    title: Watch <span class="script">& listen</span>
+    intro: Missed a Sunday? Curious about faith? Explore messages that help us know Jesus and follow him in everyday life.
+    buttons:
+      - { label: Watch recent messages, url: "#wl-latest" }
+      - { label: Browse topics, url: "#wl-topics", style: ghost }
+  - type: embed
+    id: wl-latest
+    bg: linen
+    eyebrow: Catch up or explore
+    heading: Latest <u>messages</u>.
+    intro: Each Sunday one of our pastors or leaders shares a relevant, helpful talk from the Bible. Use the player to move through our Sunday playlist, newest first.
+    src: "https://www.youtube-nocookie.com/embed/videoseries?list=PLOT8i6mKZu7fcfd9rZGs4fGvQOdApZztZ"
+    buttons:
+      - { label: Open the playlist on YouTube, url: "https://www.youtube.com/playlist?list=PLOT8i6mKZu7fcfd9rZGs4fGvQOdApZztZ" }
+      - { label: Last Sunday's message, url: "/last-sunday/", style: ghost }
+  - type: split
+    id: wl-topics
+    img: p-preach-wide
+    eyebrow: Explore the message library
+    heading: Big questions. Faith for real <u>life</u>.
+    text: ["How do we hear from God? How can I forgive and move on? What does the Bible say about money? Browse our talks and series on YouTube."]
+    bullets: [Hearing from God, Forgiveness, Generosity]
+    buttons:
+      - { label: Browse talks and series, url: "https://www.youtube.com/c/LifepointChurchRothwell/playlists" }
+      - { label: Visit our YouTube channel, url: "https://www.youtube.com/c/LifepointChurchRothwell/videos", style: ghost }
+  - type: cta
+    eyebrow: We'd love to meet you
+    heading: There's a place for you this <u>Sunday</u>.
+    text: ["Messages are a great place to start. We'd love to meet you in person too. Find a service and see what to expect."]
+    buttons:
+      - { label: Plan your Sunday, url: "/sundays/" }
+---

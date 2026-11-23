@@ -46,9 +46,9 @@ faqs:
   - q: How do I find the building?
     a: "We meet in the Chapel at Grace Lutheran College, Rothwell. Turn off Anzac Ave into Mewes Rd. The Chapel is the large building first on your left, so turn into the first carpark and you'll see it. There are signs on Sundays too."
 beyond:
-  - { title: Watch online, url: "https://www.lifepoint.org.au/watch--listen", text: "Catch up on recent messages any time, wherever you are." }
-  - { title: Try Alpha, url: "https://www.lifepoint.org.au/alpha", text: "Food, a short talk and honest conversation about life and faith. Questions welcome." }
-  - { title: Next Steps, url: "https://www.lifepoint.org.au/next-steps", text: "Been coming for a little while? Find out more about Lifepoint and how to get connected." }
+  - { title: Watch online, url: "/watch--listen/", text: "Catch up on recent messages any time, wherever you are." }
+  - { title: Try Alpha, url: "/alpha/", text: "Food, a short talk and honest conversation about life and faith. Questions welcome." }
+  - { title: Next Steps, url: "/next-steps/", text: "Been coming for a little while? Find out more about Lifepoint and how to get connected." }
 ---
 {% import "macros.njk" as m with context %}
 
@@ -115,7 +115,7 @@ beyond:
         <h3>Caboolture West</h3>
         <p class="campus__times">Service time coming soon</p>
         <p>Grace College Caboolture. A new Lifepoint campus for the growing communities of Caboolture West. Be part of it from day one.</p>
-        <p class="links"><a class="arrow-link" href="https://www.lifepoint.org.au/waraba">Find out more <span aria-hidden="true">→</span></a></p>
+        <p class="links"><a class="arrow-link" href="{{ '/waraba/' | url }}">Find out more <span aria-hidden="true">→</span></a></p>
       </div>
     </article>
   </div>
@@ -224,7 +224,7 @@ beyond:
   </div>
   <div class="beyond__cards">
     {% for b in beyond %}
-    <a class="lcard" href="{{ b.url }}"><h3>{{ b.title }} <span aria-hidden="true">→</span></h3><p>{{ b.text }}</p></a>
+    <a class="lcard" href="{{ b.url | url }}"><h3>{{ b.title }} <span aria-hidden="true">→</span></h3><p>{{ b.text }}</p></a>
     {% endfor %}
   </div>
 </section>

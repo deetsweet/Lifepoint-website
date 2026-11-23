@@ -21,76 +21,76 @@
   ],
   "quickNav": [
     { "label": "Sundays", "url": "/sundays/" },
-    { "label": "Alpha", "url": "https://www.lifepoint.org.au/alpha" },
-    { "label": "Groups", "url": "https://www.lifepoint.org.au/small-groups" },
-    { "label": "Connect", "url": "https://www.lifepoint.org.au/next-steps" },
-    { "label": "Events", "url": "https://www.lifepoint.org.au/events" },
-    { "label": "Join a Team", "url": "https://www.lifepoint.org.au/teams" }
+    { "label": "Alpha", "url": "/alpha/" },
+    { "label": "Groups", "url": "/small-groups/" },
+    { "label": "Connect", "url": "/next-steps/" },
+    { "label": "Events", "url": "/events/" },
+    { "label": "Join a Team", "url": "/teams/" }
   ],
   "menu": [
     { "label": "Sundays", "url": "/sundays/" },
-    { "label": "About", "url": "https://www.lifepoint.org.au/about", "children": [
-      { "label": "Our Church", "url": "https://www.lifepoint.org.au/about" },
-      { "label": "Our Beliefs", "url": "https://www.lifepoint.org.au/our-beliefs" },
-      { "label": "Our Team", "url": "https://www.lifepoint.org.au/our-team" },
-      { "label": "Community Hub Project", "url": "https://www.lifepoint.org.au/lifepoint-community-hub" },
-      { "label": "Caboolture West", "url": "https://www.lifepoint.org.au/waraba" }
+    { "label": "About", "url": "/about/", "children": [
+      { "label": "Our Church", "url": "/about/" },
+      { "label": "Our Beliefs", "url": "/our-beliefs/" },
+      { "label": "Our Team", "url": "/our-team/" },
+      { "label": "Community Hub Project", "url": "/lifepoint-community-hub/" },
+      { "label": "Caboolture West", "url": "/waraba/" }
     ]},
-    { "label": "Connect", "url": "https://www.lifepoint.org.au/ministries", "children": [
-      { "label": "Alpha", "url": "https://www.lifepoint.org.au/alpha" },
-      { "label": "Groups", "url": "https://www.lifepoint.org.au/small-groups" },
-      { "label": "Kids", "url": "https://www.lifepoint.org.au/kids" },
-      { "label": "Youth", "url": "https://www.lifepoint.org.au/youth" },
-      { "label": "Young Adults", "url": "https://www.lifepoint.org.au/youngadults" },
-      { "label": "Prayer", "url": "https://www.lifepoint.org.au/prayer" },
-      { "label": "Care", "url": "https://www.lifepoint.org.au/care" },
-      { "label": "All Ministries", "url": "https://www.lifepoint.org.au/ministries" }
+    { "label": "Connect", "url": "/ministries/", "children": [
+      { "label": "Alpha", "url": "/alpha/" },
+      { "label": "Groups", "url": "/small-groups/" },
+      { "label": "Kids", "url": "/kids/" },
+      { "label": "Youth", "url": "/youth/" },
+      { "label": "Young Adults", "url": "/youngadults/" },
+      { "label": "Prayer", "url": "/prayer/" },
+      { "label": "Care", "url": "/care/" },
+      { "label": "All Ministries", "url": "/ministries/" }
     ]},
-    { "label": "Next Steps", "url": "https://www.lifepoint.org.au/next-steps", "children": [
-      { "label": "Take a Step", "url": "https://www.lifepoint.org.au/next-steps" },
-      { "label": "Christian Foundations", "url": "https://www.lifepoint.org.au/christian-foundations" },
-      { "label": "Baptism", "url": "https://www.lifepoint.org.au/baptism" },
-      { "label": "Join a Team", "url": "https://www.lifepoint.org.au/join-a-team" },
-      { "label": "New Testament 26", "url": "https://www.lifepoint.org.au/nt26" }
+    { "label": "Next Steps", "url": "/next-steps/", "children": [
+      { "label": "Take a Step", "url": "/next-steps/" },
+      { "label": "Christian Foundations", "url": "/christian-foundations/" },
+      { "label": "Baptism", "url": "/baptism/" },
+      { "label": "Join a Team", "url": "/join-a-team/" },
+      { "label": "New Testament 26", "url": "/nt26/" }
     ]},
-    { "label": "Watch", "url": "https://www.lifepoint.org.au/watch--listen", "children": [
-      { "label": "Last Sunday", "url": "https://www.lifepoint.org.au/last-sunday" },
-      { "label": "Past Messages", "url": "https://www.lifepoint.org.au/watch--listen" }
+    { "label": "Watch", "url": "/watch--listen/", "children": [
+      { "label": "Last Sunday", "url": "/last-sunday/" },
+      { "label": "Past Messages", "url": "/watch--listen/" }
     ]},
-    { "label": "What's On", "url": "https://www.lifepoint.org.au/events" },
-    { "label": "Contact Us", "url": "https://www.lifepoint.org.au/connect" },
-    { "label": "Give", "url": "https://www.lifepoint.org.au/give" }
+    { "label": "What's On", "url": "/events/" },
+    { "label": "Contact Us", "url": "/connect/" },
+    { "label": "Give", "url": "/give/" }
   ],
   "footer": [
     { "heading": "Visit", "links": [
       { "label": "Sundays", "url": "/sundays/" },
-      { "label": "Kids", "url": "https://www.lifepoint.org.au/kids" },
-      { "label": "Youth", "url": "https://www.lifepoint.org.au/youth" },
-      { "label": "Young adults", "url": "https://www.lifepoint.org.au/youngadults" },
-      { "label": "What's on", "url": "https://www.lifepoint.org.au/events" }
+      { "label": "Kids", "url": "/kids/" },
+      { "label": "Youth", "url": "/youth/" },
+      { "label": "Young adults", "url": "/youngadults/" },
+      { "label": "What's on", "url": "/events/" }
     ]},
     { "heading": "Get connected", "links": [
-      { "label": "Alpha", "url": "https://www.lifepoint.org.au/alpha" },
-      { "label": "Groups", "url": "https://www.lifepoint.org.au/small-groups" },
-      { "label": "Join a team", "url": "https://www.lifepoint.org.au/join-a-team" },
-      { "label": "Prayer", "url": "https://www.lifepoint.org.au/prayer" },
-      { "label": "Next steps", "url": "https://www.lifepoint.org.au/next-steps" },
-      { "label": "Baptism", "url": "https://www.lifepoint.org.au/baptism" }
+      { "label": "Alpha", "url": "/alpha/" },
+      { "label": "Groups", "url": "/small-groups/" },
+      { "label": "Join a team", "url": "/join-a-team/" },
+      { "label": "Prayer", "url": "/prayer/" },
+      { "label": "Next steps", "url": "/next-steps/" },
+      { "label": "Baptism", "url": "/baptism/" }
     ]},
     { "heading": "About Lifepoint", "links": [
-      { "label": "Our church", "url": "https://www.lifepoint.org.au/about" },
-      { "label": "Our beliefs", "url": "https://www.lifepoint.org.au/our-beliefs" },
-      { "label": "Our team", "url": "https://www.lifepoint.org.au/our-team" },
-      { "label": "Community Hub", "url": "https://www.lifepoint.org.au/lifepoint-community-hub" },
-      { "label": "Caboolture West", "url": "https://www.lifepoint.org.au/waraba" },
-      { "label": "Contact", "url": "https://www.lifepoint.org.au/connect" }
+      { "label": "Our church", "url": "/about/" },
+      { "label": "Our beliefs", "url": "/our-beliefs/" },
+      { "label": "Our team", "url": "/our-team/" },
+      { "label": "Community Hub", "url": "/lifepoint-community-hub/" },
+      { "label": "Caboolture West", "url": "/waraba/" },
+      { "label": "Contact", "url": "/connect/" }
     ]},
     { "heading": "Resources", "links": [
-      { "label": "Watch & listen", "url": "https://www.lifepoint.org.au/watch--listen" },
-      { "label": "Team resources", "url": "https://www.lifepoint.org.au/leaders" },
-      { "label": "Giving", "url": "https://www.lifepoint.org.au/give" },
-      { "label": "Care & support", "url": "https://www.lifepoint.org.au/care" },
-      { "label": "Christian Foundations", "url": "https://www.lifepoint.org.au/christian-foundations" }
+      { "label": "Watch & listen", "url": "/watch--listen/" },
+      { "label": "Team resources", "url": "/leaders/" },
+      { "label": "Giving", "url": "/give/" },
+      { "label": "Care & support", "url": "/care/" },
+      { "label": "Christian Foundations", "url": "/christian-foundations/" }
     ]}
   ]
 }
