@@ -371,3 +371,13 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .cs-tools { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-bottom: 1rem; }
 .cs-tools input, .cs-tools select { font: inherit; padding: .7rem 1.1rem; border: 1px solid #cfc9bd; border-radius: 999px; background: var(--white); min-width: 12rem; }
 .cs-status { text-align: center; color: var(--muted); }
+
+/* Simple page header: every page except Home and Sundays (add "big: true" to a hero to get the full one) */
+.hero--simple { min-height: 0; align-items: center; }
+.hero--simple .hero__inner { padding: 8rem 1.25rem 3rem; }
+.hero--simple .hero__title { font-size: clamp(2.4rem, 8vw, 4.25rem); line-height: 1; margin: 0 0 1rem; }
+.hero--simple .hero__title .script { display: inline; font-size: .9em; }
+.hero--simple .hero__foot { grid-template-columns: 1fr; text-align: center; gap: 1.25rem; }
+.hero--simple .hero__intro { margin: 0 auto; max-width: 36rem; font-size: 1.05rem; }
+.hero--simple .hero__actions { justify-items: center; }
+@media (min-width: 768px) { .hero--simple .hero__inner { padding: 9rem 2rem 3.5rem; } }

@@ -24,10 +24,10 @@ layout: layouts/base.njk
 {% set bg = (" sec--" + s.bg) if s.bg else "" %}
 
 {% if s.type == "hero" %}
-<section class="hero{% if s.short %} hero--short{% endif %}">
+<section class="hero{% if s.big %}{% if s.short %} hero--short{% endif %}{% else %} hero--simple{% endif %}">
   {{ m.photo(s.img, "hero__img", true) }}
   <div class="hero__inner">
-    {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
+    {% if s.eyebrow and s.big %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
     <h1 class="hero__title">{{ s.title | safe }}</h1>
     <div class="hero__foot">
       {% if s.intro %}<p class="hero__intro">{{ s.intro | safe }}</p>{% endif %}
