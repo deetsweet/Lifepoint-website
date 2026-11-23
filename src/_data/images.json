@@ -107,5 +107,113 @@
   "v2030-part": {
     "file": "v2030-part.jpg",
     "alt": "Team Lifepoint blowing up balloons before a celebration"
+  },
+  "p-singer": {
+    "file": "p-singer.jpg",
+    "alt": "A young woman leading worship"
+  },
+  "p-worship-leader": {
+    "file": "p-worship-leader.jpg",
+    "alt": "A worship leader with arms wide open"
+  },
+  "p-teens-clapping": {
+    "file": "p-teens-clapping.jpg",
+    "alt": "Teenagers clapping during a service"
+  },
+  "p-stage-prayer": {
+    "file": "p-stage-prayer.jpg",
+    "alt": "A leader praying on stage"
+  },
+  "p-speaker": {
+    "file": "p-speaker.jpg",
+    "alt": "A speaker sharing at Lifepoint"
+  },
+  "p-youth-boys": {
+    "file": "p-youth-boys.jpg",
+    "alt": "A group of youth guys at Lifepoint Youth"
+  },
+  "p-youth-floor": {
+    "file": "p-youth-floor.jpg",
+    "alt": "Youth guys hanging out at youth night"
+  },
+  "p-youth-girls": {
+    "file": "p-youth-girls.jpg",
+    "alt": "Youth girls giving a thumbs up"
+  },
+  "p-alpha-guest": {
+    "file": "p-alpha-guest.jpg",
+    "alt": "A smiling guest at Alpha"
+  },
+  "p-guitar": {
+    "file": "p-guitar.jpg",
+    "alt": "A worship leader with an acoustic guitar"
+  },
+  "p-host": {
+    "file": "p-host.jpg",
+    "alt": "A host speaking at a Sunday service"
+  },
+  "p-serving": {
+    "file": "p-serving.jpg",
+    "alt": "Young people serving drinks outdoors"
+  },
+  "p-preach-wide": {
+    "file": "p-preach-wide.jpg",
+    "alt": "A Sunday service in the Chapel"
+  },
+  "p-hub": {
+    "file": "p-hub.jpg",
+    "alt": "An artist impression of the Lifepoint Church Community Hub on McKillop Street"
+  },
+  "age-kids": {
+    "file": "age-kids.jpg",
+    "alt": "A young girl celebrating during worship"
+  },
+  "age-families": {
+    "file": "age-families.jpg",
+    "alt": "A mum with her three children"
+  },
+  "dan-preaching": {
+    "file": "dan-preaching.jpg",
+    "alt": "Dan Sweetman, Senior Pastor, preaching"
+  },
+  "age-teens": {
+    "file": "age-teens.jpg",
+    "alt": "Kids and teenagers worshipping together"
+  },
+  "age-babies": {
+    "file": "age-babies.jpg",
+    "alt": "A mum holding her baby"
+  },
+  "age-young-adults": {
+    "file": "age-young-adults.jpg",
+    "alt": "Young adults singing together at a YADS night"
+  },
+  "kids-1": {
+    "file": "kids-1.jpg",
+    "alt": "A Kids Crew leader chatting with kids in a circle"
+  },
+  "kids-2": {
+    "file": "kids-2.jpg",
+    "alt": "Kids and leaders sitting together during a Lifepoint Kids activity"
+  },
+  "kids-3": {
+    "file": "kids-3.jpg",
+    "alt": "Kids dancing at Lifepoint Kids"
+  },
+  "step-coffee": {
+    "file": "step-coffee.jpg",
+    "alt": "A smiling barista making coffee"
+  },
+  "step-gather": {
+    "file": "step-gather.jpg",
+    "alt": "The band leading worship"
+  },
+  "step-arrive": {
+    "file": "step-arrive.jpg",
+    "alt": "A mum and toddler outside the Chapel on a Sunday"
+  },
+  "hero-worship": {
+    "file": "sundays-hero.jpg",
+    "alt": "A woman worshipping with her hand raised during a Lifepoint Sunday service"
   }
 }

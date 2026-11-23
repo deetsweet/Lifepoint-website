@@ -1,0 +1,133 @@
+---
+layout: layouts/base.njk
+---
+{#
+  Generic page builder. Each page lists its sections in front matter.
+  Section types: hero, text, split, cards, steps, faq, list, embed, cta, ticker, quote
+  Any "img" value is a key in src/_data/images.json.
+  Any "url" starting with "/" is a page on this site.
+#}
+{% import "macros.njk" as m with context %}
+{% macro btn(b, style) %}{% if b %}<a class="pill pill--{{ b.style or style }}" href="{{ b.url | url }}">{{ b.label }} <span class="pill__arrow" aria-hidden="true">→</span></a>{% endif %}{% endmacro %}
+{% macro head(s, centre) %}
+  {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
+  {% if s.heading %}<h2>{{ s.heading | safe }}</h2>{% endif %}
+{% endmacro %}
+{% macro body(s) %}
+  {% for p in s.text %}<p>{{ p | safe }}</p>{% endfor %}
+  {% if s.bullets %}<ul class="stars">{% for b in s.bullets %}<li>{{ b | safe }}</li>{% endfor %}</ul>{% endif %}
+  {% if s.buttons %}<p class="btns">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+  {% if s.links %}<p class="links">{% for l in s.links %}<a class="arrow-link" href="{{ l.url | url }}">{{ l.label }} <span aria-hidden="true">→</span></a>{% endfor %}</p>{% endif %}
+{% endmacro %}
+
+{% for s in sections %}
+{% set bg = (" sec--" + s.bg) if s.bg else "" %}
+
+{% if s.type == "hero" %}
+<section class="hero{% if s.short %} hero--short{% endif %}">
+  {{ m.photo(s.img, "hero__img", true) }}
+  <div class="hero__inner">
+    {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
+    <h1 class="hero__title">{{ s.title | safe }}</h1>
+    <div class="hero__foot">
+      {% if s.intro %}<p class="hero__intro">{{ s.intro | safe }}</p>{% endif %}
+      <div class="hero__actions">
+        {% if s.times %}<ul class="times">{% for t in site.timesList %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+        <div class="btns">{% for b in s.buttons %}{{ btn(b, "light") }}{% endfor %}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elif s.type == "ticker" %}
+<div class="ticker" aria-label="{{ s.items | join(', ') }}"><div class="ticker__track" aria-hidden="true">{% for round in [1, 2] %}{% for t in s.items %}<span>{{ t }} ✦</span>{% endfor %}{% endfor %}</div></div>
+
+{% elif s.type == "text" %}
+<section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
+  {% if s.centre %}
+  <div class="centre-head">{{ head(s) }}<div class="lede-block">{{ body(s) }}</div></div>
+  {% else %}
+  <div class="split-head split-head--text"><div>{{ head(s) }}</div><div>{{ body(s) }}</div></div>
+  {% endif %}
+</section>
+
+{% elif s.type == "split" %}
+<section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
+  <div class="plan{% if s.flip %} plan--flip{% endif %}">
+    {{ m.photo(s.img, "plan__img") }}
+    <div>{{ head(s) }}{{ body(s) }}</div>
+  </div>
+</section>
+
+{% elif s.type == "cards" %}
+<section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
+  {% if s.heading or s.eyebrow %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
+  <div class="gcards gcards--{{ s.cols or 3 }}">
+    {% for c in s.cards %}
+    <article class="gcard{% if c.img %} gcard--img{% endif %}">
+      {% if c.img %}<div class="gcard__media">{{ m.photo(c.img, "gcard__img") }}{% if c.badge %}<p class="badge">{{ c.badge }}</p>{% endif %}</div>{% endif %}
+      <div class="gcard__body">
+        {% if c.eyebrow %}<p class="gcard__eyebrow">{{ c.eyebrow }}</p>{% endif %}
+        <h3>{{ c.title | safe }}</h3>
+        {% if c.meta %}<p class="gcard__meta">{{ c.meta | safe }}</p>{% endif %}
+        {% for p in c.text %}<p>{{ p | safe }}</p>{% endfor %}
+        {% if c.bullets %}<ul class="stars">{% for b in c.bullets %}<li>{{ b | safe }}</li>{% endfor %}</ul>{% endif %}
+        {% if c.url %}<a class="arrow-link" href="{{ c.url | url }}">{{ c.link or "Find out more" }} <span aria-hidden="true">→</span></a>{% endif %}
+        {% for l in c.links %}<a class="arrow-link" href="{{ l.url | url }}">{{ l.label }} <span aria-hidden="true">→</span></a> {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+</section>
+
+{% elif s.type == "steps" %}
+<section class="sec{{ bg }}">
+  <div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>
+  <ol class="steps">
+    {% for st in s.steps %}
+    <li class="step">
+      {% if st.img %}<div class="step__media">{{ m.photo(st.img, "step__img") }}<span class="step__num">0{{ loop.index }}</span></div>{% else %}<span class="room__num">0{{ loop.index }}</span>{% endif %}
+      <h3>{{ st.title }}</h3>
+      {% for p in st.text %}<p>{{ p | safe }}</p>{% endfor %}
+      {% if st.url %}<a class="arrow-link" href="{{ st.url | url }}">{{ st.link or "Find out more" }} <span aria-hidden="true">→</span></a>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+{% elif s.type == "faq" %}
+<section class="sec{{ bg or ' sec--linen' }} faq">
+  <div class="faq__head">{{ head(s) }}{% for p in s.text %}<p>{{ p | safe }}</p>{% endfor %}</div>
+  <div class="faq__list">{% for f in s.faqs %}<details><summary>{{ f.q }}</summary>{% for p in f.a %}<p>{{ p | safe }}</p>{% endfor %}</details>{% endfor %}</div>
+</section>
+
+{% elif s.type == "embed" %}
+<section class="sec{{ bg }}">
+  {% if s.heading or s.eyebrow %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
+  <div class="embed{% if s.ratio %} embed--{{ s.ratio }}{% endif %}"><iframe src="{{ s.src }}" title="{{ s.title or s.heading or 'Embedded content' }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+  {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+</section>
+
+{% elif s.type == "quote" %}
+<section class="sec{{ bg or ' sec--linen' }} welcome">
+  <div class="welcome__media">{{ m.photo(s.img, "welcome__img") }}</div>
+  <div class="welcome__text">
+    {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
+    {% if s.quote %}<blockquote>{{ s.quote | safe }}</blockquote>{% endif %}
+    {% for p in s.text %}<p>{{ p | safe }}</p>{% endfor %}
+    {% if s.sig %}<p class="sig"><span class="script">{{ s.sig }}</span>{% if s.role %}<span>{{ s.role }}</span>{% endif %}</p>{% endif %}
+    {% if s.buttons %}<p class="btns">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+  </div>
+</section>
+
+{% elif s.type == "cta" %}
+<section class="sec closing{{ bg }}">
+  {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
+  <h2>{{ s.heading | safe }}</h2>
+  {% for p in s.text %}<p class="closing__text">{{ p | safe }}</p>{% endfor %}
+  <p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>
+  {% if s.small %}<p class="closing__line">{{ s.small | safe }}</p>{% endif %}
+</section>
+{% endif %}
+{% endfor %}

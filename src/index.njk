@@ -1,6 +1,85 @@
 ---
+layout: layouts/sections.njk
+title: Home | Lifepoint Church - Moreton, Queensland
+description: Lifepoint Church in Rothwell, Moreton Bay. Sundays at 8.30am, 10am and 5pm. Your place to belong.
 permalink: /
+heroHeader: true
+sections:
+  - type: hero
+    img: p-worship-leader
+    eyebrow: Welcome to Lifepoint Church
+    title: Your place <span class="script">to belong</span>
+    intro: Visit us this Sunday at Grace Lutheran College, Rothwell. No church experience required.
+    times: true
+    buttons:
+      - { label: Plan a visit, url: /sundays/ }
+      - { label: Watch online, url: /watch--listen/, style: ghost }
+  - type: cards
+    bg: linen
+    cols: 3
+    eyebrow: Our locations
+    heading: Find your <u>place</u>.
+    cards:
+      - img: campus-rothwell
+        title: Rothwell
+        meta: Sundays 8.30am · 10am · 5pm
+        text: ["<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell"]
+        url: /sundays/
+        link: Plan a visit
+      - img: p-hub
+        title: Lifepoint Church Community Hub
+        meta: Weekday office and programs space
+        text: ["Open Monday to Friday<br>1 McKillop St, Rothwell"]
+        url: https://maps.app.goo.gl/uBr3D9gFD6uBe15a9
+        link: Find the Hub
+      - img: campus-caboolture-west
+        badge: Launching 7 Feb 2027
+        title: Caboolture West
+        meta: Sundays 9.30am
+        text: ["A new Lifepoint location at Grace Lutheran College, Caboolture campus."]
+        url: /waraba/
+        link: More info
+  - type: split
+    img: p-teens-clapping
+    eyebrow: See you Sunday?
+    heading: Come as you <u>are</u>.
+    text: ["Get the info on our 8.30am, 10am and 5pm gatherings in the Grace Lutheran College Chapel at Rothwell."]
+    buttons: [{ label: Sundays info, url: /sundays/ }]
+  - type: cards
+    cols: 3
+    eyebrow: Get connected
+    heading: There's a place for <u>you</u>.
+    cards:
+      - { img: age-kids, title: Kids & Youth, text: ["Find out more about our Lifepoint Kids and Youth programs."], links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
+      - { img: p-youth-girls, title: Programs, text: ["Every age and stage of life is different, with its own challenges and joys."], url: /ministries/, link: Learn more }
+      - { img: v2030-pathway, title: Find a group, text: ["We meet as small groups throughout the week. Find a group that fits your interests, age and stage of life."], url: /small-groups/, link: Find a group }
+      - { img: p-host, title: Messages, text: ["Watch and listen to past messages to get a feel for what we're like."], url: /watch--listen/, link: Watch }
+      - { img: p-serving, title: Serve, text: ["The best way to find your place is to use your gifts and time on a Lifepoint team, in our mission to see Jesus transform lives."], url: /join-a-team/, link: Join a team }
+      - { img: p-alpha-guest, title: Alpha, text: ["Food, a short talk and honest conversation about life and faith. Questions welcome."], url: /alpha/, link: Try Alpha }
+  - type: quote
+    img: dan-preaching
+    eyebrow: A message from our Senior Pastor
+    quote: You're welcome in our family.
+    text:
+      - Our vision at Lifepoint is to make Jesus known in our region and see thousands of lives transformed by the gospel.
+      - We believe that every person matters to God, and we invite you to our church no matter what your beliefs, doubts, past or problems.
+      - In a world where being completely known and being completely accepted are often two separate categories, we believe the strange and shockingly good message of Jesus is exactly what this world needs right now.
+      - We'd love to see you Sunday.
+    sig: Dan and Steph Sweetman
+    role: Senior Pastors
+    buttons: [{ label: Meet our team, url: /our-team/ }]
+  - type: cards
+    cols: 4
+    eyebrow: Need more help?
+    heading: Take your next <u>step</u>.
+    cards:
+      - { title: Meet the team, text: ["Meet our staff and leaders."], url: /our-team/, link: About us }
+      - { title: Serving our world, text: ["We serve our local community in Moreton Bay, and the world through partners like <a href=\"https://compassion.com.au\">Compassion</a>."], url: "https://compassion.com.au", link: Compassion }
+      - { title: Faith steps, text: ["Interested in finding out more about God and faith?"], url: /next-steps/, link: Next steps }
+      - { title: Prayer, text: ["Let us know how we can be praying for you."], url: /prayer/, link: Prayer }
+  - type: cta
+    eyebrow: See you Sunday
+    heading: Your seat<br><span class="script">is saved.</span>
+    buttons: [{ label: Plan your visit, url: /sundays/ }]
+    small: Grace Lutheran College Chapel, Mewes Rd, Rothwell · Sundays 8.30am, 10am &amp; 5pm
 ---
-<!DOCTYPE html><html lang="en-AU"><head><meta charset="utf-8"><title>Lifepoint Church (test site)</title>
-<meta http-equiv="refresh" content="0; url={{ '/sundays/' | url }}"></head>
-<body><p>The test site starts at the <a href="{{ '/sundays/' | url }}">Sundays page</a>.</p></body></html>
