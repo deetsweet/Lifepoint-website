@@ -279,5 +279,241 @@
   "home-connect": {
     "file": "home-connect.jpg",
     "alt": "People praying for each other"
+  },
+  "lp-about-01": {
+    "file": "lp/lp-about-01.jpg",
+    "alt": "A Sunday service in the Chapel"
+  },
+  "lp-about-02": {
+    "file": "lp/lp-about-02.jpg",
+    "alt": "We are for moreton bay city"
+  },
+  "lp-about-03": {
+    "file": "lp/lp-about-03.jpg",
+    "alt": "We are a welcoming community"
+  },
+  "lp-about-04": {
+    "file": "lp/lp-about-04.jpg",
+    "alt": "We believe god can transform your life"
+  },
+  "lp-about-08": {
+    "file": "lp/lp-about-08.jpg",
+    "alt": "Drop in Sunday?"
+  },
+  "lp-about-09": {
+    "file": "lp/lp-about-09.jpg",
+    "alt": "Programs and Groups"
+  },
+  "lp-about-10": {
+    "file": "lp/lp-about-10.jpg",
+    "alt": "Got a Question?"
+  },
+  "lp-alpha-02": {
+    "file": "lp/lp-alpha-02.jpg",
+    "alt": "A smiling guest at Alpha"
+  },
+  "lp-alpha-04": {
+    "file": "lp/lp-alpha-04.jpg",
+    "alt": "Two hosts welcoming guests at an Alpha launch night"
+  },
+  "lp-alpha-05": {
+    "file": "lp/lp-alpha-05.jpg",
+    "alt": "A smiling guest at Alpha"
+  },
+  "lp-alpha-06": {
+    "file": "lp/lp-alpha-06.jpg",
+    "alt": "People catching up in their seats before a service"
+  },
+  "lp-alpha-07": {
+    "file": "lp/lp-alpha-07.jpg",
+    "alt": "Two hosts welcoming guests at an Alpha launch night"
+  },
+  "lp-give-02": {
+    "file": "lp/lp-give-02.jpg",
+    "alt": "A smiling guest at Alpha"
+  },
+  "lp-give-03": {
+    "file": "lp/lp-give-03.jpg",
+    "alt": "A worship leader with arms wide open"
+  },
+  "lp-give-04": {
+    "file": "lp/lp-give-04.jpg",
+    "alt": "Young people serving drinks outdoors"
+  },
+  "lp-give-05": {
+    "file": "lp/lp-give-05.jpg",
+    "alt": "Two hosts welcoming guests at an Alpha launch night"
+  },
+  "lp-give-06": {
+    "file": "lp/lp-give-06.jpg",
+    "alt": "A young woman leading worship"
+  },
+  "lp-kids-03": {
+    "file": "lp/lp-kids-03.jpg",
+    "alt": "Kids dancing at Lifepoint Kids"
+  },
+  "lp-kids-04": {
+    "file": "lp/lp-kids-04.jpg",
+    "alt": "A mum holding her baby"
+  },
+  "lp-kids-01": {
+    "file": "lp/lp-kids-01.jpg",
+    "alt": "A Kids Crew leader chatting with kids in a circle"
+  },
+  "lp-kids-06": {
+    "file": "lp/lp-kids-06.jpg",
+    "alt": "A young girl celebrating during worship"
+  },
+  "lp-kids-05": {
+    "file": "lp/lp-kids-05.jpg",
+    "alt": "A mum and toddler outside the Chapel on a Sunday"
+  },
+  "lp-ministries-01": {
+    "file": "lp/lp-ministries-01.jpg",
+    "alt": "Young people serving drinks outdoors"
+  },
+  "lp-youth-03": {
+    "file": "lp/lp-youth-03.jpg",
+    "alt": "A group of youth guys at Lifepoint Youth"
+  },
+  "lp-ministries-02": {
+    "file": "lp/lp-ministries-02.jpg",
+    "alt": "Young adults singing together at a YADS night"
+  },
+  "lp-ministries-03": {
+    "file": "lp/lp-ministries-03.jpg",
+    "alt": "People catching up in their seats before a service"
+  },
+  "lp-ministries-04": {
+    "file": "lp/lp-ministries-04.jpg",
+    "alt": "A mum with her three children"
+  },
+  "lp-ministries-05": {
+    "file": "lp/lp-ministries-05.jpg",
+    "alt": "A young woman leading worship"
+  },
+  "lp-ministries-06": {
+    "file": "lp/lp-ministries-06.jpg",
+    "alt": "A leader praying on stage"
+  },
+  "lp-ministries-07": {
+    "file": "lp/lp-ministries-07.jpg",
+    "alt": "A smiling guest at Alpha"
+  },
+  "lp-ministries-08": {
+    "file": "lp/lp-ministries-08.jpg",
+    "alt": "A mum holding her baby"
+  },
+  "lp-next-steps-01": {
+    "file": "lp/lp-next-steps-01.jpg",
+    "alt": "People sharing life together in a Lifepoint small group"
+  },
+  "lp-next-steps-02": {
+    "file": "lp/lp-next-steps-02.jpg",
+    "alt": "Connect with the Lifepoint community"
+  },
+  "lp-next-steps-03": {
+    "file": "lp/lp-next-steps-03.jpg",
+    "alt": "Explore questions of life and faith at Alpha"
+  },
+  "lp-small-groups-01": {
+    "file": "lp/lp-small-groups-01.jpg",
+    "alt": "A smiling barista making coffee"
+  },
+  "lp-next-steps-04": {
+    "file": "lp/lp-next-steps-04.jpg",
+    "alt": "Celebrating baptism at Lifepoint"
+  },
+  "lp-next-steps-05": {
+    "file": "lp/lp-next-steps-05.jpg",
+    "alt": "Serving together on a Lifepoint team"
+  },
+  "lp-our-beliefs-01": {
+    "file": "lp/lp-our-beliefs-01.jpg",
+    "alt": "A host speaking at a Sunday service"
+  },
+  "lp-our-team-01": {
+    "file": "lp/lp-our-team-01.jpg",
+    "alt": "A host speaking at a Sunday service"
+  },
+  "lp-our-team-02": {
+    "file": "lp/lp-our-team-02.jpg",
+    "alt": "Board of Elders"
+  },
+  "lp-lifepoint-community-hub-01": {
+    "file": "lp/lp-lifepoint-community-hub-01.jpg",
+    "alt": "An artist impression of the Lifepoint Church Community Hub on McKillop Street"
+  },
+  "lp-waraba-02": {
+    "file": "lp/lp-waraba-02.jpg",
+    "alt": "Lifepoint gathering outdoors in Caboolture West"
+  },
+  "lp-waraba-03": {
+    "file": "lp/lp-waraba-03.jpg",
+    "alt": "Breyton Mann, planting pastor"
+  },
+  "lp-youth-02": {
+    "file": "lp/lp-youth-02.jpg",
+    "alt": "A group of youth guys at Lifepoint Youth"
+  },
+  "lp-youngadults-01": {
+    "file": "lp/lp-youngadults-01.jpg",
+    "alt": "Friends connecting outside at Lifepoint Young Adults"
+  },
+  "lp-youngadults-05": {
+    "file": "lp/lp-youngadults-05.jpg",
+    "alt": "Young adults worshipping together at Lifepoint"
+  },
+  "lp-youngadults-07": {
+    "file": "lp/lp-youngadults-07.jpg",
+    "alt": "A welcome and conversation at Lifepoint"
+  },
+  "lp-prayer-01": {
+    "file": "lp/lp-prayer-01.jpg",
+    "alt": "Sunday Mornings"
+  },
+  "lp-care-01": {
+    "file": "lp/lp-care-01.jpg",
+    "alt": "An artist impression of the Lifepoint Church Community Hub on McKillop Street"
+  },
+  "lp-care-05": {
+    "file": "lp/lp-care-05.jpg",
+    "alt": "Young people serving drinks outdoors"
+  },
+  "lp-connect-01": {
+    "file": "lp/lp-connect-01.jpg",
+    "alt": "A mum and toddler outside the Chapel on a Sunday"
+  },
+  "lp-teams-01": {
+    "file": "lp/lp-teams-01.jpg",
+    "alt": "Young people serving drinks outdoors"
+  },
+  "lp-teams-03": {
+    "file": "lp/lp-teams-03.jpg",
+    "alt": "A host speaking at a Sunday service"
+  },
+  "lp-teams-02": {
+    "file": "lp/lp-teams-02.jpg",
+    "alt": "A smiling barista making coffee"
+  },
+  "lp-watch--listen-03": {
+    "file": "lp/lp-watch--listen-03.jpg",
+    "alt": "Dan Sweetman, Senior Pastor, preaching"
+  },
+  "lp-watch--listen-01": {
+    "file": "lp/lp-watch--listen-01.jpg",
+    "alt": "A Sunday service in the Chapel"
+  },
+  "lp-events-01": {
+    "file": "lp/lp-events-01.jpg",
+    "alt": "Teenagers clapping during a service"
+  },
+  "lp-nt26-03": {
+    "file": "lp/lp-nt26-03.jpg",
+    "alt": "Discuss and live it out in your community"
+  },
+  "lp-mama-village-02": {
+    "file": "lp/lp-mama-village-02.jpg",
+    "alt": "A mum holding her baby"
   }
 }
