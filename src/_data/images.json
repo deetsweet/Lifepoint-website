@@ -219,5 +219,65 @@
   "cw-info": {
     "file": "cw-info.jpg",
     "alt": "Sharing what Caboolture West looks like now at an information session"
+  },
+  "home-see-you-sunday": {
+    "file": "home-see-you-sunday.jpg",
+    "alt": "Friends chatting outside after a Sunday service"
+  },
+  "home-hero-poster": {
+    "file": "home-hero-poster.jpg",
+    "alt": "A congregation worshipping at Lifepoint"
+  },
+  "home-rothwell": {
+    "file": "home-rothwell.jpg",
+    "alt": "People connecting at Lifepoint Rothwell"
+  },
+  "home-hub": {
+    "file": "home-hub.jpg",
+    "alt": "The Lifepoint Church Community Hub in Rothwell"
+  },
+  "home-caboolture-west": {
+    "file": "home-caboolture-west.jpg",
+    "alt": "An aerial view of Caboolture West"
+  },
+  "home-kids-youth": {
+    "file": "home-kids-youth.jpg",
+    "alt": "Two boys giving a thumbs up at Lifepoint"
+  },
+  "home-programs": {
+    "file": "home-programs.jpg",
+    "alt": "A woman laughing with friends at Lifepoint"
+  },
+  "home-groups": {
+    "file": "home-groups.jpg",
+    "alt": "Two men with arms around each other"
+  },
+  "home-messages": {
+    "file": "home-messages.jpg",
+    "alt": "A pastor preaching at Lifepoint"
+  },
+  "home-serve": {
+    "file": "home-serve.jpg",
+    "alt": "A young man serving coffee"
+  },
+  "home-dan-steph": {
+    "file": "home-dan-steph.jpg",
+    "alt": "Dan and Steph Sweetman"
+  },
+  "home-team": {
+    "file": "home-team.jpg",
+    "alt": "Lifepoint Kids leaders chatting"
+  },
+  "home-faith-steps": {
+    "file": "home-faith-steps.jpg",
+    "alt": "Women praying together"
+  },
+  "home-serving-world": {
+    "file": "home-serving-world.jpg",
+    "alt": "Two men talking over a coffee"
+  },
+  "home-connect": {
+    "file": "home-connect.jpg",
+    "alt": "People praying for each other"
   }
 }

@@ -5,22 +5,26 @@ description: Lifepoint Church in Rothwell, Moreton Bay. Sundays at 8.30am, 10am 
 permalink: /
 heroHeader: true
 locations:
-  - { img: campus-rothwell, title: Rothwell, sub: 3 services every Sunday, times: "8.30am | 10am | 5pm", place: "<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell", url: /sundays/, link: Plan a visit }
-  - { img: p-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
-  - { img: campus-caboolture-west, title: Caboolture West, sub: New Lifepoint location, times: 9.30am Sundays, place: "Launching 7 Feb 2027 at<br>Grace Lutheran College Caboolture Campus", url: /waraba/, link: More info }
+  - { img: home-rothwell, title: Rothwell, sub: 3 services every Sunday, times: "8.30am | 10am | 5pm", place: "<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell", url: /sundays/, link: Plan a visit }
+  - { img: home-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
+  - { img: home-caboolture-west, title: Caboolture West, sub: New Lifepoint location, times: 9.30am Sundays, place: "Launching 7 Feb 2027 at<br>Grace Lutheran College Caboolture Campus", url: /waraba/, link: More info }
 tiles:
-  - { img: age-kids, title: "Kids &amp; Youth", text: Find out more about our Lifepoint Kids and Youth programs., links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
-  - { img: p-youth-girls, title: Programs, text: "Every age and stage of life is different, with its own challenges and joys.", links: [{ label: Learn more, url: /ministries/ }] }
-  - { img: step-coffee, title: Find a Group, text: "We meet as small groups through the week. Find a group that fits your interests, age and stage of life.", links: [{ label: Find a group, url: /small-groups/ }] }
+  - { img: home-kids-youth, title: "Kids &amp; Youth", text: Find out more about our Lifepoint Kids and Youth programs., links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
+  - { img: home-programs, title: Programs, text: "Every age and stage of life is different, with its own challenges and joys.", links: [{ label: Learn more, url: /ministries/ }] }
+  - { img: home-groups, title: Find a Group, text: "We meet as small groups through the week. Find a group that fits your interests, age and stage of life.", links: [{ label: Find a group, url: /small-groups/ }] }
+  - { img: home-messages, title: Messages, text: "Watch and listen to past messages to see what we're like.", links: [{ label: Watch, url: /watch--listen/ }] }
+  - { img: home-serve, title: Serve, text: "The best way to find your place is to use your gifts and time on a Lifepoint team, in our mission to see Jesus transform lives.", links: [{ label: Join a team, url: /teams/ }] }
 help:
-  - { img: p-host, title: Meet the Team, text: Meet our staff and leaders., links: [{ label: About us, url: /our-team/ }] }
-  - { img: p-serving, title: Serving our World, text: "We serve our local community in Moreton Bay, and the world through partners like Compassion.", links: [{ label: Compassion, url: "https://compassion.com.au" }] }
-  - { img: p-alpha-guest, title: Faith Steps, text: Interested in taking a step to find out more about God and faith?, links: [{ label: Next steps, url: /next-steps/ }] }
+  - { img: home-team, title: Meet the Team, text: Meet our staff and leaders., links: [{ label: About us, url: /our-team/ }] }
+  - { img: home-serving-world, title: Serving our World, text: "We serve our local community in Moreton Bay, and the world through partners like Compassion.", links: [{ label: Compassion, url: "https://compassion.com.au" }] }
+  - { img: home-faith-steps, title: Faith Steps, text: Interested in taking a step to find out more about God and faith?, links: [{ label: Next steps, url: /next-steps/ }] }
+  - { img: home-connect, title: Connect with Us, text: "Let us know what you need and someone from our team will contact you.", links: [{ label: Connect, url: /connect/ }] }
+  - { img: p-stage-prayer, title: Prayer, text: Let us know how we can be praying for you., links: [{ label: Prayer, url: /prayer/ }] }
 ---
 {% import "macros.njk" as m with context %}
 
 <section class="hhero">
-  {{ m.photo("p-worship-leader", "hhero__img", true) }}
+  <video class="hhero__img" autoplay muted loop playsinline poster="{{ '/assets/img/home-hero-poster.jpg' | url }}"><source src="{{ '/assets/img/home-hero.mp4' | url }}" type="video/mp4"></video>
   <div class="hhero__inner">
     {{ m.eyebrow("Welcome to Lifepoint Church") }}
     <h1 class="hhero__title">Your place <span class="script">to belong</span></h1>
@@ -59,7 +63,7 @@ help:
 </section>
 
 <section class="hband">
-  {{ m.photo("p-teens-clapping", "hband__img") }}
+  {{ m.photo("home-see-you-sunday", "hband__img") }}
   <div class="hband__inner">
     <h2>See you Sunday?</h2>
     <p>Get the info on our 8.30am, 10am and 5pm gatherings in the Grace Lutheran College Chapel at Rothwell.</p>
@@ -67,7 +71,7 @@ help:
   </div>
 </section>
 
-<section class="htiles">
+<section class="htiles htiles--scroll">
   {% for t in tiles %}
   <article class="htile">
     {{ m.photo(t.img, "htile__img") }}
@@ -81,6 +85,7 @@ help:
 </section>
 
 <section class="sec sec--linen hletter">
+  {{ m.photo("home-dan-steph", "hletter__img") }}
   <p class="hletter__kicker">A message from our Senior Pastor</p>
   <h2>You're welcome in our family</h2>
   <p>Our vision at Lifepoint is to make Jesus known in our region and see thousands of lives transformed by the gospel.</p>
@@ -102,7 +107,7 @@ help:
     <h2>Need more help?</h2>
     <p class="lede">Find out more and take the next step.</p>
   </div>
-  <div class="htiles htiles--inset">
+  <div class="htiles htiles--inset htiles--scroll">
     {% for t in help %}
     <article class="htile">
       {{ m.photo(t.img, "htile__img") }}

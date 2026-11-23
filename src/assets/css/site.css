@@ -452,3 +452,8 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hevents__head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
 .hevents__head h2 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); }
 .hevents .pill--ghost { color: var(--white); }
+/* Home tiles scroll sideways like the current site when there are more than three */
+.htiles--scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.htiles--scroll .htile { flex: 0 0 85%; scroll-snap-align: start; }
+@media (min-width: 900px) { .htiles--scroll .htile { flex-basis: calc((100% - 1.2rem) / 3); } .htiles--inset.htiles--scroll .htile { flex-basis: calc((100% - 2.5rem) / 3); } }
+.hletter__img { width: 100%; max-width: 40rem; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); margin-bottom: 2rem; }
