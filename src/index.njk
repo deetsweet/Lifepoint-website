@@ -26,15 +26,14 @@ help:
 <section class="hhero">
   <video class="hhero__img" autoplay muted loop playsinline poster="{{ '/assets/img/home-hero-poster.jpg' | url }}"><source src="{{ '/assets/img/home-hero.mp4' | url }}" type="video/mp4"></video>
   <div class="hhero__inner">
-    <p class="hhero__badge">No church experience required</p>
     <h1 class="hhero__title">Welcome to Lifepoint <span class="script">your place to belong</span></h1>
-    <div class="hhero__actions">
-      <a class="hhero__big" href="{{ '/sundays/' | url }}">
-        <span class="hhero__big-label">Sundays</span>
-        <span class="hhero__big-times">8.30am · 10am · 5pm · Grace Lutheran College, Rothwell</span>
-        <span class="pill__arrow" aria-hidden="true">→</span>
-      </a>
-      <div class="hhero__small">
+    <div class="hhero__foot">
+      <div>
+        <ul class="times">{% for t in site.timesList %}<li>{{ t }}</li>{% endfor %}</ul>
+        <p class="hhero__where">Sundays at Grace Lutheran College, Rothwell</p>
+      </div>
+      <div class="btns">
+        <a class="pill pill--blue" href="{{ '/sundays/' | url }}">Sundays</a>
         <a class="hhero__sm" href="https://maps.app.goo.gl/rr9TvTEZWYqxVcwr6">Get directions</a>
         <a class="hhero__sm" href="{{ '/watch--listen/' | url }}">Watch online</a>
       </div>
@@ -65,6 +64,7 @@ help:
   {{ m.photo("home-see-you-sunday", "hband__img") }}
   <div class="hband__inner">
     <h2>See you Sunday?</h2>
+    <p class="hband__note">No church experience required.</p>
     <p>Get the info on our 8.30am, 10am and 5pm gatherings in the Grace Lutheran College Chapel at Rothwell.</p>
     {{ m.pill("Sundays info", "/sundays/", "light") }}
   </div>
