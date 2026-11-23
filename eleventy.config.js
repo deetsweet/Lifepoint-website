@@ -18,6 +18,8 @@ module.exports = function (eleventyConfig) {
       ("/" + rest).startsWith(prefix + "/") ? m : `${attr}="${prefix}/${rest}"`);
   });
 
+  eleventyConfig.addGlobalData("buildId", () => Date.now().toString(36));
+
   return {
     dir: { input: "src", output: "docs", includes: "_includes", data: "_data" },
     pathPrefix: process.env.PATH_PREFIX || "/Lifepoint-website/",
