@@ -1,86 +1,119 @@
 ---
-layout: layouts/sections.njk
+layout: layouts/base.njk
 title: Home | Lifepoint Church - Moreton, Queensland
 description: Lifepoint Church in Rothwell, Moreton Bay. Sundays at 8.30am, 10am and 5pm. Your place to belong.
 permalink: /
 heroHeader: true
-sections:
-  - type: hero
-    big: true
-    img: p-worship-leader
-    eyebrow: Welcome to Lifepoint Church
-    title: Your place <span class="script">to belong</span>
-    intro: Visit us this Sunday at Grace Lutheran College, Rothwell. No church experience required.
-    times: true
-    buttons:
-      - { label: Plan a visit, url: /sundays/ }
-      - { label: Watch online, url: /watch--listen/, style: ghost }
-  - type: cards
-    bg: linen
-    cols: 3
-    eyebrow: Our locations
-    heading: Find your place.
-    cards:
-      - img: campus-rothwell
-        title: Rothwell
-        meta: Sundays 8.30am · 10am · 5pm
-        text: ["<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell"]
-        url: /sundays/
-        link: Plan a visit
-      - img: p-hub
-        title: Lifepoint Church Community Hub
-        meta: Weekday office and programs space
-        text: ["Open Monday to Friday<br>1 McKillop St, Rothwell"]
-        url: https://maps.app.goo.gl/uBr3D9gFD6uBe15a9
-        link: Find the Hub
-      - img: campus-caboolture-west
-        badge: Launching 7 Feb 2027
-        title: Caboolture West
-        meta: Sundays 9.30am
-        text: ["A new Lifepoint location at Grace Lutheran College, Caboolture campus."]
-        url: /waraba/
-        link: More info
-  - type: split
-    img: p-teens-clapping
-    eyebrow: See you Sunday?
-    heading: Come as you are.
-    text: ["Get the info on our 8.30am, 10am and 5pm gatherings in the Grace Lutheran College Chapel at Rothwell."]
-    buttons: [{ label: Sundays info, url: /sundays/ }]
-  - type: cards
-    cols: 3
-    eyebrow: Get connected
-    heading: There's a place for you.
-    cards:
-      - { img: age-kids, title: Kids & Youth, text: ["Find out more about our Lifepoint Kids and Youth programs."], links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
-      - { img: p-youth-girls, title: Programs, text: ["Every age and stage of life is different, with its own challenges and joys."], url: /ministries/, link: Learn more }
-      - { img: v2030-pathway, title: Find a group, text: ["We meet as small groups throughout the week. Find a group that fits your interests, age and stage of life."], url: /small-groups/, link: Find a group }
-      - { img: p-host, title: Messages, text: ["Watch and listen to past messages to get a feel for what we're like."], url: /watch--listen/, link: Watch }
-      - { img: p-serving, title: Serve, text: ["The best way to find your place is to use your gifts and time on a Lifepoint team, in our mission to see Jesus transform lives."], url: /join-a-team/, link: Join a team }
-      - { img: p-alpha-guest, title: Alpha, text: ["Food, a short talk and honest conversation about life and faith. Questions welcome."], url: /alpha/, link: Try Alpha }
-  - type: quote
-    img: dan-preaching
-    eyebrow: A message from our Senior Pastor
-    quote: You're welcome in our family.
-    text:
-      - Our vision at Lifepoint is to make Jesus known in our region and see thousands of lives transformed by the gospel.
-      - We believe that every person matters to God, and we invite you to our church no matter what your beliefs, doubts, past or problems.
-      - In a world where being completely known and being completely accepted are often two separate categories, we believe the strange and shockingly good message of Jesus is exactly what this world needs right now.
-      - We'd love to see you Sunday.
-    sig: Dan and Steph Sweetman
-    role: Senior Pastors
-    buttons: [{ label: Meet our team, url: /our-team/ }]
-  - type: cards
-    cols: 4
-    eyebrow: Need more help?
-    heading: Take your next step.
-    cards:
-      - { title: Meet the team, text: ["Meet our staff and leaders."], url: /our-team/, link: About us }
-      - { title: Serving our world, text: ["We serve our local community in Moreton Bay, and the world through partners like <a href=\"https://compassion.com.au\">Compassion</a>."], url: "https://compassion.com.au", link: Compassion }
-      - { title: Faith steps, text: ["Interested in finding out more about God and faith?"], url: /next-steps/, link: Next steps }
-      - { title: Prayer, text: ["Let us know how we can be praying for you."], url: /prayer/, link: Prayer }
-  - type: cta
-    eyebrow: See you Sunday
-    heading: Your seat<br><span class="script">is saved.</span>
-    buttons: [{ label: Plan your visit, url: /sundays/ }]
-    small: Grace Lutheran College Chapel, Mewes Rd, Rothwell · Sundays 8.30am, 10am &amp; 5pm
+locations:
+  - { img: campus-rothwell, title: Rothwell, sub: 3 services every Sunday, times: "8.30am | 10am | 5pm", place: "<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell", url: /sundays/, link: Plan a visit }
+  - { img: p-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
+  - { img: campus-caboolture-west, title: Caboolture West, sub: New Lifepoint location, times: 9.30am Sundays, place: "Launching 7 Feb 2027 at<br>Grace Lutheran College Caboolture Campus", url: /waraba/, link: More info }
+tiles:
+  - { img: age-kids, title: "Kids &amp; Youth", text: Find out more about our Lifepoint Kids and Youth programs., links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
+  - { img: p-youth-girls, title: Programs, text: "Every age and stage of life is different, with its own challenges and joys.", links: [{ label: Learn more, url: /ministries/ }] }
+  - { img: step-coffee, title: Find a Group, text: "We meet as small groups through the week. Find a group that fits your interests, age and stage of life.", links: [{ label: Find a group, url: /small-groups/ }] }
+help:
+  - { img: p-host, title: Meet the Team, text: Meet our staff and leaders., links: [{ label: About us, url: /our-team/ }] }
+  - { img: p-serving, title: Serving our World, text: "We serve our local community in Moreton Bay, and the world through partners like Compassion.", links: [{ label: Compassion, url: "https://compassion.com.au" }] }
+  - { img: p-alpha-guest, title: Faith Steps, text: Interested in taking a step to find out more about God and faith?, links: [{ label: Next steps, url: /next-steps/ }] }
 ---
+{% import "macros.njk" as m %}
+
+<section class="hhero">
+  {{ m.photo("p-worship-leader", "hhero__img", true) }}
+  <div class="hhero__inner">
+    {{ m.eyebrow("Welcome to Lifepoint Church") }}
+    <h1 class="hhero__title">Your place <span class="script">to belong</span></h1>
+    <div class="hhero__foot">
+      <div>
+        <p class="hhero__label">Visit us this Sunday</p>
+        <ul class="times">{% for t in site.timesList %}<li>{{ t }}</li>{% endfor %}</ul>
+        <p class="hhero__where">Grace Lutheran College, Rothwell · No church experience required</p>
+      </div>
+      <div class="btns">
+        {{ m.pill("Plan a visit", "/sundays/", "light") }}
+        <a class="pill pill--blue" href="https://maps.app.goo.gl/rr9TvTEZWYqxVcwr6">Get directions</a>
+        <a class="pill pill--ghost" href="{{ '/watch--listen/' | url }}">Watch online</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--linen hloc">
+  <div class="hloc__grid">
+    {% for l in locations %}
+    <article class="hloc__card">
+      {{ m.photo(l.img, "hloc__img") }}
+      <div class="hloc__body">
+        <h2>{{ l.title }}</h2>
+        <p class="hloc__sub">{{ l.sub | safe }}</p>
+        <div class="hloc__foot">
+          <p class="hloc__times">{{ l.times }}</p>
+          <p>{{ l.place | safe }}</p>
+          <a class="pill pill--light" href="{{ l.url | url }}">{{ l.link }}</a>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="hband">
+  {{ m.photo("p-teens-clapping", "hband__img") }}
+  <div class="hband__inner">
+    <h2>See you Sunday?</h2>
+    <p>Get the info on our 8.30am, 10am and 5pm gatherings in the Grace Lutheran College Chapel at Rothwell.</p>
+    {{ m.pill("Sundays info", "/sundays/", "light") }}
+  </div>
+</section>
+
+<section class="htiles">
+  {% for t in tiles %}
+  <article class="htile">
+    {{ m.photo(t.img, "htile__img") }}
+    <div class="htile__body">
+      <h3>{{ t.title | safe }}</h3>
+      <p>{{ t.text }}</p>
+      <p class="htile__btns">{% for b in t.links %}<a class="pill pill--ghost" href="{{ b.url | url }}">{{ b.label }}</a>{% endfor %}</p>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="sec sec--linen hletter">
+  <p class="hletter__kicker">A message from our Senior Pastor</p>
+  <h2>You're welcome in our family</h2>
+  <p>Our vision at Lifepoint is to make Jesus known in our region and see thousands of lives transformed by the gospel.</p>
+  <p>We believe that every person matters to God, and we invite you to our church no matter what your beliefs, doubts, past or problems.</p>
+  <p>In a world where being completely known and being completely accepted are often two separate categories, we believe the strange and shockingly good message of Jesus is exactly what this world needs right now.</p>
+  <p>We'd love to see you Sunday.</p>
+  <p class="hletter__sig script">Dan and Steph Sweetman</p>
+  {{ m.pill("Meet our team", "/our-team/", "dark") }}
+</section>
+
+<section class="sec sec--dark hevents" data-cs-events data-hide-sundays data-limit="4" data-fallback="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">
+  <div class="hevents__head"><h2>Coming up</h2><a class="pill pill--ghost" href="{{ '/events/' | url }}">See all events</a></div>
+  <p class="cs-status">Loading events…</p>
+  <div class="gcards gcards--4 cs-list"></div>
+</section>
+
+<section class="sec sec--linen hhelp">
+  <div class="centre-head">
+    <h2>Need more help?</h2>
+    <p class="lede">Find out more and take the next step.</p>
+  </div>
+  <div class="htiles htiles--inset">
+    {% for t in help %}
+    <article class="htile">
+      {{ m.photo(t.img, "htile__img") }}
+      <div class="htile__body">
+        <h3>{{ t.title | safe }}</h3>
+        <p>{{ t.text }}</p>
+        <p class="htile__btns">{% for b in t.links %}<a class="pill pill--light" href="{{ b.url | url }}">{{ b.label }}</a>{% endfor %}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<script src="{{ '/assets/js/churchsuite.js' | url }}" defer></script>

@@ -46,7 +46,7 @@
       var evs = Array.isArray(data) ? data : (data.events || data.data || []);
       if (!evs.length) return fail(box);
       var seen = {};
-      evs = evs.filter(function (e) { if (box.dataset.hideSundays !== undefined && e.category && /sunday/i.test(e.category.name)) return false; var k = e.name; if (seen[k]) return false; seen[k] = 1; return true; }).slice(0, 30);
+      evs = evs.filter(function (e) { if (box.dataset.hideSundays !== undefined && e.category && /sunday/i.test(e.category.name)) return false; var k = e.name; if (seen[k]) return false; seen[k] = 1; return true; }).slice(0, +(box.dataset.limit || 30));
       box.querySelector(".cs-list").innerHTML = evs.map(function (e) {
         var start = pick(e, ["datetime_start", "date_start", "start"]);
         var d = start ? new Date(start.replace(" ", "T")) : null;
