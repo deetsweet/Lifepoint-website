@@ -381,3 +381,16 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hero--simple .hero__intro { margin: 0 auto; max-width: 36rem; font-size: 1.05rem; }
 .hero--simple .hero__actions { justify-items: center; }
 @media (min-width: 768px) { .hero--simple .hero__inner { padding: 9rem 2rem 3.5rem; } }
+
+/* Stronger card contrast using brand colours (Nov 2026)
+   On white sections: Next Gen blue cards. On linen sections: deep blue cards with white text. */
+.card, .gcard { background: var(--nextgen); border: 0; }
+.card { border-top: 6px solid var(--deep-blue); }
+.card p, .gcard__body p, .gcard__eyebrow { color: var(--charcoal); }
+.sec--linen .card, .sec--linen .gcard { background: var(--deep-blue); color: var(--white); border-top-color: var(--charcoal); }
+.sec--linen .card p, .sec--linen .gcard__body p, .sec--linen .gcard__eyebrow, .sec--linen .gcard__meta { color: rgba(255,255,255,.9) !important; }
+.sec--linen .card a, .sec--linen .gcard a { color: var(--white); }
+.sec--nextgen .card, .sec--nextgen .gcard { background: var(--white); }
+.sec--dark .card, .sec--dark .gcard { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.3); }
+.sec--dark .card p, .sec--dark .gcard__body p, .sec--dark .gcard__eyebrow { color: rgba(255,255,255,.85); }
+.sec--dark .card { color: var(--white); }
