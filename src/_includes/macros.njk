@@ -1,0 +1,17 @@
+{# Photo from the images list. Falls back to a placeholder until a file is added. #}
+{% macro photo(key, cls="", eager=false) %}
+{%- set p = images[key] -%}
+{%- if p and p.file -%}
+<img class="{{ cls }}" src="{{ ('/assets/img/' + p.file) | url }}" alt="{{ p.alt }}"{% if not eager %} loading="lazy"{% endif %} decoding="async">
+{%- else -%}
+<div class="ph {{ cls }}" role="img" aria-label="{{ p.alt if p else key }}"><span>{{ p.alt if p else key }}</span></div>
+{%- endif -%}
+{% endmacro %}
+
+{# Pill button with the round arrow badge #}
+{% macro pill(label, href, style="light") %}
+<a class="pill pill--{{ style }}" href="{{ href | url }}">{{ label }} <span class="pill__arrow" aria-hidden="true">→</span></a>
+{% endmacro %}
+
+{# Eyebrow line #}
+{% macro eyebrow(text) %}<p class="eyebrow">{{ text }}</p>{% endmacro %}

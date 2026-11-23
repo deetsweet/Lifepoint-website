@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  <meta property="og:title" content="{{ title }}">
+  {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+</head>
+<body class="{{ bodyClass }}">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hdr{% if heroHeader %} hdr--over{% endif %}">
+    <a class="hdr__logo" href="{{ '/' | url }}" aria-label="Lifepoint Church home">
+      <span class="logo-word">LIFEPOINT</span><span class="logo-sub">CHURCH</span>
+    </a>
+    <nav class="hdr__quick" aria-label="Quick links">
+      {% for l in site.quickNav %}<a href="{{ l.url | url }}">{{ l.label }}</a>{% endfor %}
+    </nav>
+    <button class="hdr__burger" aria-expanded="false" aria-controls="menu" aria-label="Open navigation menu"><span></span><span></span></button>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Main menu">
+      <ul>
+        {% for item in site.menu %}
+        <li>
+          {% if item.children %}
+          <details>
+            <summary>{{ item.label }}</summary>
+            <ul>{% for c in item.children %}<li><a href="{{ c.url | url }}">{{ c.label }}</a></li>{% endfor %}</ul>
+          </details>
+          {% else %}
+          <a href="{{ item.url | url }}">{{ item.label }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="ftr">
+    <div class="ftr__top">
+      <div class="ftr__brand">
+        <a class="hdr__logo" href="{{ '/' | url }}" aria-label="Lifepoint Church home"><span class="logo-word">LIFEPOINT</span><span class="logo-sub">CHURCH</span></a>
+        <h2>{{ site.slogan }}</h2>
+        <a class="pill pill--light" href="{{ '/sundays/' | url }}">Plan your visit <span class="pill__arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="ftr__info">
+        <p><strong>Sundays · {{ site.times }}</strong><br>{{ site.venueShort }}</p>
+        <p><strong>Get in touch</strong><br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="tel:{{ site.phoneLink }}">{{ site.phone }}</a></p>
+        <p><strong>{{ site.office.label }}</strong><br>{% for line in site.office.lines %}{{ line }}<br>{% endfor %}<a href="{{ site.office.map }}">Get directions</a></p>
+      </div>
+    </div>
+    <nav class="ftr__cols" aria-label="Footer navigation">
+      {% for col in site.footer %}
+      <div>
+        <h3>{{ col.heading }}</h3>
+        <ul>{% for l in col.links %}<li><a href="{{ l.url | url }}">{{ l.label }}</a></li>{% endfor %}</ul>
+      </div>
+      {% endfor %}
+    </nav>
+    <div class="ftr__social">
+      <div><h3>Follow Lifepoint</h3><p>Stay connected through the week.</p></div>
+      <ul>{% for s in site.social %}<li><a href="{{ s.url }}">{{ s.name }}</a></li>{% endfor %}</ul>
+    </div>
+    <p class="ftr__copy">© 2026 Lifepoint Church</p>
+  </footer>
+
+  <div class="help">
+    <div class="help__panel" id="help" hidden>
+      <h3>Hello!</h3>
+      <p>How can we help?</p>
+      <a href="{{ '/sundays/' | url }}">Sundays</a>
+      <a href="https://www.lifepoint.org.au/watch--listen">Watch Messages</a>
+      <a href="https://www.lifepoint.org.au/our-team">Email a Pastor</a>
+      <a href="https://www.lifepoint.org.au/events">Events</a>
+    </div>
+    <button class="help__btn" aria-expanded="false" aria-controls="help" aria-label="How can we help?">?</button>
+  </div>
+
+  <script src="{{ '/assets/js/site.js' | url }}" defer></script>
+</body>
+</html>

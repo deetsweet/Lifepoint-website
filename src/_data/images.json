@@ -1,0 +1,79 @@
+{
+  "_note": "Every photo on the site is listed here. To swap a photo, put the new file in src/assets/img/ and change its 'file'. An empty 'file' shows a placeholder.",
+  "sundays-hero": {
+    "file": "sundays-hero.jpg",
+    "alt": "A woman worshipping with her hand raised during a Lifepoint Sunday service"
+  },
+  "sundays-age-kids": {
+    "file": "age-kids.jpg",
+    "alt": "A young girl celebrating during worship"
+  },
+  "sundays-age-teens": {
+    "file": "age-teens.jpg",
+    "alt": "Kids and teenagers worshipping together"
+  },
+  "sundays-age-babies": {
+    "file": "age-babies.jpg",
+    "alt": "A mum holding her baby"
+  },
+  "sundays-age-families": {
+    "file": "",
+    "alt": "A mum with her three children"
+  },
+  "sundays-age-young-adults": {
+    "file": "",
+    "alt": "Young adults at Lifepoint"
+  },
+  "sundays-age-seniors": {
+    "file": "",
+    "alt": "A senior member of Lifepoint sharing with a microphone"
+  },
+  "campus-rothwell": {
+    "file": "campus-rothwell.jpg",
+    "alt": "Sunday service at Lifepoint Rothwell"
+  },
+  "campus-caboolture-west": {
+    "file": "",
+    "alt": "Breyton and Georgie Mann, leading the Caboolture West plant"
+  },
+  "sundays-step-arrive": {
+    "file": "",
+    "alt": "A mum and toddler arriving at church"
+  },
+  "sundays-step-kids": {
+    "file": "",
+    "alt": "Kids Crew at Lifepoint"
+  },
+  "sundays-step-gather": {
+    "file": "",
+    "alt": "The band leading worship"
+  },
+  "sundays-step-coffee": {
+    "file": "",
+    "alt": "A smiling barista making coffee"
+  },
+  "sundays-dan": {
+    "file": "dan-preaching.jpg",
+    "alt": "Dan Sweetman, Senior Pastor, preaching"
+  },
+  "sundays-plan-visit": {
+    "file": "",
+    "alt": "A welcome team member chatting with guests"
+  },
+  "sundays-kids-1": {
+    "file": "",
+    "alt": "A Kids Crew leader chatting with kids in a circle"
+  },
+  "sundays-kids-2": {
+    "file": "",
+    "alt": "Kids in a small group activity"
+  },
+  "sundays-kids-3": {
+    "file": "",
+    "alt": "Kids dancing at Lifepoint Kids"
+  },
+  "sundays-beyond-bg": {
+    "file": "sundays-hero.jpg",
+    "alt": ""
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Lifepoint Church",
+  "slogan": "Lives transformed by Jesus.",
+  "times": "8.30am, 10am & 5pm",
+  "timesList": ["8.30am", "10am", "5pm"],
+  "venueShort": "Grace College Chapel · Mewes Road, Rothwell",
+  "email": "hello@lifepoint.org.au",
+  "phone": "0488 854 336",
+  "phoneLink": "+61488854336",
+  "office": {
+    "label": "Office & Community Hub",
+    "lines": ["1 McKillop Street", "Rothwell QLD"],
+    "map": "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9"
+  },
+  "planVisit": "https://www.lifepoint.org.au/form/visit",
+  "kidsRego": "https://lifepointchurchrothwell.churchsuite.com/-/forms/wsa5alxz",
+  "social": [
+    { "name": "Instagram", "url": "https://www.instagram.com/lifepointrothwell/" },
+    { "name": "Facebook", "url": "https://www.facebook.com/LifepointRothwell" },
+    { "name": "YouTube", "url": "https://www.youtube.com/channel/UCMo91_MfXY6qdhvK3SArtGA" }
+  ],
+  "quickNav": [
+    { "label": "Sundays", "url": "/sundays/" },
+    { "label": "Alpha", "url": "https://www.lifepoint.org.au/alpha" },
+    { "label": "Groups", "url": "https://www.lifepoint.org.au/small-groups" },
+    { "label": "Connect", "url": "https://www.lifepoint.org.au/next-steps" },
+    { "label": "Events", "url": "https://www.lifepoint.org.au/events" },
+    { "label": "Join a Team", "url": "https://www.lifepoint.org.au/teams" }
+  ],
+  "menu": [
+    { "label": "Sundays", "url": "/sundays/" },
+    { "label": "About", "url": "https://www.lifepoint.org.au/about", "children": [
+      { "label": "Our Church", "url": "https://www.lifepoint.org.au/about" },
+      { "label": "Our Beliefs", "url": "https://www.lifepoint.org.au/our-beliefs" },
+      { "label": "Our Team", "url": "https://www.lifepoint.org.au/our-team" },
+      { "label": "Community Hub Project", "url": "https://www.lifepoint.org.au/lifepoint-community-hub" },
+      { "label": "Caboolture West", "url": "https://www.lifepoint.org.au/waraba" }
+    ]},
+    { "label": "Connect", "url": "https://www.lifepoint.org.au/ministries", "children": [
+      { "label": "Alpha", "url": "https://www.lifepoint.org.au/alpha" },
+      { "label": "Groups", "url": "https://www.lifepoint.org.au/small-groups" },
+      { "label": "Kids", "url": "https://www.lifepoint.org.au/kids" },
+      { "label": "Youth", "url": "https://www.lifepoint.org.au/youth" },
+      { "label": "Young Adults", "url": "https://www.lifepoint.org.au/youngadults" },
+      { "label": "Prayer", "url": "https://www.lifepoint.org.au/prayer" },
+      { "label": "Care", "url": "https://www.lifepoint.org.au/care" },
+      { "label": "All Ministries", "url": "https://www.lifepoint.org.au/ministries" }
+    ]},
+    { "label": "Next Steps", "url": "https://www.lifepoint.org.au/next-steps", "children": [
+      { "label": "Take a Step", "url": "https://www.lifepoint.org.au/next-steps" },
+      { "label": "Christian Foundations", "url": "https://www.lifepoint.org.au/christian-foundations" },
+      { "label": "Baptism", "url": "https://www.lifepoint.org.au/baptism" },
+      { "label": "Join a Team", "url": "https://www.lifepoint.org.au/join-a-team" },
+      { "label": "New Testament 26", "url": "https://www.lifepoint.org.au/nt26" }
+    ]},
+    { "label": "Watch", "url": "https://www.lifepoint.org.au/watch--listen", "children": [
+      { "label": "Last Sunday", "url": "https://www.lifepoint.org.au/last-sunday" },
+      { "label": "Past Messages", "url": "https://www.lifepoint.org.au/watch--listen" }
+    ]},
+    { "label": "What's On", "url": "https://www.lifepoint.org.au/events" },
+    { "label": "Contact Us", "url": "https://www.lifepoint.org.au/connect" },
+    { "label": "Give", "url": "https://www.lifepoint.org.au/give" }
+  ],
+  "footer": [
+    { "heading": "Visit", "links": [
+      { "label": "Sundays", "url": "/sundays/" },
+      { "label": "Kids", "url": "https://www.lifepoint.org.au/kids" },
+      { "label": "Youth", "url": "https://www.lifepoint.org.au/youth" },
+      { "label": "Young adults", "url": "https://www.lifepoint.org.au/youngadults" },
+      { "label": "What's on", "url": "https://www.lifepoint.org.au/events" }
+    ]},
+    { "heading": "Get connected", "links": [
+      { "label": "Alpha", "url": "https://www.lifepoint.org.au/alpha" },
+      { "label": "Groups", "url": "https://www.lifepoint.org.au/small-groups" },
+      { "label": "Join a team", "url": "https://www.lifepoint.org.au/join-a-team" },
+      { "label": "Prayer", "url": "https://www.lifepoint.org.au/prayer" },
+      { "label": "Next steps", "url": "https://www.lifepoint.org.au/next-steps" },
+      { "label": "Baptism", "url": "https://www.lifepoint.org.au/baptism" }
+    ]},
+    { "heading": "About Lifepoint", "links": [
+      { "label": "Our church", "url": "https://www.lifepoint.org.au/about" },
+      { "label": "Our beliefs", "url": "https://www.lifepoint.org.au/our-beliefs" },
+      { "label": "Our team", "url": "https://www.lifepoint.org.au/our-team" },
+      { "label": "Community Hub", "url": "https://www.lifepoint.org.au/lifepoint-community-hub" },
+      { "label": "Caboolture West", "url": "https://www.lifepoint.org.au/waraba" },
+      { "label": "Contact", "url": "https://www.lifepoint.org.au/connect" }
+    ]},
+    { "heading": "Resources", "links": [
+      { "label": "Watch & listen", "url": "https://www.lifepoint.org.au/watch--listen" },
+      { "label": "Team resources", "url": "https://www.lifepoint.org.au/leaders" },
+      { "label": "Giving", "url": "https://www.lifepoint.org.au/give" },
+      { "label": "Care & support", "url": "https://www.lifepoint.org.au/care" },
+      { "label": "Christian Foundations", "url": "https://www.lifepoint.org.au/christian-foundations" }
+    ]}
+  ]
+}
