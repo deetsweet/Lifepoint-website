@@ -1,16 +1,17 @@
 ---
 layout: layouts/base.njk
-title: Lifepoint Church in 2030
+title: Vision 2030
 description: Lifepoint's 2030 vision. Internal document for our leaders.
 permalink: /vision-2030/
 noindex: true
 heroHeader: true
 picture:
-  - We see 1200 people gathering weekly across four locations.
-  - We are seeing 100 people decide to follow Jesus and 80 people baptised every year.
-  - We have a measurable discipleship pathway with 1000 people in our pathways taking clear next steps in faith.
+  - { num: "1200", text: "We see 1200 people gathering weekly across four locations." }
+  - { num: "100 / 80", text: "We are seeing 100 people decide to follow Jesus and 80 people baptised every year." }
+  - { num: "1000", text: "We have a measurable discipleship pathway with 1000 people in our pathways taking clear next steps in faith." }
 markers:
   - title: We are an outward facing church
+    short: Outward facing
     img: v2030-outward
     text:
       - "Our mission is simple: thousands of lives transformed by Jesus. We design everything with people far from God in mind. Our language is clear, barriers are low, and next steps are simple. We resist the gravitational pull of focusing on insiders. Our highest goal is to offer the good news of Jesus to those who need it most: the lost."
@@ -22,6 +23,7 @@ markers:
       - We have 200 participants for Alpha each year.
       - "We have 100 people regularly serving in outreach events and groups that are a potential funnel into the Discovery pathway (e.g. COACH mentors, community outreach events, Alpha leaders, playgroups, EFC)."
   - title: We are a praying church
+    short: Praying
     img: v2030-praying
     text:
       - "Lifepoint Church sees prayer as the most important work. Our primary battle is spiritual, and we wage war through the prayers of God's people. We have dedicated prayer spaces at each church campus. We are known as a praying church."
@@ -32,6 +34,7 @@ markers:
       - We run a prayer course in our Growth Pathway with 100 unique completions per year.
       - We never run a church meeting or event without 15 minutes of prayer.
   - title: We are a pathways church
+    short: Pathways
     img: v2030-pathway
     anchor: pathway
     text:
@@ -44,6 +47,7 @@ markers:
       - "Growth: metrics to be confirmed."
       - "Leadership: Level 1 (Step In) 50, Level 2 (Step Up) 25, Level 3 (Step Out) 10 (to be confirmed)."
   - title: We are a healthy church
+    short: Healthy
     img: v2030-healthy
     text:
       - "Lifepoint is full of broken people who are committed to becoming whole through the transforming power of the good news of King Jesus. Our leaders have healthy relationships with God, others and themselves, and they intentionally help our community to heal and grow into spiritual and emotional maturity in Jesus. We lead people to experience and practise healing in God's presence both corporately and privately, and we have multiple ministries and courses designed to help people live holistically in the abundant life of God."
@@ -52,6 +56,7 @@ markers:
     measures:
       - 80% of our key leaders are self-identifying as healthy in our Key Leader Quarterly Health Survey.
   - title: We are a next-gen focused church
+    short: Next-Gen focused
     img: v2030-nextgen
     text:
       - "Lifepoint Church is known for prioritising helping the next generation to become faith-filled followers of Jesus. We know the most important thing in life is not what we achieve, but who we raise. Our ministries and resourcing reflect our priority to be a safe yet challenging place for young people to both learn and practise following Jesus. We partner with parents to pass on faith to our children, give young leaders a go early, and make sure every young person who comes to Lifepoint is connected with a leader who knows and loves them."
@@ -62,6 +67,7 @@ markers:
       - "75% of regular young people transition to the next age ministry (kids, youth, young adults)."
       - 50 baptisms per year are Next-Gen (25 and under).
   - title: We are a multiplying church
+    short: Multiplying
     img: v2030-multiplying
     text:
       - "We multiply new <em>believers</em>, new <em>leaders</em>, and new <em>churches</em>."
@@ -127,111 +133,110 @@ values:
   <a href="#picture">The picture</a><a href="#markers">Six markers</a><a href="#pathway">Pathway</a><a href="#goals">2030 goals</a><a href="#mission">Mission</a><a href="#values">Values</a>
 </nav>
 
-<section class="sec sec--dark" id="picture">
-  <div class="centre-head">
-    {{ m.eyebrow("Mission statement") }}
-    <h2>Lifepoint exists to see thousands of lives transformed by Jesus.</h2>
-  </div>
-  <div class="vpic">
+<section class="sec v" id="picture">
+  <div class="vcol">
+    <h2>Mission statement</h2>
+    <p class="vstatement">Lifepoint exists to see thousands of lives transformed by Jesus.</p>
     <h3>Picture of Lifepoint at the end of 2030</h3>
-    <p class="vpic__lead">In 2030, Lifepoint will be a healthy and vibrant family of four churches across the City of Moreton Bay that is known as a place where Jesus is transforming thousands of lives.</p>
-    <ul>{% for p in picture %}<li>{{ p }}</li>{% endfor %}</ul>
+    <p>In 2030, Lifepoint will be a healthy and vibrant family of four churches across the City of Moreton Bay that is known as a place where Jesus is transforming thousands of lives.</p>
+    <div class="vpanels">
+      {% for p in picture %}<div class="vpanel"><p class="vpanel__num">{{ p.num }}</p><p>{{ p.text }}</p></div>{% endfor %}
+    </div>
   </div>
 </section>
 
-<section class="sec" id="markers">
-  <div class="centre-head">
-    {{ m.eyebrow("Six markers") }}
-    <h2>The core of our strategic commitments.</h2>
-    <p class="lede">We are focused on six markers which form the core of our strategic commitments.</p>
+<section class="sec sec--dark v" id="markers">
+  <div class="vcol">
+    <h2>Six markers</h2>
+    <p>We are focused on six markers which form the core of our strategic commitments.</p>
   </div>
-  <div class="vmarkers">
+  <div class="vcards">
     {% for mk in markers %}
-    <article class="vm"{% if mk.anchor %} id="{{ mk.anchor }}"{% endif %}>
-      <div class="vm__media">{{ m.photo(mk.img, "vm__img") }}<span class="vm__num">#{{ loop.index }}</span></div>
-      <div class="vm__body">
-        <h3>{{ mk.title }}</h3>
-        {% for t in mk.text %}<p>{{ t | safe }}</p>{% endfor %}
-        {% if mk.anchor == "pathway" %}
-        <div class="vhouse">
-          <p class="vhouse__label">The <strong>Lifepoint Pathway</strong> is our shared map for discipleship and mission.</p>
-          <ol class="vhouse__rooms">{% for r in rooms %}<li><strong>{{ r.name }}</strong><span class="script">{{ r.say }}</span></li>{% endfor %}</ol>
-          <p class="vhouse__label">Every meeting, ministry, environment and event is created to move people through this pathway. Within our "house" pathway we have <strong>four clear pathways for both Next-Gen and Adults</strong>.</p>
-          {% for p in pathways %}
-          <div class="pathway"><strong>{{ p.name }}</strong><ol>{% for st in p.steps %}<li>{{ st }}</li>{% endfor %}</ol></div>
-          {% endfor %}
-        </div>
-        {% endif %}
-        {% for s in mk.subs %}
-        <div class="vm__sub"><h4>{{ s.name }}</h4><p>{{ s.text | safe }}</p><p class="vm__goal">{{ s.measure }}</p></div>
-        {% endfor %}
-        {% if mk.measures %}
-        <div class="vm__measures"><p class="vm__mh">By 2030</p><ul>{% for g in mk.measures %}<li>{{ g }}</li>{% endfor %}</ul></div>
-        {% endif %}
-      </div>
-    </article>
+    <a class="vcard" href="#marker-{{ loop.index }}">
+      {{ m.photo(mk.img, "vcard__img") }}
+      <span class="vcard__body"><span class="vnum">{{ loop.index }}</span><strong>{{ mk.short }}</strong></span>
+    </a>
     {% endfor %}
   </div>
 </section>
 
-<section class="sec sec--dark" id="goals">
-  <div class="centre-head">
-    {{ m.eyebrow("Goals summary") }}
-    <h2>Lifepoint 2030 goals.</h2>
+{% for mk in markers %}
+<section class="sec v vmarker" id="marker-{{ loop.index }}">
+  <div class="vcol"{% if mk.anchor %} id="{{ mk.anchor }}"{% endif %}>
+    <p class="vmarker__head"><span class="vnum">{{ loop.index }}</span>Marker {{ loop.index }} of 6</p>
+    <h2>{{ mk.title }}</h2>
+    {% for t in mk.text %}<p>{{ t | safe }}</p>{% endfor %}
+
+    {% if mk.anchor == "pathway" %}
+    <h3>The Lifepoint Pathway</h3>
+    <p>The Lifepoint Pathway is our shared map for discipleship and mission.</p>
+    <ol class="vrooms">{% for r in rooms %}<li><strong>{{ r.name }}</strong><span>{{ r.say }}</span></li>{% endfor %}</ol>
+    <p>Every meeting, ministry, environment and event is created to move people through this pathway. Within our "house" pathway we have four clear pathways for both Next-Gen and Adults.</p>
+    <div class="vpaths">
+      {% for p in pathways %}
+      <div class="vpath"><strong>{{ p.name }}</strong><ol>{% for st in p.steps %}<li>{{ st }}</li>{% endfor %}</ol></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% for s in mk.subs %}
+    <h3>{{ s.name }}</h3>
+    <p>{{ s.text | safe }}</p>
+    <div class="vmeasure"><p class="vlabel">By 2030</p><p>{{ s.measure }}</p></div>
+    {% endfor %}
+
+    {% if mk.measures %}
+    <div class="vmeasure"><p class="vlabel">By 2030</p><ul>{% for g in mk.measures %}<li>{{ g }}</li>{% endfor %}</ul></div>
+    {% endif %}
   </div>
+</section>
+{% endfor %}
+
+<section class="sec sec--dark v" id="goals">
+  <div class="vcol"><h2>Lifepoint 2030 goals</h2></div>
   <div class="vgoals">
     <div class="vgoal">
-      <h3>Sunday attendance</h3>
-      <p class="vgoal__big">1200 <span>on a Sunday</span></p>
-      <ul class="vgoal__rows">{% for a in attendance %}<li><span>{{ a.name }}</span><b>{{ a.num }}</b><i style="width:{{ a.num / 8 }}%"></i></li>{% endfor %}</ul>
+      <p class="vlabel">Sunday attendance</p>
+      <p class="vpanel__num">1200</p>
+      <ul class="vrows">{% for a in attendance %}<li><span>{{ a.name }}</span><b>{{ a.num }}</b></li>{% endfor %}</ul>
     </div>
     <div class="vgoal">
-      <h3>Budget</h3>
-      <p class="vgoal__big">$2.2m <span>income per year</span></p>
-      <p>Staffing: 10 FTE (20 staff)</p>
+      <p class="vlabel">Budget</p>
+      <p class="vpanel__num">$2.2m</p>
+      <ul class="vrows"><li><span>Income per year</span><b>$2.2m</b></li><li><span>Staffing</span><b>10 FTE (20 staff)</b></li></ul>
     </div>
     <div class="vgoal">
-      <h3>Big rocks</h3>
-      <ul class="vgoal__rocks">{% for r in rocks %}<li>{{ r }}</li>{% endfor %}</ul>
+      <p class="vlabel">Big rocks</p>
+      <ol class="vrocks">{% for r in rocks %}<li>{{ r }}</li>{% endfor %}</ol>
     </div>
   </div>
 </section>
 
-<section class="sec" id="mission">
-  <div class="split-head">
-    <div>
-      {{ m.eyebrow("Our mission") }}
-      <h2>Why we exist.</h2>
-      <p class="vquote">"Lifepoint exists to see thousands of lives transformed by Jesus."</p>
-    </div>
-    <div>
-      <p>This mission statement is based on Jesus' instruction for his church to make disciples whose lives are changed by obedience to his teaching, to ultimately love God and love others as ourselves.</p>
-      <blockquote class="vverse">"Then Jesus came to them and said, 'All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptising them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.'"<cite><a href="https://www.bible.com/bible/111/MAT.28.18-20.NIV">Matthew 28:18-20 NIV</a></cite></blockquote>
-      <blockquote class="vverse">"Teacher, which is the greatest commandment in the Law?" Jesus replied: "'Love the Lord your God with all your heart and with all your soul and with all your mind.' This is the first and greatest commandment. And the second is like it: 'Love your neighbour as yourself.' All the Law and the Prophets hang on these two commandments."<cite><a href="https://www.bible.com/bible/111/MAT.22.36-40.NIV">Matthew 22:36-40 NIV</a></cite></blockquote>
-    </div>
+<section class="sec v" id="mission">
+  <div class="vcol">
+    <h2>Our mission explained</h2>
+    <p>This mission statement is based on Jesus' instruction for his church to make disciples whose lives are changed by obedience to his teaching, to ultimately love God and love others as ourselves.</p>
+    <blockquote class="vverse"><p>"Then Jesus came to them and said, 'All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptising them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.'"</p><cite><a href="https://www.bible.com/bible/111/MAT.28.18-20.NIV">Matthew 28:18-20 NIV</a></cite></blockquote>
+    <blockquote class="vverse"><p>"Teacher, which is the greatest commandment in the Law?" Jesus replied: "'Love the Lord your God with all your heart and with all your soul and with all your mind.' This is the first and greatest commandment. And the second is like it: 'Love your neighbour as yourself.' All the Law and the Prophets hang on these two commandments."</p><cite><a href="https://www.bible.com/bible/111/MAT.22.36-40.NIV">Matthew 22:36-40 NIV</a></cite></blockquote>
   </div>
 </section>
 
-<section class="sec sec--dark values" id="values">
-  {{ m.photo("v2030-hero", "beyond__bg") }}
-  <div class="centre-head">
-    {{ m.eyebrow("Our values") }}
-    <h2>What we are like.</h2>
-    <p class="lede">We are...</p>
-  </div>
-  <div class="values__grid">
+<section class="sec sec--dark v" id="values">
+  <div class="vcol"><h2>Our values</h2><p>We are...</p></div>
+  <div class="vgoals">
     {% for v in values %}
-    <div class="value">
+    <div class="vgoal">
       <h3>{{ v.name }}</h3>
-      <p class="value__line">{{ v.line }}</p>
-      <dl class="value__words">{% for w in v.words %}<dt>We are {{ w[0] }}</dt><dd>{{ w[1] }}</dd>{% endfor %}</dl>
+      <p>{{ v.line }}</p>
+      <dl class="vwords">{% for w in v.words %}<dt>{{ w[0] }}</dt><dd>{{ w[1] }}</dd>{% endfor %}</dl>
     </div>
     {% endfor %}
   </div>
 </section>
 
-<section class="sec closing">
-  {{ m.eyebrow("Lifepoint Church") }}
-  <h2>Thousands of lives<br><span class="script">transformed by Jesus.</span></h2>
-  {{ m.pill("Back to team resources", "/leaders/", "dark") }}
+<section class="sec v">
+  <div class="vcol vend">
+    <p class="vstatement">Thousands of lives transformed by Jesus.</p>
+    {{ m.pill("Back to team resources", "/leaders/", "dark") }}
+  </div>
 </section>
