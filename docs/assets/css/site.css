@@ -658,3 +658,18 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
   .hhero__loc small { grid-column: 1; }
   .hhero__loc .hhero__go { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
 }
+
+/* Home hero locations: frosted, equal width */
+.hhero__locs { display: inline-grid; grid-auto-rows: auto; gap: .7rem; }
+.hhero__locs li { display: block; }
+.hhero__loc { display: flex; width: 100%; justify-content: flex-start; background: rgba(255,255,255,.14); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.hhero__loc .hhero__go { margin-left: auto; }
+.hhero__loc strong { min-width: 8.5rem; }
+@media (hover: hover) { .hhero__loc:hover { background: rgba(61,98,112,.55); border-color: rgba(191,207,215,.9); } }
+.hhero__title { margin-bottom: 2.5rem; }
+.hhero__inner { padding-bottom: 3.5rem; }
+@media (max-width: 640px) {
+  .hhero__locs { display: grid; }
+  .hhero__loc { display: grid; }
+  .hhero__title { margin-bottom: 1.8rem; }
+}
