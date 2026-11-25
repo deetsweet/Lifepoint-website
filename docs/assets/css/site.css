@@ -701,3 +701,4 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hletter { padding-top: 0; }
 .hletter > .hletter__img { max-width: 1400px; width: 100%; aspect-ratio: 21/9; margin-bottom: 2.5rem; }
 @media (max-width: 899px) { .hletter > .hletter__img { aspect-ratio: 4/3; } }
+.hletter { padding-bottom: 2.5rem; } .hrow { padding-top: 1rem; }
