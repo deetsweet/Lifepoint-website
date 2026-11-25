@@ -25,11 +25,11 @@ heroHeader: true
     {% for l in locations %}
     <article class="campus campus--link">
       <div class="campus__media">
-        {{ m.photo(l.cardImg, "campus__img") }}
+        <a href="{{ ('/sundays/' + l.slug + '/') | url }}" tabindex="-1" aria-hidden="true">{{ m.photo(l.cardImg, "campus__img") }}</a>
         {% if l.note %}<p class="badge"><span>Launching</span> 7 Feb 2027</p>{% endif %}
       </div>
       <div class="campus__body">
-        <h3>{{ l.name }}</h3>
+        <h3><a class="campus__title" href="{{ ('/sundays/' + l.slug + '/') | url }}">{{ l.name }}</a></h3>
         <p class="campus__times">Sundays {{ l.times | join(" · ") }}</p>
         <p><strong>{{ l.venue }}</strong><br>{{ l.address }}</p>
         <div class="campus__btns">
