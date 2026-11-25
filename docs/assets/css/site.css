@@ -618,3 +618,8 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
   .hhero__loc small { font-size: .8rem; }
   .hhero__go { width: 1.8rem; height: 1.8rem; }
 }
+
+.hhero__watch { display: inline-flex; align-items: center; gap: .6rem; color: var(--white); text-decoration: none; font-family: var(--head); font-weight: 500; font-size: 1rem; }
+.hhero__play { display: inline-grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: rgba(255,255,255,.2); backdrop-filter: blur(4px); transition: background .15s, color .15s; }
+.hhero__play svg { margin-left: 2px; }
+@media (hover: hover) { .hhero__watch:hover .hhero__play { background: var(--white); color: var(--charcoal); } }
