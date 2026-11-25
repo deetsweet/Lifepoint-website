@@ -673,3 +673,5 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
   .hhero__loc { display: grid; }
   .hhero__title { margin-bottom: 1.8rem; }
 }
+@media (min-width: 641px) { .hhero__locs { width: max-content; justify-self: start; } .hhero__loc { gap: 1.2rem; } .hhero__loc .hhero__go { margin-left: 1rem; } }
+.hhero__foot { gap: 2rem; }
