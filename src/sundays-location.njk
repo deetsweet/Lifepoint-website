@@ -130,7 +130,7 @@ beyond:
     <ul class="ticks">
       <li>Someone to meet you at the door</li>
       <li>Help getting your kids settled</li>
-      <li>A coffee and a friendly face</li>
+      <li>{% if loc.slug == "rothwell" %}A free barista coffee on us{% else %}A coffee and a friendly face{% endif %}</li>
     </ul>
     {{ m.pill("Plan your visit", site.planVisit, "dark") }}
   </div>
