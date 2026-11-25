@@ -561,3 +561,4 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .campus .badge { color: var(--white) !important; }
 .campus .badge span { color: var(--white); }
 .sec--dark .campus p.badge { color: var(--white) !important; }
+.campus--link .campus__main { position: static; } .campus--link .campus__main::after { z-index: 1; } .campus--link .campus__main .pill__arrow { position: static; }
