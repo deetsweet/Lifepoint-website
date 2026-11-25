@@ -696,3 +696,8 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .htile__btns { justify-content: flex-start; margin-top: auto !important; gap: .4rem; }
 .htile .pill, .hloc__foot .pill { padding: .45rem 1.1rem; font-size: .9rem; }
 .htile .pill:hover, .htile .pill:focus-visible { background: var(--deep-blue); border-color: var(--deep-blue); color: var(--white); }
+/* Pastor letter sits straight under the cards, photo lines up with the card row */
+.hloc { padding-bottom: 1rem; }
+.hletter { padding-top: 0; }
+.hletter > .hletter__img { max-width: 1400px; width: 100%; aspect-ratio: 21/9; margin-bottom: 2.5rem; }
+@media (max-width: 899px) { .hletter > .hletter__img { aspect-ratio: 4/3; } }
