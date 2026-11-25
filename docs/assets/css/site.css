@@ -560,3 +560,4 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .sec--dark .campus a.campus__main:hover { background: var(--charcoal); }
 .campus .badge { color: var(--white) !important; }
 .campus .badge span { color: var(--white); }
+.sec--dark .campus p.badge { color: var(--white) !important; }
