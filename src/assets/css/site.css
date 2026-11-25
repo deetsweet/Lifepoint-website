@@ -638,3 +638,23 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 @media (min-width: 900px) { .hloc__card { flex: 1 1 0; min-height: 17rem; } }
 @media (hover: hover) { .hloc__card:hover .pill { background: var(--deep-blue); color: var(--white); } }
 .hloc__card::after { background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.45) 50%, rgba(0,0,0,.8)); } .hloc__sub { opacity: 1; }
+
+/* Home cards taller */
+.hloc__card { min-height: 19rem; }
+@media (min-width: 900px) { .hloc__card { min-height: 21rem; } }
+
+/* Home hero: outline around each whole location */
+.hhero__loc { border: 1.5px solid rgba(255,255,255,.8); border-radius: 999px; padding: .5rem .55rem .5rem 1.2rem; background: transparent; gap: .9rem; transition: background .15s; }
+.hhero__loc .times { gap: 0; }
+.hhero__loc .times span { border: 0; padding: 0; font-size: .95rem; background: none !important; color: var(--white) !important; }
+.hhero__loc .times span + span::before { content: "·"; margin: 0 .5rem; opacity: .7; }
+.hhero__loc strong { min-width: 0; }
+.hhero__loc small { opacity: .85; }
+@media (hover: hover) { .hhero__loc:hover { background: rgba(255,255,255,.15); } }
+@media (max-width: 640px) {
+  .hhero__loc { flex-wrap: nowrap; border-radius: 18px; padding: .6rem .6rem .6rem 1rem; display: grid; grid-template-columns: 1fr auto; gap: .15rem .6rem; }
+  .hhero__loc strong { grid-column: 1; }
+  .hhero__loc .times { grid-column: 1; }
+  .hhero__loc small { grid-column: 1; }
+  .hhero__loc .hhero__go { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+}
