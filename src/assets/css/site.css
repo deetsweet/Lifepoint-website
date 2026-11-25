@@ -555,3 +555,8 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .campus__main::after { content: ""; position: absolute; inset: 0; }
 .campus__btns { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; margin-top: 1.2rem; }
 .campus__dir { position: relative; z-index: 2; font-family: var(--head); font-weight: 500; color: inherit; }
+.sec--dark .campus a.campus__main { color: var(--white); }
+.campus__main .pill__arrow { background: var(--white); color: var(--deep-blue); }
+.sec--dark .campus a.campus__main:hover { background: var(--charcoal); }
+.campus .badge { color: var(--white) !important; }
+.campus .badge span { color: var(--white); }
