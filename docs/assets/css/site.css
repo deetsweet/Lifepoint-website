@@ -573,3 +573,13 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .campuses--pick .campus__body p { margin-bottom: .5rem; }
 .campuses--pick .campus__btns { margin-top: .6rem; }
 .hero--simple + .locpick { margin-top: 0; }
+
+.hero--pick .hero__inner { padding: 6rem 1.25rem 1.5rem; }
+.hero--pick .hero__title { font-size: clamp(2rem, 7vw, 3.5rem); margin-bottom: .4rem; }
+@media (min-width: 768px) { .hero--pick .hero__inner { padding: 7.5rem 2rem 2.5rem; } }
+@media (max-width: 767px) {
+  .campuses--pick .campus__img { aspect-ratio: 3/1; }
+  .campuses--pick .campus__body p:not(.campus__times) { font-size: .92rem; }
+}
+.pickhelp { text-align: center; padding-top: 3rem; padding-bottom: 3rem; }
+.pickhelp h2 { font-size: clamp(1.5rem, 4vw, 2rem); }

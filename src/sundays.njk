@@ -7,7 +7,7 @@ heroHeader: true
 ---
 {% import "macros.njk" as m with context %}
 
-<section class="hero hero--simple">
+<section class="hero hero--simple hero--pick">
   {{ m.photo("sundays-hero", "hero__img", true) }}
   <div class="hero__inner">
     <h1 class="hero__title">Sundays</h1>
@@ -39,9 +39,9 @@ heroHeader: true
   </div>
 </section>
 
-<section class="sec closing">
-  {{ m.eyebrow("Not sure which?") }}
-  <h2>We'll help you <span class="script">find your Sunday.</span></h2>
+<section class="sec pickhelp">
+  <h2>Not sure which?</h2>
+  <p>Let us know you're coming and we'll help you find your Sunday.</p>
   {{ m.pill("Plan your visit", site.planVisit, "dark") }}
 </section>
 
