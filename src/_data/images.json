@@ -615,5 +615,41 @@
   "staff-dan": {
     "file": "lp/staff-dan.jpg",
     "alt": "Dan and Steph Sweetman"
+  },
+  "cw-hero": {
+    "file": "",
+    "alt": "Caboolture West Sunday photo coming soon"
+  },
+  "cw-step-arrive": {
+    "file": "",
+    "alt": "Arriving at Caboolture West, photo coming soon"
+  },
+  "cw-step-kids": {
+    "file": "",
+    "alt": "Lifepoint Kids check-in, photo coming soon"
+  },
+  "cw-step-gather": {
+    "file": "",
+    "alt": "Sunday at Caboolture West, photo coming soon"
+  },
+  "cw-step-coffee": {
+    "file": "",
+    "alt": "Coffee after church, photo coming soon"
+  },
+  "cw-kids-1": {
+    "file": "",
+    "alt": "Lifepoint Kids at Caboolture West, photo coming soon"
+  },
+  "cw-kids-2": {
+    "file": "",
+    "alt": "Lifepoint Kids at Caboolture West, photo coming soon"
+  },
+  "cw-kids-3": {
+    "file": "",
+    "alt": "Lifepoint Kids at Caboolture West, photo coming soon"
+  },
+  "cw-plan": {
+    "file": "",
+    "alt": "Caboolture West welcome team, photo coming soon"
   }
 }

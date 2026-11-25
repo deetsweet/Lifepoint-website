@@ -535,3 +535,16 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
   .vrooms { grid-template-columns: repeat(4, 1fr); }
   .vpath { grid-template-columns: 9rem 1fr; align-items: baseline; }
 }
+
+/* Locations */
+.locwhere { display: grid; gap: 1.5rem; align-items: center; }
+.locwhere h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+.locwhere .links { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.locwhere__other { display: grid; gap: .3rem; background: var(--linen); color: var(--charcoal); border-radius: var(--radius); padding: 1.4rem 1.6rem; text-decoration: none; font-family: var(--head); font-size: 1.2rem; }
+.locwhere__other > span { font-size: .95rem; color: var(--muted); }
+.locwhere__other:hover { background: var(--white); }
+@media (min-width: 800px) { .locwhere { grid-template-columns: 1.4fr 1fr; } }
+.hhero__locs { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.hhero__locs li { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; }
+.hhero__locs strong { font-family: var(--head); font-weight: 600; min-width: 9.5rem; }
+.hhero__locs small { opacity: .85; font-size: .85rem; }

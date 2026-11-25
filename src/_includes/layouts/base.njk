@@ -56,7 +56,7 @@
         <a class="pill pill--light" href="{{ '/sundays/' | url }}">Plan your visit <span class="pill__arrow" aria-hidden="true">→</span></a>
       </div>
       <div class="ftr__info">
-        <p><strong>Sundays · {{ site.times }}</strong><br>{{ site.venueShort }}</p>
+        {% for l in locations %}<p><strong>{{ l.name }} · Sundays {{ l.timesText }}</strong><br>{{ l.venue }}, {{ l.address }}{% if l.note %}<br>From 7 February 2027{% endif %}</p>{% endfor %}
         <p><strong>Get in touch</strong><br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="tel:{{ site.phoneLink }}">{{ site.phone }}</a></p>
         <p><strong>{{ site.office.label }}</strong><br>{% for line in site.office.lines %}{{ line }}<br>{% endfor %}<a href="{{ site.office.map }}">Get directions</a></p>
       </div>

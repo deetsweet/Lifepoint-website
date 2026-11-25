@@ -1,96 +1,314 @@
 {
   "name": "Lifepoint Church",
   "slogan": "Lives transformed by Jesus.",
-  "times": "8.30am, 10am & 5pm",
-  "timesList": ["8.30am", "10am", "5pm"],
+  "times": "Rothwell 8.30am, 10am & 5pm · Caboolture West 9.30am",
+  "timesList": [
+    "8.30am",
+    "10am",
+    "5pm"
+  ],
   "venueShort": "Grace Lutheran College Chapel · Mewes Road, Rothwell",
   "email": "hello@lifepoint.org.au",
   "phone": "0488 854 336",
   "phoneLink": "+61488854336",
   "office": {
     "label": "Office & Community Hub",
-    "lines": ["1 McKillop Street", "Rothwell QLD"],
+    "lines": [
+      "1 McKillop Street",
+      "Rothwell QLD"
+    ],
     "map": "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9"
   },
   "planVisit": "https://www.lifepoint.org.au/form/visit",
   "kidsRego": "https://lifepointchurchrothwell.churchsuite.com/-/forms/wsa5alxz",
   "social": [
-    { "name": "Instagram", "url": "https://www.instagram.com/lifepointrothwell/" },
-    { "name": "Facebook", "url": "https://www.facebook.com/LifepointRothwell" },
-    { "name": "YouTube", "url": "https://www.youtube.com/channel/UCMo91_MfXY6qdhvK3SArtGA" }
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/lifepointrothwell/"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/LifepointRothwell"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/channel/UCMo91_MfXY6qdhvK3SArtGA"
+    }
   ],
   "quickNav": [
-    { "label": "Sundays", "url": "/sundays/" },
-    { "label": "Alpha", "url": "/alpha/" },
-    { "label": "Groups", "url": "/small-groups/" },
-    { "label": "Connect", "url": "/next-steps/" },
-    { "label": "Events", "url": "/events/" },
-    { "label": "Join a Team", "url": "/teams/" }
+    {
+      "label": "Sundays",
+      "url": "/sundays/"
+    },
+    {
+      "label": "Alpha",
+      "url": "/alpha/"
+    },
+    {
+      "label": "Groups",
+      "url": "/small-groups/"
+    },
+    {
+      "label": "Connect",
+      "url": "/next-steps/"
+    },
+    {
+      "label": "Events",
+      "url": "/events/"
+    },
+    {
+      "label": "Join a Team",
+      "url": "/teams/"
+    }
   ],
   "menu": [
-    { "label": "Sundays", "url": "/sundays/" },
-    { "label": "About", "url": "/about/", "children": [
-      { "label": "Our Church", "url": "/about/" },
-      { "label": "Our Beliefs", "url": "/our-beliefs/" },
-      { "label": "Our Team", "url": "/our-team/" },
-      { "label": "Community Hub Project", "url": "/lifepoint-community-hub/" },
-      { "label": "Caboolture West", "url": "/waraba/" }
-    ]},
-    { "label": "Connect", "url": "/ministries/", "children": [
-      { "label": "Alpha", "url": "/alpha/" },
-      { "label": "Groups", "url": "/small-groups/" },
-      { "label": "Kids", "url": "/kids/" },
-      { "label": "Youth", "url": "/youth/" },
-      { "label": "Young Adults", "url": "/youngadults/" },
-      { "label": "Prayer", "url": "/prayer/" },
-      { "label": "Care", "url": "/care/" },
-      { "label": "All Ministries", "url": "/ministries/" }
-    ]},
-    { "label": "Next Steps", "url": "/next-steps/", "children": [
-      { "label": "Take a Step", "url": "/next-steps/" },
-      { "label": "Christian Foundations", "url": "/christian-foundations/" },
-      { "label": "Baptism", "url": "/baptism/" },
-      { "label": "Join a Team", "url": "/join-a-team/" },
-      { "label": "New Testament 26", "url": "/nt26/" }
-    ]},
-    { "label": "Watch", "url": "/watch--listen/", "children": [
-      { "label": "Last Sunday", "url": "/last-sunday/" },
-      { "label": "Past Messages", "url": "/watch--listen/" }
-    ]},
-    { "label": "What's On", "url": "/events/" },
-    { "label": "Contact Us", "url": "/connect/" },
-    { "label": "Give", "url": "/give/" }
+    {
+      "label": "Sundays",
+      "url": "/sundays/",
+      "children": [
+        {
+          "label": "Sundays at Rothwell",
+          "url": "/sundays/rothwell/"
+        },
+        {
+          "label": "Sundays at Caboolture West",
+          "url": "/sundays/caboolture-west/"
+        },
+        {
+          "label": "All locations",
+          "url": "/sundays/"
+        }
+      ]
+    },
+    {
+      "label": "About",
+      "url": "/about/",
+      "children": [
+        {
+          "label": "Our Church",
+          "url": "/about/"
+        },
+        {
+          "label": "Our Beliefs",
+          "url": "/our-beliefs/"
+        },
+        {
+          "label": "Our Team",
+          "url": "/our-team/"
+        },
+        {
+          "label": "Community Hub Project",
+          "url": "/lifepoint-community-hub/"
+        },
+        {
+          "label": "Caboolture West Story",
+          "url": "/waraba/"
+        }
+      ]
+    },
+    {
+      "label": "Connect",
+      "url": "/ministries/",
+      "children": [
+        {
+          "label": "Alpha",
+          "url": "/alpha/"
+        },
+        {
+          "label": "Groups",
+          "url": "/small-groups/"
+        },
+        {
+          "label": "Kids",
+          "url": "/kids/"
+        },
+        {
+          "label": "Youth",
+          "url": "/youth/"
+        },
+        {
+          "label": "Young Adults",
+          "url": "/youngadults/"
+        },
+        {
+          "label": "Prayer",
+          "url": "/prayer/"
+        },
+        {
+          "label": "Care",
+          "url": "/care/"
+        },
+        {
+          "label": "All Ministries",
+          "url": "/ministries/"
+        }
+      ]
+    },
+    {
+      "label": "Next Steps",
+      "url": "/next-steps/",
+      "children": [
+        {
+          "label": "Take a Step",
+          "url": "/next-steps/"
+        },
+        {
+          "label": "Christian Foundations",
+          "url": "/christian-foundations/"
+        },
+        {
+          "label": "Baptism",
+          "url": "/baptism/"
+        },
+        {
+          "label": "Join a Team",
+          "url": "/join-a-team/"
+        },
+        {
+          "label": "New Testament 26",
+          "url": "/nt26/"
+        }
+      ]
+    },
+    {
+      "label": "Watch",
+      "url": "/watch--listen/",
+      "children": [
+        {
+          "label": "Last Sunday",
+          "url": "/last-sunday/"
+        },
+        {
+          "label": "Past Messages",
+          "url": "/watch--listen/"
+        }
+      ]
+    },
+    {
+      "label": "What's On",
+      "url": "/events/"
+    },
+    {
+      "label": "Contact Us",
+      "url": "/connect/"
+    },
+    {
+      "label": "Give",
+      "url": "/give/"
+    }
   ],
   "footer": [
-    { "heading": "Visit", "links": [
-      { "label": "Sundays", "url": "/sundays/" },
-      { "label": "Kids", "url": "/kids/" },
-      { "label": "Youth", "url": "/youth/" },
-      { "label": "Young adults", "url": "/youngadults/" },
-      { "label": "What's on", "url": "/events/" }
-    ]},
-    { "heading": "Get connected", "links": [
-      { "label": "Alpha", "url": "/alpha/" },
-      { "label": "Groups", "url": "/small-groups/" },
-      { "label": "Join a team", "url": "/join-a-team/" },
-      { "label": "Prayer", "url": "/prayer/" },
-      { "label": "Next steps", "url": "/next-steps/" },
-      { "label": "Baptism", "url": "/baptism/" }
-    ]},
-    { "heading": "About Lifepoint", "links": [
-      { "label": "Our church", "url": "/about/" },
-      { "label": "Our beliefs", "url": "/our-beliefs/" },
-      { "label": "Our team", "url": "/our-team/" },
-      { "label": "Community Hub", "url": "/lifepoint-community-hub/" },
-      { "label": "Caboolture West", "url": "/waraba/" },
-      { "label": "Contact", "url": "/connect/" }
-    ]},
-    { "heading": "Resources", "links": [
-      { "label": "Watch & listen", "url": "/watch--listen/" },
-      { "label": "Team resources", "url": "/leaders/" },
-      { "label": "Giving", "url": "/give/" },
-      { "label": "Care & support", "url": "/care/" },
-      { "label": "Christian Foundations", "url": "/christian-foundations/" }
-    ]}
+    {
+      "heading": "Visit",
+      "links": [
+        {
+          "label": "Sundays at Rothwell",
+          "url": "/sundays/rothwell/"
+        },
+        {
+          "label": "Sundays at Caboolture West",
+          "url": "/sundays/caboolture-west/"
+        },
+        {
+          "label": "Kids",
+          "url": "/kids/"
+        },
+        {
+          "label": "Youth",
+          "url": "/youth/"
+        },
+        {
+          "label": "Young adults",
+          "url": "/youngadults/"
+        },
+        {
+          "label": "What's on",
+          "url": "/events/"
+        }
+      ]
+    },
+    {
+      "heading": "Get connected",
+      "links": [
+        {
+          "label": "Alpha",
+          "url": "/alpha/"
+        },
+        {
+          "label": "Groups",
+          "url": "/small-groups/"
+        },
+        {
+          "label": "Join a team",
+          "url": "/join-a-team/"
+        },
+        {
+          "label": "Prayer",
+          "url": "/prayer/"
+        },
+        {
+          "label": "Next steps",
+          "url": "/next-steps/"
+        },
+        {
+          "label": "Baptism",
+          "url": "/baptism/"
+        }
+      ]
+    },
+    {
+      "heading": "About Lifepoint",
+      "links": [
+        {
+          "label": "Our church",
+          "url": "/about/"
+        },
+        {
+          "label": "Our beliefs",
+          "url": "/our-beliefs/"
+        },
+        {
+          "label": "Our team",
+          "url": "/our-team/"
+        },
+        {
+          "label": "Community Hub",
+          "url": "/lifepoint-community-hub/"
+        },
+        {
+          "label": "Caboolture West",
+          "url": "/waraba/"
+        },
+        {
+          "label": "Contact",
+          "url": "/connect/"
+        }
+      ]
+    },
+    {
+      "heading": "Resources",
+      "links": [
+        {
+          "label": "Watch & listen",
+          "url": "/watch--listen/"
+        },
+        {
+          "label": "Team resources",
+          "url": "/leaders/"
+        },
+        {
+          "label": "Giving",
+          "url": "/give/"
+        },
+        {
+          "label": "Care & support",
+          "url": "/care/"
+        },
+        {
+          "label": "Christian Foundations",
+          "url": "/christian-foundations/"
+        }
+      ]
+    }
   ]
 }

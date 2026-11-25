@@ -1,0 +1,214 @@
+[
+ {
+  "slug": "rothwell",
+  "name": "Rothwell",
+  "short": "Rothwell",
+  "times": [
+   "8.30am",
+   "10am",
+   "5pm"
+  ],
+  "timesText": "8.30am, 10am & 5pm",
+  "venue": "Grace Lutheran College Chapel",
+  "address": "Cnr Mewes Rd & Anzac Ave, Rothwell",
+  "maps": "https://maps.app.goo.gl/oXXmhAjeQpa4oXQ79",
+  "apple": "https://maps.apple.com/?address=Anzac%20Ave,%20Rothwell%20QLD%204022,%20Australia&auid=14105778176731285847&ll=-27.218671,153.057131&q=Grace%20Lutheran%20College%20-%20Rothwell%20Campus",
+  "heroImg": "sundays-hero",
+  "cardImg": "campus-rothwell",
+  "intro": "Whether church is familiar or brand new to you, there's a seat saved for you. Come as you are.",
+  "note": "",
+  "ticker": [
+   "Come as you are",
+   "Free barista coffee for first timers",
+   "Kids Crew every term Sunday",
+   "65 minutes",
+   "All ages welcome",
+   "Grace Lutheran College, Rothwell"
+  ],
+  "steps": [
+   {
+    "title": "Arrive",
+    "img": "sundays-step-arrive",
+    "text": "Aim for about 10 minutes early. Park free beside the Chapel and look for our welcome team at the door."
+   },
+   {
+    "title": "If you have kids",
+    "img": "sundays-step-kids",
+    "text": "Our Next Gen team will get your children checked in and settled, then show you where to pick them up."
+   },
+   {
+    "title": "Gather",
+    "img": "sundays-step-gather",
+    "text": "We sing, pray and hear a message from the Bible. The whole service runs for about 65 minutes."
+   },
+   {
+    "title": "Stay for a coffee",
+    "img": "sundays-step-coffee",
+    "text": "If it's your first time, your barista coffee is on us. It's the easiest way to meet a few people."
+   }
+  ],
+  "welcome": {
+   "img": "sundays-dan",
+   "from": "A welcome from Dan",
+   "quote": "\"You don't need to know the songs, own a Bible or have it all worked out. Just come. We'd love to meet you.\"",
+   "text": "Walking into a church for the first time can feel like a big step. I get that. Every week we have people with us who are just checking things out, people coming back after a long break, and people who've followed Jesus for decades.",
+   "sig": "Dan Sweetman",
+   "role": "Senior Pastor"
+  },
+  "kids": {
+   "groups": [
+    [
+     "Tots",
+     "18 months to Kindy age"
+    ],
+    [
+     "Kids Crew Jnr",
+     "Kindy and Prep"
+    ],
+    [
+     "Kids Crew",
+     "Years 1 to 6"
+    ]
+   ],
+   "points": [
+    "Runs at the 8.30am and 10am services during school terms",
+    "In school holidays kids join their families in the service",
+    "No kids program at 5pm, so kids stay with you",
+    "Every leader holds a Blue Card and completes child-safe training"
+   ],
+   "imgs": [
+    "sundays-kids-1",
+    "sundays-kids-2",
+    "sundays-kids-3"
+   ]
+  },
+  "practical": [
+   {
+    "title": "Free parking",
+    "text": "Right beside the Chapel."
+   },
+   {
+    "title": "Accessible site",
+    "text": "Our site is accessible, with disability parking available."
+   },
+   {
+    "title": "Parents' room",
+    "text": "A quiet space if you need it with your little one."
+   },
+   {
+    "title": "No dress code",
+    "text": "Wear whatever you're comfortable in. Most people dress like they're heading to the shops."
+   }
+  ],
+  "faqExtra": [
+   {
+    "q": "Morning or 5pm?",
+    "a": "They're very similar, with the same message and music. The main difference is that kids programs only run in the morning."
+   },
+   {
+    "q": "How do I find the building?",
+    "a": "We meet in the Chapel at Grace Lutheran College, Rothwell. Turn off Anzac Ave into Mewes Rd. The Chapel is the large building first on your left, so turn into the first carpark and you'll see it. There are signs on Sundays too."
+   }
+  ],
+  "kidsFaq": "At the 8.30am and 10am services we run Tots, Kids Crew Jnr and Kids Crew during school terms. In school holidays kids join their families in the service.",
+  "planImg": "sundays-plan-visit"
+ },
+ {
+  "slug": "caboolture-west",
+  "name": "Caboolture West",
+  "short": "Caboolture West",
+  "times": [
+   "9.30am"
+  ],
+  "timesText": "9.30am",
+  "venue": "Grace Lutheran College, Caboolture Campus",
+  "address": "129 Toohey St, Caboolture QLD 4510",
+  "maps": "https://www.google.com/maps/search/?api=1&query=129+Toohey+St+Caboolture+QLD+4510",
+  "apple": "https://maps.apple.com/?address=129%20Toohey%20St,%20Caboolture%20QLD%204510,%20Australia",
+  "heroImg": "cw-hero",
+  "cardImg": "home-caboolture-west",
+  "intro": "A new Lifepoint church for Caboolture West and the growing Waraba community. Come as you are.",
+  "note": "Launching Sunday 7 February 2027",
+  "ticker": [
+   "Come as you are",
+   "Launching 7 February 2027",
+   "Sundays at 9.30am",
+   "Lifepoint Kids",
+   "All ages welcome",
+   "Grace Lutheran College, Caboolture"
+  ],
+  "steps": [
+   {
+    "title": "Arrive",
+    "img": "cw-step-arrive",
+    "text": "Aim for about 10 minutes early. Look for the Lifepoint signs and our welcome team at the door."
+   },
+   {
+    "title": "If you have kids",
+    "img": "cw-step-kids",
+    "text": "Our Lifepoint Kids team will get your children checked in and settled, then show you where to pick them up."
+   },
+   {
+    "title": "Gather",
+    "img": "cw-step-gather",
+    "text": "We sing, pray and hear a message from the Bible. The whole service runs for about 65 minutes."
+   },
+   {
+    "title": "Stay for a coffee",
+    "img": "cw-step-coffee",
+    "text": "Stick around after the service for a coffee. It's the easiest way to meet a few people."
+   }
+  ],
+  "welcome": {
+   "img": "lp-our-team-07",
+   "from": "A welcome from Breyton",
+   "quote": "\"We'd love to meet you. Come as you are and bring your questions.\"",
+   "text": "Georgie and I live in the area, and we love this community. Thousands of families are moving into Caboolture West, and most arrive not knowing anyone. We want Lifepoint to be a place where you find friendship, hope and a real relationship with Jesus.",
+   "sig": "Breyton Mann",
+   "role": "Pastor, Lifepoint Caboolture West"
+  },
+  "kids": {
+   "groups": [],
+   "points": [
+    "Lifepoint Kids runs during the 9.30am service",
+    "Every leader holds a Blue Card and completes child-safe training",
+    "Pre-register online to skip the forms on the day"
+   ],
+   "imgs": [
+    "cw-kids-1",
+    "cw-kids-2",
+    "cw-kids-3"
+   ]
+  },
+  "practical": [
+   {
+    "title": "Parking",
+    "text": "Park at the college and follow the Lifepoint signs."
+   },
+   {
+    "title": "Kids welcome",
+    "text": "Lifepoint Kids runs during the service, and little ones are always welcome in the room."
+   },
+   {
+    "title": "No dress code",
+    "text": "Wear whatever you're comfortable in. Most people dress like they're heading to the shops."
+   },
+   {
+    "title": "New and growing",
+    "text": "We're a brand new church, so you're joining us near the start."
+   }
+  ],
+  "faqExtra": [
+   {
+    "q": "When does it start?",
+    "a": "Our first service is Sunday 7 February 2027, and we meet every Sunday at 9.30am from then on."
+   },
+   {
+    "q": "How do I find the building?",
+    "a": "We meet at Grace Lutheran College, Caboolture Campus, 129 Toohey St, Caboolture. Look for the Lifepoint signs on Sunday mornings."
+   }
+  ],
+  "kidsFaq": "Lifepoint Kids runs during the 9.30am service.",
+  "planImg": "cw-plan"
+ }
+]
