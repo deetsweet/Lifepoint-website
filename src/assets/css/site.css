@@ -602,6 +602,19 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hhero__loc .times { display: flex; gap: .5rem; }
 .hhero__loc .times span { border: 1px solid rgba(255,255,255,.75); border-radius: 999px; padding: .4rem 1rem; font-family: var(--head); font-weight: 600; font-size: .92rem; transition: background .15s, color .15s; }
 .hhero__go { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--white); color: var(--charcoal); font-size: .95rem; transition: transform .15s; }
-.hhero__loc:hover .times span { background: var(--white); color: var(--charcoal); }
-.hhero__loc:hover .hhero__go { transform: translateX(3px); }
-.hhero__loc:hover strong { text-decoration: underline; }
+
+.hhero__loc { flex-wrap: nowrap; }
+.hhero__loc .times span { white-space: nowrap; }
+@media (hover: hover) {
+  .hhero__loc:hover .times span { background: var(--white); color: var(--charcoal); }
+  .hhero__loc:hover .hhero__go { transform: translateX(3px); }
+}
+@media (max-width: 640px) {
+  .hhero__locs { gap: 1rem; }
+  .hhero__loc { flex-wrap: wrap; gap: .45rem .5rem; padding: 0; }
+  .hhero__loc strong { flex-basis: 100%; min-width: 0; font-size: 1.05rem; }
+  .hhero__loc .times { gap: .4rem; }
+  .hhero__loc .times span { padding: .3rem .75rem; font-size: .85rem; }
+  .hhero__loc small { font-size: .8rem; }
+  .hhero__go { width: 1.8rem; height: 1.8rem; }
+}
