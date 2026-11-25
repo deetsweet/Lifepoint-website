@@ -564,3 +564,12 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 
 .sec--dark .campus a.campus__title { text-decoration: none; color: var(--charcoal); }
 .campus--link:hover .campus__title { text-decoration: underline; }
+
+.locpick { padding-top: 1.5rem; padding-bottom: 2.5rem; }
+.campuses--pick { gap: 1rem; }
+.campuses--pick .campus__img { aspect-ratio: 21/9; }
+.campuses--pick .campus__body { padding: 1.1rem 1.3rem 1.3rem; }
+.campuses--pick .campus__body h3 { font-size: 1.5rem; }
+.campuses--pick .campus__body p { margin-bottom: .5rem; }
+.campuses--pick .campus__btns { margin-top: .6rem; }
+.hero--simple + .locpick { margin-top: 0; }
