@@ -595,3 +595,13 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .locpick a.campus__main .pill__arrow { background: var(--charcoal); color: var(--white); }
 .locpick .campus--link:hover a.campus__main { background: var(--white); color: var(--charcoal); }
 .locpick .campus__dir { color: var(--white); }
+
+/* Home hero locations: each row is a link */
+.hhero__locs li { display: block; }
+.hhero__loc { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; color: var(--white); text-decoration: none; padding: .45rem .6rem .45rem 0; border-radius: 999px; }
+.hhero__loc .times { display: flex; gap: .5rem; }
+.hhero__loc .times span { border: 1px solid rgba(255,255,255,.75); border-radius: 999px; padding: .4rem 1rem; font-family: var(--head); font-weight: 600; font-size: .92rem; transition: background .15s, color .15s; }
+.hhero__go { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--white); color: var(--charcoal); font-size: .95rem; transition: transform .15s; }
+.hhero__loc:hover .times span { background: var(--white); color: var(--charcoal); }
+.hhero__loc:hover .hhero__go { transform: translateX(3px); }
+.hhero__loc:hover strong { text-decoration: underline; }

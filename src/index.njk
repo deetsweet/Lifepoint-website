@@ -29,11 +29,10 @@ help:
     <h1 class="hhero__title">Welcome to Lifepoint <span class="script">your place to belong</span></h1>
     <div class="hhero__foot">
       <ul class="hhero__locs">
-        {% for l in locations %}<li><strong>{{ l.name }}</strong><ul class="times">{% for t in l.times %}<li>{{ t }}</li>{% endfor %}</ul>{% if l.note %}<small>From 7 Feb 2027</small>{% endif %}</li>{% endfor %}
+        {% for l in locations %}<li><a class="hhero__loc" href="{{ ('/sundays/' + l.slug + '/') | url }}"><strong>{{ l.name }}</strong><span class="times">{% for t in l.times %}<span>{{ t }}</span>{% endfor %}</span>{% if l.note %}<small>From 7 Feb 2027</small>{% endif %}<span class="hhero__go" aria-hidden="true">→</span></a></li>{% endfor %}
       </ul>
       <div class="btns">
-        <a class="pill pill--blue" href="{{ '/sundays/' | url }}">Sundays</a>
-        <a class="hhero__sm" href="{{ '/sundays/#locations' | url }}">Get directions</a>
+        <a class="pill pill--blue" href="{{ '/sundays/' | url }}">Plan your Sunday</a>
         <a class="hhero__sm" href="{{ '/watch--listen/' | url }}">Watch online</a>
       </div>
     </div>
