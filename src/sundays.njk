@@ -17,20 +17,20 @@ heroHeader: true
   </div>
 </section>
 
-<section class="sec sec--dark locpick" id="locations">
+<section class="sec sec--linen locpick" id="locations">
   <div class="campuses campuses--pick">
     {% for l in locations %}
-    <article class="campus campus--link">
+    <article class="campus campus--link campus--{{ l.slug }}">
       <div class="campus__media">
         <a href="{{ ('/sundays/' + l.slug + '/') | url }}" tabindex="-1" aria-hidden="true">{{ m.photo(l.cardImg, "campus__img") }}</a>
         {% if l.note %}<p class="badge"><span>Launching</span> 7 Feb 2027</p>{% endif %}
       </div>
       <div class="campus__body">
-        <h3><a class="campus__title" href="{{ ('/sundays/' + l.slug + '/') | url }}">{{ l.name }}</a></h3>
+        <h3><a class="campus__title" href="{{ ('/sundays/' + l.slug + '/') | url }}">Lifepoint {{ l.name }}</a></h3>
         <p class="campus__times">Sundays {{ l.times | join(" · ") }}</p>
         <p><strong>{{ l.venue }}</strong><br>{{ l.address }}</p>
         <div class="campus__btns">
-          <a class="pill pill--blue campus__main" href="{{ ('/sundays/' + l.slug + '/') | url }}">Sundays at {{ l.name }} <span class="pill__arrow" aria-hidden="true">→</span></a>
+          <a class="pill campus__main" href="{{ ('/sundays/' + l.slug + '/') | url }}">Sundays at {{ l.name }} <span class="pill__arrow" aria-hidden="true">→</span></a>
           <a class="campus__dir" href="{{ l.maps }}">Get directions</a>
         </div>
       </div>

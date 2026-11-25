@@ -583,3 +583,15 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 }
 .pickhelp { text-align: center; padding-top: 3rem; padding-bottom: 3rem; }
 .pickhelp h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+
+/* Location picker colours */
+.locpick .campus--rothwell { background: var(--deep-blue); color: var(--white); }
+.locpick .campus--caboolture-west { background: var(--sage); color: var(--white); }
+.locpick .campus a.campus__title { color: var(--white); text-decoration: none; }
+.locpick .campus__body h3 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); margin-bottom: .3rem; }
+.locpick .campus__times { color: var(--white); }
+.locpick .campus p { color: var(--white); }
+.locpick a.campus__main { background: var(--linen); color: var(--charcoal); }
+.locpick a.campus__main .pill__arrow { background: var(--charcoal); color: var(--white); }
+.locpick .campus--link:hover a.campus__main { background: var(--white); color: var(--charcoal); }
+.locpick .campus__dir { color: var(--white); }
