@@ -23,7 +23,7 @@ heroHeader: true
   </div>
   <div class="campuses">
     {% for l in locations %}
-    <article class="campus">
+    <article class="campus campus--link">
       <div class="campus__media">
         {{ m.photo(l.cardImg, "campus__img") }}
         {% if l.note %}<p class="badge"><span>Launching</span> 7 Feb 2027</p>{% endif %}
@@ -32,10 +32,10 @@ heroHeader: true
         <h3>{{ l.name }}</h3>
         <p class="campus__times">Sundays {{ l.times | join(" · ") }}</p>
         <p><strong>{{ l.venue }}</strong><br>{{ l.address }}</p>
-        <p class="links">
-          <a class="arrow-link" href="{{ ('/sundays/' + l.slug + '/') | url }}">Sundays at {{ l.name }} <span aria-hidden="true">→</span></a>
-          <a class="arrow-link" href="{{ l.maps }}">Get directions <span aria-hidden="true">→</span></a>
-        </p>
+        <div class="campus__btns">
+          <a class="pill pill--blue campus__main" href="{{ ('/sundays/' + l.slug + '/') | url }}">Sundays at {{ l.name }} <span class="pill__arrow" aria-hidden="true">→</span></a>
+          <a class="campus__dir" href="{{ l.maps }}">Get directions</a>
+        </div>
       </div>
     </article>
     {% endfor %}

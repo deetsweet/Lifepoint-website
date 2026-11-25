@@ -548,3 +548,10 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hhero__locs li { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; }
 .hhero__locs strong { font-family: var(--head); font-weight: 600; min-width: 9.5rem; }
 .hhero__locs small { opacity: .85; font-size: .85rem; }
+
+.campus--link { position: relative; cursor: pointer; transition: transform .2s; }
+.campus--link:hover { transform: translateY(-3px); }
+.campus--link:hover .campus__main { background: var(--charcoal); }
+.campus__main::after { content: ""; position: absolute; inset: 0; }
+.campus__btns { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; margin-top: 1.2rem; }
+.campus__dir { position: relative; z-index: 2; font-family: var(--head); font-weight: 500; color: inherit; }
