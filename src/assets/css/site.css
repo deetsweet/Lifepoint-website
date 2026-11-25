@@ -623,3 +623,17 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hhero__play { display: inline-grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: rgba(255,255,255,.2); backdrop-filter: blur(4px); transition: background .15s, color .15s; }
 .hhero__play svg { margin-left: 2px; }
 @media (hover: hover) { .hhero__watch:hover .hhero__play { background: var(--white); color: var(--charcoal); } }
+
+/* Home location cards: smaller, scrolling row on phones */
+.hloc { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.hloc__grid { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: .2rem; }
+.hloc__grid::-webkit-scrollbar { display: none; }
+.hloc__card { flex: 0 0 80%; min-height: 15rem; scroll-snap-align: start; text-decoration: none; }
+.hloc__body { padding: 1.1rem 1.2rem; }
+.hloc__body h2 { font-size: 1.4rem; }
+.hloc__sub { font-size: .9rem; }
+.hloc__times { font-size: 1rem; }
+.hloc__foot p { font-size: .9rem; margin-bottom: .2rem; }
+.hloc__foot .pill { margin-top: .5rem; padding: .45rem 1.1rem; font-size: .9rem; }
+@media (min-width: 900px) { .hloc__card { flex: 1 1 0; min-height: 17rem; } }
+@media (hover: hover) { .hloc__card:hover .pill { background: var(--deep-blue); color: var(--white); } }

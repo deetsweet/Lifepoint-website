@@ -6,8 +6,8 @@ permalink: /
 heroHeader: true
 places:
   - { img: home-rothwell, title: Rothwell, sub: 3 services every Sunday, times: "8.30am | 10am | 5pm", place: "<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell", url: /sundays/rothwell/, link: Plan a visit }
-  - { img: home-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
   - { img: home-caboolture-west, title: Caboolture West, sub: "Sundays from<br>7 February 2027", times: 9.30am, place: "<strong>Grace Lutheran College, Caboolture Campus</strong><br>129 Toohey St, Caboolture", url: /sundays/caboolture-west/, link: Plan a visit }
+  - { img: home-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
 tiles:
   - { img: home-kids-youth, title: "Kids &amp; Youth", text: Find out more about our Lifepoint Kids and Youth programs., links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
   - { img: home-programs, title: Programs, text: "Every age and stage of life is different, with its own challenges and joys.", links: [{ label: Learn more, url: /ministries/ }] }
@@ -42,7 +42,7 @@ help:
 <section class="sec sec--linen hloc">
   <div class="hloc__grid">
     {% for l in places %}
-    <article class="hloc__card">
+    <a class="hloc__card" href="{{ l.url | url }}">
       {{ m.photo(l.img, "hloc__img") }}
       <div class="hloc__body">
         <h2>{{ l.title }}</h2>
@@ -50,10 +50,10 @@ help:
         <div class="hloc__foot">
           <p class="hloc__times">{{ l.times }}</p>
           <p>{{ l.place | safe }}</p>
-          <a class="pill pill--light" href="{{ l.url | url }}">{{ l.link }}</a>
+          <span class="pill pill--light">{{ l.link }}</span>
         </div>
       </div>
-    </article>
+    </a>
     {% endfor %}
   </div>
 </section>
