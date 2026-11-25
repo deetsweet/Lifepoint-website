@@ -47,3 +47,13 @@ heroHeader: true
   <h2>We'll help you <span class="script">find your Sunday.</span></h2>
   {{ m.pill("Plan your visit", site.planVisit, "dark") }}
 </section>
+
+<script>
+document.querySelectorAll('.campus--link').forEach(function (card) {
+  card.addEventListener('click', function (e) {
+    if (e.target.closest('a')) return;
+    var main = card.querySelector('.campus__main');
+    if (main) window.location = main.href;
+  });
+});
+</script>
