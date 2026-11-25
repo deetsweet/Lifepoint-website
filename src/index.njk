@@ -5,9 +5,9 @@ description: Lifepoint Church in Moreton Bay. Sundays at Rothwell (8.30am, 10am 
 permalink: /
 heroHeader: true
 places:
+  - { img: home-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
   - { img: home-rothwell, title: Rothwell, sub: 3 services every Sunday, times: "8.30am | 10am | 5pm", place: "<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell", url: /sundays/rothwell/, link: Plan a visit }
   - { img: home-caboolture-west, title: Caboolture West, sub: "Sundays from<br>7 February 2027", times: 9.30am, place: "<strong>Grace Lutheran College, Caboolture Campus</strong><br>129 Toohey St, Caboolture", url: /sundays/caboolture-west/, link: Plan a visit }
-  - { img: home-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
 tiles:
   - { img: home-kids-youth, title: "Kids &amp; Youth", text: Find out more about our Lifepoint Kids and Youth programs., links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
   - { img: home-programs, title: Programs, text: "Every age and stage of life is different, with its own challenges and joys.", links: [{ label: Learn more, url: /ministries/ }] }
@@ -58,28 +58,6 @@ help:
   </div>
 </section>
 
-<section class="hband">
-  {{ m.photo("home-see-you-sunday", "hband__img") }}
-  <div class="hband__inner">
-    <h2>See you Sunday?</h2>
-    <p class="hband__note">No church experience required.</p>
-    <p>Sundays at Rothwell at 8.30am, 10am and 5pm, and at Caboolture West at 9.30am from 7 February 2027.</p>
-    {{ m.pill("Sundays info", "/sundays/", "light") }}
-  </div>
-</section>
-
-<section class="htiles htiles--scroll">
-  {% for t in tiles %}
-  <article class="htile">
-    {{ m.photo(t.img, "htile__img") }}
-    <div class="htile__body">
-      <h3>{{ t.title | safe }}</h3>
-      <p>{{ t.text }}</p>
-      <p class="htile__btns">{% for b in t.links %}<a class="pill pill--ghost" href="{{ b.url | url }}">{{ b.label }}</a>{% endfor %}</p>
-    </div>
-  </article>
-  {% endfor %}
-</section>
 
 <section class="sec sec--linen hletter">
   {{ m.photo("home-dan-steph", "hletter__img") }}
@@ -92,6 +70,22 @@ help:
   <p class="hletter__sig script">Dan and Steph Sweetman</p>
   {{ m.pill("Meet our team", "/our-team/", "dark") }}
 </section>
+
+<section class="sec sec--linen hrow">
+<div class="htiles htiles--scroll">
+  {% for t in tiles %}
+  <article class="htile">
+    {{ m.photo(t.img, "htile__img") }}
+    <div class="htile__body">
+      <h3>{{ t.title | safe }}</h3>
+      <p>{{ t.text }}</p>
+      <p class="htile__btns">{% for b in t.links %}<a class="pill pill--light" href="{{ b.url | url }}">{{ b.label }}</a>{% endfor %}</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+</section>
+
 
 {% include "embeds/home-events.html" %}
 
@@ -114,4 +108,12 @@ help:
   </div>
 </section>
 
-
+<section class="hband">
+  {{ m.photo("home-see-you-sunday", "hband__img") }}
+  <div class="hband__inner">
+    <h2>See you Sunday?</h2>
+    <p class="hband__note">No church experience required.</p>
+    <p>Sundays at Rothwell at 8.30am, 10am and 5pm, and at Caboolture West at 9.30am from 7 February 2027.</p>
+    {{ m.pill("Sundays info", "/sundays/", "light") }}
+  </div>
+</section>
