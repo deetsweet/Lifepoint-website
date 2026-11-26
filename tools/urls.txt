@@ -1,0 +1,83 @@
+pages/youth/01.jpeg	https://media.thechurchcoassets.com/accounts/3836/0d494c48-84e8-48e9-b419-3e7119d1350f-/DSC00118-Approved-Large.jpeg
+pages/youth/02.jpeg	https://media.thechurchcoassets.com/accounts/3836/b9a2d9df-02cf-4a3a-b2cf-64ebda66e8d5-/DSC09962-Approved-Large.jpeg
+pages/youth/03.jpeg	https://media.thechurchcoassets.com/accounts/3836/1e5fab3e-ac59-4896-b5f8-2eeb7fc3ad5b-/DSC09976-Approved-Large.jpeg
+pages/youth/04.jpeg	https://media.thechurchcoassets.com/accounts/3836/547d1e23-d4c4-41c2-a466-0c942e794ed8-/DSC09936-Approved-Large.jpeg
+pages/youth/05.jpeg	https://media.thechurchcoassets.com/accounts/3836/6980d6ef-615c-433e-b31e-eddff9d41ae0-/DSC00104-Approved-Large.jpeg
+pages/youth/06.jpeg	https://media.thechurchcoassets.com/accounts/3836/22e9da82-ce4e-401a-bd90-608f722e6ed3-/DSC00066-Approved-Large.jpeg
+pages/youth/07.jpeg	https://media.thechurchcoassets.com/accounts/3836/52a65334-169d-4d1a-aefd-64d9c4f84baf-/DSC09947-Approved-Large.jpeg
+pages/youth/08.jpeg	https://media.thechurchcoassets.com/accounts/3836/98f164f0-66a3-4502-85a3-dcaefa22e53d-/DSC00097-Approved-Large.jpeg
+pages/youth/09.jpeg	https://media.thechurchcoassets.com/accounts/3836/ecb1841d-f530-4c0d-90dc-4a42273c2e07-/DSC00030-Approved-Large.jpeg
+pages/youth/10.jpeg	https://media.thechurchcoassets.com/accounts/3836/e0abd4a3-fba4-4647-8a10-6c528e6f195c-/DSC09997-Approved-Large.jpeg
+pages/youth/11.jpeg	https://media.thechurchcoassets.com/accounts/3836/789c0b3b-566d-4889-a058-bfbfa52aa00f-/DSC00027-Approved-Large.jpeg
+pages/youth/12.jpeg	https://media.thechurchcoassets.com/accounts/3836/517a6977-0ee5-4fa3-967a-7e8dfa45172b-/DSC00074-Cut-girl-on-far-left-Large.jpeg
+pages/youth/13.jpeg	https://media.thechurchcoassets.com/accounts/3836/ca69dda7-d5e0-4960-ad55-206cd7a4ed31-/DSC00148-Approved-Large.jpeg
+pages/alpha/01.webp	https://media.thechurchcoassets.com/accounts/3836/acadabb1-3ba3-4e44-ba8c-8a5bccee9ecf-/lifepoint-alpha-welcome-and-video-poster.webp
+pages/alpha/02.png	https://media.thechurchcoassets.com/accounts/3836/6a4ecefb-c3ac-4bab-8a20-b9ca94ac1b59-/alpha-logo-transparent.png
+pages/alpha/03.webp	https://media.thechurchcoassets.com/accounts/3836/24bc623b-a64b-47f5-83c4-68586e97cc8d-/lifepoint-alpha-eat-together.webp
+pages/alpha/04.webp	https://media.thechurchcoassets.com/accounts/3836/582f8ea0-c466-4682-8d32-5bda738fa835-/lifepoint-alpha-explore-together.webp
+pages/alpha/05.webp	https://media.thechurchcoassets.com/accounts/3836/912fe8fa-5ab5-4e1e-8225-58afdec83bed-/lifepoint-alpha-talk-together.webp
+pages/alpha/06.webp	https://media.thechurchcoassets.com/accounts/3836/479b7db9-251b-499f-aa8a-2dfc0dbefd6a-/lifepoint-alpha-welcome-team.webp
+pages/alpha/07.webp	https://media.thechurchcoassets.com/accounts/3836/a6aa0f3c-5be0-46c5-8173-80051571a550-/lifepoint-alpha-dinner-gathering.webp
+pages/alpha/08.webp	https://media.thechurchcoassets.com/accounts/3836/37cd7983-ddcf-4eac-a918-1f3bf14e5547-/lifepoint-alpha-guests-listening.webp
+pages/give/01.jpg	https://media.thechurchcoassets.com/accounts/3836/9e7f68c8-9812-4faf-a344-1d74ff51f75b-./A7403759.jpg
+pages/give/02.webp	https://media.thechurchcoassets.com/accounts/3836/f66ddf48-69dd-45a1-a578-4c0175e63e1c-/singing.webp
+pages/give/03.png	https://media.thechurchcoassets.com/accounts/3836/3e2db96f-8d6c-4635-92d6-d28c772f8cc1-/community.png
+pages/give/04.webp	https://media.thechurchcoassets.com/accounts/3836/68e1c03c-8004-4278-a13e-9e135d5dd482-./602c6dfdd2744826788433e2.webp
+pages/give/05.webp	https://media.thechurchcoassets.com/accounts/3836/c16b365e-e838-4c90-a960-f7b056f1804b-./6059e9cb8cc3e62dec5d625d.webp
+pages/next-steps/01.webp	https://media.thechurchcoassets.com/accounts/3836/faa731ac-2c9e-421e-86db-215ea4960b7b-./6051bcdaf413e67538d59234.webp
+pages/next-steps/02.webp	https://media.thechurchcoassets.com/accounts/3836/3bad8e2d-b96a-480b-ba4c-585a5ffe20a5-./603c4aa880ef2208912a1c80.webp
+pages/next-steps/03.webp	https://media.thechurchcoassets.com/accounts/3836/38f96870-86db-4e47-96ce-3e0d23b35f4e-./6031791d929cca09fd5a96f5.webp
+pages/next-steps/04.webp	https://media.thechurchcoassets.com/accounts/3836/dfa6f865-aeeb-494a-9806-260e33025150-/IMG_5195%202.webp
+pages/next-steps/05.jpg	https://media.thechurchcoassets.com/accounts/3836/d1c83a1a-e385-4d86-bf6d-f6bdad9d2d72-/sundays-photos/gen-family.jpg
+pages/waraba/01.jpeg	https://media.thechurchcoassets.com/accounts/3836/76e45d4c-1468-479a-b31a-5ce861e3282c-./IMG_9437.jpeg
+pages/waraba/02.jpeg	https://media.thechurchcoassets.com/accounts/3836/2d97de13-47ea-4fc7-9dd4-e4a4fbb37dc2-./IMG_1357.jpeg
+pages/waraba/03.webp	https://media.thechurchcoassets.com/accounts/3836/0d30b002-e1ad-4f84-bc57-c264150539cc-./8.webp
+pages/waraba/04.jpeg	https://media.thechurchcoassets.com/accounts/3836/c4e15f27-838b-4890-8571-25ca49f4d22a-./IMG_9094.jpeg
+pages/waraba/05.webp	https://media.thechurchcoassets.com/accounts/3836/63d5404f-a2e3-4d73-8e0c-2a7cbdfc8f6d-/7329124666376a9e56f002218da4dfa0.webp
+pages/waraba/06.jpeg	https://media.thechurchcoassets.com/accounts/3836/3e1f85f4-120c-4ce5-b74a-3a9b3cc0461c-./IMG_4567.jpeg
+pages/waraba/07.jpeg	https://media.thechurchcoassets.com/accounts/3836/685ade7b-3637-48ea-88e7-404bf50a8445-./IMG_4153.jpeg
+pages/waraba/08.jpeg	https://media.thechurchcoassets.com/accounts/3836/359e3b4c-2fc6-4f04-bcff-4dee52412ccc-./IMG_4462.jpeg
+pages/waraba/09.jpeg	https://media.thechurchcoassets.com/accounts/3836/2e5820de-fca6-4604-a127-d5f7b366e659-./IMG_2086.jpeg
+pages/youngadults/01.jpeg	https://media.thechurchcoassets.com/accounts/3836/ac37abee-678c-4b44-aef6-e4ef26c28228-/DSC02439-Large.jpeg
+pages/youngadults/02.jpeg	https://media.thechurchcoassets.com/accounts/3836/541ad70a-fa31-4e87-af72-d313a3e79910-/DSC02454-Large.jpeg
+pages/youngadults/03.jpeg	https://media.thechurchcoassets.com/accounts/3836/019811e5-3032-4bc9-a1e7-9f4dd0b41c75-/DSC02697-1-Large.jpeg
+pages/youngadults/04.jpeg	https://media.thechurchcoassets.com/accounts/3836/64bbb00e-64b7-4580-aaa2-bcea71b82a08-/DSC02447-Large.jpeg
+pages/youngadults/05.jpeg	https://media.thechurchcoassets.com/accounts/3836/344dbe3d-528f-4d6a-9bcc-0564b432c54c-/DSC02478-Large.jpeg
+pages/youngadults/06.jpg	https://media.thechurchcoassets.com/accounts/3836/af8397ec-3077-499f-971b-02db2416ec8b-/lifepoint-new-team-photos/lifepoint-teams-ushers.jpg
+pages/youngadults/07.jpg	https://media.thechurchcoassets.com/accounts/3836/f72dda31-3881-4e96-bc6c-53aea5dddd7f-/lifepoint-teams-welcome-team.jpg
+pages/kids/01.webp	https://media.thechurchcoassets.com/accounts/3836/b2bdbcf0-7467-4e25-8fe9-df0131cca0a3-/tot log
+pages/kids/02.webp	https://media.thechurchcoassets.com/accounts/3836/b6fddb18-9117-4129-adc6-57ee573614f4-/2 - Kids Crew Logos
+pages/kids/03.webp	https://media.thechurchcoassets.com/accounts/3836/dc4283a8-f234-4abb-ae62-17322fd42ef6-/3 - Kids Crew Logos
+pages/kids/04.webp	https://media.thechurchcoassets.com/accounts/3836/ad08b619-8840-403e-b06e-59f0f9ac5604-/kids crew
+pages/kids/05.webp	https://media.thechurchcoassets.com/accounts/3836/b0e276dc-074a-4777-94fe-b87ecc81227b-./639fa09ff36e98002533c324
+pages/kids/06.webp	https://media.thechurchcoassets.com/accounts/3836/684303d6-f947-4573-99fa-ef6ae3f88e03-./639fa3ab232a230025557945
+pages/kids/07.webp	https://media.thechurchcoassets.com/accounts/3836/a66bc806-a85e-444a-8976-389895b76898-./639fa273734acb002534d885
+pages/kids/08.webp	https://media.thechurchcoassets.com/accounts/3836/3bbee1dc-9372-46d4-a16d-21489820ce68-./639fa363e230e000254da31d
+pages/baptism/01.webp	https://media.thechurchcoassets.com/accounts/3836/327f98d7-376c-4dc6-a2d3-7dd4afe20401-/Screenshot 2025-11-19 at 3.56.06 pm
+pages/baptism/02.webp	https://media.thechurchcoassets.com/accounts/3836/dfa6f865-aeeb-494a-9806-260e33025150-/IMG_5195 2
+pages/baptism/03.webp	https://media.thechurchcoassets.com/accounts/3836/c24e3d9f-a205-4aca-baee-eb133ac75e0c-/stephe
+pages/baptism/04.webp	https://media.thechurchcoassets.com/accounts/3836/d80d3738-e863-4b42-8ceb-40d675794823-./hay
+pages/baptism/05.webp	https://media.thechurchcoassets.com/accounts/3836/d5dfab4b-9a50-4b19-9174-476da1842a91-/plant breyton georgie
+pages/baptism/06.webp	https://media.thechurchcoassets.com/accounts/3836/3957ebc5-bec2-453e-b1a9-ac9ab34e003e-/youth
+pages/baptism/07.webp	https://media.thechurchcoassets.com/accounts/3836/d091ab4f-0d14-4ccd-a49b-fa9760e64909-/1719540558_Gppkv_
+pages/baptism/08.webp	https://media.thechurchcoassets.com/accounts/3836/40d7433f-1fb6-4e41-a9ee-44b880d5929d-/group
+pages/baptism/09.webp	https://media.thechurchcoassets.com/accounts/3836/de485899-6eee-4a09-8082-ba1c40f51203-./6051bd36e52eed7fee236e4c
+pages/baptism/10.webp	https://media.thechurchcoassets.com/accounts/3836/18b3fb16-afbf-4aad-b14b-2d64245d14be-/jase
+pages/care/01.webp	https://media.thechurchcoassets.com/accounts/3836/f45b653e-7e17-46d4-ab67-fef2877c7313-./67b31abcdcc7c70036a3f2a9
+pages/care/02.webp	https://media.thechurchcoassets.com/accounts/3836/e20a731a-76b7-4dcf-af68-7d6a065df178-./66dc6379da4f39003649ae89
+pages/care/03.webp	https://media.thechurchcoassets.com/accounts/3836/acadabb1-3ba3-4e44-ba8c-8a5bccee9ecf-/lifepoint-alpha-welcome-and-video-poster
+pages/care/04.webp	https://media.thechurchcoassets.com/accounts/3836/ed970cc5-ef88-431f-a8e4-499f1a608d46-./3
+pages/care/05.webp	https://media.thechurchcoassets.com/accounts/3836/48985578-72bd-426c-8e32-cf49d0a45ea9-./67abdc4112025200367abf6a
+pages/prayer/01.webp	https://media.thechurchcoassets.com/accounts/3836/e7a401cf-d4db-4a37-b38d-49720572b3f9-./67d0fb11a824430036b5e78a
+pages/prayer/02.webp	https://media.thechurchcoassets.com/accounts/3836/9d3c32a8-17e7-44b4-8629-4eda1fdde0e1-./67b3165759bb9d0036c64762
+pages/prayer/03.webp	https://media.thechurchcoassets.com/accounts/3836/e93a4ada-f316-4281-8cda-efb5ed14653c-./67b3176cdd556d00363c95fd
+pages/prayer/04.webp	https://media.thechurchcoassets.com/accounts/3836/54bbf96a-6a3d-4e0b-98cc-517e1a6f56ec-./67b3174d7a06430036083359
+pages/prayer/05.webp	https://media.thechurchcoassets.com/accounts/3836/4a835aab-d3ef-4e5f-abc2-dba7efa4126e-./2
+pages/youth/14.webp	https://media.thechurchcoassets.com/accounts/3836/2ad8d29d-da5a-435d-899d-7e770af92c1c-/311-logo
+pages/youngadults/08.webp	https://media.thechurchcoassets.com/accounts/3836/ac37abee-678c-4b44-aef6-e4ef26c28228-/DSC02439-Large
+pages/youngadults/09.webp	https://media.thechurchcoassets.com/accounts/3836/541ad70a-fa31-4e87-af72-d313a3e79910-/DSC02454-Large
+pages/youngadults/10.webp	https://media.thechurchcoassets.com/accounts/3836/344dbe3d-528f-4d6a-9bcc-0564b432c54c-/DSC02478-Large
+pages/youngadults/11.webp	https://media.thechurchcoassets.com/accounts/3836/64bbb00e-64b7-4580-aaa2-bcea71b82a08-/DSC02447-Large
+pages/youngadults/12.webp	https://media.thechurchcoassets.com/accounts/3836/019811e5-3032-4bc9-a1e7-9f4dd0b41c75-/DSC02697-1-Large
+pages/youngadults/13.webp	https://media.thechurchcoassets.com/accounts/3836/af8397ec-3077-499f-971b-02db2416ec8b-/lifepoint-new-team-photos/lifepoint-teams-ushers
+pages/youngadults/14.webp	https://media.thechurchcoassets.com/accounts/3836/f72dda31-3881-4e96-bc6c-53aea5dddd7f-/lifepoint-teams-welcome-team
