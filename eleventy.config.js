@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
   const prefix = (process.env.PATH_PREFIX || "/Lifepoint-website/").replace(/\/$/, "");
   eleventyConfig.addTransform("prefix-links", function (content) {
     if (!prefix || !(this.page.outputPath || "").endsWith(".html")) return content;
-    return content.replace(/(href|src)="\/(?!\/)([^"]*)"/g, (m, attr, rest) =>
+    return content.replace(/(href|src|poster)="\/(?!\/)([^"]*)"/g, (m, attr, rest) =>
       ("/" + rest).startsWith(prefix + "/") ? m : `${attr}="${prefix}/${rest}"`);
   });
 

@@ -1,69 +1,10 @@
 ---
-layout: layouts/sections.njk
+layout: layouts/base.njk
 title: Next Steps | Lifepoint Church - Moreton, Queensland
 description: Wherever you are with faith, there's a next step for you at Lifepoint. Connect, explore faith, find community, get baptised or join a team.
 permalink: /next-steps/
 heroHeader: true
-sections:
-  - type: hero
-    img: lp-next-steps-01
-    title: Next steps
-    intro: You don't have to have it all figured out. Wherever you are with faith, there's a next step for you at Lifepoint.
-    buttons:
-      - { label: Find your next step, url: "#find-your-step" }
-  - type: text
-    centre: true
-    bg: linen
-    id: find-your-step
-    eyebrow: There's a place for you
-    heading: Find your next step.
-    text: ["Start with what feels right for you. We'd love to walk alongside you."]
-    links:
-      - { label: "I'm new here", url: "#connect" }
-      - { label: I have questions, url: "#alpha" }
-      - { label: I want community, url: "#groups" }
-      - { label: "I'm ready to grow", url: "#baptism" }
-      - { label: I want to serve, url: "#serve" }
-  - type: split
-    id: connect
-    img: lp-next-steps-02
-    eyebrow: 01 · Connect
-    heading: "Let's get to know each other."
-    text: ["New to Lifepoint? We'd love to meet you. Leave your details so we can say hello, help you find your place and keep you in the loop."]
-    buttons: [{ label: Connect with us, url: "/connect/" }]
-  - type: split
-    id: alpha
-    flip: true
-    img: lp-next-steps-03
-    eyebrow: 02 · Explore faith
-    heading: "Big questions? You're welcome."
-    text: ["Curious about Jesus, or not sure what you believe? Alpha is a relaxed space to explore life, faith and purpose. Bring your questions and come as you are."]
-    buttons: [{ label: Explore Alpha, url: "/alpha/" }]
-  - type: split
-    id: groups
-    img: lp-small-groups-01
-    eyebrow: 03 · Find community
-    heading: Find your people.
-    text: ["Church is more than a Sunday. Small groups are a place to build friendships, share life and grow in following Jesus together."]
-    buttons: [{ label: Find a small group, url: "/small-groups/" }]
-  - type: split
-    id: baptism
-    flip: true
-    img: lp-next-steps-04
-    eyebrow: 04 · Go public with your faith
-    heading: Ready to be baptised?
-    text: ["Baptism is a public declaration of your faith in Jesus and a picture of the new life he gives. If you've decided to follow Jesus, we'd love to help you take this step."]
-    buttons: [{ label: "Let's talk about baptism", url: "/baptism/" }]
-  - type: split
-    id: serve
-    img: lp-next-steps-05
-    eyebrow: 05 · Make a difference
-    heading: You have something to bring.
-    text: ["Your gifts, your time and your heart can make a difference. Joining a team is a great way to meet people, help others and play your part in making Jesus known."]
-    buttons: [{ label: Find your team, url: "/join-a-team/" }]
-  - type: cta
-    eyebrow: "We're here to help"
-    heading: Not sure where to start?
-    text: ["That's okay. Tell us a little about yourself and we'll help you find a next step that's right for you."]
-    buttons: [{ label: "Let's chat", url: "/connect/" }]
+livePage: true
 ---
+{% include "live/next-steps.html" %}
+

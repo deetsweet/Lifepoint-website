@@ -702,3 +702,11 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hletter > .hletter__img { max-width: 1400px; width: 100%; aspect-ratio: 21/9; margin-bottom: 2.5rem; }
 @media (max-width: 899px) { .hletter > .hletter__img { aspect-ratio: 4/3; } }
 .hletter { padding-bottom: 2.5rem; } .hrow { padding-top: 1rem; }
+
+/* Pages carried over from the current lifepoint.org.au designs */
+.livegrant__inner { display: grid; gap: 2rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+.livegrant img { max-width: 220px; justify-self: center; }
+@media (min-width: 800px) { .livegrant__inner { grid-template-columns: 1fr 240px; } }
+.livegallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; max-width: 1400px; margin: 0 auto; }
+.livegallery__grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); }
+@media (min-width: 900px) { .livegallery__grid { grid-template-columns: repeat(4, 1fr); } .livegallery__grid img:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; height: 100%; } }

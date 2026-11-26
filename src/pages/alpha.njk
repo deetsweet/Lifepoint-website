@@ -1,66 +1,10 @@
 ---
-layout: layouts/sections.njk
+layout: layouts/base.njk
 title: Alpha | Lifepoint Church - Moreton, Queensland
 description: Try Alpha at Lifepoint in Rothwell or Caboolture West. Explore life, faith and meaning over a free dinner. Ages 16 and up.
 permalink: /alpha/
 heroHeader: true
-sections:
-  - type: hero
-    img: lp-alpha-02
-    eyebrow: Try Alpha at Lifepoint
-    title: Got questions?
-    intro: What gives life meaning? Is there more to it all? Explore your questions about life and the Christian faith over dinner with people who are curious too.
-    buttons:
-      - { label: "I'd like to try Alpha", url: "mailto:alpha@lifepoint.org.au?subject=I'm%20interested%20in%20Alpha" }
-      - { label: Discover Alpha, url: "#expect", style: ghost }
-  - type: ticker
-    items: [Completely free, Dinner included, Free child-minding, Ages 16 and up, Rothwell and Caboolture West]
-  - type: steps
-    bg: linen
-    eyebrow: A night at Alpha
-    heading: What happens at Alpha?
-    intro: Take a break from the rush of the week. Meet new people, consider a fresh perspective and make room for the questions you don't often get to ask.
-    steps:
-      - { img: lp-alpha-04, title: Eat together, text: ["Good conversation often starts with good food. We begin with a free dinner and time to get to know each other. Come with a friend or meet one here."] }
-      - { img: lp-alpha-05, title: Explore together, text: ["Who is Jesus? Why pray? What does faith have to do with everyday life? A short film gives us something to think about and talk through."] }
-      - { img: lp-alpha-06, title: Talk together, text: ["This is your space to be curious. Bring a different opinion, share what's on your mind or just take it all in. We'd love to hear your perspective."] }
-  - type: split
-    id: expect
-    img: lp-alpha-07
-    eyebrow: Curiosity belongs here
-    heading: Everyone is welcome.
-    text:
-      - Maybe faith is new to you. Maybe you've tried church before, or you're wondering what you believe now. You don't need the right words or a particular background to join us.
-      - You don't have to know what you believe to start exploring.
-    bullets: [No pressure, Room for questions, Be yourself]
-  - type: cards
-    bg: dark
-    cols: 2
-    eyebrow: Alpha stories
-    heading: "Hear from people who've done Alpha."
-    intro: Meet a few people who gave Alpha a go and hear what happened next.
-    cards:
-      - { video: INu3sHSs73M, title: "Jess's story" }
-      - { video: MwZqyBCB1Fg, title: "Sarah's story" }
-      - { video: o1SLuRvRJjE, title: "Desmond's story" }
-      - { video: TZBWhWtEnio, title: "Richie's story" }
-  - type: faq
-    eyebrow: Good to know
-    heading: Wondering about the details?
-    text: ["Got another question? We'd love to hear it. Email <a href=\"mailto:alpha@lifepoint.org.au\">alpha@lifepoint.org.au</a>."]
-    faqs:
-      - { q: Do I have to be a Christian?, a: ["No. You can be sceptical, uncertain, interested or somewhere in between. Alpha gives you room to consider the Christian faith and make up your own mind."] }
-      - { q: Does it cost anything?, a: ["Not a thing. Dinner, the evenings together and child-minding are all free."] }
-      - { q: Can I bring my kids?, a: ["Yes. We offer free child-minding so you can settle in and enjoy the evening. Just let us know you'll need it when you get in touch."] }
-      - { q: Can I bring a friend?, a: ["Please do. Exploring something new can feel easier with someone you know. Tell us who you're bringing so we can make room at the table."] }
-      - { q: Will I have to speak?, a: ["Only if you want to. You won't be put on the spot. There's room to talk, but there's just as much room to listen."] }
-      - { q: Where and when does Alpha run?, a: ["Our current course runs on Sunday evenings, 6.30 to 8.30pm, at the Lifepoint Church Community Hub in Rothwell through to 6 December 2026. From 2027, Alpha will run at the same time in two places: Rothwell and Lifepoint Caboolture West. Email the team to ask about joining or the next course."] }
-      - { q: How old do I need to be?, a: ["Our Alpha evenings are for anyone aged 16 or over."] }
-      - { q: The course has started. Can I still come?, a: ["Send us a message. We'll help you work out whether to come along now or join us when the next course begins."] }
-  - type: cta
-    eyebrow: Give it a go
-    heading: Give curiosity a little space.
-    text: ["You don't need to have it all worked out. Get in touch to ask about coming along or joining the next course."]
-    buttons: [{ label: "I'd like to try Alpha", url: "mailto:alpha@lifepoint.org.au?subject=I'm%20interested%20in%20Alpha" }]
-    small: Say hello to our Alpha team by email.
+livePage: true
 ---
+{% include "live/alpha.html" %}
+

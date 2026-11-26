@@ -1,58 +1,20 @@
 ---
-layout: layouts/sections.njk
+layout: layouts/base.njk
 title: Youth | Lifepoint Church - Moreton, Queensland
 description: Lifepoint Youth. Good mates, big questions. Friday nights 7 to 9pm for Grades 7 to 12 at the Lifepoint Church Community Hub.
 permalink: /youth/
 heroHeader: true
-sections:
-  - type: hero
-    img: lp-youth-02
-    eyebrow: Lifepoint Church · Rothwell
-    title: Lifepoint Youth
-    intro: Fun, faith, friendship every Friday night.
-    buttons:
-      - { label: Register for Youth, url: "https://lifepointchurchrothwell.churchsuite.com/-/forms/wsa5alxz" }
-      - { label: "See what's on", url: "https://www.instagram.com/life.point.youth/", style: ghost }
-  - type: ticker
-    items: [Friday nights, 7 to 9pm, Grades 7 to 12, Bring a mate]
-  - type: split
-    img: lp-youth-03
-    eyebrow: A place for you
-    heading: "There's a place for you at Youth."
-    text:
-      - Youth is for young people in Grades 7 to 12. Every Friday during the school term we get together for games, sport, time with friends and conversations about Jesus and what following him looks like in real life.
-      - You don't need to have faith figured out to come along. Bring a friend, meet someone new and join in.
-      - "<strong>In Grade 6? You're invited too.</strong> Join us in Term 4 and get to know the crew before starting high school."
-  - type: text
-    centre: true
-    bg: nextgen
-    eyebrow: Where we meet
-    heading: Lifepoint Church Community Hub.
-    text: ["1 McKillop Street, Rothwell. Check <a href=\"https://www.instagram.com/life.point.youth/\">@life.point.youth</a> for the latest event details and any special arrangements."]
-    buttons:
-      - { label: Find the Hub, url: "https://maps.app.goo.gl/5a66GsvKWZjt7UjN9" }
-      - { label: Open Youth Instagram, url: "https://www.instagram.com/life.point.youth/", style: ghost }
-  - type: faq
-    eyebrow: First Friday? We've got you.
-    heading: New here? You're welcome.
-    faqs:
-      - { q: What happens when I arrive?, a: ["Come and park at the Lifepoint Church Community Hub, 1 McKillop Street, Rothwell. Your parents can walk you in, or you can come in yourself. Our team will sign you in and help you get settled. <a href=\"https://maps.app.goo.gl/5a66GsvKWZjt7UjN9\">Get directions to the Hub</a>, or <a href=\"https://lifepointchurchrothwell.churchsuite.com/-/forms/wsa5alxz\">register online</a> before you come."] }
-      - { q: Do I need to be a Christian?, a: ["No. Everyone is welcome, whether you follow Jesus, have questions or are just checking it out with a friend. We explore faith together without expecting you to have all the answers."] }
-      - { q: Where do we meet?, a: ["At the Lifepoint Church Community Hub, 1 McKillop Street, Rothwell. Regular Youth nights run 7 to 9pm on Fridays during the school term. Check <a href=\"https://www.instagram.com/life.point.youth/\">Instagram</a> for special event details and any changes."] }
-      - { q: What about safety?, a: ["All of our Youth team have completed comprehensive training and hold a current Blue Card. <a href=\"https://drive.google.com/file/d/1JiME4oFKLoCf3mGXUnhbJwggd1EI4GVZ/view?usp=share_link\">Read our Safe Church Strategy</a>."] }
-      - { q: Can I talk to someone first?, a: ["Absolutely. <a href=\"mailto:gregpeirce@lifepoint.org.au\">Email Greg, our Next Generations Pastor</a>, with any questions about Youth or coming along for the first time."] }
-  - type: text
-    eyebrow: Acknowledging the City of Moreton Bay
-    heading: Thank you.
-    text:
-      - Early in 2026, Lifepoint Church received a community support grant that allowed two young women from our Youth to attend Stage One of the Girls' Brigade Queensland Leadership Development Course. They attended from 20 to 27 September at Somerset Dam, and both have since spoken about how much they gained from it, with plans to complete Stage Two in 2027.
-      - We're grateful to the City of Moreton Bay for their generosity in supporting youth leadership in our community.
-  - type: cta
-    bg: nextgen
-    eyebrow: There's a place for you here
-    heading: See you Friday.
-    text: ["Register your young person or get in touch before your first visit."]
-    buttons:
-      - { label: Register for Youth, url: "https://lifepointchurchrothwell.churchsuite.com/-/forms/wsa5alxz" }
-      - { label: Email Greg, url: "mailto:gregpeirce@lifepoint.org.au", style: ghost }
+livePage: true
 ---
+{% include "live/youth.html" %}
+
+<section class="sec sec--linen livegrant">
+  <div class="livegrant__inner">
+    <div>
+      <h3>Acknowledging the City of Moreton Bay</h3>
+      <p>Early in 2026, Lifepoint Church received a community support grant that allowed two young women from our Youth to attend Stage One of the Girls’ Brigade Queensland Leadership Development Course. They attended from 20 to 27 September at Somerset Dam and both have since spoken about how much they gained from it, with plans to complete Stage Two in 2027.</p>
+      <p><strong>We’re grateful to the City of Moreton Bay for their generosity in supporting youth leadership in our community.</strong></p>
+    </div>
+    <img src="{{ '/assets/img/pages/youth/14.webp' | url }}" alt="City of Moreton Bay logo" loading="lazy" decoding="async">
+  </div>
+</section>

@@ -1,78 +1,21 @@
 ---
-layout: layouts/sections.njk
+layout: layouts/base.njk
 title: Young Adults | Lifepoint Church - Moreton, Queensland
 description: Lifepoint Young Adults. Faith, friends and real life, from fresh out of school to settling into your 30s.
 permalink: /youngadults/
 heroHeader: true
-sections:
-  - type: hero
-    img: lp-youngadults-01
-    title: Young Adults
-    intro: A community for anyone from fresh out of school to settling into their 30s, exploring Jesus and doing life together.
-    buttons:
-      - { label: Get connected, url: "mailto:zacsweetman@lifepoint.org.au" }
-      - { label: Wednesday groups, url: "#ya-wednesdays", style: ghost }
-  - type: ticker
-    items: [Sundays at 5pm, Wednesday groups, Events and shared moments]
-  - type: text
-    centre: true
-    eyebrow: A place to grow
-    heading: Find your people.
-    text:
-      - Young adulthood can be exciting, and sometimes challenging. You don't have to work it out on your own.
-      - Whether you're studying, working or figuring out what comes next, we're here to help you explore Jesus in community. Here are three ways to get involved.
-  - type: split
-    id: ya-sundays
-    img: lp-youngadults-05
-    eyebrow: 01 · Sundays
-    heading: Make Sunday part of your week.
-    text:
-      - Most of our young adults gather at the <strong>5pm Sunday service</strong>. We worship, hear a message from the Bible and spend time together.
-      - "<strong>Come from 4.30pm for Qadash.</strong> A space to slow down, pray and worship together before the service begins."
-      - "<strong>Grace Lutheran College Chapel, Rothwell</strong><br>Mewes Road, off Anzac Avenue"
-    buttons:
-      - { label: Plan your Sunday, url: "/sundays/" }
-  - type: cards
-    id: ya-wednesdays
-    bg: linen
-    cols: 2
-    eyebrow: 02 · Wednesdays
-    heading: Wednesday groups.
-    intro: Wednesday nights during the school term are about growing in faith and building friendships in a smaller group.
-    cards:
-      - img: lp-youngadults-01
-        eyebrow: Wednesday groups
-        title: Under 20s
-        text:
-          - Meet weekly during term at the Lifepoint Church Community Hub, 1 McKillop Street, Rothwell.
-          - New to Young Adults? Get in touch with Zac and we'll help you connect.
-        links:
-          - { label: Get directions, url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9" }
-          - { label: Ask Zac, url: "mailto:zacsweetman@lifepoint.org.au" }
-      - img: home-groups
-        eyebrow: Wednesday groups
-        title: Over 20s
-        text:
-          - Connect with one of our small groups meeting across Moreton Bay.
-          - There's space to build friendships, explore the Bible and encourage each other through the everyday stuff of life.
-        links:
-          - { label: Find a group, url: "/small-groups/" }
-          - { label: Ask Zac, url: "mailto:zacsweetman@lifepoint.org.au" }
-  - type: split
-    id: ya-events
-    flip: true
-    img: lp-youngadults-07
-    eyebrow: 03 · Beyond the weekly rhythm
-    heading: Retreats, socials and more.
-    text:
-      - Across the year we make space to get away, have fun, worship and serve together.
-    bullets: [Encounter prayer and worship nights, Yearly retreat in August, Socials, Group service opportunities]
-    buttons:
-      - { label: Ask about upcoming events, url: "mailto:zacsweetman@lifepoint.org.au" }
-  - type: cta
-    eyebrow: Your next step
-    heading: "Let's get you connected."
-    text: ["Have a question or thinking about coming along? Email Zac and we'll help you find your place in Young Adults."]
-    buttons:
-      - { label: Email Zac, url: "mailto:zacsweetman@lifepoint.org.au" }
+livePage: true
 ---
+{% include "live/youngadults.html" %}
+
+<section class="sec sec--linen livegallery">
+  <div class="livegallery__grid">
+    <img src="{{ '/assets/img/pages/youngadults/08.webp' | url }}" alt="Young adults at Lifepoint" loading="lazy" decoding="async">
+    <img src="{{ '/assets/img/pages/youngadults/09.webp' | url }}" alt="Young adults at Lifepoint" loading="lazy" decoding="async">
+    <img src="{{ '/assets/img/pages/youngadults/10.webp' | url }}" alt="Young adults at Lifepoint" loading="lazy" decoding="async">
+    <img src="{{ '/assets/img/pages/youngadults/11.webp' | url }}" alt="Young adults at Lifepoint" loading="lazy" decoding="async">
+    <img src="{{ '/assets/img/pages/youngadults/12.webp' | url }}" alt="Young adults at Lifepoint" loading="lazy" decoding="async">
+    <img src="{{ '/assets/img/pages/youngadults/13.webp' | url }}" alt="Young adults at Lifepoint" loading="lazy" decoding="async">
+    <img src="{{ '/assets/img/pages/youngadults/14.webp' | url }}" alt="Young adults at Lifepoint" loading="lazy" decoding="async">
+  </div>
+</section>
