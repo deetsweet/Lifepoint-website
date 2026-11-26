@@ -651,5 +651,337 @@
   "cw-plan": {
     "file": "",
     "alt": "Caboolture West welcome team, photo coming soon"
+  },
+  "pg-alpha-01": {
+    "file": "pages/alpha/01.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-alpha-02": {
+    "file": "pages/alpha/02.png",
+    "alt": "Lifepoint Church"
+  },
+  "pg-alpha-03": {
+    "file": "pages/alpha/03.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-alpha-04": {
+    "file": "pages/alpha/04.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-alpha-05": {
+    "file": "pages/alpha/05.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-alpha-06": {
+    "file": "pages/alpha/06.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-alpha-07": {
+    "file": "pages/alpha/07.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-alpha-08": {
+    "file": "pages/alpha/08.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-baptism-01": {
+    "file": "pages/baptism/01.webp",
+    "alt": "Our baptism course videos"
+  },
+  "pg-baptism-02": {
+    "file": "pages/baptism/02.webp",
+    "alt": "A baptism at Lifepoint"
+  },
+  "pg-baptism-03": {
+    "file": "pages/baptism/03.webp",
+    "alt": "Steph at a Lifepoint baptism"
+  },
+  "pg-baptism-04": {
+    "file": "pages/baptism/04.webp",
+    "alt": "A baptism celebration"
+  },
+  "pg-baptism-05": {
+    "file": "pages/baptism/05.webp",
+    "alt": "Breyton and Georgie Mann"
+  },
+  "pg-baptism-06": {
+    "file": "pages/baptism/06.webp",
+    "alt": "Young people at Lifepoint"
+  },
+  "pg-baptism-07": {
+    "file": "pages/baptism/07.webp",
+    "alt": "Queensland Baptists logo"
+  },
+  "pg-baptism-08": {
+    "file": "pages/baptism/08.webp",
+    "alt": "People gathering on a Sunday"
+  },
+  "pg-baptism-09": {
+    "file": "pages/baptism/09.webp",
+    "alt": "People connecting at Lifepoint"
+  },
+  "pg-baptism-10": {
+    "file": "pages/baptism/10.webp",
+    "alt": "Jason Coleman chatting with someone"
+  },
+  "pg-care-01": {
+    "file": "pages/care/01.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-care-02": {
+    "file": "pages/care/02.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-care-03": {
+    "file": "pages/care/03.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-care-04": {
+    "file": "pages/care/04.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-care-05": {
+    "file": "pages/care/05.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-give-01": {
+    "file": "pages/give/01.jpg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-give-02": {
+    "file": "pages/give/02.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-give-03": {
+    "file": "pages/give/03.png",
+    "alt": "Lifepoint Church"
+  },
+  "pg-give-04": {
+    "file": "pages/give/04.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-give-05": {
+    "file": "pages/give/05.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-kids-01": {
+    "file": "pages/kids/01.webp",
+    "alt": "Tots logo"
+  },
+  "pg-kids-02": {
+    "file": "pages/kids/02.webp",
+    "alt": "Kids Crew Jnr logo"
+  },
+  "pg-kids-03": {
+    "file": "pages/kids/03.webp",
+    "alt": "Kids Crew logo"
+  },
+  "pg-kids-04": {
+    "file": "pages/kids/04.webp",
+    "alt": "Kids at Lifepoint Kids"
+  },
+  "pg-kids-05": {
+    "file": "pages/kids/05.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-kids-06": {
+    "file": "pages/kids/06.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-kids-07": {
+    "file": "pages/kids/07.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-kids-08": {
+    "file": "pages/kids/08.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-next-steps-01": {
+    "file": "pages/next-steps/01.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-next-steps-02": {
+    "file": "pages/next-steps/02.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-next-steps-03": {
+    "file": "pages/next-steps/03.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-next-steps-04": {
+    "file": "pages/next-steps/04.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-next-steps-05": {
+    "file": "pages/next-steps/05.jpg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-prayer-01": {
+    "file": "pages/prayer/01.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-prayer-02": {
+    "file": "pages/prayer/02.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-prayer-03": {
+    "file": "pages/prayer/03.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-prayer-04": {
+    "file": "pages/prayer/04.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-prayer-05": {
+    "file": "pages/prayer/05.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-01": {
+    "file": "pages/waraba/01.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-02": {
+    "file": "pages/waraba/02.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-03": {
+    "file": "pages/waraba/03.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-04": {
+    "file": "pages/waraba/04.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-05": {
+    "file": "pages/waraba/05.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-06": {
+    "file": "pages/waraba/06.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-07": {
+    "file": "pages/waraba/07.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-08": {
+    "file": "pages/waraba/08.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-waraba-09": {
+    "file": "pages/waraba/09.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-01": {
+    "file": "pages/youngadults/01.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-02": {
+    "file": "pages/youngadults/02.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-03": {
+    "file": "pages/youngadults/03.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-04": {
+    "file": "pages/youngadults/04.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-05": {
+    "file": "pages/youngadults/05.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-06": {
+    "file": "pages/youngadults/06.jpg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-07": {
+    "file": "pages/youngadults/07.jpg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-08": {
+    "file": "pages/youngadults/08.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-09": {
+    "file": "pages/youngadults/09.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-10": {
+    "file": "pages/youngadults/10.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-11": {
+    "file": "pages/youngadults/11.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-12": {
+    "file": "pages/youngadults/12.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-13": {
+    "file": "pages/youngadults/13.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youngadults-14": {
+    "file": "pages/youngadults/14.webp",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-01": {
+    "file": "pages/youth/01.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-02": {
+    "file": "pages/youth/02.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-03": {
+    "file": "pages/youth/03.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-04": {
+    "file": "pages/youth/04.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-05": {
+    "file": "pages/youth/05.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-06": {
+    "file": "pages/youth/06.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-07": {
+    "file": "pages/youth/07.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-08": {
+    "file": "pages/youth/08.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-09": {
+    "file": "pages/youth/09.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-10": {
+    "file": "pages/youth/10.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-11": {
+    "file": "pages/youth/11.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-12": {
+    "file": "pages/youth/12.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-13": {
+    "file": "pages/youth/13.jpeg",
+    "alt": "Lifepoint Church"
+  },
+  "pg-youth-14": {
+    "file": "pages/youth/14.webp",
+    "alt": "Lifepoint Church"
   }
 }

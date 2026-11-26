@@ -710,3 +710,7 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .livegallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; max-width: 1400px; margin: 0 auto; }
 .livegallery__grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); }
 @media (min-width: 900px) { .livegallery__grid { grid-template-columns: repeat(4, 1fr); } .livegallery__grid img:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; height: 100%; } }
+
+.gcards--logos .gcard__img { aspect-ratio: 1/1; object-fit: contain; background: var(--white); padding: 1.5rem; }
+.gcards--logos .gcard { text-align: center; }
+.livegallery__grid--even img, .livegallery__grid--even .ph { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius); grid-column: auto !important; grid-row: auto !important; height: auto !important; }

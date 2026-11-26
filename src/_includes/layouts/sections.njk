@@ -62,7 +62,7 @@ layout: layouts/base.njk
 {% elif s.type == "cards" %}
 <section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
   {% if s.heading or s.eyebrow %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
-  <div class="gcards gcards--{{ s.cols or 3 }}{% if s.portraits %} gcards--portraits{% endif %}">
+  <div class="gcards gcards--{{ s.cols or 3 }}{% if s.portraits %} gcards--portraits{% endif %}{% if s.logos %} gcards--logos{% endif %}">
     {% for c in s.cards %}
     <article class="gcard{% if c.img %} gcard--img{% endif %}">
       {% if c.video %}<div class="embed embed--card"><iframe src="https://www.youtube-nocookie.com/embed/{{ c.video }}" title="{{ c.title }}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>{% endif %}
@@ -80,6 +80,11 @@ layout: layouts/base.njk
     {% endfor %}
   </div>
   {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+</section>
+
+{% elif s.type == "gallery" %}
+<section class="sec{{ bg }}">
+  <div class="livegallery__grid livegallery__grid--even">{% for i in s.imgs %}{{ m.photo(i, "") }}{% endfor %}</div>
 </section>
 
 {% elif s.type == "steps" %}
