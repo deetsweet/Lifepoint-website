@@ -14,4 +14,4 @@
 {% endmacro %}
 
 {# Eyebrow line #}
-{% macro eyebrow(text) %}<p class="eyebrow">{{ text }}</p>{% endmacro %}
+{% macro eyebrow(text) %}<p class="eyebrow">{{ text | safe }}</p>{% endmacro %}
