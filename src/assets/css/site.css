@@ -758,3 +758,9 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .hhero .pill--clear:hover { background: rgba(255,255,255,.15); }
 .pill__play { flex: none; }
 .htile__img { object-position: var(--pos, center); }
+/* Latest messages grid */
+.vids { display: grid; gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+@media (min-width: 760px) { .vids { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; } }
+.vid .embed { margin: 0; max-width: none; }
+.vid h3 { font-size: 1.15rem; margin: .8rem 0 .2rem; }
+.vid p { margin: 0; color: var(--muted); font-size: .9rem; }

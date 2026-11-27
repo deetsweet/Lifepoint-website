@@ -123,6 +123,25 @@ layout: layouts/base.njk
   {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
 </section>
 
+{% elif s.type == "videos" %}
+<section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
+  {% if s.heading or s.eyebrow %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
+  {% if messages and messages.length %}
+  <div class="vids">
+    {% for v in messages %}
+    <article class="vid">
+      <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ v.id }}?rel=0" title="{{ v.title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <h3>{{ v.title }}</h3>
+      {% if v.date %}<p>{{ v.date }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="embed"><iframe src="{{ s.fallback }}" title="{{ s.heading }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+  {% endif %}
+  {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+</section>
+
 {% elif s.type == "quote" %}
 <section class="sec{{ bg or ' sec--linen' }} welcome">
   <div class="welcome__media">{{ m.photo(s.img, "welcome__img") }}</div>
