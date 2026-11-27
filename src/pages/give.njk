@@ -1,10 +1,78 @@
 ---
-layout: layouts/base.njk
+layout: layouts/sections.njk
 title: Give | Lifepoint Church - Moreton, Queensland
-description: Giving at Lifepoint Church. Give securely online or by bank transfer to Lifepoint Rothwell, Lifepoint Caboolture West or the Building Fund.
+description: Giving at Lifepoint Church. Give securely online or by bank deposit to Lifepoint Rothwell, Lifepoint Caboolture West or the Building Fund.
 permalink: /give/
 heroHeader: true
-livePage: true
+sections:
+  - type: hero
+    short: true
+    img: pg-give-01
+    title: Generosity changes lives.
+    intro: Your giving helps make Jesus known, care for our community and create places where people can find faith and belonging. Thank you for being part of what God is doing through Lifepoint.
+    buttons:
+      - { label: Give securely online, url: "https://lifepointchurchrothwell.churchsuite.com/donate" }
+      - { label: Bank details, url: "#bank", style: ghost }
+    note: New here? There's no expectation to give. You're welcome at Lifepoint, whether you give or not.
+  - type: bank
+    id: bank
+    bg: dark
+    eyebrow: Give by bank deposit
+    heading: Choose where to give.
+    intro: Give directly through your bank using the details below. For regular giving, you can arrange a recurring transfer through your bank.
+    accounts:
+      - { name: Lifepoint Rothwell, bsb: "034 090", acc: "135 923" }
+      - { name: Lifepoint Caboolture West, bsb: "034 059", acc: "638 768", link: { label: About the church plant, url: "/waraba/" } }
+      - { name: Building Fund, bsb: "034 072", acc: "192 342", link: { label: Make a pledge, url: "https://docs.google.com/forms/d/e/1FAIpQLSdW3CV6viQuoG3SbwEugt6BzIUa9_7x8v9ks_zvY-h-0fumMA/viewform" } }
+    text:
+      - "<strong>Prefer to give by card?</strong> Online giving is handled through our ChurchSuite donation page."
+    buttons:
+      - { label: Give securely online, url: "https://lifepointchurchrothwell.churchsuite.com/donate", style: light }
+  - type: text
+    bg: linen
+    eyebrow: Why we give
+    heading: We give because Jesus gave first.
+    text:
+      - "<strong>Giving with confidence.</strong> We see giving as a joyful response to God's generosity, an act of worship and a practical way to care for others."
+      - Our church partners/members vote on our budget. We welcome questions about how giving is used and how Lifepoint's finances are managed.
+    links:
+      - { label: Our vision, url: "/vision-2030/" }
+      - { label: Ask a question, url: "/connect/" }
+  - type: cards
+    cols: 4
+    eyebrow: What your generosity makes possible
+    heading: More than a donation.
+    intro: Your generosity helps support ministry here at Lifepoint and practical care in our local community and around the world.
+    cards:
+      - img: pg-give-02
+        title: Resourcing the church
+        text: ["Helping fund staff, ministry spaces, programs and the practical resources that support Lifepoint's mission to make Jesus known."]
+        links: [{ label: Our vision, url: "/vision-2030/" }]
+      - img: pg-give-03
+        title: Our local community
+        text: ["Supporting local chaplains, school breakfasts, food hampers and people facing practical needs in our community."]
+        links: [{ label: Get involved, url: "/connect/" }]
+      - img: pg-give-04
+        title: Compassion in the Philippines
+        text: ["Partnering with Compassion and local churches to support children through essentials such as food, clean water and education."]
+        links: [{ label: Explore child sponsorship, url: "https://compassiononline.live/lifepointcc" }]
+      - img: pg-give-05
+        title: Our international community
+        text: ["Supporting people serving overseas and organisations such as His Harvest, caring for children and families in India."]
+        links: [{ label: About His Harvest, url: "https://hisharvest.com.au/" }]
+  - type: faq
+    eyebrow: Questions about giving
+    heading: Let's keep it simple.
+    faqs:
+      - { q: Do I need to give money to the church?, a: ["No. Giving is voluntary, never a condition of belonging. Christians give in response to God's love and generosity, rather than out of pressure or obligation."] }
+      - { q: How much should I give?, a: ["Pray, consider your circumstances and choose an amount you can give willingly and responsibly. A tithe (10%) is a guide some Christians use, rather than a compulsory payment or a limit on generosity. See <a href=\"https://www.bible.com/bible/111/MAL.3.10.NIV\">Malachi 3:10</a>. You can also <a href=\"https://media.thechurchcoassets.com/accounts/3836/d98801e1-3367-4f5a-ac42-959ac045606f-./Telling%20Your%20Money%20Where%20To%20Go.m4a\">listen to our message on financial freedom</a>."] }
+      - { q: Can I give regularly?, a: ["Yes. You can set up a recurring bank transfer using the account details above. For online giving, visit our <a href=\"https://lifepointchurchrothwell.churchsuite.com/donate\">ChurchSuite donation page</a> to see the available options."] }
+      - { q: Can I give to the building fund or Lifepoint Caboolture West?, a: ["Yes. Both have their own bank account listed above. For the Building Fund, you can also <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSdW3CV6viQuoG3SbwEugt6BzIUa9_7x8v9ks_zvY-h-0fumMA/viewform\">complete a pledge form</a>. Find out more about <a href=\"/waraba/\">Lifepoint Caboolture West</a>."] }
+      - { q: What does the Bible say about generosity?, a: ["Generosity flows from gratitude for what God has given us. <a href=\"https://www.bible.com/bible/111/2CO.9.6-11.NIV\">2 Corinthians 9:6-11</a> encourages willing, cheerful giving and trust in God's provision. Giving is not a transaction or a promise of personal wealth; it is a way to worship God, care for others and share what we have."] }
+      - { q: How can I ask about church finances?, a: ["We welcome questions about giving, our budget and how funds are used. <a href=\"/connect/\">Contact our team</a> and we'll help you connect with the right person."] }
+  - type: cta
+    heading: Thank you for your generosity.
+    text: ["Together, we're helping make Jesus known and seeing lives transformed by the gospel."]
+    buttons:
+      - { label: Give securely online, url: "https://lifepointchurchrothwell.churchsuite.com/donate" }
 ---
-{% include "live/give.html" %}
-

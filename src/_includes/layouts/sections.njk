@@ -25,8 +25,11 @@ layout: layouts/base.njk
 
 {% if s.type == "hero" %}
 <section class="hero{% if s.big %}{% if s.short %} hero--short{% endif %}{% else %} hero--simple{% endif %}">
-  {{ m.photo(s.img, "hero__img", true) }}
+  {% if s.video %}<video class="hero__img hero__video" autoplay muted loop playsinline preload="metadata" poster="{{ ('/assets/img/' + images[s.img].file) | url }}"><source src="{{ s.video }}" type="video/mp4"></video>
+  <button class="hero__pause" type="button" aria-label="Pause video" data-video-toggle>❚❚</button>
+  {% else %}{{ m.photo(s.img, "hero__img", true) }}{% endif %}
   <div class="hero__inner">
+    {% if s.logo %}<img class="hero__logo" src="{{ ('/assets/img/' + images[s.logo].file) | url }}" alt="{{ images[s.logo].alt }}">{% endif %}
     {% if s.eyebrow and s.big %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
     <h1 class="hero__title">{{ s.title | safe }}</h1>
     <div class="hero__foot">
@@ -36,6 +39,8 @@ layout: layouts/base.njk
         <div class="btns">{% for b in s.buttons %}{{ btn(b, "light") }}{% endfor %}</div>
       </div>
     </div>
+    {% if s.chips %}<ul class="hero__chips">{% for c in s.chips %}<li>{% if c.url %}<a href="{{ c.url | url }}">{{ c.label }}</a>{% else %}{{ c }}{% endif %}</li>{% endfor %}</ul>{% endif %}
+    {% if s.note %}<p class="hero__note">{{ s.note | safe }}</p>{% endif %}
   </div>
 </section>
 
@@ -146,6 +151,32 @@ layout: layouts/base.njk
   {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
 </section>
 
+{% elif s.type == "stats" %}
+<section class="sec{{ bg }}">
+  <div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>
+  <dl class="stats">{% for st in s.stats %}<div><dt>{{ st.label | safe }}</dt><dd>{{ st.value }}</dd></div>{% endfor %}</dl>
+  {% if s.small %}<p class="stats__note">{{ s.small | safe }}</p>{% endif %}
+</section>
+
+{% elif s.type == "bank" %}
+<section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
+  <div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>
+  <div class="gcards gcards--3 bank">
+    {% for a in s.accounts %}
+    <article class="gcard"><div class="gcard__body">
+      <h3>{{ a.name }}</h3>
+      <dl class="bank__rows">
+        <div><dt>BSB</dt><dd><span>{{ a.bsb }}</span><button type="button" class="copy" data-copy="{{ a.bsb | replace(' ', '') }}" aria-label="Copy {{ a.name }} BSB">Copy</button></dd></div>
+        <div><dt>Account</dt><dd><span>{{ a.acc }}</span><button type="button" class="copy" data-copy="{{ a.acc | replace(' ', '') }}" aria-label="Copy {{ a.name }} account number">Copy</button></dd></div>
+      </dl>
+      {% if a.link %}<a class="arrow-link" href="{{ a.link.url | url }}">{{ a.link.label }} <span aria-hidden="true">→</span></a>{% endif %}
+    </div></article>
+    {% endfor %}
+  </div>
+  {% if s.text %}<div class="centre-head bank__after">{% for p in s.text %}<p>{{ p | safe }}</p>{% endfor %}</div>{% endif %}
+  {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
+</section>
+
 {% elif s.type == "cta" %}
 <section class="sec closing{{ bg }}">
   {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
@@ -156,4 +187,8 @@ layout: layouts/base.njk
 </section>
 {% endif %}
 {% endfor %}
+<script>
+document.querySelectorAll("[data-copy]").forEach(function(b){b.addEventListener("click",function(){navigator.clipboard&&navigator.clipboard.writeText(b.dataset.copy).then(function(){var t=b.textContent;b.textContent="Copied";setTimeout(function(){b.textContent=t},1500)})})});
+document.querySelectorAll("[data-video-toggle]").forEach(function(b){var v=b.parentNode.querySelector("video");if(matchMedia("(prefers-reduced-motion: reduce)").matches){v.pause();v.removeAttribute("autoplay");b.textContent="▶";b.setAttribute("aria-label","Play video")}b.addEventListener("click",function(){if(v.paused){v.play();b.textContent="❚❚";b.setAttribute("aria-label","Pause video")}else{v.pause();b.textContent="▶";b.setAttribute("aria-label","Play video")}})});
+</script>
 {% if usesChurchSuite %}<script src="{{ '/assets/js/churchsuite.js' | url }}" defer></script>{% endif %}

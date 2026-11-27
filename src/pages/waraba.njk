@@ -1,10 +1,108 @@
 ---
-layout: layouts/base.njk
+layout: layouts/sections.njk
 title: Caboolture West | Lifepoint Church - Moreton, Queensland
 description: Lifepoint Caboolture West. A new church community in Waraba, launching 7 February 2027. Sundays at 9.30am.
 permalink: /waraba/
 heroHeader: true
-livePage: true
+sections:
+  - type: hero
+    short: true
+    img: pg-waraba-02
+    title: Lifepoint Caboolture West
+    intro: A new church community launching 7 February 2027. Sundays at 9.30am.
+    buttons:
+      - { label: Sundays at Caboolture West, url: "/sundays/caboolture-west/" }
+      - { label: Join the team, url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform", style: ghost }
+    chips:
+      - { label: Give to the plant, url: "/give/" }
+      - { label: Email our planting pastor, url: "mailto:breytonmann@lifepoint.org.au" }
+      - { label: Instagram, url: "https://www.instagram.com/lifepoint.cw/" }
+      - { label: Facebook, url: "https://www.facebook.com/profile.php?id=61595650091409" }
+  - type: cards
+    cols: 3
+    cards:
+      - eyebrow: Our public launch
+        title: 7 February 2027
+      - eyebrow: Weekly services from launch
+        title: 9.30am Sundays
+      - eyebrow: Grace Lutheran College
+        title: Caboolture Campus
+        text: ["129 Toohey St, Caboolture"]
+    buttons:
+      - { label: Get in touch, url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform", style: light }
+  - type: quote
+    img: pg-waraba-03
+    eyebrow: A message from our planting pastor
+    text:
+      - "Hi, I'm Breyton, and I'm leading Lifepoint's new campus in Waraba (Caboolture West)."
+      - My wife Georgie and I live in the area and we're passionate about this community and seeing lives transformed by the good news of Jesus.
+      - Waraba is growing fast, with thousands of families moving into streets that were paddocks not long ago. Most of them arrive not knowing anyone, and we want to be the first to say hello. We want every one of those families to find friendship, hope and a real relationship with Jesus.
+      - "We're building a launch team ahead of our public launch on 7 February, 2027. If you live nearby, we'd love to meet you. <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform\">Get in touch</a> and I'll be in contact soon."
+    sig: Breyton Mann
+    role: Planting Pastor, Lifepoint Caboolture West
+    buttons:
+      - { label: Get in touch, url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform" }
+      - { label: Email Breyton, url: "mailto:breytonmann@lifepoint.org.au", style: ghost }
+  - type: text
+    centre: true
+    eyebrow: Follow the journey
+    heading: A new community. A story unfolding.
+    text:
+      - Get to know Lifepoint Caboolture West and follow along as we prepare to launch. Find our latest photos, updates and moments from the community on Instagram.
+    buttons:
+      - { label: Follow on Instagram, url: "https://www.instagram.com/lifepoint.cw/" }
+      - { label: Find us on Facebook, url: "https://www.facebook.com/profile.php?id=61595650091409", style: ghost }
+  - type: stats
+    bg: linen
+    eyebrow: Waraba in numbers
+    heading: A whole new community.
+    intro: A church community for the new Waraba City development in Caboolture West. West of Caboolture, the Waraba Priority Development Area is planned to grow over around 40 years, with new homes, local jobs, schools, parks and community facilities.
+    stats:
+      - { value: "65,000", label: residents expected at full development }
+      - { value: "25,000", label: homes planned for the future community }
+      - { value: "17,000", label: jobs anticipated across local centres and employment areas }
+      - { value: "2,880", label: hectares within the development area }
+    small: "Approximate long-term planning estimates, not current population or completed development. Source: <a href=\"https://www.edq.qld.gov.au/projects/waraba/\">Economic Development Queensland</a>, page updated 25 September 2026. Figures checked 24 October 2026."
+  - type: cards
+    cols: 2
+    eyebrow: The journey ahead
+    heading: Getting ready. Growing together.
+    cards:
+      - img: pg-waraba-04
+        title: 2026 - Preparation Year
+        text: ["Prayer, Building Team, Outreach, Communication"]
+        links: [{ label: "I'm interested", url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform" }]
+      - img: pg-waraba-05
+        title: 2027 - Launch Year
+        text: ["In 2027 we will be publicly launching this new Lifepoint Church in the Waraba Region."]
+        links: [{ label: Find out more, url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform" }]
+  - type: gallery
+    imgs: [pg-waraba-01, pg-waraba-06, pg-waraba-07, pg-waraba-08, pg-waraba-09, pg-waraba-02, pg-waraba-04, pg-waraba-03]
+  - type: faq
+    bg: linen
+    heading: Get to know Lifepoint.
+    faqs:
+      - { q: "A church that's very much alive", a: ["Lifepoint is a growing and vibrant church in Moreton Bay. Whoever said that the church is dying forgot to tell these people. It is a place and people known in this region for being incredibly welcoming and strangely authentic, people just seem real (even if they are messy)."] }
+      - { q: "It's all about Jesus", a: ["We always talk about Jesus, and we believe he is the way, the truth and the life. We believe he was who he claimed to be, and that through him everyone is being called into God's family. We believe that God is calling you to be forgiven, redeemed and sent!"] }
+      - { q: Something real is happening here, a: ["There is a tangible and undeniable sense of God being alive at Lifepoint. We love to pray and sing, experience God's presence and love and serve one another."] }
+      - { q: Bible people in a modern world, a: ["We believe that the Bible is true and helpful. We love the Bible, preach the Bible, read the Bible, and most importantly, live by its often counter-cultural teaching."] }
+      - { q: More than Sundays, a: ["We don't talk much about rules and religion at Lifepoint, we talk about love, grace, truth, and a strange new free and joyful way to live that involves a supernatural power called the Holy Spirit."] }
+      - { q: A church of groups, a: ["Lifepoint is a church of groups. We have dozens of small groups and we take the home as seriously as we do our larger gatherings."] }
+      - { q: Friendship at the heart, a: ["In a world where people have fewer people who really know them, Lifepoint is full of friendship. It is refreshing to see people who genuinely love each other, even though they all don't agree about everything and come from different social, cultural and religious backgrounds."] }
+      - { q: A church for the next generation, a: ["There are so many young people here! We have hundreds of kids, teenagers and young adults at Lifepoint. Who would have thought it but these young people LOVE church, and are being trained as people who will make a difference in this world for good."] }
+      - { q: A church of generosity and service, a: ["Lifepoint people get together in groups all the time and serve our needy, our disabled, our schools, the struggling, and offer real help in financial and other ways. It is a place people call upon because they know their mess will be met not with judgement, but grace and love."] }
+      - { q: A church that equips and sends leaders, a: ["It is a training church, with the main focus being on loving God and loving others where people are already working and living. There are a very high number of leaders here."] }
+  - type: cta
+    eyebrow: Lifepoint Caboolture West
+    heading: Be part of what's next.
+    buttons:
+      - { label: Join the team, url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform" }
+      - { label: Give to the plant, url: "/give/", style: ghost }
+  - type: cards
+    cols: 3
+    heading: How are you going?
+    cards:
+      - { title: Drop in Sunday?, text: ["We'd love to see you this weekend."], url: "/sundays/" }
+      - { title: Programs and Groups, text: ["See where you might fit at Lifepoint."], url: "/ministries/" }
+      - { title: Got a Question?, text: ["Chat to a Pastor or Leader."], url: "/connect/", link: Contact Us }
 ---
-{% include "live/waraba.html" %}
-

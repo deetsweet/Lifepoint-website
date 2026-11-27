@@ -1,10 +1,65 @@
 ---
-layout: layouts/base.njk
+layout: layouts/sections.njk
 title: Next Steps | Lifepoint Church - Moreton, Queensland
 description: Wherever you are with faith, there's a next step for you at Lifepoint. Connect, explore faith, find community, get baptised or join a team.
 permalink: /next-steps/
 heroHeader: true
-livePage: true
+sections:
+  - type: hero
+    short: true
+    img: pg-next-steps-01
+    title: Next steps
+    intro: A little step. A life-changing journey. You don't have to have it all figured out. Wherever you are with faith, there's a next step for you at Lifepoint.
+    buttons:
+      - { label: Find your next step, url: "#find-your-step" }
+    chips:
+      - { label: "I'm new here", url: "/connect/" }
+      - { label: I have questions, url: "/alpha/" }
+      - { label: I want community, url: "/small-groups/" }
+      - { label: "I'm ready to grow", url: "/baptism/" }
+      - { label: I want to serve, url: "/teams/" }
+  - type: steps
+    id: find-your-step
+    heading: Find your next step.
+    intro: Start with what feels right for you. We'd love to walk alongside you.
+    steps:
+      - img: pg-next-steps-02
+        title: Let's get to know each other.
+        text: ["New to Lifepoint? We'd love to meet you. Leave your details so we can say hello, help you find your place and keep you in the loop."]
+        url: /connect/
+        link: Connect with us
+      - img: pg-next-steps-03
+        title: Big questions? You're welcome.
+        text: ["Curious about Jesus, or not sure what you believe? Alpha is a relaxed space to explore life, faith and purpose. Bring your questions and come as you are."]
+        url: /alpha/
+        link: Explore Alpha
+      - img: pg-next-steps-01
+        title: Find your people.
+        text: ["Church is more than a Sunday. Small groups are a place to build friendships, share life and grow in following Jesus together."]
+        url: /small-groups/
+        link: Find a small group
+  - type: split
+    bg: linen
+    img: pg-next-steps-04
+    eyebrow: 04 · Go public with your faith
+    heading: A new life. A beautiful next step.
+    text:
+      - Baptism is a public declaration of your faith in Jesus, a picture of the new life he gives. If you've decided to follow Jesus, we'd love to help you take this step.
+    buttons:
+      - { label: Let's talk about baptism, url: "/baptism/" }
+  - type: split
+    bg: linen
+    flip: true
+    img: pg-next-steps-05
+    eyebrow: 05 · Make a difference
+    heading: You have something to bring.
+    text:
+      - Your gifts, your time and your heart can make a difference. Joining a team is a great way to meet people, help others and play your part in making Jesus known.
+    buttons:
+      - { label: Find your team, url: "/teams/" }
+  - type: cta
+    heading: Not sure where to start?
+    text: ["That's okay. Tell us a little about yourself and we'll help you find a next step that's right for you."]
+    buttons:
+      - { label: Let's chat, url: "/connect/" }
 ---
-{% include "live/next-steps.html" %}
-
