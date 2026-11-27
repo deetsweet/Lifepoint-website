@@ -142,7 +142,8 @@
   },
   "p-alpha-guest": {
     "file": "p-alpha-guest.jpg",
-    "alt": "A smiling guest at Alpha"
+    "alt": "A smiling guest at Alpha",
+    "pos": "center 12%"
   },
   "p-guitar": {
     "file": "p-guitar.jpg",

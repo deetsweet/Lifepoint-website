@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
-  {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  {% if description %}<meta name="description" content="{{ description | replace("&amp;", "&") }}">{% endif %}
   {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   {%- set shareTitle = title | replace(" | Lifepoint Church - Moreton, Queensland", "") -%}
   {%- set ogKey = ogImage or (sections[0].img if sections and sections[0].img) -%}
@@ -14,7 +14,7 @@
   <meta property="og:site_name" content="Lifepoint Church">
   <meta property="og:locale" content="en_AU">
   <meta property="og:title" content="{{ shareTitle }}">
-  {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+  {% if description %}<meta property="og:description" content="{{ description | replace("&amp;", "&") }}">{% endif %}
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ shareImg }}">
   <meta name="twitter:card" content="summary_large_image">

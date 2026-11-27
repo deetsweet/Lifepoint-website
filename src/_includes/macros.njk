@@ -2,7 +2,7 @@
 {% macro photo(key, cls="", eager=false) %}
 {%- set p = images[key] -%}
 {%- if p and p.file -%}
-<img class="{{ cls }}" src="{{ ('/assets/img/' + p.file) | url }}" alt="{{ p.alt }}"{% if not eager %} loading="lazy"{% endif %} decoding="async">
+<img class="{{ cls }}" src="{{ ('/assets/img/' + p.file) | url }}" alt="{{ p.alt }}"{% if p.pos %} style="object-position: {{ p.pos }}"{% endif %}{% if not eager %} loading="lazy"{% endif %} decoding="async">
 {%- else -%}
 <div class="ph {{ cls }}" role="img" aria-label="{{ p.alt if p else key }}"><span>{{ p.alt if p else key }}</span></div>
 {%- endif -%}
