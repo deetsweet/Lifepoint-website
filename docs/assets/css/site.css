@@ -740,3 +740,15 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .bank__after { margin-top: 2rem; }
 .hero__chips a { color: inherit; text-decoration: none; }
 .hero__chips li:has(a):hover { background: var(--white); color: var(--charcoal); }
+
+/* Motion (Nov 2026): fade between pages and gentle fade-up on scroll. Off for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; }
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv--in { opacity: 1; transform: none; }
+  .gcard, .pill, .htile img, .gcard__img { transition: transform .35s ease, box-shadow .35s ease, opacity .7s ease; }
+  a.gcard:hover, .gcard:has(a.arrow-link:hover) { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,.18); }
+  .gcard__media { overflow: hidden; }
+  .gcard:hover .gcard__img { transform: scale(1.04); }
+}

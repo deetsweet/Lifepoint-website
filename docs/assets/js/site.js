@@ -30,3 +30,22 @@
   window.addEventListener("scroll", check, { passive: true });
   check();
 })();
+
+// Gentle fade-up as sections scroll into view. Skipped for people who turn motion off.
+(function () {
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var sel = ".centre-head, .split-head, .plan, .gcard, .step, .faq__head, .faq__list, .livegallery__grid img, .stats > div, .welcome, .closing, .lhe-inner, .htile, .campus, .card";
+  var els = [].slice.call(document.querySelectorAll("main " + sel)).filter(function (el) {
+    return el.getBoundingClientRect().top > window.innerHeight * 0.9 && !el.closest(".hero, .hhero");
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target, sibs = el.parentNode ? [].slice.call(el.parentNode.children).filter(function (c) { return c.classList.contains("rv"); }) : [];
+      el.style.transitionDelay = Math.min(sibs.indexOf(el), 4) * 80 + "ms";
+      el.classList.add("rv--in");
+      io.unobserve(el);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) { el.classList.add("rv"); io.observe(el); });
+})();
