@@ -38,7 +38,8 @@
   },
   "sundays-step-arrive": {
     "file": "step-arrive.jpg",
-    "alt": "A mum and toddler outside the Chapel on a Sunday"
+    "alt": "A mum and toddler outside the Chapel on a Sunday",
+    "pos": "center 30%"
   },
   "sundays-step-kids": {
     "file": "step-kids.jpg",
@@ -50,7 +51,8 @@
   },
   "sundays-step-coffee": {
     "file": "step-coffee.jpg",
-    "alt": "A smiling barista making coffee"
+    "alt": "A smiling barista making coffee",
+    "pos": "center 25%"
   },
   "sundays-dan": {
     "file": "dan-preaching.jpg",
@@ -58,7 +60,8 @@
   },
   "sundays-plan-visit": {
     "file": "lp/sundays-plan-visit.jpg",
-    "alt": "A welcome team member chatting with guests"
+    "alt": "A welcome team member chatting with guests",
+    "pos": "center 40%"
   },
   "sundays-kids-1": {
     "file": "kids-1.jpg",
@@ -114,7 +117,8 @@
   },
   "p-worship-leader": {
     "file": "p-worship-leader.jpg",
-    "alt": "A worship leader with arms wide open"
+    "alt": "A worship leader with arms wide open",
+    "pos": "center 25%"
   },
   "p-teens-clapping": {
     "file": "p-teens-clapping.jpg",
@@ -122,7 +126,8 @@
   },
   "p-stage-prayer": {
     "file": "p-stage-prayer.jpg",
-    "alt": "A leader praying on stage"
+    "alt": "A leader praying on stage",
+    "pos": "center 35%"
   },
   "p-speaker": {
     "file": "p-speaker.jpg",
@@ -203,7 +208,8 @@
   },
   "step-coffee": {
     "file": "step-coffee.jpg",
-    "alt": "A smiling barista making coffee"
+    "alt": "A smiling barista making coffee",
+    "pos": "center 25%"
   },
   "step-gather": {
     "file": "step-gather.jpg",
@@ -211,7 +217,8 @@
   },
   "step-arrive": {
     "file": "step-arrive.jpg",
-    "alt": "A mum and toddler outside the Chapel on a Sunday"
+    "alt": "A mum and toddler outside the Chapel on a Sunday",
+    "pos": "center 30%"
   },
   "hero-worship": {
     "file": "sundays-hero.jpg",
@@ -271,7 +278,8 @@
   },
   "home-faith-steps": {
     "file": "home-faith-steps.jpg",
-    "alt": "Women praying together"
+    "alt": "Women praying together",
+    "pos": "center 18%"
   },
   "home-serving-world": {
     "file": "home-serving-world.jpg",
@@ -279,7 +287,8 @@
   },
   "home-connect": {
     "file": "home-connect.jpg",
-    "alt": "People praying for each other"
+    "alt": "People praying for each other",
+    "pos": "center 8%"
   },
   "lp-about-01": {
     "file": "lp/lp-about-01.jpg",
@@ -371,7 +380,8 @@
   },
   "lp-ministries-01": {
     "file": "lp/lp-ministries-01.jpg",
-    "alt": "Kids playing with pool noodles at Lifepoint"
+    "alt": "Kids playing with pool noodles at Lifepoint",
+    "pos": "center 30%"
   },
   "lp-youth-03": {
     "file": "lp/lp-youth-03.jpg",
@@ -483,11 +493,13 @@
   },
   "lp-connect-01": {
     "file": "lp/lp-connect-01.jpg",
-    "alt": "Two women and a baby at Lifepoint"
+    "alt": "Two women and a baby at Lifepoint",
+    "pos": "center 32%"
   },
   "lp-teams-01": {
     "file": "lp/lp-teams-01.jpg",
-    "alt": "Two women and a baby at Lifepoint"
+    "alt": "Two women and a baby at Lifepoint",
+    "pos": "center 32%"
   },
   "lp-teams-03": {
     "file": "lp/lp-teams-03.jpg",
@@ -495,7 +507,8 @@
   },
   "lp-teams-02": {
     "file": "lp/lp-teams-02.jpg",
-    "alt": "A volunteer serving at a coffee station"
+    "alt": "A volunteer serving at a coffee station",
+    "pos": "center 15%"
   },
   "lp-watch--listen-03": {
     "file": "lp/lp-watch--listen-03.jpg",
@@ -507,11 +520,13 @@
   },
   "lp-events-01": {
     "file": "lp/lp-events-01.jpg",
-    "alt": "Friends greeting each other at Lifepoint"
+    "alt": "Friends greeting each other at Lifepoint",
+    "pos": "center 20%"
   },
   "lp-nt26-03": {
     "file": "lp/lp-nt26-03.jpg",
-    "alt": "Two men with arms around each other"
+    "alt": "Two men with arms around each other",
+    "pos": "center 28%"
   },
   "lp-mama-village-02": {
     "file": "lp/lp-mama-village-02.jpg",
@@ -579,7 +594,8 @@
   },
   "lp-prayer-03": {
     "file": "lp/lp-prayer-03.jpg",
-    "alt": "People praying for each other"
+    "alt": "People praying for each other",
+    "pos": "center 5%"
   },
   "lp-prayer-04": {
     "file": "lp/lp-prayer-04.jpg",
@@ -591,7 +607,8 @@
   },
   "lp-care-02": {
     "file": "lp/lp-care-02.jpg",
-    "alt": "Women praying together"
+    "alt": "Women praying together",
+    "pos": "center 8%"
   },
   "lp-care-03": {
     "file": "lp/lp-care-03.jpg",
@@ -599,7 +616,8 @@
   },
   "lp-care-04": {
     "file": "lp/lp-care-04.jpg",
-    "alt": "A couple praying together"
+    "alt": "A couple praying together",
+    "pos": "center 12%"
   },
   "lp-nt26-06": {
     "file": "lp/lp-nt26-06.jpg",
@@ -731,7 +749,8 @@
   },
   "pg-care-02": {
     "file": "pages/care/02.webp",
-    "alt": "Lifepoint Church"
+    "alt": "Friends praying together with hands on shoulders",
+    "pos": "center 18%"
   },
   "pg-care-03": {
     "file": "pages/care/03.webp",
@@ -751,7 +770,8 @@
   },
   "pg-give-02": {
     "file": "pages/give/02.webp",
-    "alt": "Worship together at Lifepoint"
+    "alt": "Worship together at Lifepoint",
+    "pos": "center 18%"
   },
   "pg-give-03": {
     "file": "pages/give/03.png",
@@ -779,7 +799,8 @@
   },
   "pg-kids-04": {
     "file": "pages/kids/04.webp",
-    "alt": "Kids at Lifepoint Kids"
+    "alt": "Kids at Lifepoint Kids",
+    "pos": "center 8%"
   },
   "pg-kids-05": {
     "file": "pages/kids/05.webp",
@@ -815,7 +836,8 @@
   },
   "pg-next-steps-05": {
     "file": "pages/next-steps/05.jpg",
-    "alt": "Serving together on a Lifepoint team"
+    "alt": "Serving together on a Lifepoint team",
+    "pos": "center 18%"
   },
   "pg-prayer-01": {
     "file": "pages/prayer/01.webp",
@@ -903,7 +925,8 @@
   },
   "pg-youngadults-08": {
     "file": "pages/youngadults/08.webp",
-    "alt": "Friends connecting outside at Lifepoint Young Adults"
+    "alt": "Friends connecting outside at Lifepoint Young Adults",
+    "pos": "center 40%"
   },
   "pg-youngadults-09": {
     "file": "pages/youngadults/09.webp",
@@ -971,7 +994,8 @@
   },
   "pg-youth-11": {
     "file": "pages/youth/11.jpeg",
-    "alt": "Friends at Lifepoint Youth"
+    "alt": "Friends at Lifepoint Youth",
+    "pos": "center 15%"
   },
   "pg-youth-12": {
     "file": "pages/youth/12.jpeg",
