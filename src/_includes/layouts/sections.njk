@@ -132,7 +132,6 @@ layout: layouts/base.njk
     <article class="vid">
       <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ v.id }}?rel=0" title="{{ v.title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
       <h3>{{ v.title }}</h3>
-      {% if v.date %}<p>{{ v.date }}</p>{% endif %}
     </article>
     {% endfor %}
   </div>
