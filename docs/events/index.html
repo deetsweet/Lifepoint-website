@@ -68,7 +68,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/Lifepoint-website/assets/css/site.css?v=mwyq7fo6">
+  <link rel="stylesheet" href="/Lifepoint-website/assets/css/site.css?v=mwyq8ad8">
   <link rel="icon" href="/Lifepoint-website/assets/logo/lifepoint-badge-grey.svg" type="image/svg+xml">
 </head>
 <body class="">
@@ -189,8 +189,8 @@
 
 <section class="sec-raw"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;family=Lato:wght@400;700&amp;display=swap">
 <div id="lifepoint-events-listing" data-listing="events">
-  <p class="lp-status" role="status">Loading events... <a href="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">Browse on ChurchSuite</a></p>
-  <div class="lp-grid"></div>
+  <p class="lp-status lp-sr" role="status">Loading events... <a href="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">Browse on ChurchSuite</a></p>
+  <div class="lp-grid"><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div></div>
 
 <style>
 #lifepoint-events-listing {
@@ -370,6 +370,15 @@
   outline: 2px solid #3D6270;
   outline-offset: 4px;
 }
+#lifepoint-events-listing .lp-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#lifepoint-events-listing .lp-skel { border-radius: 20px; background: #fff; padding: 0 0 1.4rem; overflow: hidden; display: grid; gap: .6rem; box-shadow: 0 0 0 1px #ece8de; }
+#lifepoint-events-listing .lp-skel span { display: block; background: linear-gradient(90deg, #eee9dd 0%, #f6f2e8 50%, #eee9dd 100%); background-size: 200% 100%; animation: lp-shimmer 1.4s ease-in-out infinite; }
+#lifepoint-events-listing .lp-skel__img { aspect-ratio: 16/10; margin-bottom: .4rem; }
+#lifepoint-events-listing .lp-skel__bar { height: 1.1rem; width: 75%; margin: 0 1.4rem; border-radius: 6px; }
+#lifepoint-events-listing .lp-skel__bar--s { height: .75rem; width: 40%; }
+#lifepoint-events-listing .lp-skel__bar--m { width: 60%; }
+@keyframes lp-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@media (prefers-reduced-motion: reduce) { #lifepoint-events-listing .lp-skel span { animation: none; } }
 </style>
 
 <script>
@@ -620,6 +629,27 @@
     return events.filter(entry => !isSundayService(entry) || nextServices.has(entry));
   }
 
+
+  function addEventSchema(items) {
+    const data = items.filter(e => e.starts_at && e.name).slice(0, 20).map(e => {
+      const out = { '@type': 'Event', name: e.name.trim(), startDate: e.starts_at,
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', eventStatus: 'https://schema.org/EventScheduled',
+        organizer: { '@type': 'Organization', name: 'Lifepoint Church', url: 'https://www.lifepoint.org.au/' } };
+      if (e.ends_at) out.endDate = e.ends_at;
+      if (e.url) out.url = e.url;
+      const img = e.image && (e.image.large || e.image.medium || e.image.small);
+      if (img) out.image = img;
+      const loc = e.location && e.location.name;
+      out.location = { '@type': 'Place', name: loc || 'Lifepoint Church', address: (e.location && e.location.address) || loc || 'Rothwell QLD' };
+      return out;
+    });
+    if (!data.length) return;
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': data });
+    document.head.append(s);
+  }
+
   async function load() {
     const events = [];
     let page = 1;
@@ -646,11 +676,15 @@
     grid.replaceChildren(cards);
     const link = status.querySelector('a');
     status.replaceChildren(count ? '' : 'No ' + mode + ' are listed right now. ', link);
+    status.classList.remove('lp-sr');
     status.hidden = count > 0;
+    addEventSchema(visible.map(v => v.item));
   }
 
   load().catch(() => {
-    status.firstChild.textContent = 'The ' + mode + ' could not load. ';
+    grid.replaceChildren();
+    status.classList.remove('lp-sr');
+    status.firstChild.textContent = 'The ' + mode + ' could not load just now. ';
   });
 })();
 </script>
@@ -734,6 +768,6 @@ document.querySelectorAll("[data-video-toggle]").forEach(function(b){var v=b.par
     <button class="help__btn" aria-expanded="false" aria-controls="help" aria-label="How can we help?">?</button>
   </div>
 
-  <script src="/Lifepoint-website/assets/js/site.js?v=mwyq7fo6" defer></script>
+  <script src="/Lifepoint-website/assets/js/site.js?v=mwyq8ad8" defer></script>
 </body>
 </html>
