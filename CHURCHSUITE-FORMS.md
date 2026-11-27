@@ -6,8 +6,9 @@ These are the forms the new site still borrows from somewhere else. Build each i
 
 These live on The Church Co and stop working the day that account closes.
 
-1. **Plan your visit** (currently lifepoint.org.au/form/visit)
-   Used on: Home and Sundays (the main "Plan your visit" buttons).
+1. **Let us know you're coming** (currently lifepoint.org.au/form/visit)
+   Used on: the Rothwell and Caboolture West pages (the "Let us know you're coming" buttons in the Plan your visit section and at the bottom of the page). The "Plan your visit" buttons elsewhere lead to the Sundays information, not this form.
+   Suggested: one form per location so each welcome team gets its own notifications. Fields: first and last name, email, mobile (optional), which service, which Sunday (optional), who's coming (just me / with adults / family with kids), kids' ages, anything we should know.
 
 2. **Contact us / leave a message** (currently lifepoint.org.au/form/contact)
    Used on: Connect. Also the follow-up form for life coaching and financial mentoring on the Care page, and "Ask a question" on Give.

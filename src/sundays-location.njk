@@ -35,7 +35,6 @@ beyond:
   - { title: Next Steps, url: "/next-steps/", text: "Been coming for a little while? Find out more about Lifepoint and how to get connected." }
 ---
 {% import "macros.njk" as m with context %}
-{% set other = locations | reject("equalto", loc) | first %}
 
 <section class="hero">
   {{ m.photo(loc.heroImg, "hero__img", true) }}
@@ -46,7 +45,7 @@ beyond:
       <p class="hero__intro">{% if loc.note %}<strong>{{ loc.note }}.</strong> {% endif %}{{ loc.intro }}</p>
       <div class="hero__actions">
         <ul class="times">{% for t in loc.times %}<li>{{ t }}</li>{% endfor %}</ul>
-        {{ m.pill("Plan your visit", site.planVisit) }}
+        {{ m.pill("Plan your visit", "#plan") }}
       </div>
     </div>
   </div>
@@ -65,11 +64,10 @@ beyond:
       <p class="campus__times">Sundays {{ loc.times | join(" · ") }}</p>
       <p><strong>{{ loc.venue }}</strong><br>{{ loc.address }}</p>
       <p class="links">
-        <a class="arrow-link" href="{{ loc.maps }}">Google Maps <span aria-hidden="true">→</span></a>
-        <a class="arrow-link" href="{{ loc.apple }}">Apple Maps <span aria-hidden="true">→</span></a>
+        <a class="sm-btn" href="{{ loc.maps }}">Google Maps</a>
+        <a class="sm-btn" href="{{ loc.apple }}">Apple Maps</a>
       </p>
     </div>
-    <a class="locwhere__other" href="{{ ('/sundays/' + other.slug + '/') | url }}">Looking for {{ other.name }}?<span>Sundays {{ other.times | join(" · ") }} <span aria-hidden="true">→</span></span></a>
   </div>
 </section>
 
@@ -122,7 +120,7 @@ beyond:
   </div>
 </section>
 
-<section class="sec sec--linen plan">
+<section class="sec sec--linen plan" id="plan">
   {{ m.photo(loc.planImg, "plan__img") }}
   <div class="plan__text">
     {{ m.eyebrow("Plan your visit") }}
@@ -132,7 +130,7 @@ beyond:
       <li>Help getting your kids settled</li>
       <li>{% if loc.slug == "rothwell" %}A free barista coffee on us{% else %}A coffee and a friendly face{% endif %}</li>
     </ul>
-    {{ m.pill("Plan your visit", site.planVisit, "dark") }}
+    {{ m.pill("Let us know you're coming", site.planVisit, "dark") }}
   </div>
 </section>
 
@@ -195,6 +193,6 @@ beyond:
 <section class="sec closing">
   {{ m.eyebrow("See you Sunday") }}
   <h2>Your seat<br><span class="script">is saved.</span></h2>
-  {{ m.pill("Plan your visit", site.planVisit, "dark") }}
+  {{ m.pill("Let us know you're coming", site.planVisit, "dark") }}
   <p class="closing__line">{{ loc.venue }}, {{ loc.address }} · Sundays {{ loc.timesText }}</p>
 </section>

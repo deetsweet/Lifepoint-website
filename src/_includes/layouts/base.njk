@@ -61,32 +61,45 @@
   </main>
 
   <footer class="ftr">
-    <div class="ftr__top">
-      <div class="ftr__brand">
-        <a class="ftr__logo" href="{{ '/' | url }}"><img src="{{ '/assets/logo/lifepoint-primary-white.svg' | url }}" alt="Lifepoint Church" width="150" height="100" loading="lazy"></a>
-        <h2>{{ site.slogan }}</h2>
-        <a class="pill pill--light" href="{{ '/sundays/' | url }}">Plan your visit <span class="pill__arrow" aria-hidden="true">→</span></a>
-      </div>
-      <div class="ftr__info">
-        {% for l in locations %}<p><strong>{{ l.name }} · Sundays {{ l.timesText }}</strong><br>{{ l.venue }}, {{ l.address }}{% if l.note %}<br>From 7 February 2027{% endif %}</p>{% endfor %}
-        <p><strong>Get in touch</strong><br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="tel:{{ site.phoneLink }}">{{ site.phone }}</a></p>
-        <p><strong>{{ site.office.label }}</strong><br>{% for line in site.office.lines %}{{ line }}<br>{% endfor %}<a href="{{ site.office.map }}">Get directions</a></p>
-      </div>
+    <div class="ftr__head">
+      <a class="ftr__logo" href="{{ '/' | url }}"><img src="{{ '/assets/logo/lifepoint-secondary-white.svg' | url }}" alt="Lifepoint Church" width="240" height="31" loading="lazy"></a>
+      <h2>{{ site.slogan }}</h2>
+      <a class="ftr__cta" href="{{ '/sundays/' | url }}">Plan your visit</a>
     </div>
-    <nav class="ftr__cols" aria-label="Footer navigation">
-      {% for col in site.footer %}
-      <div>
-        <h3>{{ col.heading }}</h3>
-        <ul>{% for l in col.links %}<li><a href="{{ l.url | url }}">{{ l.label }}</a></li>{% endfor %}</ul>
+    <div class="ftr__times">
+      {% for l in locations %}<p><strong>{{ l.name }} · Sundays {{ l.timesText }}</strong><span>{{ l.venue }} · {{ l.address }}{% if l.note %} · from 7 February 2027{% endif %}</span></p>{% endfor %}
+    </div>
+    <div class="ftr__main">
+      <div class="ftr__contact">
+        <p><strong>Get in touch</strong><a href="mailto:{{ site.email }}">{{ site.email }}</a><a href="tel:{{ site.phoneLink }}">{{ site.phone }}</a></p>
+        <p><strong>{{ site.office.label }}</strong>{% for line in site.office.lines %}<span>{{ line }}</span>{% endfor %}<a href="{{ site.office.map }}">Get directions</a></p>
       </div>
-      {% endfor %}
-    </nav>
+      <nav class="ftr__nav" aria-label="Footer navigation">
+        {% for col in site.footer %}
+        <details class="ftr__col" open>
+          <summary>{{ col.heading }}</summary>
+          <ul>{% for l in col.links %}<li><a href="{{ l.url | url }}">{{ l.label }}</a></li>{% endfor %}</ul>
+        </details>
+        {% endfor %}
+      </nav>
+    </div>
     <div class="ftr__social">
       <div><h3>Follow Lifepoint</h3><p>Stay connected through the week.</p></div>
-      <ul>{% for s in site.social %}<li><a href="{{ s.url }}" aria-label="Lifepoint on {{ s.name }}" title="{{ s.name }}">{% if s.name == "Instagram" %}<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>{% endif %}{% if s.name == "Facebook" %}<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>{% endif %}{% if s.name == "YouTube" %}<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>{% endif %}</a></li>{% endfor %}</ul>
+      <ul>{% for s in site.social %}<li><a href="{{ s.url }}">{% if s.name == "Instagram" %}<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>{% endif %}{% if s.name == "Facebook" %}<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 12 2z"/></svg>{% endif %}{% if s.name == "YouTube" %}<svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>{% endif %}<span>{{ s.name }}</span></a></li>{% endfor %}</ul>
     </div>
     <p class="ftr__copy">© 2026 Lifepoint Church</p>
+    <script>
+    (function () {
+      var wide = window.matchMedia('(min-width: 900px)');
+      var cols = document.querySelectorAll('.ftr__col');
+      function sync() { cols.forEach(function (d) { d.open = wide.matches; }); }
+      sync();
+      wide.addEventListener('change', sync);
+      cols.forEach(function (d) { d.querySelector('summary').addEventListener('click', function (e) { if (wide.matches) e.preventDefault(); }); });
+    })();
+    </script>
   </footer>
+
 
   <div class="help">
     <div class="help__panel" id="help" hidden>

@@ -32,7 +32,7 @@ help:
         {% for l in locations %}<li><a class="hhero__loc" href="{{ ('/sundays/' + l.slug + '/') | url }}"><strong>{{ l.name }}</strong><span class="times">{% for t in l.times %}<span>{{ t }}</span>{% endfor %}</span><span class="hhero__go" aria-hidden="true">→</span></a></li>{% endfor %}
       </ul>
       <div class="btns">
-        <a class="pill pill--blue" href="{{ '/sundays/' | url }}">Plan your Sunday</a>
+        <a class="pill pill--blue" href="{{ '/sundays/' | url }}">Plan your visit</a>
         <a class="pill pill--blue pill--clear" href="{{ '/watch--listen/' | url }}"><svg class="pill__play" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch online</a>
       </div>
     </div>
