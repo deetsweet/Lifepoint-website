@@ -4,22 +4,20 @@ title: Home | Lifepoint Church - Moreton, Queensland
 description: Lifepoint Church in Moreton Bay. Sundays at Rothwell (8.30am, 10am and 5pm) and Caboolture West (9.30am). Your place to belong.
 permalink: /
 heroHeader: true
-places:
-  - { img: home-hub, title: Lifepoint Hub, sub: "Weekday office<br>&amp; programs space", times: Open Monday to Friday, place: "1 McKillop St, Rothwell", url: "https://maps.app.goo.gl/uBr3D9gFD6uBe15a9", link: Find our Hub }
-  - { img: home-rothwell, title: Rothwell, sub: 3 services every Sunday, times: "8.30am | 10am | 5pm", place: "<strong>Grace Lutheran College Chapel</strong><br>Cnr Mewes Rd &amp; Anzac Ave, Rothwell", url: /sundays/rothwell/, link: Plan a visit }
-  - { img: home-caboolture-west, title: Caboolture West, sub: "Sundays from<br>7 February 2027", times: 9.30am, place: "<strong>Grace Lutheran College, Caboolture Campus</strong><br>129 Toohey St, Caboolture", url: /sundays/caboolture-west/, link: Plan a visit }
-tiles:
-  - { img: home-kids-youth, title: "Kids &amp; Youth", text: Find out more about our Lifepoint Kids and Youth programs., links: [{ label: Kids, url: /kids/ }, { label: Youth, url: /youth/ }] }
-  - { img: home-programs, title: Programs, text: "Every age and stage of life is different, with its own challenges and joys.", links: [{ label: Learn more, url: /ministries/ }] }
-  - { img: home-groups, title: Find a Group, text: "We meet as small groups through the week. Find a group that fits your interests, age and stage of life.", links: [{ label: Find a group, url: /small-groups/ }] }
-  - { img: home-messages, title: Messages, text: "Watch and listen to past messages to see what we're like.", links: [{ label: Watch, url: /watch--listen/ }] }
-  - { img: home-serve, title: Serve, text: "The best way to find your place is to use your gifts and time on a Lifepoint team, in our mission to see Jesus transform lives.", links: [{ label: Join a team, url: /teams/ }] }
-help:
-  - { img: home-team, title: Meet the Team, text: Meet our staff and leaders., links: [{ label: About us, url: /our-team/ }] }
-  - { img: home-serving-world, title: Serving our World, text: "We serve our local community in Moreton Bay, and the world through partners like Compassion.", links: [{ label: Compassion, url: "https://compassion.com.au" }] }
-  - { img: home-faith-steps, title: Faith Steps, text: Interested in taking a step to find out more about God and faith?, links: [{ label: Next steps, url: /next-steps/ }] }
-  - { img: p-stage-prayer, title: Connect with Us, text: "Let us know what you need and someone from our team will contact you.", links: [{ label: Connect, url: /connect/ }] }
-  - { img: home-connect, title: Prayer, text: Let us know how we can be praying for you., links: [{ label: Prayer, url: /prayer/ }] }
+firstSunday:
+  - { title: Arrive, img: sundays-step-arrive, text: "Aim for about 10 minutes early. Our welcome team will meet you at the door and help you find your way." }
+  - { title: If you have kids, img: sundays-step-kids, text: "Our Lifepoint Kids team will check your children in, get them settled and show you where to pick them up." }
+  - { title: Gather, img: sundays-step-gather, text: "We sing, pray and hear a message from the Bible. The whole service runs for about 65 minutes." }
+  - { title: Stay for a coffee, img: sundays-step-coffee, text: "Stick around afterwards for a coffee. It's the easiest way to meet a few people." }
+videos:
+  - { video: jqyPt60bXZ0, title: "A message from Dan", text: "Full, But Starving" }
+  - { video: o1SLuRvRJjE, title: "Desmond's story", text: "How Desmond found his place at Lifepoint" }
+steps:
+  - { img: p-alpha-guest, title: Try Alpha, text: "Food, a short talk and honest conversation about life and faith. Questions welcome.", links: [{ label: Alpha, url: /alpha/ }] }
+  - { img: home-groups, title: Find a group, text: "We meet in small groups through the week. Find one that fits your age, stage and interests.", links: [{ label: Find a group, url: /small-groups/ }] }
+  - { img: home-faith-steps, title: Faith steps, text: "Exploring faith, getting baptised or wanting to go deeper? Find your next step.", links: [{ label: Next steps, url: /next-steps/ }] }
+  - { img: home-serve, title: Serve, text: "The best way to find your place is to use your gifts on a Lifepoint team.", links: [{ label: Join a team, url: /teams/ }] }
+  - { img: home-connect, title: Prayer, text: "Let us know how we can be praying for you.", links: [{ label: Prayer, url: /prayer/ }] }
 ---
 {% import "macros.njk" as m with context %}
 
@@ -28,9 +26,12 @@ help:
   <div class="hhero__inner">
     <h1 class="hhero__title">Welcome to Lifepoint <span class="script">your place to belong</span></h1>
     <div class="hhero__foot">
+      <div class="hhero__where">
+      <p class="hhero__label">One church · two locations</p>
       <ul class="hhero__locs">
-        {% for l in locations %}<li><a class="hhero__loc" href="{{ ('/sundays/' + l.slug + '/') | url }}"><strong>{{ l.name }}</strong><span class="times">{% for t in l.times %}<span>{{ t }}</span>{% endfor %}</span><span class="hhero__go" aria-hidden="true">→</span></a></li>{% endfor %}
+        {% for l in locations %}<li><a class="hhero__loc" href="{{ ('/sundays/' + l.slug + '/') | url }}"><strong>{{ l.name }}{% if l.note %}<small class="hhero__soon">From 7 Feb 2027</small>{% endif %}</strong><span class="times">{% for t in l.times %}<span>{{ t }}</span>{% endfor %}</span><span class="hhero__go" aria-hidden="true">→</span></a></li>{% endfor %}
       </ul>
+      </div>
       <div class="btns">
         <a class="pill pill--blue" href="{{ '/sundays/' | url }}">Plan your visit</a>
         <a class="pill pill--blue pill--clear" href="{{ '/watch--listen/' | url }}"><svg class="pill__play" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch online</a>
@@ -39,64 +40,80 @@ help:
   </div>
 </section>
 
-<section class="sec sec--linen hloc">
-  <div class="hloc__grid">
-    {% for l in places %}
-    <a class="hloc__card" href="{{ l.url | url }}">
-      {{ m.photo(l.img, "hloc__img") }}
-      <div class="hloc__body">
-        <h2>{{ l.title }}</h2>
-        <p class="hloc__sub">{{ l.sub | safe }}</p>
-        <div class="hloc__foot">
-          <p class="hloc__times">{{ l.times }}</p>
-          <p>{{ l.place | safe }}</p>
-          <span class="pill pill--light">{{ l.link }}</span>
-        </div>
-      </div>
-    </a>
+<section class="sec sec--linen" id="first-sunday">
+  <div class="centre-head">
+    {{ m.eyebrow("Your first Sunday") }}
+    <h2>Here's what to expect.</h2>
+    <p class="lede">No church experience required. Come as you are and we'll help you find your way.</p>
+  </div>
+  <ol class="steps steps--compact">
+    {% for s in firstSunday %}
+    <li class="step">
+      <div class="step__media">{{ m.photo(s.img, "step__img") }}<span class="step__num">0{{ loop.index }}</span></div>
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.text }}</p>
+    </li>
     {% endfor %}
+  </ol>
+  <p class="btns btns--centre">{{ m.pill("Plan your visit", "/sundays/", "dark") }}</p>
+</section>
+
+<section class="sec sec--nextgen kids">
+  <div class="kids__text">
+    {{ m.eyebrow("Lifepoint Kids") }}
+    <h2>Your kids will love it here.</h2>
+    <dl class="groups">
+      <div><dt>Tots</dt><dd>18 months to Kindy age</dd></div>
+      <div><dt>Kids Crew Jnr</dt><dd>Kindy and Prep</dd></div>
+      <div><dt>Kids Crew</dt><dd>Years 1 to 6</dd></div>
+    </dl>
+    <ul class="stars">
+      <li>Safe, simple check-in when you arrive</li>
+      <li>Every leader holds a Blue Card and completes child-safe training</li>
+      <li>Pre-register online to skip the forms on the day</li>
+    </ul>
+    <p class="btns">{{ m.pill("Pre-register your kids", site.kidsRego, "dark") }}<a class="arrow-link" href="{{ '/kids/' | url }}">More about Kids <span aria-hidden="true">→</span></a></p>
+  </div>
+  <div class="kids__collage">
+    {% for i in ["sundays-kids-1", "sundays-kids-2", "sundays-kids-3"] %}{{ m.photo(i, "collage__img") }}{% endfor %}
   </div>
 </section>
 
+<section class="sec sec--dark">
+  <div class="centre-head">
+    {{ m.eyebrow("See what it's like") }}
+    <h2>Have a look before you come.</h2>
+    <p class="lede">Hear a message from Dan, or from someone who's found their place at Lifepoint.</p>
+  </div>
+  <div class="vids">
+    {% for v in videos %}
+    <article class="vid">
+      <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ v.video }}?rel=0" title="{{ v.title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <h3>{{ v.title }}</h3>
+      <p>{{ v.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="btns btns--centre">{{ m.pill("More messages", "/watch--listen/", "light") }}</p>
+</section>
 
 <section class="sec sec--linen hletter">
   {{ m.photo("home-dan-steph", "hletter__img") }}
-  <p class="hletter__kicker">A message from our Senior Pastor</p>
+  <p class="hletter__kicker">A welcome from our Senior Pastors</p>
   <h2>You're welcome in our family</h2>
-  <p>Our vision at Lifepoint is to make Jesus known in our region and see thousands of lives transformed by the gospel.</p>
-  <p>We believe that every person matters to God, and we invite you to our church no matter what your beliefs, doubts, past or problems.</p>
-  <p>In a world where being completely known and being completely accepted are often two separate categories, we believe the strange and shockingly good message of Jesus is exactly what this world needs right now.</p>
-  <p>We'd love to see you Sunday.</p>
+  <p>Every person matters to God, and you're welcome here whatever your beliefs, doubts, past or problems. We'd love to meet you on Sunday.</p>
   <p class="hletter__sig script">Dan and Steph Sweetman</p>
-  {{ m.pill("Meet our team", "/our-team/", "dark") }}
+  {{ m.pill("Read Dan's welcome", "/our-team/#welcome", "dark") }}
 </section>
 
 <section class="sec sec--linen hrow" id="explore">
-<div class="htiles htiles--scroll">
-  {% for t in tiles %}
-  <article class="htile">
-    {{ m.photo(t.img, "htile__img") }}
-    <div class="htile__body">
-      <h3>{{ t.title | safe }}</h3>
-      <p>{{ t.text }}</p>
-      <p class="htile__btns">{% for b in t.links %}<a class="pill pill--light" href="{{ b.url | url }}">{{ b.label }}</a>{% endfor %}</p>
-    </div>
-  </article>
-  {% endfor %}
-</div>
-</section>
-
-
-{% include "embeds/home-events.html" %}
-
-<section class="sec sec--linen hhelp">
   <div class="centre-head">
-    <h2>Need more help?</h2>
-    <p class="lede">Find out more and take the next step.</p>
+    {{ m.eyebrow("Take a step") }}
+    <h2>Already coming? Here's what's next.</h2>
   </div>
-  <div class="htiles htiles--inset htiles--scroll">
-    {% for t in help %}
-    <article class="htile"{% if t.pos %} style="--pos: {{ t.pos }}"{% endif %}>
+  <div class="htiles htiles--scroll">
+    {% for t in steps %}
+    <article class="htile">
       {{ m.photo(t.img, "htile__img") }}
       <div class="htile__body">
         <h3>{{ t.title | safe }}</h3>
@@ -107,6 +124,8 @@ help:
     {% endfor %}
   </div>
 </section>
+
+{% include "embeds/home-events.html" %}
 
 <section class="hband">
   {{ m.photo("home-see-you-sunday", "hband__img") }}

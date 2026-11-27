@@ -142,7 +142,7 @@ layout: layouts/base.njk
 </section>
 
 {% elif s.type == "quote" %}
-<section class="sec{{ bg or ' sec--linen' }} welcome">
+<section class="sec{{ bg or ' sec--linen' }} welcome"{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="welcome__media">{{ m.photo(s.img, "welcome__img") }}</div>
   <div class="welcome__text">
     {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
