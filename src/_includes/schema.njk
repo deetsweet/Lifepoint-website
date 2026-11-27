@@ -1,0 +1,44 @@
+{%- set base = site.url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "@id": "{{ base }}/#church",
+  "name": "Lifepoint Church",
+  "slogan": "{{ site.slogan }}",
+  "url": "{{ base }}/",
+  "logo": "{{ base }}/assets/logo/lifepoint-badge-grey.svg",
+  "image": "{{ base }}/assets/img/{{ site.shareImg }}",
+  "email": "{{ site.email }}",
+  "telephone": "{{ site.phoneLink }}",
+  "address": { "@type": "PostalAddress", "streetAddress": "1 McKillop Street", "addressLocality": "Rothwell", "addressRegion": "QLD", "postalCode": "4022", "addressCountry": "AU" },
+  "areaServed": "City of Moreton Bay",
+  "sameAs": [{% for s in site.social %}"{{ s.url }}"{% if not loop.last %}, {% endif %}{% endfor %}],
+  "department": [
+    {
+      "@type": "Church",
+      "@id": "{{ base }}/sundays/rothwell/#church",
+      "name": "Lifepoint Church Rothwell",
+      "url": "{{ base }}/sundays/rothwell/",
+      "address": { "@type": "PostalAddress", "streetAddress": "Grace Lutheran College Chapel, Cnr Mewes Rd & Anzac Ave", "addressLocality": "Rothwell", "addressRegion": "QLD", "postalCode": "4022", "addressCountry": "AU" },
+      "event": [{% for t in [["08:30","8.30am"],["10:00","10am"],["17:00","5pm"]] %}
+        { "@type": "Event", "name": "Sunday service {{ t[1] }}, Lifepoint Rothwell", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "isAccessibleForFree": true,
+          "location": { "@type": "Place", "name": "Grace Lutheran College Chapel", "address": "Cnr Mewes Rd & Anzac Ave, Rothwell QLD 4022" },
+          "eventSchedule": { "@type": "Schedule", "repeatFrequency": "P1W", "byDay": "https://schema.org/Sunday", "startTime": "{{ t[0] }}", "scheduleTimezone": "Australia/Brisbane" } }{% if not loop.last %},{% endif %}{% endfor %}
+      ]
+    },
+    {
+      "@type": "Church",
+      "@id": "{{ base }}/sundays/caboolture-west/#church",
+      "name": "Lifepoint Church Caboolture West",
+      "url": "{{ base }}/sundays/caboolture-west/",
+      "address": { "@type": "PostalAddress", "streetAddress": "Grace Lutheran College, Caboolture Campus, 129 Toohey St", "addressLocality": "Caboolture", "addressRegion": "QLD", "postalCode": "4510", "addressCountry": "AU" },
+      "event": [
+        { "@type": "Event", "name": "Sunday service 9.30am, Lifepoint Caboolture West", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "isAccessibleForFree": true,
+          "location": { "@type": "Place", "name": "Grace Lutheran College, Caboolture Campus", "address": "129 Toohey St, Caboolture QLD 4510" },
+          "eventSchedule": { "@type": "Schedule", "repeatFrequency": "P1W", "byDay": "https://schema.org/Sunday", "startTime": "09:30", "startDate": "2027-02-07", "scheduleTimezone": "Australia/Brisbane" } }
+      ]
+    }
+  ]
+}
+</script>
