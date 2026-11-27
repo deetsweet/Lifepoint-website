@@ -18,8 +18,8 @@ help:
   - { img: home-team, title: Meet the Team, text: Meet our staff and leaders., links: [{ label: About us, url: /our-team/ }] }
   - { img: home-serving-world, title: Serving our World, text: "We serve our local community in Moreton Bay, and the world through partners like Compassion.", links: [{ label: Compassion, url: "https://compassion.com.au" }] }
   - { img: home-faith-steps, title: Faith Steps, text: Interested in taking a step to find out more about God and faith?, links: [{ label: Next steps, url: /next-steps/ }] }
-  - { img: home-connect, title: Connect with Us, text: "Let us know what you need and someone from our team will contact you.", links: [{ label: Connect, url: /connect/ }] }
-  - { img: p-stage-prayer, title: Prayer, text: Let us know how we can be praying for you., links: [{ label: Prayer, url: /prayer/ }] }
+  - { img: p-stage-prayer, title: Connect with Us, text: "Let us know what you need and someone from our team will contact you.", links: [{ label: Connect, url: /connect/ }] }
+  - { img: home-connect, pos: "center 20%", title: Prayer, text: Let us know how we can be praying for you., links: [{ label: Prayer, url: /prayer/ }] }
 ---
 {% import "macros.njk" as m with context %}
 
@@ -96,7 +96,7 @@ help:
   </div>
   <div class="htiles htiles--inset htiles--scroll">
     {% for t in help %}
-    <article class="htile">
+    <article class="htile"{% if t.pos %} style="--pos: {{ t.pos }}"{% endif %}>
       {{ m.photo(t.img, "htile__img") }}
       <div class="htile__body">
         <h3>{{ t.title | safe }}</h3>
