@@ -255,10 +255,10 @@
         element('p', 'lp-time', 'Ends ' + date.format(end) + ' at ' + clock.format(end))
       );
     } else {
-      const dateLabel = date.format(start) + (multipleDays ? ' \u2013 ' + date.format(end) : '');
+      const dateLabel = date.format(start) + (multipleDays ? ' to ' + date.format(end) : '');
       const timeLabel = event.all_day
         ? 'All day'
-        : clock.format(start) + (hasEnd ? ' \u2013 ' + clock.format(end) : '');
+        : clock.format(start) + (hasEnd ? ' to ' + clock.format(end) : '');
       body.append(element('p', 'lp-date', dateLabel), element('p', 'lp-time', timeLabel));
     }
 
