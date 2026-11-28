@@ -906,3 +906,13 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .prow__title { font: 500 1.05rem/1.25 var(--head); }
 .vid__more { display: inline-block; margin-top: .3rem; font: 500 .95rem var(--head); color: var(--charcoal); }
 .sec--dark .vid__more { color: var(--white); }
+/* Logos in two-column sections: shown whole at a modest size, never cropped */
+.plan__img--logo { aspect-ratio: auto; height: auto; object-fit: contain; max-width: 18rem; justify-self: center; border-radius: 0; }
+/* Welcome letter: text only, with a small round photo beside the sign-off */
+.welcome--avatar { grid-template-columns: 1fr !important; }
+.welcome--avatar .welcome__text { max-width: 44rem; }
+.sig--avatar { display: flex; align-items: center; gap: 1rem; margin-top: 1.8rem; }
+.sig__img { width: 4.5rem; height: 4.5rem; border-radius: 50%; object-fit: cover; flex: none; }
+.sig__text { display: grid; gap: 0; margin: 0; }
+.sig__text .script { font-size: 2.3rem; line-height: 1.3; }
+.sig__text span:last-child { font-family: var(--head); font-size: .85rem; letter-spacing: .2em; text-transform: uppercase; }

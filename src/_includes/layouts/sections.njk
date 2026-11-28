@@ -59,7 +59,7 @@ layout: layouts/base.njk
 {% elif s.type == "split" %}
 <section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
   <div class="plan{% if s.flip %} plan--flip{% endif %}">
-    {{ m.photo(s.img, "plan__img") }}
+    {{ m.photo(s.img, "plan__img" + (" plan__img--logo" if s.logo else "")) }}
     <div>{{ head(s) }}{{ body(s) }}</div>
   </div>
 </section>
@@ -156,13 +156,14 @@ layout: layouts/base.njk
 {% endif %}
 
 {% elif s.type == "quote" %}
-<section class="sec{{ bg or ' sec--linen' }} welcome"{% if s.id %} id="{{ s.id }}"{% endif %}>
-  <div class="welcome__media">{{ m.photo(s.img, "welcome__img") }}</div>
+<section class="sec{{ bg or ' sec--linen' }} welcome{% if s.avatar %} welcome--avatar{% endif %}"{% if s.id %} id="{{ s.id }}"{% endif %}>
+  {% if not s.avatar %}<div class="welcome__media">{{ m.photo(s.img, "welcome__img") }}</div>{% endif %}
   <div class="welcome__text">
     {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
     {% if s.quote %}<blockquote>{{ s.quote | safe }}</blockquote>{% endif %}
     {% for p in s.text %}<p>{{ p | safe }}</p>{% endfor %}
-    {% if s.sig %}<p class="sig"><span class="script">{{ s.sig }}</span>{% if s.role %}<span>{{ s.role }}</span>{% endif %}</p>{% endif %}
+    {% if s.sig and s.avatar %}<div class="sig sig--avatar">{{ m.photo(s.img, "sig__img") }}<p class="sig__text"><span class="script">{{ s.sig }}</span>{% if s.role %}<span>{{ s.role }}</span>{% endif %}</p></div>
+    {% elif s.sig %}<p class="sig"><span class="script">{{ s.sig }}</span>{% if s.role %}<span>{{ s.role }}</span>{% endif %}</p>{% endif %}
     {% if s.buttons %}<p class="btns">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
   </div>
 </section>
