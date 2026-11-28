@@ -16,11 +16,6 @@ layout: layouts/base.njk
 
   {% if video %}
   <div class="post__wide"><div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ video }}?rel=0" title="{{ title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div></div>
-  {% elif label == "Sermon" %}
-  <div class="post__photo"><div class="post__novideo">
-    {% if img %}{{ m.photo(img, "post__img", false, imgPos) }}{% endif %}
-    <p>The video of this message will be added here soon. <a href="{{ '/watch--listen/' | url }}">Watch recent messages</a></p>
-  </div></div>
   {% elif img %}
   <div class="post__photo">{{ m.photo(img, "post__img", false, imgPos) }}</div>
   {% endif %}
