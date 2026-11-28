@@ -544,6 +544,11 @@
     "file": "lp/lp-our-team-05.jpg",
     "alt": "Zac Sweetman"
   },
+  "zac-speaking": {
+    "file": "lp/zac-speaking.webp",
+    "alt": "Zac Sweetman speaking at Lifepoint",
+    "pos": "center 18%"
+  },
   "lp-our-team-06": {
     "file": "lp/lp-our-team-06.jpg",
     "alt": "Steph Sweetman"

@@ -59,13 +59,14 @@ layout: layouts/base.njk
 {% elif s.type == "split" %}
 <section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
   <div class="plan{% if s.flip %} plan--flip{% endif %}">
-    {{ m.photo(s.img, "plan__img" + (" plan__img--logo" if s.logo else "")) }}
+    {{ m.photo(s.img, "plan__img" + (" plan__img--logo" if s.logo else "") + (" plan__img--portrait" if s.portrait else "")) }}
     <div>{{ head(s) }}{{ body(s) }}</div>
   </div>
 </section>
 
 {% elif s.type == "cards" %}
-<section class="sec{{ bg }}" {% if s.id %}id="{{ s.id }}"{% endif %}>
+<section class="sec{{ bg }}{% if s.bgImg %} sec--photo{% endif %}" {% if s.id %}id="{{ s.id }}"{% endif %}>
+  {% if s.bgImg %}{{ m.photo(s.bgImg, "sec__bg") }}{% endif %}
   {% if s.heading or s.eyebrow %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
   <div class="gcards gcards--{{ s.cols or 3 }}{% if s.portraits %} gcards--portraits{% endif %}{% if s.logos %} gcards--logos{% endif %}">
     {% for c in s.cards %}
@@ -217,6 +218,10 @@ layout: layouts/base.njk
   {% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}
   <h2>{{ s.heading | safe }}</h2>
   {% for p in s.text %}<p class="closing__text">{{ p | safe }}</p>{% endfor %}
+  {% if s.person %}<div class="closing__person">
+    <span class="closing__face"{% if s.person.zoom %} style="--zoom: {{ s.person.zoom }}; --focus: {{ s.person.focus or 'center' }}"{% endif %}>{{ m.photo(s.person.img, "closing__face-img") }}</span>
+    <span><strong>{{ s.person.name }}</strong>{% if s.person.role %}<span>{{ s.person.role }}</span>{% endif %}</span>
+  </div>{% endif %}
   <p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>
   {% if s.small %}<p class="closing__line">{{ s.small | safe }}</p>{% endif %}
 </section>

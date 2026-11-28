@@ -973,3 +973,20 @@ html:not(.launched) .post-launch { display: none !important; }
 .post__photo .post__img { aspect-ratio: 16/9; }
 /* Blog list banners: 16:7 (a little taller than 16:4); article photos stay 16:9 */
 .bcard:has(.bcard__thumb) .bcard__thumb { aspect-ratio: 16/7; }
+/* Closing section: small round photo and name of the person to contact */
+.closing__person { display: inline-flex; align-items: center; gap: .9rem; margin: .6rem auto 1.4rem; text-align: left; }
+.closing__face { flex: none; width: 4.5rem; height: 4.5rem; border-radius: 50%; overflow: hidden; }
+.closing__face-img { width: 100%; height: 100%; object-fit: cover; transform: scale(var(--zoom, 1)); transform-origin: var(--focus, center); }
+.closing__person strong { display: block; font-family: var(--head); font-weight: 500; font-size: 1.1rem; }
+.closing__person span span { color: var(--muted); font-size: .95rem; }
+.sec--dark .closing__person span span { color: rgba(255,255,255,.8); }
+.closing__person { margin-bottom: .2rem; }
+.closing__person + .btns { margin-top: 1rem; }
+/* Portrait photos in two-column sections (e.g. Zac on Young Adults): tall and big, never stretched */
+.plan__img--portrait { aspect-ratio: 4/5; max-width: 30rem; justify-self: center; }
+/* Sections with a darkened photo behind them (bgImg) */
+.sec--photo { position: relative; overflow: hidden; background: var(--charcoal); color: var(--white); }
+.sec--photo > .sec__bg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; margin: 0; object-fit: cover; z-index: 0; }
+.sec--photo::before { content: ""; position: absolute; inset: 0; background: rgba(20, 20, 20, .68); z-index: 1; }
+.sec--photo > *:not(.sec__bg) { position: relative; z-index: 2; }
+.sec--photo .lede { color: rgba(255, 255, 255, .9); }
