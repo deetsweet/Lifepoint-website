@@ -42,12 +42,13 @@ jobs:
             --exclude '^https://www\.lifepoint\.org\.au'
             --exclude 'fonts\.googleapis\.com|fonts\.gstatic\.com'
             --exclude 'facebook\.com|instagram\.com'
+            --exclude 'unsplash\.com/photos/'
             '_linkcheck/**/*.html'
         # Notes on the settings above:
         # - 403 and 429 count as working: some sites block automated checkers but work fine for people.
         # - www.lifepoint.org.au is skipped until the domain moves to this site (it still serves the
         #   old Church Co site, so page addresses there don't match yet). Remove that line after the move.
-        # - Facebook and Instagram block checkers, so their links are skipped.
+        # - Facebook, Instagram and Unsplash photo pages block checkers (they work in a browser), so they're skipped.
 
       - name: Open or update the issue listing broken links
         if: steps.lychee.outputs.exit_code != 0
