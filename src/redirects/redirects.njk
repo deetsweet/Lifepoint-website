@@ -1,0 +1,10 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}"
+eleventyExcludeFromCollections: true
+---
+{#- Old lifepoint.org.au addresses that now live somewhere else. Add new ones in src/_data/redirects.json. -#}
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><title>{{ r.title }} | Lifepoint Church</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url={{ r.to | url }}"><link rel="canonical" href="{{ site.url }}{{ r.to }}"></head><body><p>This page has moved: <a href="{{ r.to | url }}">{{ r.title }}</a></p></body></html>

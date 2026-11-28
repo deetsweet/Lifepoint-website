@@ -1,0 +1,10 @@
+[
+  { "from": "/join-a-team/", "to": "/teams/", "title": "Join a Team" },
+  { "from": "/about-us/", "to": "/about/", "title": "About" },
+  { "from": "/for-moreton-bay/", "to": "/about/", "title": "About" },
+  { "from": "/sermons/", "to": "/watch--listen/", "title": "Watch & listen" },
+  { "from": "/channel/cd424263-224a-4408-bfa3-cd3d630f2352/", "to": "/watch--listen/", "title": "Watch & listen" },
+  { "from": "/event/04dc40a7-630b-4ee4-992a-02cd7f4d35b1/", "to": "/events/", "title": "Events" },
+  { "from": "/event/2dde22c7-e2a2-4d2e-b7d7-24848c6eb1d3/", "to": "/events/", "title": "Events" },
+  { "from": "/event/44f08438-1e85-4be8-9310-0d4fa4bda3fa/", "to": "/events/", "title": "Events" }
+]
