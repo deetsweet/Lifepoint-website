@@ -4,6 +4,7 @@ date: 2025-10-31
 author: dan
 label: Sermon
 img: pg-next-steps-02
+imgPos: center 28%
 series: Exile Survival Guide
 passage: 1 Peter 1:1–9
 excerpt: The world is changing faster than any of us can keep up with. Peter's letter to people far from home offers a hope that actually works.

@@ -46,9 +46,9 @@ Your article goes here. Leave a blank line between paragraphs.
 | `date` | The day it went out: `YYYY-MM-DD`. |
 | `author` | One of `dan`, `jason`, `breyton`, `jem`. To add someone, add them to `src/_data/authors.json` (name, role and a photo name). |
 | `label` | Exactly one of: `Sermon`, `From the team`, `Church news`. |
-| `img` | A photo name from `src/_data/images.json` (for example `home-see-you-sunday`). Leave the line out if there's no photo. |
+| `img` | A photo name from `src/_data/images.json` (for example `home-see-you-sunday`). Every post should have one, sermons included. It shows as a thin banner (4 wide by 1 high) above the title, so pick a photo that still reads when cropped to a strip. See "Photos" below. |
 | `excerpt` | One or two sentences for the cards. |
-| `video` | Sermons only: the YouTube video ID (the part after `watch?v=`). |
+| `video` | Sermons only, optional: the YouTube video ID (the part after `watch?v=`). Add it once the video is uploaded; the post doesn't need to wait for it. |
 | `series`, `passage` | Sermons only, optional: shown under the title. |
 | `ai: true` | Add this to AI-assisted summaries. It shows a small note at the end saying so. |
 
@@ -114,7 +114,15 @@ A Bible verse:
 
 - Always have the preacher read the summary before it goes live.
 - Add `ai: true` if AI helped write it.
-- If the video isn't on YouTube yet, leave `video` out. The post shows "The video of this message will be added here soon". Add the `video:` line once it's uploaded.
+- Post the summary early, from the preacher's notes or a transcript, so small groups have it in the week of the message. Don't wait for YouTube: videos often go up a week or more later.
+- Until there's a video, leave `video` out. The post shows its photo with "The video of this message will be added here soon". Add the `video:` line once it's uploaded and the video appears at the top of the post, and a "Read the summary" link appears under it on Watch & listen.
+- Give sermons a photo like any other post (`img`). YouTube thumbnails aren't used, so the photo doesn't change when the video arrives.
+
+## 6. Photos
+
+- Use a real Lifepoint photo when one clearly fits the post, otherwise a free stock photo of an object or scene that echoes the main idea (bread for a message about being hungry, coffee cups for a story about welcome). Avoid stock photos of people, who could be mistaken for Lifepoint people.
+- Stock photos: use Unsplash photos marked "Free to use", never Unsplash+ (paid). Save the photo about 1600 pixels wide into `src/assets/img/blog/`, then add it to `src/_data/images.json` with a `credit` (the photographer's name) and `creditUrl` (the photo's Unsplash page). The post then shows "Photo: name on Unsplash" at the end.
+- Photos are cropped to a 4:1 strip. If heads or the important part get cut off, add `imgPos: center 25%` (or similar) under `img:` in the post. Lower percentages move the crop up the photo. This only affects that post, not other pages using the same photo.
 
 ## Checking before it goes live
 

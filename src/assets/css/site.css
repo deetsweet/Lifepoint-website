@@ -956,3 +956,18 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 /* Caboolture West launch wording (see src/_data/launch.js) */
 html.launched .pre-launch { display: none !important; }
 html:not(.launched) .post-launch { display: none !important; }
+/* Blog list v4: a thin 16:4 photo banner across the top of each post, text below (all screen sizes) */
+.bcard:has(.bcard__thumb) { grid-template-columns: 1fr; grid-template-areas: "thumb" "meta" "title" "excerpt" "by"; row-gap: .45rem; column-gap: 0; padding: .7rem .7rem 1.3rem; align-items: start; }
+.bcard:has(.bcard__thumb) .bcard__body { display: contents; }
+.bcard:has(.bcard__thumb) .bcard__meta { grid-area: meta; }
+.bcard:has(.bcard__thumb) h3 { grid-area: title; }
+.bcard:has(.bcard__thumb) .bcard__excerpt { grid-area: excerpt; }
+.bcard:has(.bcard__thumb) .bcard__by { grid-area: by; }
+.bcard:has(.bcard__thumb) .bcard__thumb { grid-area: thumb; width: 100%; aspect-ratio: 4/1; border-radius: 12px; margin-bottom: .6rem; }
+.bcard:has(.bcard__thumb) .bcard__meta, .bcard:has(.bcard__thumb) h3, .bcard:has(.bcard__thumb) .bcard__excerpt, .bcard:has(.bcard__thumb) .bcard__by { margin-left: .7rem; margin-right: .7rem; }
+@media (min-width: 720px) {
+  .bgrid { max-width: 52rem; }
+  .bcard:has(.bcard__thumb) { padding: .8rem .8rem 1.5rem; }
+  .bcard:has(.bcard__thumb) .bcard__meta, .bcard:has(.bcard__thumb) h3, .bcard:has(.bcard__thumb) .bcard__excerpt, .bcard:has(.bcard__thumb) .bcard__by { margin-left: 1rem; margin-right: 1rem; }
+}
+.post__photo .post__img { aspect-ratio: 4/1; }

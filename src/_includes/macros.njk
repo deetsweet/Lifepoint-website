@@ -1,8 +1,8 @@
 {# Photo from the images list. Falls back to a placeholder until a file is added. #}
-{% macro photo(key, cls="", eager=false) %}
+{% macro photo(key, cls="", eager=false, pos="") %}
 {%- set p = images[key] -%}
 {%- if p and p.file -%}
-<img class="{{ cls }}" src="{{ ('/assets/img/' + p.file) | url }}" alt="{{ p.alt }}"{% if p.pos %} style="object-position: {{ p.pos }}"{% endif %}{% if not eager %} loading="lazy"{% endif %} decoding="async">
+<img class="{{ cls }}" src="{{ ('/assets/img/' + p.file) | url }}" alt="{{ p.alt }}"{% if pos or p.pos %} style="object-position: {{ pos or p.pos }}"{% endif %}{% if not eager %} loading="lazy"{% endif %} decoding="async">
 {%- else -%}
 <div class="ph {{ cls }}" role="img" aria-label="{{ p.alt if p else key }}"><span>{{ p.alt if p else key }}</span></div>
 {%- endif -%}
@@ -26,8 +26,8 @@
     <p class="bcard__excerpt">{{ p.data.excerpt }}</p>
     {% if a %}<p class="bcard__by">{{ photo(a.img, "bcard__avatar") }}<span>{{ a.name }}</span></p>{% endif %}
   </div>
-  {%- if p.data.img or p.data.video %}
-  <div class="bcard__thumb">{% if p.data.img %}{{ photo(p.data.img, "bcard__img") }}{% else %}<img class="bcard__img" src="https://i.ytimg.com/vi/{{ p.data.video }}/mqdefault.jpg" alt="" loading="lazy">{% endif %}</div>
+  {%- if p.data.img %}
+  <div class="bcard__thumb">{{ photo(p.data.img, "bcard__img", false, p.data.imgPos) }}</div>
   {%- endif %}
 </a>
 {% endmacro %}
@@ -35,7 +35,7 @@
 {# Compact blog row: small thumbnail, label and date, title #}
 {% macro postRow(p) %}
 <a class="prow" href="{{ p.url | url }}">
-  <span class="prow__thumb">{%- if p.data.img %}{{ photo(p.data.img, "prow__img") }}{% elif p.data.video %}<img class="prow__img" src="https://i.ytimg.com/vi/{{ p.data.video }}/mqdefault.jpg" alt="" loading="lazy">{% endif -%}</span>
+  <span class="prow__thumb">{%- if p.data.img %}{{ photo(p.data.img, "prow__img", false, p.data.imgPos) }}{% endif -%}</span>
   <span class="prow__text">
     <span class="prow__meta">{{ p.data.label }} · <time datetime="{{ p.date | isoDate }}">{{ p.date | readableDate }}</time></span>
     <span class="prow__title">{{ p.data.title }}</span>

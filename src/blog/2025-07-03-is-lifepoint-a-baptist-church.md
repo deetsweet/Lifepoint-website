@@ -3,6 +3,7 @@ title: What makes Lifepoint a Baptist church?
 date: 2025-07-03
 label: From the team
 img: lp-our-team-02
+imgPos: center 25%
 excerpt: We don't make a big fuss about labels, but we are proudly part of the Baptist family. Here's what that actually means.
 ---
 

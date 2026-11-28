@@ -3,6 +3,7 @@ title: Christian fasting
 date: 2026-06-15
 label: From the team
 img: pg-prayer-01
+imgPos: center 40%
 excerpt: What fasting is, why Christians have practised it for centuries, and some practical tips for getting started.
 ---
 

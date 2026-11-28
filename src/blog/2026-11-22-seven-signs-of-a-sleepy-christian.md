@@ -4,6 +4,7 @@ date: 2026-11-22
 author: dan
 label: Sermon
 img: sundays-dan
+imgPos: center 22%
 series: Staying Awake, week 1
 passage: 1 Thessalonians 5:6
 excerpt: Followers of Jesus can drift into spiritual sleep without noticing. Seven signs from 1 Thessalonians, and the only thing that really wakes us up.

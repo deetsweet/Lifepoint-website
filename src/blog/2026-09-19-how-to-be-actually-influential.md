@@ -4,6 +4,7 @@ date: 2026-09-19
 author: dan
 label: Sermon
 img: pg-baptism-02
+imgPos: center 20%
 passage: 1 Timothy
 excerpt: In a country running out of trust, real influence goes to the trusted. Three principles from Paul's handover letter to Timothy.
 ---

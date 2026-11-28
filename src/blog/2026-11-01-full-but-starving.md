@@ -3,6 +3,7 @@ title: Full, but starving
 date: 2026-11-01
 author: dan
 label: Sermon
+img: blog-sourdough-loaf
 video: jqyPt60bXZ0
 series: The Way Home
 passage: John 6
