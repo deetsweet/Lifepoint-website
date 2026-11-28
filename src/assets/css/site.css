@@ -812,3 +812,97 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 @media (min-width: 641px) { .hhero__loc { grid-template-columns: 10.5rem 1fr auto; } .hhero__loc strong { white-space: nowrap; } }
 /* Welcome photos: never wider than a comfortable portrait, centred when stacked */
 .welcome__media { max-width: 30rem; margin-left: auto; margin-right: auto; }
+
+/* Blog */
+.blog__title { font-size: clamp(2.4rem, 7vw, 4rem); margin-bottom: .4rem; }
+.blog .centre-head { margin-bottom: 1.6rem; }
+.blog__filters { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; margin-bottom: 2rem; }
+.blog__filter { font: 500 .8rem var(--head); letter-spacing: .02em; padding: .3rem .8rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.55); background: transparent; color: var(--white); cursor: pointer; transition: background .15s, color .15s; }
+.blog__filter:hover { border-color: var(--white); }
+.blog__filter.is-on { background: var(--white); color: var(--charcoal); border-color: var(--white); }
+.blog__empty { text-align: center; }
+/* The blog's own colour: sage, so it reads as its own space */
+.blog, .blog-more, .hblog { background: var(--sage); color: var(--white); }
+.blog .lede, .hblog .lede { color: rgba(255,255,255,.85); }
+.hblog .pill--dark { background: var(--white); color: var(--charcoal); }
+.hblog .pill--dark .pill__arrow { background: var(--charcoal); color: var(--white); }
+.bgrid { display: grid; gap: 1.25rem; max-width: var(--wrap); margin: 0 auto; }
+@media (min-width: 720px) { .bgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .bgrid { grid-template-columns: repeat(3, 1fr); } }
+.bcard { display: flex; flex-direction: column; background: var(--white); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: var(--charcoal); box-shadow: 0 1px 0 rgba(0,0,0,.04); transition: transform .15s, box-shadow .15s; }
+.bcard[hidden] { display: none; }
+.bcard:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
+.bcard__media { position: relative; }
+.bcard__img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.bcard__img--blank { background: var(--nextgen); }
+.bcard__label { position: absolute; left: .8rem; top: .8rem; background: var(--white); color: var(--charcoal); border-radius: 999px; padding: .25rem .8rem; font: 500 .8rem var(--head); }
+.bcard__body { display: flex; flex-direction: column; gap: .35rem; padding: 1.2rem 1.3rem 1.3rem; flex: 1; }
+.bcard__date { margin: 0; font: 600 .75rem var(--head); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.bcard h3 { font-size: 1.4rem; line-height: 1.2; margin: 0; }
+.bcard__excerpt { margin: 0; color: var(--muted); }
+.bcard__by { margin: auto 0 0; padding-top: .8rem; display: flex; align-items: center; gap: .55rem; font: 500 .9rem var(--head); }
+.bcard__avatar { width: 2rem; height: 2rem; border-radius: 50%; object-fit: cover; }
+.sec--dark .bcard { color: var(--charcoal); }
+
+.post { padding: 3.5rem 1.25rem 3rem; }
+.post > * { max-width: 44rem; margin-left: auto; margin-right: auto; }
+.post__head { text-align: center; margin-bottom: 2.2rem; }
+.post__meta { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: .6rem; margin: 0 0 1rem; font: 600 .8rem var(--head); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.post__label { color: var(--charcoal); text-decoration: none; border: 1.5px solid var(--charcoal); border-radius: 999px; padding: .2rem .8rem; letter-spacing: .06em; }
+.post__label:hover { background: var(--charcoal); color: var(--white); }
+.post h1 { font-size: clamp(2.3rem, 6.5vw, 3.6rem); line-height: 1.08; margin: 0 0 .8rem; }
+.post__series { margin: 0 0 1.4rem; color: var(--muted); font-style: italic; }
+.post__author { display: inline-flex; align-items: center; gap: .8rem; text-align: left; margin: .4rem 0 0; }
+.post__author strong { display: block; font-family: var(--head); font-weight: 500; }
+.post__author span { line-height: 1.35; color: var(--muted); font-size: .95rem; }
+.post__author strong { color: var(--charcoal); font-size: 1.05rem; }
+.post__avatar { width: 3.2rem; height: 3.2rem; border-radius: 50%; object-fit: cover; }
+.post > .post__wide { max-width: 60rem; margin-bottom: 2.4rem; }
+.post__img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); }
+.post__novideo { position: relative; }
+.post__novideo p { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; margin: 0; background: rgba(51,51,51,.88); color: var(--white); border-radius: 12px; padding: .7rem 1rem; font-size: .95rem; }
+.post__novideo a { color: var(--white); }
+.post__body h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin: 2.4rem 0 .8rem; }
+.post__body h3 { font-size: 1.3rem; margin: 1.8rem 0 .5rem; }
+.post__body ul, .post__body ol { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+.post__body li { margin-bottom: .45rem; }
+.post__body blockquote { font-size: clamp(1.25rem, 3vw, 1.55rem); border-left: 3px solid var(--charcoal); padding-left: 1.2rem; margin: 1.8rem 0; }
+.post__body blockquote p { margin-bottom: .6rem; }
+.post__body .verse { font-family: Georgia, "Times New Roman", serif; font-style: italic; color: var(--muted); }
+.post__body .prayer { background: var(--linen); border-radius: var(--radius); padding: 1.6rem 1.8rem; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 1.15rem; line-height: 1.7; }
+.post__body .prayer p { margin: 0 0 .8rem; }
+.post__body .questions { background: var(--linen); border-radius: var(--radius); padding: 1.5rem 1.7rem .6rem; margin-top: 2.4rem; }
+.post__body .questions h2 { margin-top: 0; font-size: 1.5rem; }
+.post__body .chat p { margin: 0 0 .45rem; }
+.post__body .chat { border-left: 3px solid var(--nextgen); padding-left: 1.1rem; margin: 1.4rem 0; }
+.post__ai { margin-top: 2.4rem; padding-top: 1.2rem; border-top: 1px solid #e6e1d6; color: var(--muted); font-size: .9rem; font-style: italic; }
+.post__foot { margin-top: 2.4rem; text-align: center; }
+.post__body .questions--deeper { background: var(--nextgen); margin-top: 1.2rem; }
+.post__body .questions--deeper > p { color: var(--charcoal); opacity: .75; margin-top: -.4rem; }
+.post__body .questions--deeper h3 { font-size: 1.15rem; margin: 1.4rem 0 .5rem; }
+.post__body .questions--deeper ol { margin-bottom: .6rem; }
+.post__back { display: inline-flex; align-items: center; gap: .4rem; margin-bottom: 1.4rem; font: 500 .95rem var(--head); color: var(--charcoal); text-decoration: none; opacity: .75; transition: opacity .15s; }
+.post__back:hover { opacity: 1; }
+.post__back span { transition: transform .15s; }
+.post__back:hover span { transform: translateX(-3px); }
+
+/* Compact blog rows (home page, Watch pages) */
+.sermons { background: var(--sage); color: var(--white); }
+.hblog, .sermons { padding-top: 3rem; padding-bottom: 3rem; }
+.sermons__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .6rem 2rem; margin-bottom: 1.3rem; }
+.sermons__head .eyebrow { margin-bottom: .5rem; }
+.sermons__head h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin: 0; }
+.sermons__head p { margin: .4rem 0 0; color: rgba(255,255,255,.85); }
+.sermons__all { font: 500 .95rem var(--head); color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.6); padding-bottom: 2px; white-space: nowrap; }
+.sermons__all:hover { border-bottom-color: var(--white); }
+.prows { display: grid; gap: .6rem; }
+@media (min-width: 900px) { .prows { grid-template-columns: repeat(3, 1fr); gap: .9rem; } }
+.prow { display: flex; align-items: center; gap: .9rem; background: var(--white); color: var(--charcoal); border-radius: 14px; padding: .55rem; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+.prow:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.1); }
+.prow__thumb { flex: none; width: 5.2rem; height: 4rem; border-radius: 10px; overflow: hidden; background: var(--nextgen); }
+.prow__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.prow__text { display: grid; gap: .15rem; min-width: 0; }
+.prow__meta { font: 600 .68rem var(--head); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.prow__title { font: 500 1.05rem/1.25 var(--head); }
+.vid__more { display: inline-block; margin-top: .3rem; font: 500 .95rem var(--head); color: var(--charcoal); }
+.sec--dark .vid__more { color: var(--white); }

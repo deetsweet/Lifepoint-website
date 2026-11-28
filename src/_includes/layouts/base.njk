@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }}</title>
+  <title>{{ title }}{% if page.url.startsWith("/blog/") and page.url != "/blog/" %} | Lifepoint Church{% endif %}</title>
   {% if description %}<meta name="description" content="{{ description | replace("&amp;", "&") }}">{% endif %}
   {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   {%- set shareTitle = title | replace(" | Lifepoint Church - Moreton, Queensland", "") -%}

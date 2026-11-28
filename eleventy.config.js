@@ -22,6 +22,13 @@ module.exports = function (eleventyConfig) {
 
   // Works out each section's background. Card sections go charcoal, unless the
   // section before is already charcoal, so two dark sections never sit together.
+  // Blog: "22 November 2026" style dates, and posts newest first.
+  eleventyConfig.addFilter("readableDate", (d) =>
+    new Date(d).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }));
+  eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
+  eleventyConfig.addCollection("posts", (api) =>
+    api.getFilteredByGlob("src/blog/*.md").sort((a, b) => b.date - a.date));
+
   eleventyConfig.addFilter("withBg", (sections = []) => {
     let prevDark = false;
     return sections.map((s) => {

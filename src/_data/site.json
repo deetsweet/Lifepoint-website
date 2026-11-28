@@ -185,6 +185,10 @@
       ]
     },
     {
+      "label": "Blog",
+      "url": "/blog/"
+    },
+    {
       "label": "What's On",
       "url": "/events/"
     },
@@ -291,6 +295,10 @@
         {
           "label": "Watch & listen",
           "url": "/watch--listen/"
+        },
+        {
+          "label": "Blog",
+          "url": "/blog/"
         },
         {
           "label": "Team resources",

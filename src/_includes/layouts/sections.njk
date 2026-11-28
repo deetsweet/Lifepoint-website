@@ -132,6 +132,7 @@ layout: layouts/base.njk
     <article class="vid">
       <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ v.id }}?rel=0" title="{{ v.title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
       <h3>{{ v.title }}</h3>
+      {% for p in collections.posts %}{% if p.data.video == v.id %}<a class="vid__more" href="{{ p.url | url }}">Read the summary and group questions <span aria-hidden="true">→</span></a>{% endif %}{% endfor %}
     </article>
     {% endfor %}
   </div>
@@ -140,6 +141,19 @@ layout: layouts/base.njk
   {% endif %}
   {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
 </section>
+
+{% elif s.type == "sermons" %}
+{%- set sermons = [] -%}
+{%- for p in collections.posts -%}{% if p.data.label == "Sermon" and sermons.length < (s.count or 3) %}{% set sermons = (sermons.push(p), sermons) %}{% endif %}{%- endfor -%}
+{% if sermons.length %}
+<section class="sec sermons"{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="sermons__head">
+    <div>{% if s.eyebrow %}{{ m.eyebrow(s.eyebrow) }}{% endif %}<h2>{{ s.heading or "Sermon summaries" }}</h2>{% if s.intro %}<p>{{ s.intro | safe }}</p>{% endif %}</div>
+    <a class="sermons__all" href="{{ '/blog/' | url }}?label=sermon">All sermon summaries <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="prows">{% for p in sermons %}{{ m.postRow(p) }}{% endfor %}</div>
+</section>
+{% endif %}
 
 {% elif s.type == "quote" %}
 <section class="sec{{ bg or ' sec--linen' }} welcome"{% if s.id %} id="{{ s.id }}"{% endif %}>

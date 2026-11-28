@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: Blog | Lifepoint Church - Moreton, Queensland
+description: Sermons, reflections and news from the Lifepoint team.
+permalink: /blog/
+heroHeader: true
+ogImage: pg-youngadults-13
+---
+{% import "macros.njk" as m with context %}
+{%- set labels = [["Sermon", "Sermons"], ["From the team", "From the team"], ["Church news", "Church news"]] -%}
+<section class="hero hero--simple">
+  {{ m.photo("pg-youngadults-13", "hero__img", true) }}
+  <div class="hero__inner">
+    <h1 class="hero__title">Lifepoint Blog</h1>
+    <div class="hero__foot"><p class="hero__intro">Messages and news from our team</p></div>
+  </div>
+</section>
+
+<section class="sec blog">
+  <div class="blog__filters" role="group" aria-label="Filter posts">
+    <button type="button" class="blog__filter is-on" data-filter="all" aria-pressed="true">All</button>
+    {% for l in labels %}<button type="button" class="blog__filter" data-filter="{{ l[0] | slugify }}" aria-pressed="false">{{ l[1] }}</button>{% endfor %}
+  </div>
+  <div class="bgrid" id="posts">
+    {% for p in collections.posts %}{{ m.postCard(p) }}{% endfor %}
+  </div>
+  <p class="blog__empty" hidden>No posts here yet.</p>
+</section>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.blog__filter');
+  var cards = document.querySelectorAll('#posts .bcard');
+  var empty = document.querySelector('.blog__empty');
+  function show(f) {
+    var n = 0;
+    btns.forEach(function (b) { var on = b.dataset.filter === f; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on); });
+    cards.forEach(function (c) { var hit = f === 'all' || c.dataset.label === f; c.hidden = !hit; if (hit) n++; });
+    empty.hidden = n > 0;
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () {
+    show(b.dataset.filter);
+    var u = new URL(location); if (b.dataset.filter === 'all') u.searchParams.delete('label'); else u.searchParams.set('label', b.dataset.filter);
+    history.replaceState(null, '', u);
+  }); });
+  var start = new URLSearchParams(location.search).get('label');
+  if (start && document.querySelector('[data-filter="' + start + '"]')) show(start);
+})();
+</script>

@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+---
+{% import "macros.njk" as m with context %}
+{%- set a = authors[author] -%}
+<article class="post">
+  <header class="post__head">
+    <a class="post__back" href="{{ '/blog/' | url }}"><span aria-hidden="true">←</span> All posts</a>
+    <p class="post__meta"><a class="post__label" href="{{ '/blog/' | url }}?label={{ label | slugify }}">{{ label }}</a><span aria-hidden="true">·</span><time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></p>
+    <h1>{{ title }}</h1>
+    {% if series %}<p class="post__series">{{ series }}{% if passage %} · {{ passage }}{% endif %}</p>{% endif %}
+    {% if a %}
+    <p class="post__author">{{ m.photo(a.img, "post__avatar") }}<span><strong>{{ a.name }}</strong>{{ a.role }}</span></p>
+    {% endif %}
+  </header>
+
+  {% if video %}
+  <div class="post__wide"><div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ video }}?rel=0" title="{{ title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div></div>
+  {% elif label == "Sermon" %}
+  <div class="post__wide"><div class="post__novideo">
+    {% if img %}{{ m.photo(img, "post__img") }}{% endif %}
+    <p>The video of this message will be added here soon. <a href="{{ '/watch--listen/' | url }}">Watch recent messages</a></p>
+  </div></div>
+  {% elif img %}
+  <div class="post__wide">{{ m.photo(img, "post__img") }}</div>
+  {% endif %}
+
+  <div class="post__body">
+    {{ content | safe }}
+    {% if ai %}<p class="post__ai">This sermon summary was prepared with the help of AI.</p>{% endif %}
+  </div>
+
+  <footer class="post__foot">
+    <a class="arrow-link" href="{{ '/blog/' | url }}">All blog posts <span aria-hidden="true">→</span></a>
+  </footer>
+</article>
+
+{%- set more = [] -%}
+{%- for p in collections.posts -%}{% if p.url != page.url and more.length < 3 %}{% set more = (more.push(p), more) %}{% endif %}{%- endfor -%}
+{% if more.length %}
+<section class="sec blog-more">
+  <div class="centre-head">{{ m.eyebrow("Keep reading") }}<h2>More from the blog</h2></div>
+  <div class="bgrid">{% for p in more %}{{ m.postCard(p) }}{% endfor %}</div>
+</section>
+{% endif %}

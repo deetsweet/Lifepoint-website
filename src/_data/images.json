@@ -946,7 +946,8 @@
   },
   "pg-youngadults-13": {
     "file": "pages/youngadults/13.webp",
-    "alt": "Conversations and connections in the Lifepoint community"
+    "alt": "Conversations and connections in the Lifepoint community",
+    "pos": "center 22%"
   },
   "pg-youngadults-14": {
     "file": "pages/youngadults/14.webp",

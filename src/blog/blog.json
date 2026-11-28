@@ -1,0 +1,8 @@
+{
+  "layout": "layouts/post.njk",
+  "permalink": "/blog/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "ogImage": "{{ img }}",
+    "description": "{{ excerpt }}"
+  }
+}

@@ -125,6 +125,14 @@ steps:
   </div>
 </section>
 
+<section class="sec hblog">
+  <div class="sermons__head">
+    <div>{{ m.eyebrow("From the blog") }}<h2>Latest from Lifepoint</h2></div>
+    <a class="sermons__all" href="{{ '/blog/' | url }}">All posts <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="prows">{% for p in collections.posts.slice(0, 3) %}{{ m.postRow(p) }}{% endfor %}</div>
+</section>
+
 {% include "embeds/home-events.html" %}
 
 <section class="hband">
