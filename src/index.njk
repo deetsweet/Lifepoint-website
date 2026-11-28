@@ -29,7 +29,7 @@ steps:
       <div class="hhero__where">
       <p class="hhero__label">One church · two locations</p>
       <ul class="hhero__locs">
-        {% for l in locations %}<li><a class="hhero__loc" href="{{ ('/sundays/' + l.slug + '/') | url }}"><strong>{{ l.name }}{% if l.note %}<small class="hhero__soon">From 7 Feb 2027</small>{% endif %}</strong><span class="times">{% for t in l.times %}<span>{{ t }}</span>{% endfor %}</span><span class="hhero__go" aria-hidden="true">→</span></a></li>{% endfor %}
+        {% for l in locations %}<li><a class="hhero__loc" href="{{ ('/sundays/' + l.slug + '/') | url }}"><strong>{{ l.name }}{% if l.note %}<small class="hhero__soon pre-launch">From 7 Feb 2027</small>{% endif %}</strong><span class="times">{% for t in l.times %}<span>{{ t }}</span>{% endfor %}</span><span class="hhero__go" aria-hidden="true">→</span></a></li>{% endfor %}
       </ul>
       </div>
       <div class="btns">
@@ -140,7 +140,7 @@ steps:
   <div class="hband__inner">
     <h2>See you Sunday?</h2>
     <p class="hband__note">No church experience required.</p>
-    <p>Sundays at Rothwell at 8.30am, 10am and 5pm, and at Caboolture West at 9.30am from 7 February 2027.</p>
+    <p>Sundays at Rothwell at 8.30am, 10am and 5pm, and at Caboolture West at 9.30am{{ m.launch(" from 7 February 2027", "") }}.</p>
     {{ m.pill("Sundays info", "/sundays/", "light") }}
   </div>
 </section>

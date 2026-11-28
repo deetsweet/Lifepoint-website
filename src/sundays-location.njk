@@ -42,7 +42,7 @@ beyond:
     {{ m.eyebrow("Lifepoint Church · " + loc.name) }}
     <h1 class="hero__title">Sundays <span class="script">at</span> {{ loc.name }}</h1>
     <div class="hero__foot">
-      <p class="hero__intro">{% if loc.note %}<strong>{{ loc.note }}.</strong> {% endif %}{{ loc.intro }}</p>
+      <p class="hero__intro">{% if loc.note %}<strong class="pre-launch">{{ loc.note }}. </strong>{% endif %}{{ loc.intro }}</p>
       <div class="hero__actions">
         <ul class="times">{% for t in loc.times %}<li>{{ t }}</li>{% endfor %}</ul>
         {{ m.pill("Plan your visit", "#plan") }}
@@ -53,7 +53,7 @@ beyond:
 
 <div class="ticker" aria-label="{{ loc.ticker | join(', ') }}">
   <div class="ticker__track" aria-hidden="true">
-    {% for round in [1, 2] %}{% for t in loc.ticker %}<span>{{ t }} ✦</span>{% endfor %}{% endfor %}
+    {% for round in [1, 2] %}{% for t in loc.ticker %}<span>{{ t }} ✦</span>{% if loop.first and loc.tickerLaunch and not launch.done %}<span class="pre-launch">{{ loc.tickerLaunch }} ✦</span>{% endif %}{% endfor %}{% endfor %}
   </div>
 </div>
 

@@ -14,6 +14,20 @@ async function read(url) {
   })).filter(v => v.id);
 }
 
+// Videos are often uploaded days or weeks after the Sunday, and not always in order,
+// so sort by the Sunday date in the title ("... - Sunday November 8 2026") when there is one.
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+function sundayDate(title) {
+  // Handles "November 8 2026", "August 9th 2026" and "16 August 2026"
+  const month = "(january|february|march|april|may|june|july|august|september|october|november|december)";
+  const a = title.match(new RegExp(month + "\\s+(\\d{1,2})(?:st|nd|rd|th)?,?\\s+(\\d{4})", "i"));
+  const b = title.match(new RegExp("(\\d{1,2})(?:st|nd|rd|th)?\\s+" + month + ",?\\s+(\\d{4})", "i"));
+  const [mon, day, year] = a ? [a[1], a[2], a[3]] : b ? [b[2], b[1], b[3]] : [];
+  if (!mon) return "";
+  const d = new Date(Date.UTC(+year, MONTHS.indexOf(mon.toLowerCase()), +day));
+  return Number.isFinite(+d) ? d.toISOString() : "";
+}
+
 module.exports = async function () {
   for (const url of [
     "https://www.youtube.com/feeds/videos.xml?playlist_id=" + PLAYLIST,
@@ -22,10 +36,11 @@ module.exports = async function () {
     try {
       const list = await read(url);
       if (list.length) {
-        list.sort((a, b) => (b.published || "").localeCompare(a.published || ""));
+        list.forEach(v => { v.sunday = sundayDate(v.title); v.sortKey = v.sunday || v.published || ""; });
+        list.sort((a, b) => b.sortKey.localeCompare(a.sortKey) || (b.published || "").localeCompare(a.published || ""));
         return list.slice(0, 4).map(v => ({
           ...v,
-          date: v.published ? new Date(v.published).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "Australia/Brisbane" }) : ""
+          date: (v.sunday || v.published) ? new Date(v.sunday || v.published).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: v.sunday ? "UTC" : "Australia/Brisbane" }) : ""
         }));
       }
     } catch (e) { console.warn("[messages] could not read", url, e.message); }

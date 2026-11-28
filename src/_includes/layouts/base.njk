@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en-AU"{% if launch.done %} class="launched"{% endif %}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if not launch.done %}<script>if(Date.now()>={{ launch.ts }})document.documentElement.classList.add("launched")</script>{% endif %}
   <title>{{ title }}{% if page.url.startsWith("/blog/") and page.url != "/blog/" %} | Lifepoint Church{% endif %}</title>
   {% if description %}<meta name="description" content="{{ description | replace("&amp;", "&") }}">{% endif %}
   {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
@@ -67,7 +68,7 @@
       <a class="ftr__cta" href="{{ '/sundays/' | url }}">Plan your visit</a>
     </div>
     <div class="ftr__times">
-      {% for l in locations %}<p><strong>{{ l.name }} · Sundays {{ l.timesText }}</strong><span>{{ l.venue }} · {{ l.address }}{% if l.note %} · from 7 February 2027{% endif %}</span></p>{% endfor %}
+      {% for l in locations %}<p><strong>{{ l.name }} · Sundays {{ l.timesText }}</strong><span>{{ l.venue }} · {{ l.address }}{% if l.note %}<span class="pre-launch"> · from 7 February 2027</span>{% endif %}</span></p>{% endfor %}
     </div>
     <div class="ftr__main">
       <div class="ftr__contact">

@@ -42,3 +42,6 @@
   </span>
 </a>
 {% endmacro %}
+
+{# Caboolture West launch wording: "before" until 7 February 2027 (Brisbane time), then "after" #}
+{% macro launch(before, after) %}{% if launch.done %}{{ after | safe }}{% else %}<span class="pre-launch">{{ before | safe }}</span>{% if after %}<span class="post-launch">{{ after | safe }}</span>{% endif %}{% endif %}{% endmacro %}

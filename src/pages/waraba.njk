@@ -1,7 +1,8 @@
 ---
 layout: layouts/sections.njk
 title: Caboolture West | Lifepoint Church - Moreton, Queensland
-description: Lifepoint Caboolture West. A new church community in Waraba, launching 7 February 2027. Sundays at 9.30am.
+eleventyComputed:
+  description: "Lifepoint Caboolture West. A new church community in Waraba{% if not launch.done %}, launching 7 February 2027{% endif %}. Sundays at 9.30am."
 permalink: /waraba/
 heroHeader: true
 sections:
@@ -9,7 +10,7 @@ sections:
     short: true
     img: pg-waraba-02
     title: Lifepoint Caboolture West
-    intro: A new church community launching 7 February 2027. Sundays at 9.30am.
+    intro: A new church community<span class="pre-launch"> launching 7 February 2027</span><span class="post-launch"> in Waraba</span>. Sundays at 9.30am.
     buttons:
       - { label: Sundays at Caboolture West, url: "/sundays/caboolture-west/" }
       - { label: Join the team, url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform", style: ghost }
@@ -21,9 +22,9 @@ sections:
   - type: cards
     cols: 3
     cards:
-      - eyebrow: Our public launch
+      - eyebrow: <span class="pre-launch">Our public launch</span><span class="post-launch">Launched</span>
         title: 7 February 2027
-      - eyebrow: Weekly services from launch
+      - eyebrow: Weekly services<span class="pre-launch"> from launch</span>
         title: 9.30am Sundays
       - eyebrow: Grace Lutheran College
         title: Caboolture Campus
@@ -37,7 +38,7 @@ sections:
       - "Hi, I'm Breyton, and I'm leading Lifepoint's new campus in Waraba (Caboolture West)."
       - My wife Georgie and I live in the area and we're passionate about this community and seeing lives transformed by the good news of Jesus.
       - Waraba is growing fast, with thousands of families moving into streets that were paddocks not long ago. Most of them arrive not knowing anyone, and we want to be the first to say hello. We want every one of those families to find friendship, hope and a real relationship with Jesus.
-      - "We're building a launch team ahead of our public launch on 7 February, 2027. If you live nearby, we'd love to meet you. <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform\">Get in touch</a> and I'll be in contact soon."
+      - "<span class=\"pre-launch\">We're building a launch team ahead of our public launch on 7 February 2027.</span><span class=\"post-launch\">Lifepoint Caboolture West launched on 7 February 2027.</span> If you live nearby, we'd love to meet you. <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform\">Get in touch</a> and I'll be in contact soon."
     sig: Breyton Mann
     role: Planting Pastor, Lifepoint Caboolture West
     buttons:
@@ -48,7 +49,7 @@ sections:
     eyebrow: Follow the journey
     heading: A new community. A story unfolding.
     text:
-      - Get to know Lifepoint Caboolture West and follow along as we prepare to launch. Find our latest photos, updates and moments from the community on Instagram.
+      - Get to know Lifepoint Caboolture West and <span class="pre-launch">follow along as we prepare to launch</span><span class="post-launch">follow along with what God is doing in Waraba</span>. Find our latest photos, updates and moments from the community on Instagram.
     buttons:
       - { label: Follow on Instagram, url: "https://www.instagram.com/lifepoint.cw/" }
       - { label: Find us on Facebook, url: "https://www.facebook.com/profile.php?id=61595650091409", style: ghost }
@@ -74,7 +75,7 @@ sections:
         links: [{ label: "I'm interested", url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform" }]
       - img: pg-waraba-05
         title: 2027 - Launch Year
-        text: ["In 2027 we will be publicly launching this new Lifepoint Church in the Waraba Region."]
+        text: ["<span class=\"pre-launch\">In 2027 we will be publicly launching this new Lifepoint church in the Waraba region.</span><span class=\"post-launch\">In February 2027 we publicly launched this new Lifepoint church in the Waraba region.</span>"]
         links: [{ label: Find out more, url: "https://docs.google.com/forms/d/e/1FAIpQLSeTaaiWwimLvjHRadJjIq3Gh2e8mxaWC8YGywg1OY6kM8WKGQ/viewform" }]
   - type: gallery
     imgs: [pg-waraba-01, pg-waraba-06, pg-waraba-07, pg-waraba-08, pg-waraba-09, pg-waraba-02, pg-waraba-04, pg-waraba-03]

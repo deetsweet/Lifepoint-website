@@ -952,3 +952,7 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
   .bcard:has(.bcard__thumb) .bcard__thumb { width: 100%; border-radius: 12px; margin-bottom: .5rem; }
   .bcard:has(.bcard__thumb) .bcard__meta, .bcard:has(.bcard__thumb) h3, .bcard:has(.bcard__thumb) .bcard__excerpt, .bcard:has(.bcard__thumb) .bcard__by { margin-left: .5rem; margin-right: .5rem; }
 }
+.embed__caption { max-width: 1100px; margin: .9rem auto 0; text-align: center; font: 500 1rem var(--head); }
+/* Caboolture West launch wording (see src/_data/launch.js) */
+html.launched .pre-launch { display: none !important; }
+html:not(.launched) .post-launch { display: none !important; }

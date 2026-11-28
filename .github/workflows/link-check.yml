@@ -1,0 +1,81 @@
+name: Weekly broken link check
+on:
+  workflow_dispatch:
+  schedule:
+    # Mondays at 8am Brisbane time (22:00 UTC Sunday; Queensland has no daylight saving)
+    - cron: "0 22 * * 0"
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: link-check
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+
+      # Build a copy of the site at the root ("/") so internal links can be checked as files.
+      - name: Build the site for checking
+        run: PATH_PREFIX=/ npx @11ty/eleventy --output=_linkcheck
+
+      - name: Check every link
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: false
+          output: ./lychee/out.md
+          format: markdown
+          args: >-
+            --root-dir ${{ github.workspace }}/_linkcheck
+            --no-progress
+            --max-concurrency 8
+            --timeout 30
+            --max-retries 3
+            --scheme https --scheme http --scheme file
+            --accept 100..=103,200..=299,403,429
+            --exclude '^https://www\.lifepoint\.org\.au'
+            --exclude 'fonts\.googleapis\.com|fonts\.gstatic\.com'
+            --exclude 'facebook\.com|instagram\.com'
+            '_linkcheck/**/*.html'
+        # Notes on the settings above:
+        # - 403 and 429 count as working: some sites block automated checkers but work fine for people.
+        # - www.lifepoint.org.au is skipped until the domain moves to this site (it still serves the
+        #   old Church Co site, so page addresses there don't match yet). Remove that line after the move.
+        # - Facebook and Instagram block checkers, so their links are skipped.
+
+      - name: Open or update the issue listing broken links
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "The weekly link check found links on the website that don't work."
+            echo
+            echo "Each one is listed under the page it appears on. Fix the link in the page's source file (or the photo list in src/_data/images.json), publish, and the next check will close this issue automatically. To check again straight away, run the \"Weekly broken link check\" workflow from the Actions tab."
+            echo
+            cat ./lychee/out.md
+          } > issue.md
+          gh label create broken-links --color d73a4a --description "Found by the weekly link check" 2>/dev/null || true
+          title="Broken links on the website ($(date -u +%d\ %b\ %Y))"
+          num=$(gh issue list --label broken-links --state open --json number --jq '.[0].number')
+          if [ -n "$num" ]; then
+            gh issue edit "$num" --title "$title" --body-file issue.md
+            gh issue comment "$num" --body "The check on $(date -u +%d\ %b\ %Y) still found broken links. The list above is up to date."
+          else
+            gh issue create --title "$title" --label broken-links --body-file issue.md
+          fi
+
+      - name: Close the issue when everything works again
+        if: steps.lychee.outputs.exit_code == 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for num in $(gh issue list --label broken-links --state open --json number --jq '.[].number'); do
+            gh issue close "$num" --comment "The check on $(date -u +%d\ %b\ %Y) found no broken links, so this is fixed."
+          done

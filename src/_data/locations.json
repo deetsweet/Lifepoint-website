@@ -129,9 +129,9 @@
   "cardImg": "home-caboolture-west",
   "intro": "A new Lifepoint church for Caboolture West and the growing Waraba community. Come as you are.",
   "note": "Launching Sunday 7 February 2027",
+  "tickerLaunch": "Launching 7 February 2027",
   "ticker": [
    "Come as you are",
-   "Launching 7 February 2027",
    "Sundays at 9.30am",
    "Lifepoint Kids",
    "All ages welcome",
@@ -200,8 +200,8 @@
   ],
   "faqExtra": [
    {
-    "q": "When does it start?",
-    "a": "Our first service is Sunday 7 February 2027, and we meet every Sunday at 9.30am from then on."
+    "q": "When do you meet?",
+    "a": "<span class=\"pre-launch\">Our first service is Sunday 7 February 2027, and we meet every Sunday at 9.30am from then on.</span><span class=\"post-launch\">We meet every Sunday at 9.30am.</span>"
    },
    {
     "q": "How do I find the building?",

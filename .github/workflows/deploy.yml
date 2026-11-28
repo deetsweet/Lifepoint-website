@@ -8,6 +8,9 @@ on:
     - cron: "0 4 * * 0"
     - cron: "0 11 * * 0"
     - cron: "0 23 * * 0"
+    # Nightly rebuild at 2am Brisbane time (16:00 UTC the day before; Queensland has no daylight saving),
+    # so events, the latest message and the Caboolture West launch wording stay current
+    - cron: "0 16 * * *"
 permissions:
   contents: read
   pages: write

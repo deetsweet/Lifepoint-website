@@ -1,7 +1,8 @@
 ---
 layout: layouts/base.njk
 title: Sundays | Lifepoint Church - Moreton, Queensland
-description: Sundays at Lifepoint Church. Rothwell at 8.30am, 10am and 5pm. Caboolture West at 9.30am from 7 February 2027.
+eleventyComputed:
+  description: "Sundays at Lifepoint Church. Rothwell at 8.30am, 10am and 5pm. Caboolture West at 9.30am{% if not launch.done %} from 7 February 2027{% endif %}."
 permalink: /sundays/
 heroHeader: true
 ---
@@ -23,7 +24,7 @@ heroHeader: true
     <article class="campus campus--link campus--{{ l.slug }}">
       <div class="campus__media">
         <a href="{{ ('/sundays/' + l.slug + '/') | url }}" tabindex="-1" aria-hidden="true">{{ m.photo(l.cardImg, "campus__img") }}</a>
-        {% if l.note %}<p class="badge"><span>Launching</span> 7 Feb 2027</p>{% endif %}
+        {% if l.note %}<p class="badge pre-launch"><span>Launching</span> 7 Feb 2027</p>{% endif %}
       </div>
       <div class="campus__body">
         <h3><a class="campus__title" href="{{ ('/sundays/' + l.slug + '/') | url }}">Lifepoint {{ l.name }}</a></h3>

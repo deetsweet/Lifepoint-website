@@ -73,7 +73,7 @@ layout: layouts/base.njk
       {% if c.video %}<div class="embed embed--card"><iframe src="https://www.youtube-nocookie.com/embed/{{ c.video }}" title="{{ c.title }}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>{% endif %}
       {% if c.img %}<div class="gcard__media">{{ m.photo(c.img, "gcard__img") }}{% if c.badge %}<p class="badge">{{ c.badge }}</p>{% endif %}</div>{% endif %}
       <div class="gcard__body">
-        {% if c.eyebrow %}<p class="gcard__eyebrow">{{ c.eyebrow }}</p>{% endif %}
+        {% if c.eyebrow %}<p class="gcard__eyebrow">{{ c.eyebrow | safe }}</p>{% endif %}
         <h3>{{ c.title | safe }}</h3>
         {% if c.meta %}<p class="gcard__meta">{{ c.meta | safe }}</p>{% endif %}
         {% for p in c.text %}<p>{{ p | safe }}</p>{% endfor %}
@@ -119,7 +119,9 @@ layout: layouts/base.njk
 {% elif s.type == "embed" %}
 <section class="sec{{ bg }}">
   {% if s.heading or s.eyebrow %}<div class="centre-head">{{ head(s) }}{% if s.intro %}<p class="lede">{{ s.intro | safe }}</p>{% endif %}</div>{% endif %}
-  <div class="embed{% if s.ratio %} embed--{{ s.ratio }}{% endif %}"><iframe src="{{ s.src }}" title="{{ s.title or s.heading or 'Embedded content' }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+  {%- set latest = messages[0] if (s.latest and messages and messages.length) else null -%}
+  <div class="embed{% if s.ratio %} embed--{{ s.ratio }}{% endif %}"><iframe src="{{ ('https://www.youtube-nocookie.com/embed/' + latest.id + '?rel=0') if latest else s.src }}" title="{{ latest.title if latest else (s.title or s.heading or 'Embedded content') }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+  {% if latest %}<p class="embed__caption">{{ latest.title }}{% for p in collections.posts %}{% if p.data.video == latest.id %} · <a href="{{ p.url | url }}">Read the summary and group questions</a>{% endif %}{% endfor %}</p>{% endif %}
   {% if s.buttons %}<p class="btns btns--centre">{% for b in s.buttons %}{{ btn(b, "dark") }}{% endfor %}</p>{% endif %}
 </section>
 

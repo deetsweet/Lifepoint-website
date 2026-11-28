@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;family=Lato:wght@400;700&amp;display=swap">
 <div id="lifepoint-events-listing" data-listing="events">
-  <p class="lp-status lp-sr" role="status">Loading events... <a href="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">Browse on ChurchSuite</a></p>
-  <div class="lp-grid"><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div></div>
+  <p class="lp-status lp-sr" role="status"{% if events.listHtml %} hidden{% endif %}>Loading events... <a href="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">Browse on ChurchSuite</a></p>
+  <div class="lp-grid"{% if events.listHtml %} data-built{% endif %}>{% if events.listHtml %}{{ events.listHtml | safe }}{% else %}<div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div><div class="lp-skel" aria-hidden="true"><span class="lp-skel__img"></span><span class="lp-skel__bar lp-skel__bar--s"></span><span class="lp-skel__bar"></span><span class="lp-skel__bar lp-skel__bar--m"></span></div>{% endif %}</div>
+  {% if events.listSchema %}<script type="application/ld+json" id="lp-events-ld">{{ events.listSchema | safe }}</script>{% endif %}
 
 <style>
 #lifepoint-events-listing {
@@ -455,8 +456,11 @@
       return out;
     });
     if (!data.length) return;
+    // Replace the list written in at build time, so Google never sees two copies.
+    document.getElementById('lp-events-ld')?.remove();
     const s = document.createElement('script');
     s.type = 'application/ld+json';
+    s.id = 'lp-events-ld';
     s.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': data });
     document.head.append(s);
   }
@@ -493,6 +497,8 @@
   }
 
   load().catch(() => {
+    // ChurchSuite couldn't be reached: keep the events written in when the site was built.
+    if (grid.hasAttribute('data-built')) return;
     grid.replaceChildren();
     status.classList.remove('lp-sr');
     status.firstChild.textContent = 'The ' + mode + ' could not load just now. ';

@@ -5,8 +5,9 @@
       <h2 id="lifepoint-home-events-heading">Coming up</h2>
       <a class="lhe-all" href="/events/">See all events</a>
     </div>
-    <p class="lhe-status lhe-sr" role="status">Loading events…</p>
-    <ul class="lhe-list" aria-label="Upcoming events"><li class="lhe-item lhe-feature lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li></ul>
+    <p class="lhe-status lhe-sr" role="status"{% if events.homeHtml %} hidden{% endif %}>Loading events…</p>
+    <ul class="lhe-list" aria-label="Upcoming events"{% if events.homeHtml %} data-built{% endif %}>{% if events.homeHtml %}{{ events.homeHtml | safe }}{% else %}<li class="lhe-item lhe-feature lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li><li class="lhe-item lhe-skel" aria-hidden="true"><span class="lhe-link"><span class="lhe-photo"></span><span><span class="lhe-bar lhe-bar--s"></span><span class="lhe-bar"></span></span></span></li>{% endif %}</ul>
+    {% if events.homeSchema %}<script type="application/ld+json" id="lhe-ld">{{ events.homeSchema | safe }}</script>{% endif %}
   </div>
 </section>
 
@@ -236,8 +237,11 @@
       return out;
     });
     if (!data.length) return;
+    // Replace the list written in at build time, so Google never sees two copies.
+    document.getElementById('lhe-ld')?.remove();
     const s = document.createElement('script');
     s.type = 'application/ld+json';
+    s.id = 'lhe-ld';
     s.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': data });
     document.head.append(s);
   }
@@ -266,6 +270,8 @@
   }
 
   load().catch(() => {
+    // ChurchSuite couldn't be reached: keep the list written in when the site was built.
+    if (list.hasAttribute('data-built')) return;
     list.replaceChildren();
     status.classList.remove('lhe-sr');
     status.innerHTML = 'Upcoming events could not load just now. <a href="https://lifepointchurchrothwell.churchsuite.com/-/calendar/9a5e6d75-319d-43a1-9782-0e325a0838c1">Browse the calendar on ChurchSuite</a>.';
