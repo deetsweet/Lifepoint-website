@@ -16,20 +16,19 @@
 {# Eyebrow line #}
 {% macro eyebrow(text) %}<p class="eyebrow">{{ text | replace(" · ", "&nbsp;· ") | safe }}</p>{% endmacro %}
 
-{# Blog post card: used on the blog list, the home page and under each post #}
+{# Blog post row: text first (label, date, title, summary, author), small thumbnail on the right #}
 {% macro postCard(p) %}
 {%- set a = authors[p.data.author] -%}
 <a class="bcard" href="{{ p.url | url }}" data-label="{{ p.data.label | slugify }}">
-  <div class="bcard__media">
-    {%- if p.data.img %}{{ photo(p.data.img, "bcard__img") }}{% elif p.data.video %}<img class="bcard__img" src="https://i.ytimg.com/vi/{{ p.data.video }}/hqdefault.jpg" alt="" loading="lazy">{% else %}<div class="bcard__img bcard__img--blank"></div>{% endif -%}
-    <span class="bcard__label">{{ p.data.label }}</span>
-  </div>
   <div class="bcard__body">
-    <p class="bcard__date"><time datetime="{{ p.date | isoDate }}">{{ p.date | readableDate }}</time></p>
+    <p class="bcard__meta"><span class="bcard__label">{{ p.data.label }}</span><time datetime="{{ p.date | isoDate }}">{{ p.date | readableDate }}</time></p>
     <h3>{{ p.data.title }}</h3>
     <p class="bcard__excerpt">{{ p.data.excerpt }}</p>
     {% if a %}<p class="bcard__by">{{ photo(a.img, "bcard__avatar") }}<span>{{ a.name }}</span></p>{% endif %}
   </div>
+  {%- if p.data.img or p.data.video %}
+  <div class="bcard__thumb">{% if p.data.img %}{{ photo(p.data.img, "bcard__img") }}{% else %}<img class="bcard__img" src="https://i.ytimg.com/vi/{{ p.data.video }}/mqdefault.jpg" alt="" loading="lazy">{% endif %}</div>
+  {%- endif %}
 </a>
 {% endmacro %}
 

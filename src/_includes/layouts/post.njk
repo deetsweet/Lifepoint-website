@@ -17,17 +17,18 @@ layout: layouts/base.njk
   {% if video %}
   <div class="post__wide"><div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ video }}?rel=0" title="{{ title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div></div>
   {% elif label == "Sermon" %}
-  <div class="post__wide"><div class="post__novideo">
+  <div class="post__photo"><div class="post__novideo">
     {% if img %}{{ m.photo(img, "post__img") }}{% endif %}
     <p>The video of this message will be added here soon. <a href="{{ '/watch--listen/' | url }}">Watch recent messages</a></p>
   </div></div>
   {% elif img %}
-  <div class="post__wide">{{ m.photo(img, "post__img") }}</div>
+  <div class="post__photo">{{ m.photo(img, "post__img") }}</div>
   {% endif %}
 
   <div class="post__body">
     {{ content | safe }}
     {% if ai %}<p class="post__ai">This sermon summary was prepared with the help of AI.</p>{% endif %}
+    {% if img and images[img] and images[img].credit %}<p class="post__credit">Photo: <a href="{{ images[img].creditUrl }}">{{ images[img].credit }}</a> on Unsplash</p>{% endif %}
   </div>
 
   <footer class="post__foot">

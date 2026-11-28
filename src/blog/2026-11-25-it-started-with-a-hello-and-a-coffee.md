@@ -3,7 +3,7 @@ title: It started with a hello and a coffee
 date: 2026-11-25
 author: jason
 label: From the team
-img: pg-care-03
+img: blog-coffee-mugs
 excerpt: A new person almost didn't come back to Lifepoint. Here's the small thing that changed their mind.
 ---
 

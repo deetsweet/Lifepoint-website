@@ -3,7 +3,7 @@ title: 3 things I learned on sabbatical
 date: 2026-10-07
 author: jason
 label: From the team
-img: lp-small-groups-01
+img: blog-morning-walk
 excerpt: Rest, presence and open hands. Jason reflects on what God showed him during a season away.
 ---
 

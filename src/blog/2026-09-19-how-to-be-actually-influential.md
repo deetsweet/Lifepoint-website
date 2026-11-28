@@ -1,7 +1,8 @@
 ---
 title: How to actually be influential
 date: 2026-09-19
-label: From the team
+author: dan
+label: Sermon
 img: pg-baptism-02
 passage: 1 Timothy
 excerpt: In a country running out of trust, real influence goes to the trusted. Three principles from Paul's handover letter to Timothy.

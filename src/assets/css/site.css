@@ -826,22 +826,25 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .blog .lede, .hblog .lede { color: rgba(255,255,255,.85); }
 .hblog .pill--dark { background: var(--white); color: var(--charcoal); }
 .hblog .pill--dark .pill__arrow { background: var(--charcoal); color: var(--white); }
-.bgrid { display: grid; gap: 1.25rem; max-width: var(--wrap); margin: 0 auto; }
-@media (min-width: 720px) { .bgrid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .bgrid { grid-template-columns: repeat(3, 1fr); } }
-.bcard { display: flex; flex-direction: column; background: var(--white); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: var(--charcoal); box-shadow: 0 1px 0 rgba(0,0,0,.04); transition: transform .15s, box-shadow .15s; }
+.bgrid { display: grid; gap: .9rem; max-width: 52rem; margin: 0 auto; }
+.bcard { display: grid; grid-template-columns: 1fr 8rem; align-items: start; gap: 1rem; background: var(--white); border-radius: var(--radius); padding: 1.2rem 1.2rem 1.3rem 1.4rem; text-decoration: none; color: var(--charcoal); transition: transform .15s, box-shadow .15s; }
+.bcard:not(:has(.bcard__thumb)) { grid-template-columns: 1fr; }
 .bcard[hidden] { display: none; }
-.bcard:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
-.bcard__media { position: relative; }
-.bcard__img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
-.bcard__img--blank { background: var(--nextgen); }
-.bcard__label { position: absolute; left: .8rem; top: .8rem; background: var(--white); color: var(--charcoal); border-radius: 999px; padding: .25rem .8rem; font: 500 .8rem var(--head); }
-.bcard__body { display: flex; flex-direction: column; gap: .35rem; padding: 1.2rem 1.3rem 1.3rem; flex: 1; }
-.bcard__date { margin: 0; font: 600 .75rem var(--head); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.bcard h3 { font-size: 1.4rem; line-height: 1.2; margin: 0; }
+.bcard:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+.bcard:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.bcard__body { display: grid; gap: .4rem; min-width: 0; }
+.bcard__meta { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .7rem; margin: 0; font: 600 .72rem var(--head); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.bcard__label { color: var(--deep-blue); }
+.bcard h3 { font-size: clamp(1.35rem, 3.4vw, 1.75rem); line-height: 1.15; margin: 0; }
 .bcard__excerpt { margin: 0; color: var(--muted); }
-.bcard__by { margin: auto 0 0; padding-top: .8rem; display: flex; align-items: center; gap: .55rem; font: 500 .9rem var(--head); }
-.bcard__avatar { width: 2rem; height: 2rem; border-radius: 50%; object-fit: cover; }
+.bcard__by { margin: .35rem 0 0; display: flex; align-items: center; gap: .55rem; font: 500 .9rem var(--head); }
+.bcard__avatar { width: 1.9rem; height: 1.9rem; border-radius: 50%; object-fit: cover; }
+.bcard__thumb { width: 8rem; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; }
+.bcard__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (min-width: 720px) {
+  .bcard { grid-template-columns: 1fr 15rem; gap: 1.8rem; padding: 1.5rem 1.5rem 1.6rem 1.8rem; }
+  .bcard__thumb { width: 15rem; border-radius: 12px; }
+}
 .sec--dark .bcard { color: var(--charcoal); }
 
 .post { padding: 3.5rem 1.25rem 3rem; }
@@ -899,7 +902,7 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 @media (min-width: 900px) { .prows { grid-template-columns: repeat(3, 1fr); gap: .9rem; } }
 .prow { display: flex; align-items: center; gap: .9rem; background: var(--white); color: var(--charcoal); border-radius: 14px; padding: .55rem; text-decoration: none; transition: transform .15s, box-shadow .15s; }
 .prow:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.1); }
-.prow__thumb { flex: none; width: 5.2rem; height: 4rem; border-radius: 10px; overflow: hidden; background: var(--nextgen); }
+.prow__thumb { flex: none; width: 6.4rem; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; background: var(--nextgen); }
 .prow__img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .prow__text { display: grid; gap: .15rem; min-width: 0; }
 .prow__meta { font: 600 .68rem var(--head); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
@@ -916,3 +919,36 @@ blockquote { margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif;
 .sig__text { display: grid; gap: 0; margin: 0; }
 .sig__text .script { font-size: 2.3rem; line-height: 1.3; }
 .sig__text span:last-child { font-family: var(--head); font-size: .85rem; letter-spacing: .2em; text-transform: uppercase; }
+.post__credit { margin-top: 1rem; font-size: .8rem; color: var(--muted); } .post__credit a { color: inherit; }
+/* Post pages: the photo is a modest strip the width of the text, so the title and words lead */
+.post > .post__photo { max-width: 44rem; margin-bottom: 2.2rem; }
+.post__photo .post__img { aspect-ratio: 16/9; }
+.bcard__label::after { content: "·"; margin-left: .7rem; color: var(--muted); }
+/* Phones: thumbnail sits beside the label and title; the summary and author run full width below */
+@media (max-width: 719px) {
+  .bcard:has(.bcard__thumb) { grid-template-columns: 1fr 8rem; grid-template-areas: "meta thumb" "title thumb" "excerpt excerpt" "by by"; row-gap: .4rem; column-gap: .9rem; }
+  .bcard:has(.bcard__thumb) .bcard__body { display: contents; }
+  .bcard:has(.bcard__thumb) .bcard__meta { grid-area: meta; }
+  .bcard:has(.bcard__thumb) h3 { grid-area: title; align-self: start; }
+  .bcard:has(.bcard__thumb) .bcard__excerpt { grid-area: excerpt; }
+  .bcard:has(.bcard__thumb) .bcard__by { grid-area: by; }
+  .bcard:has(.bcard__thumb) .bcard__thumb { grid-area: thumb; }
+}
+/* Blog list v3: smaller summary text so the 16:9 photo can be bigger */
+.bgrid { max-width: 60rem; }
+.bcard__excerpt { font-size: .92rem; line-height: 1.5; }
+.bcard__by { font-size: .85rem; }
+@media (min-width: 720px) {
+  .bcard { grid-template-columns: 1fr 21rem; gap: 1.8rem; align-items: center; }
+  .bcard__thumb { width: 21rem; }
+}
+@media (max-width: 719px) {
+  .bcard:has(.bcard__thumb) { grid-template-columns: 1fr 9.5rem; }
+  .bcard__thumb { width: 9.5rem; }
+}
+/* Phones: photo full width above the label, title and summary */
+@media (max-width: 719px) {
+  .bcard:has(.bcard__thumb) { grid-template-columns: 1fr; grid-template-areas: "thumb" "meta" "title" "excerpt" "by"; row-gap: .45rem; padding: .8rem .8rem 1.2rem; }
+  .bcard:has(.bcard__thumb) .bcard__thumb { width: 100%; border-radius: 12px; margin-bottom: .5rem; }
+  .bcard:has(.bcard__thumb) .bcard__meta, .bcard:has(.bcard__thumb) h3, .bcard:has(.bcard__thumb) .bcard__excerpt, .bcard:has(.bcard__thumb) .bcard__by { margin-left: .5rem; margin-right: .5rem; }
+}

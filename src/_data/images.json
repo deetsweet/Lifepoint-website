@@ -1013,5 +1013,17 @@
   "pg-youth-14": {
     "file": "pages/youth/14.webp",
     "alt": "Lifepoint Church"
+  },
+  "blog-coffee-mugs": {
+    "file": "blog/coffee-mugs.jpg",
+    "alt": "Two steaming mugs of coffee on a wooden table",
+    "credit": "Florian Siedl",
+    "creditUrl": "https://unsplash.com/photos/steaming-ceramic-mugs-on-wooden-table-GPWpmI-7KXw"
+  },
+  "blog-morning-walk": {
+    "file": "blog/morning-walk.jpg",
+    "alt": "Two people walking along a tree-lined path in morning light",
+    "credit": "Martijn Baudoin",
+    "creditUrl": "https://unsplash.com/photos/two-people-walk-on-a-path-through-bare-trees-rvE2Mp6YQZg"
   }
 }
